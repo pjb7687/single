@@ -18,7 +18,17 @@ namespace Single2013
         private frmTIRF m_frm;
         private ImageDrawer m_imgdrawer;
 
+        private double m_exptime;
+        private int m_calibcnt = 10;
+        private double m_calibdistdelta = 0.04;
+        private double m_stdev;
+
+        private double[] m_fitvals = new double[2];
+
         public bool m_focusing;
+        public bool m_ignoredarkframe = false;
+
+        private double m_frameintensity;
 
         private Thread m_focusingThread;
 
@@ -35,7 +45,7 @@ namespace Single2013
             int ystart = 0; int yend = m_ccd.m_imageheight;
 
             while (m_focusing && m_imgdrawer.AFFlag) Thread.Sleep(10);
-            m_imgdrawer.AFFlag = false;
+            m_imgdrawer.AFFlag = true;
 
             if (m_imgdrawer.dump_array != null) m_imgdrawer.dumparray_sem.WaitOne();
 
@@ -48,6 +58,7 @@ namespace Single2013
                     suby = (double)(m_imgdrawer.dump_array[x, y] - m_imgdrawer.dump_array[x, (y + 2)]);
                     Idiffx += subx*subx;
                     Idiffy += suby*suby;
+                    m_frameintensity = I;
 				}
 			}
             m_imgdrawer.dumparray_sem.Release();
@@ -55,30 +66,83 @@ namespace Single2013
 	        return Idiffy/I - Idiffx/I;
         }
 
+        void LinearFit(double[] x, double[] y, int dataSize, double[] fit_vals)
+        {
+            double SUMx = 0;     //sum of x values
+            double SUMy = 0;     //sum of y values
+            double SUMxy = 0;    //sum of x * y
+            double SUMxx = 0;    //sum of x^2
+            double AVGy = 0;     //mean of y
+            double AVGx = 0;     //mean of x
+
+            //calculate various sums 
+            for (int i = 0; i < dataSize; i++)
+            {
+                //sum of x
+                SUMx = SUMx + x[i];
+                //sum of y
+                SUMy = SUMy + y[i];
+                //sum of squared x*y
+                SUMxy = SUMxy + x[i] * y[i];
+                //sum of squared x
+                SUMxx = SUMxx + x[i] * x[i];
+            }
+
+            //calculate the means of x and y
+            AVGy = SUMy / dataSize;
+            AVGx = SUMx / dataSize;
+
+            //slope or a1
+            fit_vals[1] = (dataSize * SUMxy - SUMx * SUMy) / (dataSize * SUMxx - SUMx * SUMx);
+
+            //y intercept or a0
+            fit_vals[0] = AVGy - fit_vals[1] * AVGx;
+        }
+
         private void FocusingThread()
         {
-            double fom;
+            double fom, distdelta;
+            double lastintensity;
             while (m_focusing)
             {
+
+                lastintensity = m_frameintensity;
                 fom = CalcFOM();
-                    if (fom < 0)
-                        m_stage.MoveToDist(m_stage.m_distz + 0.002, 3);
-                    else
-                        m_stage.MoveToDist(m_stage.m_distz - 0.002, 3);
+
+                if (m_ignoredarkframe && (lastintensity > m_frameintensity))
+                    continue;
+
+                if (Math.Abs(fom) > 4 * m_stdev)
+                {
+                    distdelta = -fom * m_fitvals[1] / 2;
+
+                    if (Math.Abs(distdelta) < 0.5) // for safety
+                        m_stage.MoveToDist(m_stage.m_distz + distdelta, 3);
+                }
+                else if (fom < 0)
+                {
+                    m_stage.MoveToDist(m_stage.m_distz + 0.002, 3);
+                }
+                else
+                {
+                    m_stage.MoveToDist(m_stage.m_distz - 0.002, 3);
+                }
                 // Direct insertion of the values in a thread may cause a conflict between threads.
                 // So we should use 'Invoke' method for the main thread to put the values to the controls...
-                m_frm.Invoke(new frmTIRF.updateAFInfoDelegate(m_frm.updateAFInfo), new object[] { "FOM: " + fom.ToString() + "  DIST: " + m_stage.m_distz.ToString() });
+                try
+                {
+                    m_frm.Invoke(new frmTIRF.updateAFInfoDelegate(m_frm.updateAFInfo), new object[] { fom, m_stage.m_distz });
+                }
+                catch { }
+                
             }
         }
 
-        public void StartFocusing(int selectedchannel, frmTIRF frm, ImageDrawer imgdrawer)
+        public void StartFocusing()
         {
-            m_selectedchannel = selectedchannel;
             m_focusingThread = new Thread(new ThreadStart(FocusingThread));
             m_focusingThread.Priority = ThreadPriority.BelowNormal;
             m_focusing = true;
-            m_frm = frm;
-            m_imgdrawer = imgdrawer;
             m_focusingThread.Start();
         }
 
@@ -87,16 +151,136 @@ namespace Single2013
             m_focusing = false;
         }
 
-        public AutoFocusing(smbStage stage, smbCCD ccd)
+        public void Calibrate(double exptime)
         {
+            m_exptime = exptime;
+            m_focusingThread = new Thread(new ThreadStart(CalibrateThread));
+            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Start();
+        }
+
+        public void FindingFocalPoint()
+        {
+            m_focusingThread = new Thread(new ThreadStart(FindingFocalPointThread));
+            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Start();
+        }
+
+        public void CalculateSTDEV()
+        {
+            m_focusingThread = new Thread(new ThreadStart(CalculateSTDEVThread));
+            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Start();
+        }
+
+        private void CalibrateThread()
+        {
+            int i;
+
+            double[] foms = new double[m_calibcnt+1];
+            double[] dists = new double[m_calibcnt+1];
+
+            m_stage.MoveToDist(m_stage.m_distz - m_calibdistdelta * m_calibcnt / 2, 3);
+            m_focusing = true;
+            for (i = 0; i < m_calibcnt; i++)
+            {
+                Thread.Sleep(100);
+                foms[i] = CalcFOM();
+                dists[i] = m_stage.m_distz;
+                m_stage.MoveToDist(m_stage.m_distz + m_calibdistdelta, 3);
+            }
+            foms[foms.Length-1] = CalcFOM();
+            m_focusing = false;
+            Thread.Sleep(100);
+            dists[dists.Length - 1] = m_stage.m_distz;
+
+            LinearFit(dists, foms, m_calibcnt, m_fitvals);
+            try
+            {
+                m_frm.Invoke(new frmTIRF.CalibrateDoneDelegate(m_frm.CalibrateDone), new object[] { dists, foms, m_fitvals });
+            }
+            catch { }
+
+        }
+
+        private void CalculateSTDEVThread()
+        {
+            int i, stdevnum = (int)(10/m_exptime);
+            double avg=0, avg2=0;
+            double[] foms = new double[stdevnum];
+
+            if (stdevnum < 10) stdevnum = 10;
+            m_focusing = true;
+            for (i = 0; i < stdevnum; i++)
+            {
+                foms[i] = CalcFOM();
+                if (foms[i] < 0)
+                    m_stage.MoveToDist(m_stage.m_distz + 0.002, 3);
+                else
+                    m_stage.MoveToDist(m_stage.m_distz - 0.002, 3);
+
+                avg += foms[i]; avg2 += foms[i] * foms[i];
+            }
+            m_focusing = false;
+            avg /= stdevnum; avg2 /= stdevnum;
+
+            m_stdev = Math.Sqrt(Math.Abs(avg * avg - avg2));
+            try
+            {
+                m_frm.Invoke(new frmTIRF.CalculateSTDEVDoneDelegate(m_frm.CalculateSTDEVDone), new object[] { foms, m_stdev });
+            }
+            catch { }
+        }
+
+        private void FindingFocalPointThread()
+        {
+            double fom, lastfom = 0;
+            double distdelta;
+
+            int pointnum =  (int)(5 / m_exptime);
+            if (pointnum < 10) pointnum = 10;
+
+            m_focusing = true;
+            m_stage.MoveToDist(m_stage.m_distz + m_calibdistdelta * m_calibcnt/2, 3);
+            Thread.Sleep(50);
+            fom = CalcFOM();
+            distdelta = -fom * m_fitvals[1] / 2;
+
+            if (Math.Abs(distdelta) < 0.5) // for safety
+                m_stage.MoveToDist(m_stage.m_distz + distdelta, 3);
+
+            for (int i = 0; i < pointnum; i++)
+            {
+                Thread.Sleep(50);
+                fom = CalcFOM();
+                if ((lastfom < 0 && fom > 0) || (lastfom > 0 && fom < 0)) break;
+                lastfom = fom;
+                distdelta = -fom * m_fitvals[1] / 2;
+
+                if (Math.Abs(distdelta) < 0.5) // for safety
+                    m_stage.MoveToDist(m_stage.m_distz + distdelta, 3);
+            }
+            m_focusing = false;
+            try
+            {
+                m_frm.Invoke(new frmTIRF.FindingFocalPointDoneDelegate(m_frm.FindingFocalPointDone), new object[] { });
+            }
+            catch { }
+        }
+
+        public AutoFocusing(smbStage stage, smbCCD ccd, frmTIRF frm, ImageDrawer imgdrawer, int selectedchannel)
+        {
+            m_frm = frm;
             m_stage = stage;
             m_ccd = ccd;
+            m_imgdrawer = imgdrawer;
+            m_selectedchannel = selectedchannel;
         }
 
         ~AutoFocusing()
         {
             StopFocusing();
-            m_focusingThread.Join();
+            if (m_focusingThread != null) m_focusingThread.Join();
         }
     }
 }

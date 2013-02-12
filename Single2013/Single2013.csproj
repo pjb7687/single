@@ -77,6 +77,7 @@
     <Compile Include="AddModify2.Designer.cs">
       <DependentUpon>AddModify2.cs</DependentUpon>
     </Compile>
+    <Compile Include="AutoFlow.cs" />
     <Compile Include="AutoFocusing.cs" />
     <Compile Include="frmTIRF.cs">
       <SubType>Form</SubType>

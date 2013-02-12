@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -66,7 +64,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ComboBoxBinSize = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GroupBoxFilmingSettings = new System.Windows.Forms.GroupBox();
             this.ButtonSaveFilmingSettings = new System.Windows.Forms.Button();
             this.TextBoxPMAHead = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -85,6 +83,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.NUDAFRange = new System.Windows.Forms.NumericUpDown();
             this.ButtonAFStart = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.ComboBoxAFDevices = new System.Windows.Forms.ComboBox();
@@ -92,12 +92,47 @@
             this.ButtonAFConnect = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartAFFOM = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartAFDistance = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.CheckBoxAFIgnoreDarkFrame = new System.Windows.Forms.CheckBox();
             this.LabelAFInfo = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.ListViewAFLPumps = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ButtonAFLFindDevices = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ButtonAFLSetValuesToDevice = new System.Windows.Forms.Button();
+            this.NUDAFLRate = new System.Windows.Forms.NumericUpDown();
+            this.NUDAFLFrameNumber = new System.Windows.Forms.NumericUpDown();
+            this.NUDAFLVolume = new System.Windows.Forms.NumericUpDown();
+            this.ButtonAFLAddRule = new System.Windows.Forms.Button();
+            this.ButtonAFLInstantRun = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.RadioButtonAFLRefill = new System.Windows.Forms.RadioButton();
+            this.RadioButtonAFLInfusion = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TrackBarAFLRate = new System.Windows.Forms.TrackBar();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.TextBoxAFLDiameter = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.ButtonAFLEnable = new System.Windows.Forms.Button();
+            this.ButtonAFLRemoveRules = new System.Windows.Forms.Button();
+            this.ListViewAFLRules = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -129,13 +164,14 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
             this.DeviceSettings.SuspendLayout();
             this.GroupBoxDAQSettings.SuspendLayout();
             this.GroupBoxCCDSettings.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GroupBoxFilmingSettings.SuspendLayout();
             this.LogGroupBox.SuspendLayout();
             this.TemperatureGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDTemp)).BeginInit();
@@ -147,12 +183,28 @@
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).BeginInit();
+            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDChannelNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -215,7 +267,7 @@
             this.DeviceSettings.AutoScroll = true;
             this.DeviceSettings.Controls.Add(this.GroupBoxDAQSettings);
             this.DeviceSettings.Controls.Add(this.GroupBoxCCDSettings);
-            this.DeviceSettings.Controls.Add(this.groupBox2);
+            this.DeviceSettings.Controls.Add(this.GroupBoxFilmingSettings);
             this.DeviceSettings.Location = new System.Drawing.Point(4, 21);
             this.DeviceSettings.Name = "DeviceSettings";
             this.DeviceSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -260,7 +312,7 @@
             this.ListViewCounters.Location = new System.Drawing.Point(16, 165);
             this.ListViewCounters.Name = "ListViewCounters";
             this.ListViewCounters.Size = new System.Drawing.Size(257, 75);
-            this.ListViewCounters.TabIndex = 14;
+            this.ListViewCounters.TabIndex = 11;
             this.ListViewCounters.UseCompatibleStateImageBehavior = false;
             this.ListViewCounters.View = System.Windows.Forms.View.Details;
             // 
@@ -296,7 +348,7 @@
             this.ListViewLasers.Location = new System.Drawing.Point(15, 34);
             this.ListViewLasers.Name = "ListViewLasers";
             this.ListViewLasers.Size = new System.Drawing.Size(257, 75);
-            this.ListViewLasers.TabIndex = 13;
+            this.ListViewLasers.TabIndex = 7;
             this.ListViewLasers.UseCompatibleStateImageBehavior = false;
             this.ListViewLasers.View = System.Windows.Forms.View.Details;
             // 
@@ -316,7 +368,7 @@
             this.ButtonSaveDAQSettings.Location = new System.Drawing.Point(15, 272);
             this.ButtonSaveDAQSettings.Name = "ButtonSaveDAQSettings";
             this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(257, 22);
-            this.ButtonSaveDAQSettings.TabIndex = 12;
+            this.ButtonSaveDAQSettings.TabIndex = 15;
             this.ButtonSaveDAQSettings.Text = "Save && Apply DAQ Settings";
             this.ButtonSaveDAQSettings.UseVisualStyleBackColor = true;
             this.ButtonSaveDAQSettings.Click += new System.EventHandler(this.ButtonSaveDAQSettings_Click);
@@ -327,7 +379,7 @@
             this.ButtonRemoveCounter.Location = new System.Drawing.Point(209, 246);
             this.ButtonRemoveCounter.Name = "ButtonRemoveCounter";
             this.ButtonRemoveCounter.Size = new System.Drawing.Size(63, 22);
-            this.ButtonRemoveCounter.TabIndex = 11;
+            this.ButtonRemoveCounter.TabIndex = 14;
             this.ButtonRemoveCounter.Text = "Remove";
             this.ButtonRemoveCounter.UseVisualStyleBackColor = true;
             this.ButtonRemoveCounter.Click += new System.EventHandler(this.ButtonRemoveCounter_Click);
@@ -338,7 +390,7 @@
             this.ButtonModifyCounter.Location = new System.Drawing.Point(140, 246);
             this.ButtonModifyCounter.Name = "ButtonModifyCounter";
             this.ButtonModifyCounter.Size = new System.Drawing.Size(63, 22);
-            this.ButtonModifyCounter.TabIndex = 10;
+            this.ButtonModifyCounter.TabIndex = 13;
             this.ButtonModifyCounter.Text = "Modify";
             this.ButtonModifyCounter.UseVisualStyleBackColor = true;
             this.ButtonModifyCounter.Click += new System.EventHandler(this.ButtonModifyCounter_Click);
@@ -349,7 +401,7 @@
             this.ButtonAddCounter.Location = new System.Drawing.Point(71, 246);
             this.ButtonAddCounter.Name = "ButtonAddCounter";
             this.ButtonAddCounter.Size = new System.Drawing.Size(63, 22);
-            this.ButtonAddCounter.TabIndex = 9;
+            this.ButtonAddCounter.TabIndex = 12;
             this.ButtonAddCounter.Text = "Add";
             this.ButtonAddCounter.UseVisualStyleBackColor = true;
             this.ButtonAddCounter.Click += new System.EventHandler(this.ButtonAddCounter_Click);
@@ -360,7 +412,7 @@
             this.ButtonRemoveLaser.Location = new System.Drawing.Point(209, 116);
             this.ButtonRemoveLaser.Name = "ButtonRemoveLaser";
             this.ButtonRemoveLaser.Size = new System.Drawing.Size(63, 22);
-            this.ButtonRemoveLaser.TabIndex = 8;
+            this.ButtonRemoveLaser.TabIndex = 10;
             this.ButtonRemoveLaser.Text = "Remove";
             this.ButtonRemoveLaser.UseVisualStyleBackColor = true;
             this.ButtonRemoveLaser.Click += new System.EventHandler(this.ButtonRemoveLaser_Click);
@@ -371,7 +423,7 @@
             this.ButtonModifyLaser.Location = new System.Drawing.Point(140, 116);
             this.ButtonModifyLaser.Name = "ButtonModifyLaser";
             this.ButtonModifyLaser.Size = new System.Drawing.Size(63, 22);
-            this.ButtonModifyLaser.TabIndex = 7;
+            this.ButtonModifyLaser.TabIndex = 9;
             this.ButtonModifyLaser.Text = "Modify";
             this.ButtonModifyLaser.UseVisualStyleBackColor = true;
             this.ButtonModifyLaser.Click += new System.EventHandler(this.ButtonModifyLaser_Click);
@@ -382,7 +434,7 @@
             this.ButtonAddLaser.Location = new System.Drawing.Point(71, 116);
             this.ButtonAddLaser.Name = "ButtonAddLaser";
             this.ButtonAddLaser.Size = new System.Drawing.Size(63, 22);
-            this.ButtonAddLaser.TabIndex = 6;
+            this.ButtonAddLaser.TabIndex = 8;
             this.ButtonAddLaser.Text = "Add";
             this.ButtonAddLaser.UseVisualStyleBackColor = true;
             // 
@@ -433,7 +485,7 @@
             this.ComboBoxCCDModel.Location = new System.Drawing.Point(123, 15);
             this.ComboBoxCCDModel.Name = "ComboBoxCCDModel";
             this.ComboBoxCCDModel.Size = new System.Drawing.Size(149, 20);
-            this.ComboBoxCCDModel.TabIndex = 7;
+            this.ComboBoxCCDModel.TabIndex = 3;
             // 
             // label13
             // 
@@ -465,7 +517,7 @@
             this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(15, 93);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(258, 23);
-            this.ButtonSaveCCDSettings.TabIndex = 4;
+            this.ButtonSaveCCDSettings.TabIndex = 6;
             this.ButtonSaveCCDSettings.Text = "Save && Apply CCD Settings";
             this.ButtonSaveCCDSettings.UseVisualStyleBackColor = true;
             this.ButtonSaveCCDSettings.Click += new System.EventHandler(this.ButtonSaveCCDSettings_Click);
@@ -493,7 +545,7 @@
             this.ComboBoxBinSize.Location = new System.Drawing.Point(123, 41);
             this.ComboBoxBinSize.Name = "ComboBoxBinSize";
             this.ComboBoxBinSize.Size = new System.Drawing.Size(149, 20);
-            this.ComboBoxBinSize.TabIndex = 1;
+            this.ComboBoxBinSize.TabIndex = 4;
             // 
             // label6
             // 
@@ -504,20 +556,20 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Bin Size :";
             // 
-            // groupBox2
+            // GroupBoxFilmingSettings
             // 
-            this.groupBox2.Controls.Add(this.ButtonSaveFilmingSettings);
-            this.groupBox2.Controls.Add(this.TextBoxPMAHead);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.TextBoxPMAPath);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(286, 99);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filming";
+            this.GroupBoxFilmingSettings.Controls.Add(this.ButtonSaveFilmingSettings);
+            this.GroupBoxFilmingSettings.Controls.Add(this.TextBoxPMAHead);
+            this.GroupBoxFilmingSettings.Controls.Add(this.label11);
+            this.GroupBoxFilmingSettings.Controls.Add(this.TextBoxPMAPath);
+            this.GroupBoxFilmingSettings.Controls.Add(this.label10);
+            this.GroupBoxFilmingSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroupBoxFilmingSettings.Location = new System.Drawing.Point(3, 3);
+            this.GroupBoxFilmingSettings.Name = "GroupBoxFilmingSettings";
+            this.GroupBoxFilmingSettings.Size = new System.Drawing.Size(286, 99);
+            this.GroupBoxFilmingSettings.TabIndex = 3;
+            this.GroupBoxFilmingSettings.TabStop = false;
+            this.GroupBoxFilmingSettings.Text = "Filming";
             // 
             // ButtonSaveFilmingSettings
             // 
@@ -526,7 +578,7 @@
             this.ButtonSaveFilmingSettings.Location = new System.Drawing.Point(15, 68);
             this.ButtonSaveFilmingSettings.Name = "ButtonSaveFilmingSettings";
             this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(257, 23);
-            this.ButtonSaveFilmingSettings.TabIndex = 5;
+            this.ButtonSaveFilmingSettings.TabIndex = 2;
             this.ButtonSaveFilmingSettings.Text = "Save && Apply Filming Settings";
             this.ButtonSaveFilmingSettings.UseVisualStyleBackColor = true;
             this.ButtonSaveFilmingSettings.Click += new System.EventHandler(this.ButtonSaveFilmingSettings_Click);
@@ -536,7 +588,7 @@
             this.TextBoxPMAHead.Location = new System.Drawing.Point(124, 41);
             this.TextBoxPMAHead.Name = "TextBoxPMAHead";
             this.TextBoxPMAHead.Size = new System.Drawing.Size(148, 21);
-            this.TextBoxPMAHead.TabIndex = 3;
+            this.TextBoxPMAHead.TabIndex = 1;
             // 
             // label11
             // 
@@ -552,7 +604,7 @@
             this.TextBoxPMAPath.Location = new System.Drawing.Point(124, 14);
             this.TextBoxPMAPath.Name = "TextBoxPMAPath";
             this.TextBoxPMAPath.Size = new System.Drawing.Size(148, 21);
-            this.TextBoxPMAPath.TabIndex = 1;
+            this.TextBoxPMAPath.TabIndex = 0;
             // 
             // label10
             // 
@@ -570,7 +622,7 @@
             this.SetTempButton.Location = new System.Drawing.Point(142, 49);
             this.SetTempButton.Name = "SetTempButton";
             this.SetTempButton.Size = new System.Drawing.Size(133, 25);
-            this.SetTempButton.TabIndex = 3;
+            this.SetTempButton.TabIndex = 2;
             this.SetTempButton.Text = "Set Temperature";
             this.SetTempButton.UseVisualStyleBackColor = true;
             this.SetTempButton.Click += new System.EventHandler(this.SetTempButton_Click);
@@ -624,7 +676,7 @@
             -2147483648});
             this.NUDTemp.Name = "NUDTemp";
             this.NUDTemp.Size = new System.Drawing.Size(119, 21);
-            this.NUDTemp.TabIndex = 4;
+            this.NUDTemp.TabIndex = 1;
             this.NUDTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TempLabel
@@ -722,6 +774,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.NUDAFRange);
             this.groupBox5.Controls.Add(this.ButtonAFStart);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.ComboBoxAFDevices);
@@ -734,6 +788,39 @@
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Settings";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(333, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 12);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Range:";
+            // 
+            // NUDAFRange
+            // 
+            this.NUDAFRange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDAFRange.Location = new System.Drawing.Point(387, 22);
+            this.NUDAFRange.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.NUDAFRange.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDAFRange.Name = "NUDAFRange";
+            this.NUDAFRange.Size = new System.Drawing.Size(65, 21);
+            this.NUDAFRange.TabIndex = 14;
+            this.NUDAFRange.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ButtonAFStart
             // 
@@ -762,11 +849,11 @@
             this.ComboBoxAFDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxAFDevices.FormattingEnabled = true;
             this.ComboBoxAFDevices.Items.AddRange(new object[] {
-            "MadCity Lab - C Focus",
-            "Physik Instrumente - Piezo"});
+            "MCL - C Focus",
+            "PI - Z Piezo"});
             this.ComboBoxAFDevices.Location = new System.Drawing.Point(71, 21);
             this.ComboBoxAFDevices.Name = "ComboBoxAFDevices";
-            this.ComboBoxAFDevices.Size = new System.Drawing.Size(251, 20);
+            this.ComboBoxAFDevices.Size = new System.Drawing.Size(120, 20);
             this.ComboBoxAFDevices.TabIndex = 3;
             // 
             // ButtonAFCalibration
@@ -784,7 +871,7 @@
             // ButtonAFConnect
             // 
             this.ButtonAFConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFConnect.Location = new System.Drawing.Point(338, 18);
+            this.ButtonAFConnect.Location = new System.Drawing.Point(197, 18);
             this.ButtonAFConnect.Name = "ButtonAFConnect";
             this.ButtonAFConnect.Size = new System.Drawing.Size(125, 25);
             this.ButtonAFConnect.TabIndex = 2;
@@ -801,17 +888,15 @@
             this.groupBox3.Size = new System.Drawing.Size(743, 252);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Histogram of FOM / FOM / Distance";
+            this.groupBox3.Text = "Linear fit of FOMs / Histogram of FOMs";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.chart3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chart2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ChartAFFOM, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ChartAFDistance, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -820,59 +905,53 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 232);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // chart3
+            // ChartAFFOM
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea4);
-            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chart3.Legends.Add(legend4);
-            this.chart3.Location = new System.Drawing.Point(248, 3);
-            this.chart3.Name = "chart3";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart3.Series.Add(series4);
-            this.chart3.Size = new System.Drawing.Size(239, 226);
-            this.chart3.TabIndex = 2;
-            this.chart3.Text = "chart3";
+            chartArea17.AxisX.LabelStyle.Format = "0.##";
+            chartArea17.AxisY.LabelStyle.Format = "0.##";
+            chartArea17.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea17);
+            this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend17.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend17);
+            this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
+            this.ChartAFFOM.Name = "ChartAFFOM";
+            series25.ChartArea = "ChartArea1";
+            series25.Legend = "Legend1";
+            series25.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series25);
+            this.ChartAFFOM.Size = new System.Drawing.Size(363, 226);
+            this.ChartAFFOM.TabIndex = 1;
+            this.ChartAFFOM.Text = "chart2";
             // 
-            // chart2
+            // ChartAFDistance
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
-            this.chart2.Location = new System.Drawing.Point(493, 3);
-            this.chart2.Name = "chart2";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart2.Series.Add(series5);
-            this.chart2.Size = new System.Drawing.Size(241, 226);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            // 
-            // chart1
-            // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart1.Series.Add(series6);
-            this.chart1.Size = new System.Drawing.Size(239, 226);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            chartArea18.AxisX.LabelStyle.Format = "0.##";
+            chartArea18.AxisY.LabelStyle.Format = "0.##";
+            chartArea18.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea18);
+            this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend18.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend18);
+            this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
+            this.ChartAFDistance.Name = "ChartAFDistance";
+            series26.ChartArea = "ChartArea1";
+            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series26.Legend = "Legend1";
+            series26.Name = "FOM";
+            series27.ChartArea = "ChartArea1";
+            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series27.Legend = "Legend1";
+            series27.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series26);
+            this.ChartAFDistance.Series.Add(series27);
+            this.ChartAFDistance.Size = new System.Drawing.Size(362, 226);
+            this.ChartAFDistance.TabIndex = 0;
+            this.ChartAFDistance.Text = "chart1";
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.CheckBoxAFIgnoreDarkFrame);
             this.groupBox6.Controls.Add(this.LabelAFInfo);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(752, 3);
@@ -880,12 +959,24 @@
             this.groupBox6.Size = new System.Drawing.Size(315, 312);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Focusing Info";
+            this.groupBox6.Text = "Settings / Focusing Info";
+            // 
+            // CheckBoxAFIgnoreDarkFrame
+            // 
+            this.CheckBoxAFIgnoreDarkFrame.AutoSize = true;
+            this.CheckBoxAFIgnoreDarkFrame.Checked = true;
+            this.CheckBoxAFIgnoreDarkFrame.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBoxAFIgnoreDarkFrame.Location = new System.Drawing.Point(15, 31);
+            this.CheckBoxAFIgnoreDarkFrame.Name = "CheckBoxAFIgnoreDarkFrame";
+            this.CheckBoxAFIgnoreDarkFrame.Size = new System.Drawing.Size(173, 16);
+            this.CheckBoxAFIgnoreDarkFrame.TabIndex = 12;
+            this.CheckBoxAFIgnoreDarkFrame.Text = "Ignore Dark Frame (ALEX)";
+            this.CheckBoxAFIgnoreDarkFrame.UseVisualStyleBackColor = true;
             // 
             // LabelAFInfo
             // 
             this.LabelAFInfo.AutoSize = true;
-            this.LabelAFInfo.Location = new System.Drawing.Point(15, 26);
+            this.LabelAFInfo.Location = new System.Drawing.Point(13, 75);
             this.LabelAFInfo.Name = "LabelAFInfo";
             this.LabelAFInfo.Size = new System.Drawing.Size(110, 12);
             this.LabelAFInfo.TabIndex = 11;
@@ -893,6 +984,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.splitContainer6);
             this.tabPage4.Location = new System.Drawing.Point(4, 21);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -900,6 +992,383 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer6.IsSplitterFixed = true;
+            this.splitContainer6.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer6.Name = "splitContainer6";
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.splitContainer7);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.groupBox8);
+            this.splitContainer6.Size = new System.Drawing.Size(1070, 318);
+            this.splitContainer6.SplitterDistance = 499;
+            this.splitContainer6.TabIndex = 0;
+            this.splitContainer6.TabStop = false;
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer7.IsSplitterFixed = true;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.groupBox9);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer7.Size = new System.Drawing.Size(499, 318);
+            this.splitContainer7.SplitterDistance = 100;
+            this.splitContainer7.TabIndex = 1;
+            this.splitContainer7.TabStop = false;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.ListViewAFLPumps);
+            this.groupBox9.Controls.Add(this.ButtonAFLFindDevices);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Location = new System.Drawing.Point(0, 0);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(499, 100);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Syringe Pumps";
+            // 
+            // ListViewAFLPumps
+            // 
+            this.ListViewAFLPumps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewAFLPumps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13});
+            this.ListViewAFLPumps.FullRowSelect = true;
+            this.ListViewAFLPumps.GridLines = true;
+            this.ListViewAFLPumps.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
+            this.ListViewAFLPumps.MultiSelect = false;
+            this.ListViewAFLPumps.Name = "ListViewAFLPumps";
+            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 66);
+            this.ListViewAFLPumps.TabIndex = 9;
+            this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
+            this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
+            this.ListViewAFLPumps.Click += new System.EventHandler(this.ListViewAFLPumps_Click);
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Pump Model";
+            this.columnHeader12.Width = 226;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Port";
+            this.columnHeader13.Width = 76;
+            // 
+            // ButtonAFLFindDevices
+            // 
+            this.ButtonAFLFindDevices.Location = new System.Drawing.Point(354, 20);
+            this.ButtonAFLFindDevices.Name = "ButtonAFLFindDevices";
+            this.ButtonAFLFindDevices.Size = new System.Drawing.Size(139, 24);
+            this.ButtonAFLFindDevices.TabIndex = 8;
+            this.ButtonAFLFindDevices.Text = "Find Devices";
+            this.ButtonAFLFindDevices.UseVisualStyleBackColor = true;
+            this.ButtonAFLFindDevices.Click += new System.EventHandler(this.ButtonAFLFindDevices_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ButtonAFLSetValuesToDevice);
+            this.groupBox2.Controls.Add(this.NUDAFLRate);
+            this.groupBox2.Controls.Add(this.NUDAFLFrameNumber);
+            this.groupBox2.Controls.Add(this.NUDAFLVolume);
+            this.groupBox2.Controls.Add(this.ButtonAFLAddRule);
+            this.groupBox2.Controls.Add(this.ButtonAFLInstantRun);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.RadioButtonAFLRefill);
+            this.groupBox2.Controls.Add(this.RadioButtonAFLInfusion);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.TrackBarAFLRate);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.TextBoxAFLDiameter);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(499, 214);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Rule Settings";
+            // 
+            // ButtonAFLSetValuesToDevice
+            // 
+            this.ButtonAFLSetValuesToDevice.Enabled = false;
+            this.ButtonAFLSetValuesToDevice.Location = new System.Drawing.Point(181, 181);
+            this.ButtonAFLSetValuesToDevice.Name = "ButtonAFLSetValuesToDevice";
+            this.ButtonAFLSetValuesToDevice.Size = new System.Drawing.Size(142, 22);
+            this.ButtonAFLSetValuesToDevice.TabIndex = 22;
+            this.ButtonAFLSetValuesToDevice.Text = "Set Values to Device";
+            this.ButtonAFLSetValuesToDevice.UseVisualStyleBackColor = true;
+            // 
+            // NUDAFLRate
+            // 
+            this.NUDAFLRate.Location = new System.Drawing.Point(290, 140);
+            this.NUDAFLRate.Name = "NUDAFLRate";
+            this.NUDAFLRate.Size = new System.Drawing.Size(58, 21);
+            this.NUDAFLRate.TabIndex = 21;
+            this.NUDAFLRate.ValueChanged += new System.EventHandler(this.NUDAFLRate_ValueChanged);
+            // 
+            // NUDAFLFrameNumber
+            // 
+            this.NUDAFLFrameNumber.Location = new System.Drawing.Point(165, 23);
+            this.NUDAFLFrameNumber.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.NUDAFLFrameNumber.Name = "NUDAFLFrameNumber";
+            this.NUDAFLFrameNumber.Size = new System.Drawing.Size(183, 21);
+            this.NUDAFLFrameNumber.TabIndex = 20;
+            // 
+            // NUDAFLVolume
+            // 
+            this.NUDAFLVolume.Location = new System.Drawing.Point(165, 84);
+            this.NUDAFLVolume.Name = "NUDAFLVolume";
+            this.NUDAFLVolume.Size = new System.Drawing.Size(183, 21);
+            this.NUDAFLVolume.TabIndex = 20;
+            // 
+            // ButtonAFLAddRule
+            // 
+            this.ButtonAFLAddRule.Location = new System.Drawing.Point(329, 180);
+            this.ButtonAFLAddRule.Name = "ButtonAFLAddRule";
+            this.ButtonAFLAddRule.Size = new System.Drawing.Size(142, 22);
+            this.ButtonAFLAddRule.TabIndex = 15;
+            this.ButtonAFLAddRule.Text = "Add Rule";
+            this.ButtonAFLAddRule.UseVisualStyleBackColor = true;
+            this.ButtonAFLAddRule.Click += new System.EventHandler(this.ButtonAFLAddRule_Click);
+            // 
+            // ButtonAFLInstantRun
+            // 
+            this.ButtonAFLInstantRun.Location = new System.Drawing.Point(33, 181);
+            this.ButtonAFLInstantRun.Name = "ButtonAFLInstantRun";
+            this.ButtonAFLInstantRun.Size = new System.Drawing.Size(142, 22);
+            this.ButtonAFLInstantRun.TabIndex = 16;
+            this.ButtonAFLInstantRun.Text = "Instant Run";
+            this.ButtonAFLInstantRun.UseVisualStyleBackColor = true;
+            this.ButtonAFLInstantRun.Click += new System.EventHandler(this.ButtonAFLInstantRun_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(60, 25);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(94, 12);
+            this.label23.TabIndex = 19;
+            this.label23.Text = "Frame Number:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(361, 142);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(42, 12);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "ul/min";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(361, 86);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 12);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "ul";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(361, 56);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(27, 12);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "mm";
+            // 
+            // RadioButtonAFLRefill
+            // 
+            this.RadioButtonAFLRefill.AutoSize = true;
+            this.RadioButtonAFLRefill.Checked = true;
+            this.RadioButtonAFLRefill.Location = new System.Drawing.Point(249, 114);
+            this.RadioButtonAFLRefill.Name = "RadioButtonAFLRefill";
+            this.RadioButtonAFLRefill.Size = new System.Drawing.Size(115, 16);
+            this.RadioButtonAFLRefill.TabIndex = 11;
+            this.RadioButtonAFLRefill.TabStop = true;
+            this.RadioButtonAFLRefill.Text = "Refill (Withdraw)";
+            this.RadioButtonAFLRefill.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonAFLInfusion
+            // 
+            this.RadioButtonAFLInfusion.AutoSize = true;
+            this.RadioButtonAFLInfusion.Location = new System.Drawing.Point(165, 114);
+            this.RadioButtonAFLInfusion.Name = "RadioButtonAFLInfusion";
+            this.RadioButtonAFLInfusion.Size = new System.Drawing.Size(67, 16);
+            this.RadioButtonAFLInfusion.TabIndex = 10;
+            this.RadioButtonAFLInfusion.Text = "Infusion";
+            this.RadioButtonAFLInfusion.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(96, 116);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(58, 12);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Direction:";
+            // 
+            // TrackBarAFLRate
+            // 
+            this.TrackBarAFLRate.Location = new System.Drawing.Point(165, 142);
+            this.TrackBarAFLRate.Maximum = 17190;
+            this.TrackBarAFLRate.Minimum = 1;
+            this.TrackBarAFLRate.Name = "TrackBarAFLRate";
+            this.TrackBarAFLRate.Size = new System.Drawing.Size(119, 42);
+            this.TrackBarAFLRate.TabIndex = 8;
+            this.TrackBarAFLRate.TickFrequency = 1000;
+            this.TrackBarAFLRate.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBarAFLRate.Value = 1;
+            this.TrackBarAFLRate.Scroll += new System.EventHandler(this.TrackBarAFLRate_Scroll);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(120, 142);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(34, 12);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Rate:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(102, 86);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 12);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Volume:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(48, 56);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(106, 12);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Syringe Diameter:";
+            // 
+            // TextBoxAFLDiameter
+            // 
+            this.TextBoxAFLDiameter.Location = new System.Drawing.Point(165, 53);
+            this.TextBoxAFLDiameter.Name = "TextBoxAFLDiameter";
+            this.TextBoxAFLDiameter.Size = new System.Drawing.Size(183, 21);
+            this.TextBoxAFLDiameter.TabIndex = 3;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.ButtonAFLEnable);
+            this.groupBox8.Controls.Add(this.ButtonAFLRemoveRules);
+            this.groupBox8.Controls.Add(this.ListViewAFLRules);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(0, 0);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(567, 318);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
+            // 
+            // ButtonAFLEnable
+            // 
+            this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 284);
+            this.ButtonAFLEnable.Name = "ButtonAFLEnable";
+            this.ButtonAFLEnable.Size = new System.Drawing.Size(551, 28);
+            this.ButtonAFLEnable.TabIndex = 4;
+            this.ButtonAFLEnable.Text = "Enable Auto Flow";
+            this.ButtonAFLEnable.UseVisualStyleBackColor = true;
+            this.ButtonAFLEnable.Click += new System.EventHandler(this.ButtonAFLEnable_Click);
+            // 
+            // ButtonAFLRemoveRules
+            // 
+            this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(397, 238);
+            this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
+            this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
+            this.ButtonAFLRemoveRules.TabIndex = 3;
+            this.ButtonAFLRemoveRules.Text = "Remove Selected";
+            this.ButtonAFLRemoveRules.UseVisualStyleBackColor = true;
+            this.ButtonAFLRemoveRules.Click += new System.EventHandler(this.ButtonAFLRemoveRules_Click);
+            // 
+            // ListViewAFLRules
+            // 
+            this.ListViewAFLRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewAFLRules.CheckBoxes = true;
+            this.ListViewAFLRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader11,
+            this.columnHeader14,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.ListViewAFLRules.FullRowSelect = true;
+            this.ListViewAFLRules.GridLines = true;
+            this.ListViewAFLRules.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewAFLRules.Location = new System.Drawing.Point(7, 20);
+            this.ListViewAFLRules.MultiSelect = false;
+            this.ListViewAFLRules.Name = "ListViewAFLRules";
+            this.ListViewAFLRules.Size = new System.Drawing.Size(551, 212);
+            this.ListViewAFLRules.TabIndex = 0;
+            this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
+            this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
+            this.ListViewAFLRules.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListViewAFLRules_ItemCheck);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Frame #";
+            this.columnHeader7.Width = 65;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Pump";
+            this.columnHeader11.Width = 240;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Volume";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Rate";
+            this.columnHeader9.Width = 45;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Direction";
+            this.columnHeader10.Width = 65;
             // 
             // tabPage5
             // 
@@ -948,7 +1417,7 @@
             0});
             this.NUDChannelNum.Name = "NUDChannelNum";
             this.NUDChannelNum.Size = new System.Drawing.Size(133, 21);
-            this.NUDChannelNum.TabIndex = 15;
+            this.NUDChannelNum.TabIndex = 6;
             this.NUDChannelNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NUDChannelNum.Value = new decimal(new int[] {
             1,
@@ -1025,7 +1494,7 @@
             this.NUDStopFrame.Location = new System.Drawing.Point(131, 14);
             this.NUDStopFrame.Name = "NUDStopFrame";
             this.NUDStopFrame.Size = new System.Drawing.Size(152, 21);
-            this.NUDStopFrame.TabIndex = 1;
+            this.NUDStopFrame.TabIndex = 12;
             // 
             // CheckBoxAutoStop
             // 
@@ -1033,7 +1502,7 @@
             this.CheckBoxAutoStop.Location = new System.Drawing.Point(6, 15);
             this.CheckBoxAutoStop.Name = "CheckBoxAutoStop";
             this.CheckBoxAutoStop.Size = new System.Drawing.Size(119, 16);
-            this.CheckBoxAutoStop.TabIndex = 0;
+            this.CheckBoxAutoStop.TabIndex = 11;
             this.CheckBoxAutoStop.Text = "Stop Filiming at :";
             this.CheckBoxAutoStop.UseVisualStyleBackColor = true;
             this.CheckBoxAutoStop.CheckedChanged += new System.EventHandler(this.CheckBoxAutoStop_CheckedChanged);
@@ -1057,7 +1526,7 @@
             this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
             this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
             this.ALEXCheckedListBox.Size = new System.Drawing.Size(280, 63);
-            this.ALEXCheckedListBox.TabIndex = 0;
+            this.ALEXCheckedListBox.TabIndex = 10;
             this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
             this.ALEXCheckedListBox.UseTabStops = false;
             this.ALEXCheckedListBox.SelectedValueChanged += new System.EventHandler(this.ALEXCheckedListBox_SelectedValueChanged);
@@ -1081,7 +1550,7 @@
             this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
             this.LaserCheckedListBox.Name = "LaserCheckedListBox";
             this.LaserCheckedListBox.Size = new System.Drawing.Size(280, 60);
-            this.LaserCheckedListBox.TabIndex = 0;
+            this.LaserCheckedListBox.TabIndex = 9;
             this.LaserCheckedListBox.ThreeDCheckBoxes = true;
             this.LaserCheckedListBox.UseTabStops = false;
             this.LaserCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.LaserCheckedListBox_ItemCheck);
@@ -1114,7 +1583,7 @@
             this.TextBoxExptime.Location = new System.Drawing.Point(142, 73);
             this.TextBoxExptime.Name = "TextBoxExptime";
             this.TextBoxExptime.Size = new System.Drawing.Size(133, 21);
-            this.TextBoxExptime.TabIndex = 23;
+            this.TextBoxExptime.TabIndex = 5;
             this.TextBoxExptime.Text = "0.1";
             this.TextBoxExptime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextBoxExptime.TextChanged += new System.EventHandler(this.TextBoxExptime_TextChanged);
@@ -1126,7 +1595,7 @@
             this.TextBoxScaler.Location = new System.Drawing.Point(142, 46);
             this.TextBoxScaler.Name = "TextBoxScaler";
             this.TextBoxScaler.Size = new System.Drawing.Size(133, 21);
-            this.TextBoxScaler.TabIndex = 22;
+            this.TextBoxScaler.TabIndex = 4;
             this.TextBoxScaler.Text = "1";
             this.TextBoxScaler.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextBoxScaler.TextChanged += new System.EventHandler(this.TextBoxScaler_TextChanged);
@@ -1140,7 +1609,7 @@
             this.CheckBoxAuto.Location = new System.Drawing.Point(20, 160);
             this.CheckBoxAuto.Name = "CheckBoxAuto";
             this.CheckBoxAuto.Size = new System.Drawing.Size(49, 16);
-            this.CheckBoxAuto.TabIndex = 21;
+            this.CheckBoxAuto.TabIndex = 1000;
             this.CheckBoxAuto.Text = "Auto";
             this.CheckBoxAuto.UseVisualStyleBackColor = true;
             this.CheckBoxAuto.CheckedChanged += new System.EventHandler(this.CheckBoxAuto_CheckedChanged);
@@ -1171,7 +1640,7 @@
             0});
             this.NUDGain.Name = "NUDGain";
             this.NUDGain.Size = new System.Drawing.Size(133, 21);
-            this.NUDGain.TabIndex = 17;
+            this.NUDGain.TabIndex = 3;
             this.NUDGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NUDGain.ValueChanged += new System.EventHandler(this.NUDGain_ValueChanged);
             // 
@@ -1200,7 +1669,7 @@
             this.SetGainButton.Location = new System.Drawing.Point(12, 182);
             this.SetGainButton.Name = "SetGainButton";
             this.SetGainButton.Size = new System.Drawing.Size(263, 24);
-            this.SetGainButton.TabIndex = 4;
+            this.SetGainButton.TabIndex = 1001;
             this.SetGainButton.Text = "Set Values";
             this.SetGainButton.UseVisualStyleBackColor = true;
             this.SetGainButton.Click += new System.EventHandler(this.SetGainButton_Click);
@@ -1327,6 +1796,11 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Diameter";
+            this.columnHeader14.Width = 70;
+            // 
             // frmTIRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1346,8 +1820,8 @@
             this.GroupBoxDAQSettings.PerformLayout();
             this.GroupBoxCCDSettings.ResumeLayout(false);
             this.GroupBoxCCDSettings.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GroupBoxFilmingSettings.ResumeLayout(false);
+            this.GroupBoxFilmingSettings.PerformLayout();
             this.LogGroupBox.ResumeLayout(false);
             this.LogGroupBox.PerformLayout();
             this.TemperatureGroupBox.ResumeLayout(false);
@@ -1361,13 +1835,30 @@
             this.splitContainer5.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).EndInit();
+            this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NUDChannelNum)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -1444,7 +1935,7 @@
         private System.Windows.Forms.CheckBox CheckBoxAuto;
         private System.Windows.Forms.TextBox TextBoxExptime;
         private System.Windows.Forms.TextBox TextBoxScaler;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox GroupBoxFilmingSettings;
         private System.Windows.Forms.GroupBox GroupBoxDAQSettings;
         private System.Windows.Forms.ListView ListViewCounters;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -1481,20 +1972,58 @@
         private System.Windows.Forms.ComboBox ComboBoxAFDevices;
         private System.Windows.Forms.Button ButtonAFCalibration;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFFOM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFDistance;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label LabelAFInfo;
         private System.Windows.Forms.Button ButtonAFStart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.ComboBox ComboBoxCCDModel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button StartFilmingButton;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.NumericUpDown NUDStopFrame;
         private System.Windows.Forms.CheckBox CheckBoxAutoStop;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown NUDAFRange;
+        private System.Windows.Forms.CheckBox CheckBoxAFIgnoreDarkFrame;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton RadioButtonAFLRefill;
+        private System.Windows.Forms.RadioButton RadioButtonAFLInfusion;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TrackBar TrackBarAFLRate;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox TextBoxAFLDiameter;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button ButtonAFLRemoveRules;
+        private System.Windows.Forms.ListView ListViewAFLRules;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Button ButtonAFLEnable;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button ButtonAFLFindDevices;
+        private System.Windows.Forms.ListView ListViewAFLPumps;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.Button ButtonAFLInstantRun;
+        private System.Windows.Forms.Button ButtonAFLAddRule;
+        private System.Windows.Forms.NumericUpDown NUDAFLRate;
+        private System.Windows.Forms.NumericUpDown NUDAFLVolume;
+        private System.Windows.Forms.Button ButtonAFLSetValuesToDevice;
+        private System.Windows.Forms.NumericUpDown NUDAFLFrameNumber;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
 
     }
 }

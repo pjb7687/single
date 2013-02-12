@@ -45,6 +45,7 @@ namespace Single2013
 
         public string m_pmafilename;
         public int m_autostopframenum = -1;
+        public List<string> m_autoflowcommands = new List<string>();
         
         private void LoadColors(string path)
         {
@@ -113,8 +114,8 @@ namespace Single2013
 
             while (m_drawflag)
             {
-                //try
-                //{
+                try
+                {
                     m_ccd.m_gettingimage = true;
                     m_ccd.GetImage(m_buf);
                     m_ccd.m_gettingimage = false;
@@ -146,7 +147,7 @@ namespace Single2013
                         }
                     }
                     displayarray_sem.Release();
-                    AFFlag = true;
+                    AFFlag = false;
 
                     if (m_filming)
                     {
@@ -159,6 +160,7 @@ namespace Single2013
                                 for (j = 0; j < m_ccd.m_imageheight; j++)
                                     bw.Write(dump_array[i, j]);
                         }
+
                         if (m_autostopframenum > 0 && m_autostopframenum == m_framenum)
                             m_frm.Invoke(new frmTIRF.AutoStopDelegate(m_frm.AutoStop), new object[] { });
                     }
@@ -175,8 +177,8 @@ namespace Single2013
                     }
                     m_pb.Image = bitmap;
                     displayarray_sem.Release();
-                //}
-                //catch { }
+                }
+                catch { }
             }
         }
 

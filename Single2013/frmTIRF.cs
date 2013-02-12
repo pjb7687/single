@@ -6,9 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization;
 using System.IO;
 
 using SMBdevices;
+using System.Windows;
+using System.IO.Ports;
 
 namespace Single2013
 {
@@ -17,9 +20,11 @@ namespace Single2013
         private smbCCD m_ccd;
         private smbShutter m_shutter;
         private smbStage m_stage;
+        private int m_selectedpump = -1;
 
         private ImageDrawer m_imgdrawer;
         private AutoFocusing m_autofocusing;
+        private AutoFlow m_autoflow;
 
         public bool m_CCDon = false;
 
@@ -37,7 +42,7 @@ namespace Single2013
         public delegate void updateAutoScaleInfoDelegate(int theMax, int[] theMin);
         public void updateAutoScaleInfo(int theMax, int[] theMin)
         {
-            double scaler = (double)(theMax - theMin[0]) / 256;
+            double scaler = (double)(theMax - theMin.Min()) / 256;
             NumericUpDown tmp;
 
             if (scaler < 1) scaler = 1;
@@ -63,10 +68,18 @@ namespace Single2013
             LabelTime.Text = "Time: " + time;
         }
 
-        public delegate void updateAFInfoDelegate(string info);
-        public void updateAFInfo(string info)
+        public delegate void updateAFInfoDelegate(double fom, double dist);
+        public void updateAFInfo(double fom, double dist)
         {
-            LabelAFInfo.Text = info;
+            ChartAFDistance.Series[0].Points.AddY(dist);
+            ChartAFFOM.Series[0].Points.AddY(fom);
+            ChartAFDistance.ChartAreas[0].AxisY.Minimum = ChartAFDistance.Series[0].Points.FindMinByValue().YValues[0] - 1;
+            ChartAFDistance.ChartAreas[0].AxisY.Maximum = ChartAFDistance.Series[0].Points.FindMaxByValue().YValues[0] + 1;
+            ChartAFFOM.ChartAreas[0].AxisY.Minimum = ChartAFFOM.Series[0].Points.FindMinByValue().YValues[0] - 0.1;
+            ChartAFFOM.ChartAreas[0].AxisY.Maximum = ChartAFFOM.Series[0].Points.FindMaxByValue().YValues[0] + 0.1;
+            if (ChartAFDistance.Series[0].Points.Count > 500) ChartAFDistance.Series[0].Points.RemoveAt(0);
+            if (ChartAFFOM.Series[0].Points.Count > 500) ChartAFFOM.Series[0].Points.RemoveAt(0);
+            LabelAFInfo.Text = "FOM: " + fom.ToString("\\0.#####E0") + "\nDIST: " + dist.ToString("\\0.#####E0");
         }
 
         public delegate void AutoStopDelegate();
@@ -74,6 +87,68 @@ namespace Single2013
         {
             StartFilmingButton_Click(null, new EventArgs());
         }
+
+        public delegate void FindingFocalPointDoneDelegate();
+        public delegate void CalculateSTDEVDoneDelegate(double[] foms, double stdev);
+        public delegate void CalibrateDoneDelegate(double[] dists, double[] foms, double[] fitvals);
+
+        public void CalibrateDone(double[] dists, double[] foms, double[] fitvals)
+        {
+            int i;
+            Log("[Auto Focusing]", new string[] { "Slope: " + fitvals[1].ToString() });
+            Log("[Auto Focusing]", new string[] { "Roughly finding the best focal point..." });
+
+            ChartAFDistance.Series.Clear();
+            ChartAFDistance.Series.Add("FOM");
+            ChartAFDistance.Series.Add("Linear Fit");
+            ChartAFDistance.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            ChartAFDistance.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            for (i = 0; i < dists.Length; i++)
+                ChartAFDistance.Series[0].Points.AddXY(dists[i], foms[i]);
+            ChartAFDistance.Series[1].Points.AddXY(dists[0], fitvals[0] + fitvals[1] * dists[0]);
+            ChartAFDistance.Series[1].Points.AddXY(dists[dists.Length - 1], fitvals[0] + fitvals[1] * dists[dists.Length - 1]);
+            ChartAFDistance.ChartAreas[0].AxisY.Minimum = ChartAFDistance.Series[0].Points.FindMinByValue().YValues[0] - 0.01;
+            ChartAFDistance.ChartAreas[0].AxisY.Maximum = ChartAFDistance.Series[0].Points.FindMaxByValue().YValues[0] + 0.01;
+            m_autofocusing.FindingFocalPoint();
+        }
+
+        public void FindingFocalPointDone()
+        {
+            Log("[Auto Focusing]", new string[] { "Calculating STDEV..."});
+            m_autofocusing.CalculateSTDEV();
+        }
+
+        public void CalculateSTDEVDone(double[] foms, double stdev)
+        {
+            int i, j, cnt;
+            double binstart, binend;
+            double binstep = (foms.Max() - foms.Min()) / 10;
+            Log("[Auto Focusing]", new string[] { "STDEV: " + stdev.ToString() });
+            ChartAFFOM.Series.Clear();
+            ChartAFFOM.Series.Add("Freq. Count of FOM");
+
+            binstart = foms.Min(); binend = binstart + binstep;
+            for (i = 0; i < 10; i++)
+            {
+                cnt = 0;
+                for (j = 0; j < foms.Length; j++)
+                    if ((foms[j] >= binstart) && (foms[j] < binend)) cnt++;
+                binstart += binstep; binend += binstep;
+                ChartAFFOM.Series[0].Points.AddY(cnt);
+            }
+            ButtonAFCalibration.Enabled = true;
+            ButtonAFStart.Enabled = true;
+        }
+
+        public delegate void updateAFLInfoDelegate(int index, double volume);
+        public void updateAFLInfo(int index, double volume)
+        {
+            ListViewAFLRules.ItemCheck -= new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
+            ListViewAFLRules.Items[index].Checked = true;
+            ListViewAFLRules.ItemCheck += new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
+            Log("[Auto Flow]", new string[] {"Flowed volume: " + volume.ToString()});
+        }
+
         #endregion
 
         #region Helper Methods
@@ -120,6 +195,7 @@ namespace Single2013
             ComboBoxZoomMode.SelectedIndex = Properties.Settings.Default.ZoomModeIndex;
             ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
 
+            m_ccd = null;
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetTemp(20);
@@ -159,6 +235,7 @@ namespace Single2013
                                          Properties.Settings.Default.Counters[i + 3]);
 
             // Drawer Class
+            m_imgdrawer = null;
             m_imgdrawer = new ImageDrawer(Properties.Settings.Default.Colortable, this, m_ccd);
 
             // PMA file path setting
@@ -175,9 +252,10 @@ namespace Single2013
 
             // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
-            OffAllLaser();
 
             LoadAllSettings();
+
+            OffAllLaser();
 
             NUDChannelNum.Value = 2;
             SetGainButton_Click(sender, e);
@@ -193,6 +271,10 @@ namespace Single2013
                 MessageBox.Show("In order to shutdown whole system, Temperature of CCD should be above -20 C.", "Single 2013");
                 e.Cancel = true;
             }
+            if (m_autofocusing != null)
+                m_autofocusing.m_focusing = false;
+            if (m_autoflow != null)
+                m_autoflow.m_autoflow = false;
             m_imgdrawer.m_auto = false;
             m_imgdrawer.m_filming = false;
             m_ccd.m_gettingimage = false;
@@ -221,8 +303,12 @@ namespace Single2013
             StartFilmingButton.Enabled = !m_CCDon;
             GroupBoxCCDSettings.Enabled = m_CCDon;
             GroupBoxDAQSettings.Enabled = m_CCDon;
+            GroupBoxFilmingSettings.Enabled = m_CCDon;
             SetGainButton.Enabled = m_CCDon;
             NUDChannelNum.Enabled = m_CCDon;
+            ButtonAFConnect.Enabled = m_CCDon;
+            ButtonAFLFindDevices.Enabled = m_CCDon;
+            ListViewAFLPumps.Enabled = m_CCDon;
             m_CCDon = !m_CCDon;
         }
 
@@ -289,19 +375,26 @@ namespace Single2013
                 sub.BackColor = System.Drawing.SystemColors.Window;
             }
             m_chanum = (int)NUDChannelNum.Value;
+            NUDAFRange.Maximum = m_chanum;
         }
 
         private void StartFilmingButton_Click(object sender, EventArgs e)
         {
             if (m_imgdrawer.m_filming) {
+                m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
                 StartFilmingButton.Text = "Start Filming";
                 m_shutter.StopALEX();
+                if (m_autofocusing != null)
+                    m_autofocusing.m_ignoredarkframe = false;
                 LaserCheckedListBox.Enabled = true;
                 for (int i = 0; i < LaserCheckedListBox.Items.Count; i++)
                 {
                     if (LaserCheckedListBox.GetItemChecked(i)) m_shutter.LaserOn(i);
                     else m_shutter.LaserOff(i);
                 }
+                if (m_autoflow.m_autoflow)
+                    ButtonAFLEnable_Click(sender, e);
+                Log("Filming Stopped.");
             }
             else
             {
@@ -341,11 +434,11 @@ namespace Single2013
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
+                    m_autofocusing.m_ignoredarkframe = CheckBoxAFIgnoreDarkFrame.Checked;
                     m_shutter.StartALEX(m_ccd.m_exptime);
-                    Log("Filming Stopped.");
                 }
+                m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
             }
-            m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
         }
 
         private void LaserCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -495,8 +588,9 @@ namespace Single2013
             Properties.Settings.Default.CCDModelIndex = ComboBoxCCDModel.SelectedIndex;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
-            LoadAllSettings();
-            SetGainButton_Click(sender, e);
+            DialogResult yesno = MessageBox.Show("CCD settings will be applied after restarting application. Do you want to restart now?", "Settings", MessageBoxButtons.YesNo);
+            if (yesno == DialogResult.Yes)
+                Application.Restart();
         }
 
         private void ButtonSaveDAQSettings_Click(object sender, EventArgs e)
@@ -536,8 +630,9 @@ namespace Single2013
             }
             try
             {
-                m_stage = new smbStage((smbStage.StageType)ComboBoxAFDevices.SelectedIndex);
-                m_autofocusing = new AutoFocusing(m_stage, m_ccd);
+                if (m_stage == null)
+                    m_stage = new smbStage((smbStage.StageType)ComboBoxAFDevices.SelectedIndex);
+                m_autofocusing = new AutoFocusing(m_stage, m_ccd, this, m_imgdrawer, (int)NUDAFRange.Value);
             } catch (Exception) {
                 MessageBox.Show("Initialization Failed! Did you turned your device on?", "Single 2013");
                 return;
@@ -548,16 +643,132 @@ namespace Single2013
         private void ButtonAFStart_Click(object sender, EventArgs e)
         {
             if (m_autofocusing.m_focusing)
+            {
                 m_autofocusing.StopFocusing();
+                ButtonAFCalibration.Enabled = true;
+                ButtonAFStart.Text = "Start Focusing";
+            }
             else
-                m_autofocusing.StartFocusing(1, this, m_imgdrawer);
+            {
+                ChartAFDistance.Series.Clear();
+                ChartAFFOM.Series.Clear();
+
+                ChartAFDistance.Series.Add("Distance");
+                ChartAFFOM.Series.Add("FOM");
+
+                ChartAFDistance.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                ChartAFFOM.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                m_autofocusing.StartFocusing();
+                ButtonAFCalibration.Enabled = false;
+                ButtonAFStart.Text = "Stop Focusing";
+            }
         }
 
         private void ButtonAFCalibration_Click(object sender, EventArgs e)
         {
-
+            ButtonAFCalibration.Enabled = false;
+            Log("[Auto Focusing]", new string[] { "Calibrating..." });
+            m_autofocusing.Calibrate(m_ccd.m_exptime);
         }
         #endregion
 
+        #region Auto Flow
+        private void ButtonAFLFindDevices_Click(object sender, EventArgs e)
+        {
+            m_autoflow = new AutoFlow(m_ccd, m_imgdrawer, this);
+            foreach (smbPump pump in m_autoflow.m_pumps)
+                ListViewAFLPumps.Items.Add(new ListViewItem(new string[] { smbPump.GetPumpName(pump.m_pump), pump.m_port }));
+        }
+
+        private void ListViewAFLPumps_Click(object sender, EventArgs e)
+        {
+            if (ListViewAFLPumps.SelectedIndices.Count != 1) return;
+            m_selectedpump = ListViewAFLPumps.SelectedIndices[0];
+            NUDAFLRate.Maximum = (int)m_autoflow.m_pumps[m_selectedpump].m_maxrate;
+            NUDAFLRate.Minimum = (int)m_autoflow.m_pumps[m_selectedpump].m_minrate;
+            TrackBarAFLRate.Maximum = (int)NUDAFLRate.Maximum;
+            TrackBarAFLRate.Minimum = (int)NUDAFLRate.Minimum;
+            NUDAFLVolume.Maximum = (int)m_autoflow.m_pumps[m_selectedpump].m_maxvolume;
+            NUDAFLVolume.Minimum = (int)m_autoflow.m_pumps[m_selectedpump].m_minvolume;
+
+            TextBoxAFLDiameter.Text = m_autoflow.m_pumps[m_selectedpump].GetDiameter().ToString();
+            NUDAFLRate.Value = (int)m_autoflow.m_pumps[m_selectedpump].GetRate();
+            NUDAFLVolume.Value = (int)m_autoflow.m_pumps[m_selectedpump].GetVolume();
+            if (m_autoflow.m_pumps[m_selectedpump].GetDirection() == smbPump.runMode.INFUSION)
+            {
+                RadioButtonAFLInfusion.Checked = true;
+                RadioButtonAFLRefill.Checked = false;
+            }
+            else
+            {
+                RadioButtonAFLInfusion.Checked = false;
+                RadioButtonAFLRefill.Checked = true;
+            }
+            
+        }
+
+        private void TrackBarAFLRate_Scroll(object sender, EventArgs e)
+        {
+            NUDAFLRate.Value = TrackBarAFLRate.Value;
+        }
+
+        private void NUDAFLRate_ValueChanged(object sender, EventArgs e)
+        {
+            TrackBarAFLRate.Value = (int)NUDAFLRate.Value;
+        }
+
+        private void ButtonAFLInstantRun_Click(object sender, EventArgs e)
+        {
+            if (m_selectedpump == -1) return;
+            m_autoflow.InstantFlow(m_selectedpump, Convert.ToDouble(TextBoxAFLDiameter.Text), Convert.ToDouble(NUDAFLVolume.Value), Convert.ToDouble(NUDAFLRate.Value), RadioButtonAFLInfusion.Checked ? smbPump.runMode.INFUSION : smbPump.runMode.REFILL);
+        }
+
+        private void ButtonAFLAddRule_Click(object sender, EventArgs e)
+        {
+            if (m_selectedpump == -1) return;
+            ListViewAFLRules.Items.Add(new ListViewItem(new string[] { NUDAFLFrameNumber.Value.ToString(), ListViewAFLPumps.Items[m_selectedpump].SubItems[0].Text + " (" + ListViewAFLPumps.Items[m_selectedpump].SubItems[1].Text + ")", TextBoxAFLDiameter.Text, NUDAFLVolume.Value.ToString(), NUDAFLRate.Value.ToString(), RadioButtonAFLInfusion.Checked ? "Infusion" : "Refill" })).Tag = m_selectedpump;
+        }
+
+        private void ButtonAFLRemoveRules_Click(object sender, EventArgs e)
+        {
+            if (ListViewAFLRules.SelectedIndices.Count == 0) return;
+            ListViewAFLRules.Items.RemoveAt(ListViewAFLRules.SelectedIndices[0]);
+        }
+
+        private void ButtonAFLEnable_Click(object sender, EventArgs e)
+        {
+            if (m_autoflow.m_autoflow)
+            {
+                m_autoflow.StopAutoFlow();
+                m_autoflow.ClearRules();
+                ButtonAFLEnable.Text = "Enable Auto Flow";
+                ButtonAFLAddRule.Enabled = true;
+                ButtonAFLRemoveRules.Enabled = true;
+                ListViewAFLRules.Enabled = true;
+                ListViewAFLRules.ItemCheck -= new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
+                foreach (ListViewItem x in ListViewAFLRules.Items)
+                    x.Checked = false;
+                ListViewAFLRules.ItemCheck += new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
+                Log("[Auto Flow]", new string[] { "Auto flow has been disabled." });
+            }
+            else
+            {
+                ButtonAFLEnable.Text = "Disable Auto Flow";
+                ButtonAFLAddRule.Enabled = false;
+                ButtonAFLRemoveRules.Enabled = false;
+                ListViewAFLRules.Enabled = false;
+                foreach (ListViewItem x in ListViewAFLRules.Items)
+                    m_autoflow.AddFlowRule((int)x.Tag, Convert.ToInt32(x.SubItems[0].Text), Convert.ToDouble(x.SubItems[2].Text), Convert.ToDouble(x.SubItems[3].Text), Convert.ToDouble(x.SubItems[4].Text), x.SubItems[5].Text == "Infusion" ? smbPump.runMode.INFUSION : smbPump.runMode.REFILL);
+                m_autoflow.StartAutoFlow();
+                Log("[Auto Flow]", new string[] { "Auto flow is Enabled!" });
+            }
+        }
+        #endregion
+
+        private void ListViewAFLRules_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            e.NewValue = e.CurrentValue;
+        }
     }
 }
