@@ -16,7 +16,7 @@ namespace Single2013
     {
         private smbCCD m_ccd;
         private smbShutter m_shutter;
-        private smbPiezo m_piezo;
+        private smbStage m_stage;
 
         private ImageDrawer m_imgdrawer;
         private AutoFocusing m_autofocusing;
@@ -25,6 +25,8 @@ namespace Single2013
 
         private string m_pmafiledir;
         private string m_pmafilenamehead;
+
+        public int m_chanum;
 
         public frmTIRF()
         {
@@ -66,6 +68,12 @@ namespace Single2013
         {
             LabelAFInfo.Text = info;
         }
+
+        public delegate void AutoStopDelegate();
+        public void AutoStop()
+        {
+            StartFilmingButton_Click(null, new EventArgs());
+        }
         #endregion
 
         #region Helper Methods
@@ -97,17 +105,24 @@ namespace Single2013
             LogTextBox.ScrollToCaret();
         }
 
+        private void Log(string mainissue)
+        {
+            string crlf = "\r\n";
+            LogTextBox.Text += crlf + crlf + mainissue;
+            LogTextBox.SelectionStart = LogTextBox.Text.Length;
+            LogTextBox.ScrollToCaret();
+        }
+
         private void LoadAllSettings()
         {
             // Settings Related
             ComboBoxBinSize.SelectedIndex = Properties.Settings.Default.BinSizeIndex;
             ComboBoxZoomMode.SelectedIndex = Properties.Settings.Default.ZoomModeIndex;
+            ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
 
-            CommonData.binsize = Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]);
-            m_ccd.SetBinSize(CommonData.binsize, CommonData.binsize);
-            CommonData.imageheight = 512 / CommonData.binsize;
-            CommonData.imagewidth = 512 / CommonData.binsize;
-            CommonData.clipsize = 30 / (512 / Math.Min(CommonData.imagewidth, CommonData.imageheight));
+            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
+            m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
+            m_ccd.SetTemp(20);
 
             if (ComboBoxZoomMode.SelectedIndex == 0) //Center
             {
@@ -144,7 +159,7 @@ namespace Single2013
                                          Properties.Settings.Default.Counters[i + 3]);
 
             // Drawer Class
-            m_imgdrawer = new ImageDrawer(Properties.Settings.Default.Colortable, this);
+            m_imgdrawer = new ImageDrawer(Properties.Settings.Default.Colortable, this, m_ccd);
 
             // PMA file path setting
             m_pmafiledir = Properties.Settings.Default.PMASavePath;
@@ -158,15 +173,11 @@ namespace Single2013
         {
             LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park";
 
-            // Instruments
-            m_ccd = new smbCCD(smbCCD.CCDType.ENDOR_CCD);
-            m_ccd.SetTemp(-85);
-
+            // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
+            OffAllLaser();
 
             LoadAllSettings();
-
-            OffAllLaser();
 
             NUDChannelNum.Value = 2;
             SetGainButton_Click(sender, e);
@@ -197,7 +208,7 @@ namespace Single2013
                 m_ccd.ShutterOn();
                 m_imgdrawer.m_auto = CheckBoxAuto.Checked;
                 m_imgdrawer.StartDrawing(CCDWindow, m_ccd);
-                Log("Shutter Opened.", new string[] { "Bin Size: " + CommonData.binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
+                Log("Shutter Opened.", new string[] { "Bin Size: " + m_ccd.m_binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
             }
             else
             {
@@ -205,7 +216,7 @@ namespace Single2013
                 m_imgdrawer.StopDrawing();
                 m_ccd.ShutterOff();
                 OpenCameraButton.Text = "Open Camera";
-                Log("Shutter Closed", new string[] {});
+                Log("Shutter Closed.");
             }
             StartFilmingButton.Enabled = !m_CCDon;
             GroupBoxCCDSettings.Enabled = m_CCDon;
@@ -277,7 +288,7 @@ namespace Single2013
             {
                 sub.BackColor = System.Drawing.SystemColors.Window;
             }
-            CommonData.chanum = (int)NUDChannelNum.Value;
+            m_chanum = (int)NUDChannelNum.Value;
         }
 
         private void StartFilmingButton_Click(object sender, EventArgs e)
@@ -309,7 +320,7 @@ namespace Single2013
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(logfilename))
                 {
                     file.WriteLine("Exposure time:  " + TextBoxExptime.Text);
-                    file.WriteLine("Acquisition mode:  Full " + CommonData.imagewidth.ToString() + "x" + CommonData.imageheight.ToString() + " " + CommonData.binsize.ToString() + "x" + CommonData.binsize.ToString() + " Binning");
+                    file.WriteLine("Acquisition mode:  Full " + m_ccd.m_imagewidth.ToString() + "x" + m_ccd.m_imageheight.ToString() + " " + m_ccd.m_binsize.ToString() + "x" + m_ccd.m_binsize.ToString() + " Binning");
                     file.WriteLine("Gain:  " + NUDGain.Value.ToString());
                     file.WriteLine("Data scaler:  " + TextBoxScaler.Text);
                     string str = "Background subtraction:";
@@ -324,13 +335,14 @@ namespace Single2013
                 using (var fileStream = new FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None))
                 using (var bw = new BinaryWriter(fileStream))
                 {
-                    bw.Write(BitConverter.GetBytes((short)CommonData.imagewidth));
-                    bw.Write(BitConverter.GetBytes((short)CommonData.imageheight));
+                    bw.Write(BitConverter.GetBytes((short)m_ccd.m_imagewidth));
+                    bw.Write(BitConverter.GetBytes((short)m_ccd.m_imageheight));
                 }
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
                     m_shutter.StartALEX(m_ccd.m_exptime);
+                    Log("Filming Stopped.");
                 }
             }
             m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
@@ -380,6 +392,13 @@ namespace Single2013
             }
         }
 
+        private void CheckBoxAutoStop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxAutoStop.Checked)
+                m_imgdrawer.m_autostopframenum = (int)NUDStopFrame.Value;
+            else
+                m_imgdrawer.m_autostopframenum = 0;
+        }
         #endregion
 
         #region 'Device Settings' Tab Related
@@ -473,6 +492,7 @@ namespace Single2013
         {
             Properties.Settings.Default.BinSizeIndex = ComboBoxBinSize.SelectedIndex;
             Properties.Settings.Default.ZoomModeIndex = ComboBoxZoomMode.SelectedIndex;
+            Properties.Settings.Default.CCDModelIndex = ComboBoxCCDModel.SelectedIndex;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();
@@ -506,20 +526,38 @@ namespace Single2013
         }
         #endregion
 
-        #region Auto Focusing Events
+        #region Auto Focusing
         private void ButtonAFConnect_Click(object sender, EventArgs e)
         {
-            m_piezo = new smbPiezo(smbPiezo.PiezoType.MCL_CFOCUS);
-            m_autofocusing = new AutoFocusing(m_piezo);
+            if (ComboBoxAFDevices.Text == "")
+            {
+                MessageBox.Show("Select a Device.", "Single 2013");
+                return;
+            }
+            try
+            {
+                m_stage = new smbStage((smbStage.StageType)ComboBoxAFDevices.SelectedIndex);
+                m_autofocusing = new AutoFocusing(m_stage, m_ccd);
+            } catch (Exception) {
+                MessageBox.Show("Initialization Failed! Did you turned your device on?", "Single 2013");
+                return;
+            }
+            ButtonAFCalibration.Enabled = true;
         }
-        #endregion
 
-        private void ButtonStartFocusing_Click(object sender, EventArgs e)
+        private void ButtonAFStart_Click(object sender, EventArgs e)
         {
             if (m_autofocusing.m_focusing)
                 m_autofocusing.StopFocusing();
             else
-                m_autofocusing.StartFocusing(1, this);
+                m_autofocusing.StartFocusing(1, this, m_imgdrawer);
         }
+
+        private void ButtonAFCalibration_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }

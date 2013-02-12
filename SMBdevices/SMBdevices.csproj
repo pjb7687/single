@@ -58,8 +58,8 @@
     <Compile Include="smbCCD.cs" />
     <Compile Include="EndorCCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="smbPiezo.cs" />
     <Compile Include="smbShutter.cs" />
+    <Compile Include="smbStage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

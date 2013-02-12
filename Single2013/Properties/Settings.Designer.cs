@@ -128,5 +128,17 @@ namespace Single2013.Properties {
                 this["Colortable"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CCDModelIndex {
+            get {
+                return ((int)(this["CCDModelIndex"]));
+            }
+            set {
+                this["CCDModelIndex"] = value;
+            }
+        }
     }
 }

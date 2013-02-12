@@ -78,7 +78,6 @@
       <DependentUpon>AddModify2.cs</DependentUpon>
     </Compile>
     <Compile Include="AutoFocusing.cs" />
-    <Compile Include="CommonData.cs" />
     <Compile Include="frmTIRF.cs">
       <SubType>Form</SubType>
     </Compile>

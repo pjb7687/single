@@ -17,13 +17,13 @@ namespace Single2013
     {
         uint[,] colortable = new uint[256, 3];
 
-        public static Semaphore dumparray_sem = new Semaphore(1, 1);
-        public static Semaphore displayarray_sem = new Semaphore(1, 1);
+        public Semaphore dumparray_sem = new Semaphore(1, 1);
+        public Semaphore displayarray_sem = new Semaphore(1, 1);
 
-        public static byte[,] dump_array;
-        public static int[] display_array;
+        public byte[,] dump_array;
+        public int[] display_array;
 
-        public static bool isArraydumped = false; //af
+        public bool AFFlag = false;
 
         private smbCCD m_ccd;
         private int[] m_buf;
@@ -44,6 +44,7 @@ namespace Single2013
         public bool m_auto;
 
         public string m_pmafilename;
+        public int m_autostopframenum = -1;
         
         private void LoadColors(string path)
         {
@@ -86,20 +87,20 @@ namespace Single2013
         {
             int i, j, k;
 
-            m_min = new int[CommonData.chanum];
+            m_min = new int[m_frm.m_chanum];
             for (i = 0; i < m_min.Length; i++) m_min[i] = 100000000;
             m_max = 0;
 
-            for (j = CommonData.clipsize; j < CommonData.imageheight - CommonData.clipsize; j++)
+            for (j = m_ccd.m_clipsize; j < m_ccd.m_imageheight - m_ccd.m_clipsize; j++)
             {
-                for (k = 0; k < CommonData.chanum; k++)
+                for (k = 0; k < m_frm.m_chanum; k++)
                 {
-                    for (i = k * CommonData.imagewidth / CommonData.chanum + CommonData.clipsize; i < (k + 1) * CommonData.imagewidth / CommonData.chanum - CommonData.clipsize; i++)
+                    for (i = k * m_ccd.m_imagewidth / m_frm.m_chanum + m_ccd.m_clipsize; i < (k + 1) * m_ccd.m_imagewidth / m_frm.m_chanum - m_ccd.m_clipsize; i++)
                     {
-                        if (m_buf[j * CommonData.imagewidth + i] > m_max)
-                            m_max = m_buf[j * CommonData.imagewidth + i]; //search the max intensity
-                        if (m_buf[j * CommonData.imagewidth  + i] < m_min[k])
-                            m_min[k] = m_buf[j * CommonData.imagewidth + i]; //search the min intensity 
+                        if (m_buf[j * m_ccd.m_imagewidth + i] > m_max)
+                            m_max = m_buf[j * m_ccd.m_imagewidth + i]; //search the max intensity
+                        if (m_buf[j * m_ccd.m_imagewidth  + i] < m_min[k])
+                            m_min[k] = m_buf[j * m_ccd.m_imagewidth + i]; //search the min intensity 
                     }
                 }
             }            
@@ -108,7 +109,7 @@ namespace Single2013
         private void DrawingThread()
         {
             int i, j, k;
-            int high = CommonData.imagewidth * CommonData.imageheight;
+            int high = m_ccd.m_imagewidth * m_ccd.m_imageheight;
 
             while (m_drawflag)
             {
@@ -121,7 +122,7 @@ namespace Single2013
 
                     if (m_auto)
                     {
-                        // Direct insert of the values in a thread doesn't work.
+                        // Direct insertion of the values in a thread doesn't work.
                         // Instead, we should use 'Invoke' method to put the values to the controls...
                         m_frm.Invoke(new frmTIRF.updateAutoScaleInfoDelegate(m_frm.updateAutoScaleInfo), new object[] { m_max, m_min });
                         m_subs = m_min;
@@ -131,21 +132,21 @@ namespace Single2013
 
                     dumparray_sem.WaitOne();
                     displayarray_sem.WaitOne();
-                    for (j = 0; j < CommonData.imageheight; j++)
+                    for (j = 0; j < m_ccd.m_imageheight; j++)
                     {
-                        for (k = 0; k < CommonData.chanum; k++)
+                        for (k = 0; k < m_frm.m_chanum; k++)
                         {
-                            for (i = k * CommonData.imagewidth / CommonData.chanum; i < (k + 1) * CommonData.imagewidth / CommonData.chanum; i++)
+                            for (i = k * m_ccd.m_imagewidth / m_frm.m_chanum; i < (k + 1) * m_ccd.m_imagewidth / m_frm.m_chanum; i++)
                             {
-                                dump_array[j, i] = (byte)((double)((m_buf[high - (j * CommonData.imagewidth + (CommonData.imageheight - i))] - m_subs[k]) / m_scaler));
-                                if (m_buf[high - (j * CommonData.imagewidth + (CommonData.imageheight - i))] - m_subs[k] < 0) dump_array[j, i] = 0;
-                                if ((m_buf[high - (j * CommonData.imagewidth + (CommonData.imageheight - i))] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
-                                display_array[j * CommonData.imagewidth + i] = ColorMaker(dump_array[j, i]);
+                                dump_array[j, i] = (byte)((double)((m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k]) / m_scaler));
+                                if (m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k] < 0) dump_array[j, i] = 0;
+                                if ((m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
+                                display_array[j * m_ccd.m_imagewidth + i] = ColorMaker(dump_array[j, i]);
                             }
                         }
                     }
                     displayarray_sem.Release();
-                    isArraydumped = true;
+                    AFFlag = true;
 
                     if (m_filming)
                     {
@@ -154,10 +155,12 @@ namespace Single2013
                         using (var fileStream = new FileStream(m_pmafilename, FileMode.Append, FileAccess.Write, FileShare.None))
                         using (var bw = new BinaryWriter(fileStream))
                         {
-                            for (i = 0; i < CommonData.imagewidth; i++)
-                                for (j = 0; j < CommonData.imageheight; j++)
+                            for (i = 0; i < m_ccd.m_imagewidth; i++)
+                                for (j = 0; j < m_ccd.m_imageheight; j++)
                                     bw.Write(dump_array[i, j]);
                         }
+                        if (m_autostopframenum > 0 && m_autostopframenum == m_framenum)
+                            m_frm.Invoke(new frmTIRF.AutoStopDelegate(m_frm.AutoStop), new object[] { });
                     }
                     dumparray_sem.Release();
 
@@ -167,7 +170,7 @@ namespace Single2013
                     {
                         fixed (int* intPtr = &display_array[0])
                         {
-                            bitmap = new Bitmap(CommonData.imagewidth, CommonData.imageheight, 4 * ((CommonData.imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
+                            bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
                         }
                     }
                     m_pb.Image = bitmap;
@@ -177,16 +180,18 @@ namespace Single2013
             }
         }
 
-        public ImageDrawer(string colormappath, frmTIRF f)
+        public ImageDrawer(string colormappath, frmTIRF f, smbCCD ccd)
         {
-            LoadColors(colormappath);
-            m_buf = new int[CommonData.imagewidth * CommonData.imageheight];
-            
+            m_frm = f;
+            m_ccd = ccd;
             m_auto = false;
             m_scaler = 1;
-            dump_array = new byte[CommonData.imagewidth, CommonData.imageheight];
-            display_array = new int[CommonData.imagewidth * CommonData.imageheight];
-            m_frm = f;
+
+            LoadColors(colormappath);
+            m_buf = new int[m_ccd.m_imagewidth * m_ccd.m_imageheight];
+            
+            dump_array = new byte[m_ccd.m_imagewidth, m_ccd.m_imageheight];
+            display_array = new int[m_ccd.m_imagewidth * m_ccd.m_imageheight];
         }
 
         public void SetValues(double scaler, int[] subs)
