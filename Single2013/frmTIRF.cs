@@ -198,7 +198,7 @@ namespace Single2013
             m_ccd = null;
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
-            m_ccd.SetTemp(20);
+            m_ccd.SetTemp(-85);
 
             if (ComboBoxZoomMode.SelectedIndex == 0) //Center
             {
@@ -266,11 +266,12 @@ namespace Single2013
 
         private void frmTIRF_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*
             if (m_ccd.GetTemp() < -20)
             {
                 MessageBox.Show("In order to shutdown whole system, Temperature of CCD should be above -20 C.", "Single 2013");
                 e.Cancel = true;
-            }
+            }*/
             if (m_autofocusing != null)
                 m_autofocusing.m_focusing = false;
             if (m_autoflow != null)
@@ -764,11 +765,11 @@ namespace Single2013
                 Log("[Auto Flow]", new string[] { "Auto flow is Enabled!" });
             }
         }
-        #endregion
 
         private void ListViewAFLRules_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             e.NewValue = e.CurrentValue;
         }
+        #endregion
     }
 }
