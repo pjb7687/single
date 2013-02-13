@@ -261,7 +261,7 @@ namespace Single2013
             SetGainButton_Click(sender, e);
 
             LogTextBox.Text += "\r\nReady.";
-            Log("Temperature Warning:", new string[] { "Temperature is set to " + Convert.ToString(-85) + " C." });
+            Log("[Camera]", new string[] { "Temperature of CCD is set to " + Convert.ToString(-85) + " C." });
         }
 
         private void frmTIRF_FormClosing(object sender, FormClosingEventArgs e)
@@ -291,7 +291,7 @@ namespace Single2013
                 m_ccd.ShutterOn();
                 m_imgdrawer.m_auto = CheckBoxAuto.Checked;
                 m_imgdrawer.StartDrawing(CCDWindow, m_ccd);
-                Log("Shutter Opened.", new string[] { "Bin Size: " + m_ccd.m_binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
+                Log("[Camera]", new string[] { "Shutter Opened.", "Bin Size: " + m_ccd.m_binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
             }
             else
             {
@@ -299,9 +299,11 @@ namespace Single2013
                 m_imgdrawer.StopDrawing();
                 m_ccd.ShutterOff();
                 OpenCameraButton.Text = "Open Camera";
-                Log("Shutter Closed.");
+                Log("[Camera]", new string[] {"Shutter Closed."});
             }
             StartFilmingButton.Enabled = !m_CCDon;
+            SetTempButton.Enabled = m_CCDon;
+            GetTempButton.Enabled = m_CCDon;
             GroupBoxCCDSettings.Enabled = m_CCDon;
             GroupBoxDAQSettings.Enabled = m_CCDon;
             GroupBoxFilmingSettings.Enabled = m_CCDon;
@@ -393,9 +395,10 @@ namespace Single2013
                     if (LaserCheckedListBox.GetItemChecked(i)) m_shutter.LaserOn(i);
                     else m_shutter.LaserOff(i);
                 }
-                if (m_autoflow.m_autoflow)
-                    ButtonAFLEnable_Click(sender, e);
-                Log("Filming Stopped.");
+                if (m_autoflow != null)
+                    if (m_autoflow.m_autoflow)
+                        ButtonAFLEnable_Click(sender, e);
+                Log("[Filming]", new string[] {"Filming Stopped."});
             }
             else
             {
@@ -424,7 +427,7 @@ namespace Single2013
                 }
 
                 m_imgdrawer.m_pmafilename = filename;
-                Log("Filming Started.", new string [] { "File Name: " + filename });
+                Log("[Filming]", new string [] { "Filming Started.", "File Name: " + filename });
                 StartFilmingButton.Text = "Stop Filming";
                 using (var fileStream = new FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None))
                 using (var bw = new BinaryWriter(fileStream))
@@ -643,10 +646,10 @@ namespace Single2013
 
         private void ButtonAFStart_Click(object sender, EventArgs e)
         {
+            ButtonAFCalibration.Enabled = m_autofocusing.m_focusing;
             if (m_autofocusing.m_focusing)
             {
                 m_autofocusing.StopFocusing();
-                ButtonAFCalibration.Enabled = true;
                 ButtonAFStart.Text = "Start Focusing";
             }
             else
@@ -661,7 +664,6 @@ namespace Single2013
                 ChartAFFOM.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 m_autofocusing.StartFocusing();
-                ButtonAFCalibration.Enabled = false;
                 ButtonAFStart.Text = "Stop Focusing";
             }
         }
@@ -677,9 +679,20 @@ namespace Single2013
         #region Auto Flow
         private void ButtonAFLFindDevices_Click(object sender, EventArgs e)
         {
-            m_autoflow = new AutoFlow(m_ccd, m_imgdrawer, this);
+            if (m_autoflow == null)
+            {
+                m_autoflow = new AutoFlow(m_ccd, m_imgdrawer, this);
+            }
+            else
+            {
+                if (m_autoflow.m_autoflow)
+                    ButtonAFLEnable_Click(sender, e);
+            }
+            
+            ListViewAFLPumps.Items.Clear();
             foreach (smbPump pump in m_autoflow.m_pumps)
                 ListViewAFLPumps.Items.Add(new ListViewItem(new string[] { smbPump.GetPumpName(pump.m_pump), pump.m_port }));
+            ButtonAFLEnable.Enabled = true;
         }
 
         private void ListViewAFLPumps_Click(object sender, EventArgs e)
@@ -739,14 +752,15 @@ namespace Single2013
 
         private void ButtonAFLEnable_Click(object sender, EventArgs e)
         {
+            ButtonAFLAddRule.Enabled = m_autoflow.m_autoflow;
+            ButtonAFLRemoveRules.Enabled = m_autoflow.m_autoflow;
+            ListViewAFLRules.Enabled = m_autoflow.m_autoflow;
+
             if (m_autoflow.m_autoflow)
             {
                 m_autoflow.StopAutoFlow();
                 m_autoflow.ClearRules();
                 ButtonAFLEnable.Text = "Enable Auto Flow";
-                ButtonAFLAddRule.Enabled = true;
-                ButtonAFLRemoveRules.Enabled = true;
-                ListViewAFLRules.Enabled = true;
                 ListViewAFLRules.ItemCheck -= new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
                 foreach (ListViewItem x in ListViewAFLRules.Items)
                     x.Checked = false;
@@ -756,9 +770,6 @@ namespace Single2013
             else
             {
                 ButtonAFLEnable.Text = "Disable Auto Flow";
-                ButtonAFLAddRule.Enabled = false;
-                ButtonAFLRemoveRules.Enabled = false;
-                ListViewAFLRules.Enabled = false;
                 foreach (ListViewItem x in ListViewAFLRules.Items)
                     m_autoflow.AddFlowRule((int)x.Tag, Convert.ToInt32(x.SubItems[0].Text), Convert.ToDouble(x.SubItems[2].Text), Convert.ToDouble(x.SubItems[3].Text), Convert.ToDouble(x.SubItems[4].Text), x.SubItems[5].Text == "Infusion" ? smbPump.runMode.INFUSION : smbPump.runMode.REFILL);
                 m_autoflow.StartAutoFlow();

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -130,6 +130,7 @@
             this.ListViewAFLRules = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -164,7 +165,7 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -715,6 +716,7 @@
             // 
             this.TabControlModules.Controls.Add(this.tabPage3);
             this.TabControlModules.Controls.Add(this.tabPage4);
+            this.TabControlModules.Controls.Add(this.tabPage1);
             this.TabControlModules.Controls.Add(this.tabPage5);
             this.TabControlModules.Controls.Add(this.tabPage6);
             this.TabControlModules.Controls.Add(this.tabPage7);
@@ -907,44 +909,44 @@
             // 
             // ChartAFFOM
             // 
-            chartArea17.AxisX.LabelStyle.Format = "0.##";
-            chartArea17.AxisY.LabelStyle.Format = "0.##";
-            chartArea17.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea17);
+            chartArea3.AxisX.LabelStyle.Format = "0.##";
+            chartArea3.AxisY.LabelStyle.Format = "0.##";
+            chartArea3.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea3);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend17.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend17);
+            legend3.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend3);
             this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series25.ChartArea = "ChartArea1";
-            series25.Legend = "Legend1";
-            series25.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series25);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series4);
             this.ChartAFFOM.Size = new System.Drawing.Size(363, 226);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea18.AxisX.LabelStyle.Format = "0.##";
-            chartArea18.AxisY.LabelStyle.Format = "0.##";
-            chartArea18.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea18);
+            chartArea4.AxisX.LabelStyle.Format = "0.##";
+            chartArea4.AxisY.LabelStyle.Format = "0.##";
+            chartArea4.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea4);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend18.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend18);
+            legend4.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend4);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series26.Legend = "Legend1";
-            series26.Name = "FOM";
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series27.Legend = "Legend1";
-            series27.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series26);
-            this.ChartAFDistance.Series.Add(series27);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series5.Legend = "Legend1";
+            series5.Name = "FOM";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series5);
+            this.ChartAFDistance.Series.Add(series6);
             this.ChartAFDistance.Size = new System.Drawing.Size(362, 226);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1302,6 +1304,7 @@
             // 
             this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLEnable.Enabled = false;
             this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 284);
             this.ButtonAFLEnable.Name = "ButtonAFLEnable";
             this.ButtonAFLEnable.Size = new System.Drawing.Size(551, 28);
@@ -1355,6 +1358,11 @@
             // 
             this.columnHeader11.Text = "Pump";
             this.columnHeader11.Width = 240;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Diameter";
+            this.columnHeader14.Width = 70;
             // 
             // columnHeader8
             // 
@@ -1796,10 +1804,15 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
-            // columnHeader14
+            // tabPage1
             // 
-            this.columnHeader14.Text = "Diameter";
-            this.columnHeader14.Width = 70;
+            this.tabPage1.Location = new System.Drawing.Point(4, 21);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Temperature";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // frmTIRF
             // 
@@ -2024,6 +2037,7 @@
         private System.Windows.Forms.Button ButtonAFLSetValuesToDevice;
         private System.Windows.Forms.NumericUpDown NUDAFLFrameNumber;
         private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.TabPage tabPage1;
 
     }
 }
