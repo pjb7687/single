@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SMBdevices
 {
-    public class smbCCD
+    public class smbCCD : IDisposable
     {
         public enum CCDType
         {
@@ -24,6 +24,8 @@ namespace SMBdevices
         public int m_binsize;
 
         private uint m_Bufsize;
+
+        private bool m_disposed = false;
 
         public smbCCD(CCDType ccd)
         {
@@ -164,20 +166,27 @@ namespace SMBdevices
             }
         }
 
-        ~smbCCD()
+        public void Dispose()
         {
+            if (m_disposed) return;
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
                     AndorCCD.AbortAcquisition();
                     AndorCCD.SetShutter(1, 2, 1, 1);
-                    AndorCCD.CoolerOFF();
                     AndorCCD.SetTemperature(20);
+                    AndorCCD.CoolerOFF();
                     AndorCCD.ShutDown();
                     break;
                 case CCDType.PROEM_CCD:
                     break;
             }
+            m_disposed = true;
+        }
+
+        ~smbCCD()
+        {
+            Dispose();
         }
 
     }

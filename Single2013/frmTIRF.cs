@@ -195,6 +195,9 @@ namespace Single2013
             ComboBoxZoomMode.SelectedIndex = Properties.Settings.Default.ZoomModeIndex;
             ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
 
+            if (m_ccd != null) m_ccd.Dispose();
+            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
+            m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetTemp(-85);
 
             if (ComboBoxZoomMode.SelectedIndex == 0) //Center
@@ -249,9 +252,6 @@ namespace Single2013
 
             // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
-
-            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
-            m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
 
             LoadAllSettings();
 
@@ -592,9 +592,7 @@ namespace Single2013
             Properties.Settings.Default.CCDModelIndex = ComboBoxCCDModel.SelectedIndex;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
-            DialogResult yesno = MessageBox.Show("Change of Binning size will be applied after restarting application. Do you want to restart now?", "Settings", MessageBoxButtons.YesNo);
-            if (yesno == DialogResult.Yes)
-                Application.Restart();
+            LoadAllSettings();
         }
 
         private void ButtonSaveDAQSettings_Click(object sender, EventArgs e)
