@@ -194,19 +194,26 @@ namespace Single2013
             ComboBoxBinSize.SelectedIndex = Properties.Settings.Default.BinSizeIndex;
             ComboBoxZoomMode.SelectedIndex = Properties.Settings.Default.ZoomModeIndex;
             ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
+            NUDImagingWidth.Value = Properties.Settings.Default.ImagingWidth;
+            NUDImagingHeight.Value = Properties.Settings.Default.ImagingHeight;
 
             if (m_ccd != null) m_ccd.Dispose();
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, 0);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
+            m_ccd.SetRange((int)NUDImagingWidth.Value, (int)NUDImagingHeight.Value);
             m_ccd.SetTemp(-85);
 
-            if (ComboBoxZoomMode.SelectedIndex == 0) //Center
+            switch (ComboBoxZoomMode.SelectedIndex)
             {
-                CCDWindow.SizeMode = PictureBoxSizeMode.CenterImage;
-            }
-            else
-            {
-                CCDWindow.SizeMode = PictureBoxSizeMode.StretchImage;
+                case 0:
+                    CCDWindow.SizeMode = PictureBoxSizeMode.CenterImage;
+                    break;
+                case 1:
+                    CCDWindow.SizeMode = PictureBoxSizeMode.StretchImage;
+                    break;
+                case 2:
+                    CCDWindow.SizeMode = PictureBoxSizeMode.Zoom;
+                    break;
             }
 
             TextBoxPMAHead.Text = Properties.Settings.Default.PMAhead;
@@ -379,6 +386,9 @@ namespace Single2013
             }
             m_chanum = (int)NUDChannelNum.Value;
             NUDAFRange.Maximum = m_chanum;
+
+            Log("[Camera]", new string[] { "Exposure time: " + m_ccd.GetExptime().ToString() });
+
         }
 
         private void StartFilmingButton_Click(object sender, EventArgs e)
@@ -591,6 +601,8 @@ namespace Single2013
             Properties.Settings.Default.BinSizeIndex = ComboBoxBinSize.SelectedIndex;
             Properties.Settings.Default.ZoomModeIndex = ComboBoxZoomMode.SelectedIndex;
             Properties.Settings.Default.CCDModelIndex = ComboBoxCCDModel.SelectedIndex;
+            Properties.Settings.Default.ImagingWidth = (int)NUDImagingWidth.Value;
+            Properties.Settings.Default.ImagingHeight = (int)NUDImagingHeight.Value;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();

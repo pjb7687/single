@@ -23,6 +23,9 @@ namespace SMBdevices
         public int m_imageheight;
         public int m_binsize;
 
+        private int m_rangeheight = 512;
+        private int m_rangewidth = 512;
+
         private uint m_Bufsize;
 
         private bool m_disposed = false;
@@ -120,21 +123,45 @@ namespace SMBdevices
             return m_CCDTemp;
         }
 
-        public void SetBinSize(int bin_size)
+        private void SetImageSize()
         {
-            m_binsize = bin_size;
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
                     AndorCCD.SetReadMode(4);
-                    AndorCCD.SetImage(m_binsize, m_binsize, 1, 512, 1, 512);
+                    AndorCCD.SetImage(m_binsize, m_binsize, 1, m_rangewidth, 1, m_rangeheight);
                     break;
                 case CCDType.PROEM_CCD:
                     break;
             }
-            m_Bufsize = (uint)((512 / m_binsize) * (512 / m_binsize));
-            m_imagewidth = m_imageheight = 512 / m_binsize;
+            m_Bufsize = (uint)((m_rangewidth / m_binsize) * (m_rangeheight / m_binsize));
+            m_imagewidth = m_rangewidth / m_binsize;
+            m_imageheight = m_rangeheight / m_binsize;
             m_clipsize = 30 / (512 / Math.Min(m_imagewidth, m_imageheight));
+        }
+
+        public float GetExptime()
+        {
+            float exptime = 0;
+            float acc = 0;
+            float kin = 0;
+
+            AndorCCD.GetAcquisitionTimings(ref exptime, ref acc, ref kin);
+
+            return exptime;
+        }
+
+        public void SetBinSize(int bin_size)
+        {
+            m_binsize = bin_size;
+            SetImageSize();
+        }
+
+        public void SetRange(int rangeWidth, int rangeHeight)
+        {
+            m_rangewidth = rangeWidth;
+            m_rangeheight = rangeHeight;
+            SetImageSize();
         }
 
         public void SetExpTime(double exptime)

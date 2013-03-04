@@ -140,5 +140,29 @@ namespace Single2013.Properties {
                 this["CCDModelIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("512")]
+        public int ImagingWidth {
+            get {
+                return ((int)(this["ImagingWidth"]));
+            }
+            set {
+                this["ImagingWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("512")]
+        public int ImagingHeight {
+            get {
+                return ((int)(this["ImagingHeight"]));
+            }
+            set {
+                this["ImagingHeight"] = value;
+            }
+        }
     }
 }

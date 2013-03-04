@@ -48,5 +48,11 @@
     <Setting Name="CCDModelIndex" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="ImagingWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">512</Value>
+    </Setting>
+    <Setting Name="ImagingHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">512</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -109,7 +109,7 @@ namespace Single2013
 
         private void DrawingThread()
         {
-            int i, j, k;
+            int i, j, k, t;
             int high = m_ccd.m_imagewidth * m_ccd.m_imageheight;
 
             while (m_drawflag)
@@ -119,12 +119,12 @@ namespace Single2013
                     m_ccd.m_gettingimage = true;
                     m_ccd.GetImage(m_buf);
                     m_ccd.m_gettingimage = false;
-                    CalMaxMin();
 
                     if (m_auto)
                     {
                         // Direct insertion of the values in a thread doesn't work.
                         // Instead, we should use 'Invoke' method to put the values to the controls...
+                        CalMaxMin();
                         m_frm.Invoke(new frmTIRF.updateAutoScaleInfoDelegate(m_frm.updateAutoScaleInfo), new object[] { m_max, m_min });
                         m_subs = m_min;
                         m_scaler = ((double)(m_max - m_min[0])) / 256;
@@ -132,21 +132,22 @@ namespace Single2013
                     }
 
                     dumparray_sem.WaitOne();
-                    displayarray_sem.WaitOne();
+                    //displayarray_sem.WaitOne();
                     for (j = 0; j < m_ccd.m_imageheight; j++)
                     {
                         for (k = 0; k < m_frm.m_chanum; k++)
                         {
                             for (i = k * m_ccd.m_imagewidth / m_frm.m_chanum; i < (k + 1) * m_ccd.m_imagewidth / m_frm.m_chanum; i++)
                             {
-                                dump_array[j, i] = (byte)((double)((m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k]) / m_scaler));
-                                if (m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k] < 0) dump_array[j, i] = 0;
-                                if ((m_buf[high - (j * m_ccd.m_imagewidth + (m_ccd.m_imageheight - i))] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
+                                t = high - (j * m_ccd.m_imagewidth + (m_ccd.m_imagewidth - i));
+                                dump_array[j, i] = (byte)(((m_buf[t] - m_subs[k]) / m_scaler));
+                                if (m_buf[t] - m_subs[k] < 0) dump_array[j, i] = 0;
+                                else if ((m_buf[t] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
                                 display_array[j * m_ccd.m_imagewidth + i] = ColorMaker(dump_array[j, i]);
                             }
                         }
                     }
-                    displayarray_sem.Release();
+                    //displayarray_sem.Release();
                     AFFlag = false;
 
                     if (m_filming)
@@ -156,8 +157,8 @@ namespace Single2013
                         using (var fileStream = new FileStream(m_pmafilename, FileMode.Append, FileAccess.Write, FileShare.None))
                         using (var bw = new BinaryWriter(fileStream))
                         {
-                            for (i = 0; i < m_ccd.m_imagewidth; i++)
-                                for (j = 0; j < m_ccd.m_imageheight; j++)
+                            for (i = 0; i < m_ccd.m_imageheight; i++)
+                                for (j = 0; j < m_ccd.m_imagewidth; j++)
                                     bw.Write(dump_array[i, j]);
                         }
 
@@ -166,16 +167,19 @@ namespace Single2013
                     }
                     dumparray_sem.Release();
 
-                    Bitmap bitmap;
-                    displayarray_sem.WaitOne();
-                    unsafe
+                    if (m_framenum % 20 == 0)
                     {
-                        fixed (int* intPtr = &display_array[0])
+                        Bitmap bitmap;
+                        displayarray_sem.WaitOne();
+                        unsafe
                         {
-                            bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
+                            fixed (int* intPtr = &display_array[0])
+                            {
+                                bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
+                            }
                         }
+                        m_pb.Image = bitmap;
                     }
-                    m_pb.Image = bitmap;
                     displayarray_sem.Release();
                 }
                 catch { }
@@ -191,8 +195,8 @@ namespace Single2013
 
             LoadColors(colormappath);
             m_buf = new int[m_ccd.m_imagewidth * m_ccd.m_imageheight];
-            
-            dump_array = new byte[m_ccd.m_imagewidth, m_ccd.m_imageheight];
+
+            dump_array = new byte[m_ccd.m_imageheight, m_ccd.m_imagewidth];
             display_array = new int[m_ccd.m_imagewidth * m_ccd.m_imageheight];
         }
 

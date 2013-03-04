@@ -57,6 +57,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.GroupBoxCCDSettings = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.NUDImagingHeight = new System.Windows.Forms.NumericUpDown();
+            this.NUDImagingWidth = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
             this.ComboBoxCCDModel = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.ComboBoxZoomMode = new System.Windows.Forms.ComboBox();
@@ -172,6 +176,8 @@
             this.DeviceSettings.SuspendLayout();
             this.GroupBoxDAQSettings.SuspendLayout();
             this.GroupBoxCCDSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDImagingHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDImagingWidth)).BeginInit();
             this.GroupBoxFilmingSettings.SuspendLayout();
             this.LogGroupBox.SuspendLayout();
             this.TemperatureGroupBox.SuspendLayout();
@@ -291,9 +297,9 @@
             this.GroupBoxDAQSettings.Controls.Add(this.label8);
             this.GroupBoxDAQSettings.Controls.Add(this.label7);
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 227);
+            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 257);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
-            this.GroupBoxDAQSettings.Size = new System.Drawing.Size(286, 299);
+            this.GroupBoxDAQSettings.Size = new System.Drawing.Size(270, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
             this.GroupBoxDAQSettings.TabStop = false;
             this.GroupBoxDAQSettings.Text = "DAQ && CounterBoard";
@@ -312,7 +318,7 @@
             this.ListViewCounters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ListViewCounters.Location = new System.Drawing.Point(16, 165);
             this.ListViewCounters.Name = "ListViewCounters";
-            this.ListViewCounters.Size = new System.Drawing.Size(257, 75);
+            this.ListViewCounters.Size = new System.Drawing.Size(241, 75);
             this.ListViewCounters.TabIndex = 11;
             this.ListViewCounters.UseCompatibleStateImageBehavior = false;
             this.ListViewCounters.View = System.Windows.Forms.View.Details;
@@ -348,7 +354,7 @@
             this.ListViewLasers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ListViewLasers.Location = new System.Drawing.Point(15, 34);
             this.ListViewLasers.Name = "ListViewLasers";
-            this.ListViewLasers.Size = new System.Drawing.Size(257, 75);
+            this.ListViewLasers.Size = new System.Drawing.Size(241, 75);
             this.ListViewLasers.TabIndex = 7;
             this.ListViewLasers.UseCompatibleStateImageBehavior = false;
             this.ListViewLasers.View = System.Windows.Forms.View.Details;
@@ -368,7 +374,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveDAQSettings.Location = new System.Drawing.Point(15, 272);
             this.ButtonSaveDAQSettings.Name = "ButtonSaveDAQSettings";
-            this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(257, 22);
+            this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(241, 22);
             this.ButtonSaveDAQSettings.TabIndex = 15;
             this.ButtonSaveDAQSettings.Text = "Save && Apply DAQ Settings";
             this.ButtonSaveDAQSettings.UseVisualStyleBackColor = true;
@@ -377,7 +383,7 @@
             // ButtonRemoveCounter
             // 
             this.ButtonRemoveCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveCounter.Location = new System.Drawing.Point(209, 246);
+            this.ButtonRemoveCounter.Location = new System.Drawing.Point(193, 246);
             this.ButtonRemoveCounter.Name = "ButtonRemoveCounter";
             this.ButtonRemoveCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonRemoveCounter.TabIndex = 14;
@@ -388,7 +394,7 @@
             // ButtonModifyCounter
             // 
             this.ButtonModifyCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonModifyCounter.Location = new System.Drawing.Point(140, 246);
+            this.ButtonModifyCounter.Location = new System.Drawing.Point(124, 246);
             this.ButtonModifyCounter.Name = "ButtonModifyCounter";
             this.ButtonModifyCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonModifyCounter.TabIndex = 13;
@@ -399,7 +405,7 @@
             // ButtonAddCounter
             // 
             this.ButtonAddCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddCounter.Location = new System.Drawing.Point(71, 246);
+            this.ButtonAddCounter.Location = new System.Drawing.Point(55, 246);
             this.ButtonAddCounter.Name = "ButtonAddCounter";
             this.ButtonAddCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonAddCounter.TabIndex = 12;
@@ -410,7 +416,7 @@
             // ButtonRemoveLaser
             // 
             this.ButtonRemoveLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveLaser.Location = new System.Drawing.Point(209, 116);
+            this.ButtonRemoveLaser.Location = new System.Drawing.Point(193, 116);
             this.ButtonRemoveLaser.Name = "ButtonRemoveLaser";
             this.ButtonRemoveLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonRemoveLaser.TabIndex = 10;
@@ -421,7 +427,7 @@
             // ButtonModifyLaser
             // 
             this.ButtonModifyLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonModifyLaser.Location = new System.Drawing.Point(140, 116);
+            this.ButtonModifyLaser.Location = new System.Drawing.Point(124, 116);
             this.ButtonModifyLaser.Name = "ButtonModifyLaser";
             this.ButtonModifyLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonModifyLaser.TabIndex = 9;
@@ -432,7 +438,7 @@
             // ButtonAddLaser
             // 
             this.ButtonAddLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddLaser.Location = new System.Drawing.Point(71, 116);
+            this.ButtonAddLaser.Location = new System.Drawing.Point(55, 116);
             this.ButtonAddLaser.Name = "ButtonAddLaser";
             this.ButtonAddLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonAddLaser.TabIndex = 8;
@@ -459,6 +465,10 @@
             // 
             // GroupBoxCCDSettings
             // 
+            this.GroupBoxCCDSettings.Controls.Add(this.label24);
+            this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingHeight);
+            this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingWidth);
+            this.GroupBoxCCDSettings.Controls.Add(this.label15);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxCCDModel);
             this.GroupBoxCCDSettings.Controls.Add(this.label13);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxZoomMode);
@@ -469,10 +479,53 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(286, 125);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(270, 155);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(25, 95);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(88, 12);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Imaging Area :";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // NUDImagingHeight
+            // 
+            this.NUDImagingHeight.Location = new System.Drawing.Point(206, 93);
+            this.NUDImagingHeight.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.NUDImagingHeight.Name = "NUDImagingHeight";
+            this.NUDImagingHeight.Size = new System.Drawing.Size(50, 21);
+            this.NUDImagingHeight.TabIndex = 9;
+            // 
+            // NUDImagingWidth
+            // 
+            this.NUDImagingWidth.Location = new System.Drawing.Point(124, 93);
+            this.NUDImagingWidth.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.NUDImagingWidth.Name = "NUDImagingWidth";
+            this.NUDImagingWidth.Size = new System.Drawing.Size(50, 21);
+            this.NUDImagingWidth.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(183, 95);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(12, 12);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "x";
             // 
             // ComboBoxCCDModel
             // 
@@ -485,7 +538,7 @@
             "ProEM CCD"});
             this.ComboBoxCCDModel.Location = new System.Drawing.Point(123, 15);
             this.ComboBoxCCDModel.Name = "ComboBoxCCDModel";
-            this.ComboBoxCCDModel.Size = new System.Drawing.Size(149, 20);
+            this.ComboBoxCCDModel.Size = new System.Drawing.Size(133, 20);
             this.ComboBoxCCDModel.TabIndex = 3;
             // 
             // label13
@@ -505,19 +558,20 @@
             this.ComboBoxZoomMode.FormattingEnabled = true;
             this.ComboBoxZoomMode.Items.AddRange(new object[] {
             "Center",
-            "Stretch"});
+            "Stretch",
+            "Scale"});
             this.ComboBoxZoomMode.Location = new System.Drawing.Point(123, 67);
             this.ComboBoxZoomMode.Name = "ComboBoxZoomMode";
-            this.ComboBoxZoomMode.Size = new System.Drawing.Size(149, 20);
+            this.ComboBoxZoomMode.Size = new System.Drawing.Size(133, 20);
             this.ComboBoxZoomMode.TabIndex = 5;
             // 
             // ButtonSaveCCDSettings
             // 
             this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(15, 93);
+            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 123);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
-            this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(258, 23);
+            this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(242, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
             this.ButtonSaveCCDSettings.Text = "Save && Apply CCD Settings";
             this.ButtonSaveCCDSettings.UseVisualStyleBackColor = true;
@@ -545,7 +599,7 @@
             "8"});
             this.ComboBoxBinSize.Location = new System.Drawing.Point(123, 41);
             this.ComboBoxBinSize.Name = "ComboBoxBinSize";
-            this.ComboBoxBinSize.Size = new System.Drawing.Size(149, 20);
+            this.ComboBoxBinSize.Size = new System.Drawing.Size(133, 20);
             this.ComboBoxBinSize.TabIndex = 4;
             // 
             // label6
@@ -567,7 +621,7 @@
             this.GroupBoxFilmingSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxFilmingSettings.Location = new System.Drawing.Point(3, 3);
             this.GroupBoxFilmingSettings.Name = "GroupBoxFilmingSettings";
-            this.GroupBoxFilmingSettings.Size = new System.Drawing.Size(286, 99);
+            this.GroupBoxFilmingSettings.Size = new System.Drawing.Size(270, 99);
             this.GroupBoxFilmingSettings.TabIndex = 3;
             this.GroupBoxFilmingSettings.TabStop = false;
             this.GroupBoxFilmingSettings.Text = "Filming";
@@ -578,7 +632,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveFilmingSettings.Location = new System.Drawing.Point(15, 68);
             this.ButtonSaveFilmingSettings.Name = "ButtonSaveFilmingSettings";
-            this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(257, 23);
+            this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveFilmingSettings.TabIndex = 2;
             this.ButtonSaveFilmingSettings.Text = "Save && Apply Filming Settings";
             this.ButtonSaveFilmingSettings.UseVisualStyleBackColor = true;
@@ -586,9 +640,9 @@
             // 
             // TextBoxPMAHead
             // 
-            this.TextBoxPMAHead.Location = new System.Drawing.Point(124, 41);
+            this.TextBoxPMAHead.Location = new System.Drawing.Point(123, 41);
             this.TextBoxPMAHead.Name = "TextBoxPMAHead";
-            this.TextBoxPMAHead.Size = new System.Drawing.Size(148, 21);
+            this.TextBoxPMAHead.Size = new System.Drawing.Size(133, 21);
             this.TextBoxPMAHead.TabIndex = 1;
             // 
             // label11
@@ -604,7 +658,7 @@
             // 
             this.TextBoxPMAPath.Location = new System.Drawing.Point(124, 14);
             this.TextBoxPMAPath.Name = "TextBoxPMAPath";
-            this.TextBoxPMAPath.Size = new System.Drawing.Size(148, 21);
+            this.TextBoxPMAPath.Size = new System.Drawing.Size(132, 21);
             this.TextBoxPMAPath.TabIndex = 0;
             // 
             // label10
@@ -1848,6 +1902,8 @@
             this.GroupBoxDAQSettings.PerformLayout();
             this.GroupBoxCCDSettings.ResumeLayout(false);
             this.GroupBoxCCDSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDImagingHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDImagingWidth)).EndInit();
             this.GroupBoxFilmingSettings.ResumeLayout(false);
             this.GroupBoxFilmingSettings.PerformLayout();
             this.LogGroupBox.ResumeLayout(false);
@@ -2053,6 +2109,10 @@
         private System.Windows.Forms.NumericUpDown NUDAFLFrameNumber;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown NUDImagingHeight;
+        private System.Windows.Forms.NumericUpDown NUDImagingWidth;
+        private System.Windows.Forms.Label label15;
 
     }
 }
