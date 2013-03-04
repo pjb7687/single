@@ -143,6 +143,7 @@ namespace Single2013
             m_focusingThread = new Thread(new ThreadStart(FocusingThread));
             m_focusingThread.Priority = ThreadPriority.BelowNormal;
             m_focusing = true;
+            m_focusingThread.IsBackground = true;
             m_focusingThread.Start();
         }
 

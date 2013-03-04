@@ -104,6 +104,7 @@ namespace Single2013
             m_autoflow = true;
             m_autoflowThread = new Thread(new ThreadStart(AutoFlowThread));
             m_autoflowThread.Priority = ThreadPriority.BelowNormal;
+            m_autoflowThread.IsBackground = true;
             m_autoflowThread.Start();
         }
 

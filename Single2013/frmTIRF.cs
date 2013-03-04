@@ -231,15 +231,19 @@ namespace Single2013
                                                                           Properties.Settings.Default.Counters[i + 3]}));
 
             LaserCheckedListBox.Items.Clear();
-            for (int i = 0; i < Properties.Settings.Default.Lasers.Count; i += 2)
-                AddLaserToListBox(Properties.Settings.Default.Lasers[i], Properties.Settings.Default.Lasers[i + 1]);
+            try
+            {
+                for (int i = 0; i < Properties.Settings.Default.Lasers.Count; i += 2)
+                    AddLaserToListBox(Properties.Settings.Default.Lasers[i], Properties.Settings.Default.Lasers[i + 1]);
 
-            ALEXCheckedListBox.Items.Clear();
-            for (int i = 0; i < Properties.Settings.Default.Counters.Count; i += 4)
-                AddCounterBoardToListBox(Properties.Settings.Default.Counters[i],
-                                         Properties.Settings.Default.Counters[i + 1],
-                                         Properties.Settings.Default.Counters[i + 2],
-                                         Properties.Settings.Default.Counters[i + 3]);
+                ALEXCheckedListBox.Items.Clear();
+                for (int i = 0; i < Properties.Settings.Default.Counters.Count; i += 4)
+                    AddCounterBoardToListBox(Properties.Settings.Default.Counters[i],
+                                             Properties.Settings.Default.Counters[i + 1],
+                                             Properties.Settings.Default.Counters[i + 2],
+                                             Properties.Settings.Default.Counters[i + 3]);
+            }
+            catch { }
 
             // Drawer Class
             m_imgdrawer = null;

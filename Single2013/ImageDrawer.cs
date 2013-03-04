@@ -114,6 +114,7 @@ namespace Single2013
 
             while (m_drawflag)
             {
+                Thread.Sleep(0);
                 try
                 {
                     m_ccd.m_gettingimage = true;
@@ -219,7 +220,8 @@ namespace Single2013
 
             m_drawflag = true;
             m_drawingThread = new Thread(new ThreadStart(DrawingThread));
-            m_drawingThread.Priority = ThreadPriority.AboveNormal;
+            m_drawingThread.Priority = ThreadPriority.Normal;
+            m_drawingThread.IsBackground = true;
             m_drawingThread.Start();
         }
 
