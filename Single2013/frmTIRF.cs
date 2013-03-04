@@ -398,7 +398,7 @@ namespace Single2013
         private void StartFilmingButton_Click(object sender, EventArgs e)
         {
             if (m_imgdrawer.m_filming) {
-                m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
+                m_imgdrawer.StopFilming();
                 StartFilmingButton.Text = "Start Filming";
                 m_shutter.StopALEX();
                 if (m_autofocusing != null)
@@ -440,7 +440,6 @@ namespace Single2013
                     file.WriteLine(str);
                 }
 
-                m_imgdrawer.m_pmafilename = filename;
                 Log("[Filming]", new string [] { "Filming Started.", "File Name: " + filename });
                 StartFilmingButton.Text = "Stop Filming";
                 using (var fileStream = new FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None))
@@ -449,6 +448,9 @@ namespace Single2013
                     bw.Write(BitConverter.GetBytes((short)m_ccd.m_imagewidth));
                     bw.Write(BitConverter.GetBytes((short)m_ccd.m_imageheight));
                 }
+
+                m_imgdrawer.StartFilming(filename);
+                
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
@@ -456,7 +458,6 @@ namespace Single2013
                         m_autofocusing.m_ignoredarkframe = CheckBoxAFIgnoreDarkFrame.Checked;
                     m_shutter.StartALEX(m_ccd.m_exptime);
                 }
-                m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
             }
         }
 

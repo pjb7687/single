@@ -40,10 +40,13 @@ namespace Single2013
         private double m_scaler;
         private int[] m_subs;
 
+        private FileStream m_filestream;
+        private BinaryWriter m_bw;
+        private string m_pmafilename;
+
         public int m_framenum;
         public bool m_auto;
 
-        public string m_pmafilename;
         public int m_autostopframenum = -1;
         public List<string> m_autoflowcommands = new List<string>();
         
@@ -155,13 +158,9 @@ namespace Single2013
                     {
                         m_framenum++;
                         m_frm.Invoke(new frmTIRF.updateFilmingInfoDelegate(m_frm.updateFilmingInfo), new object[] { m_framenum });
-                        using (var fileStream = new FileStream(m_pmafilename, FileMode.Append, FileAccess.Write, FileShare.None))
-                        using (var bw = new BinaryWriter(fileStream))
-                        {
-                            for (i = 0; i < m_ccd.m_imageheight; i++)
-                                for (j = 0; j < m_ccd.m_imagewidth; j++)
-                                    bw.Write(dump_array[i, j]);
-                        }
+                        for (i = 0; i < m_ccd.m_imageheight; i++)
+                            for (j = 0; j < m_ccd.m_imagewidth; j++)
+                                m_bw.Write(dump_array[i, j]);
 
                         if (m_autostopframenum > 0 && m_autostopframenum == m_framenum)
                             m_frm.Invoke(new frmTIRF.AutoStopDelegate(m_frm.AutoStop), new object[] { });
@@ -187,6 +186,20 @@ namespace Single2013
             }
         }
 
+        public void StartFilming(string pmafilename)
+        {
+            m_filestream = new FileStream(pmafilename, FileMode.Append, FileAccess.Write, FileShare.Write);
+            m_bw = new BinaryWriter(m_filestream);
+            m_filming = true;
+        }
+
+        public void StopFilming()
+        {
+            m_filming = false;
+            m_bw.Close();
+            m_filestream.Close();
+        }
+        
         public ImageDrawer(string colormappath, frmTIRF f, smbCCD ccd)
         {
             m_frm = f;
