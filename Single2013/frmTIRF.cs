@@ -196,7 +196,7 @@ namespace Single2013
             ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
 
             if (m_ccd != null) m_ccd.Dispose();
-            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex);
+            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, 0);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetTemp(-85);
 
@@ -438,7 +438,8 @@ namespace Single2013
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
-                    m_autofocusing.m_ignoredarkframe = CheckBoxAFIgnoreDarkFrame.Checked;
+                    if (m_autofocusing != null)
+                        m_autofocusing.m_ignoredarkframe = CheckBoxAFIgnoreDarkFrame.Checked;
                     m_shutter.StartALEX(m_ccd.m_exptime);
                 }
                 m_imgdrawer.m_filming = !m_imgdrawer.m_filming;
@@ -683,6 +684,7 @@ namespace Single2013
             }
             else
             {
+                m_autoflow.m_autoflow = false;
                 if (m_autoflow.m_autoflow)
                     ButtonAFLEnable_Click(sender, e);
             }

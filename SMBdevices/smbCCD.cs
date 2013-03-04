@@ -27,12 +27,31 @@ namespace SMBdevices
 
         private bool m_disposed = false;
 
-        public smbCCD(CCDType ccd)
+        public static int getCameraNumber(CCDType ccd)
+        {
+            int cameranum = 0;
+            switch (ccd)
+            {
+                case CCDType.ANDOR_CCD:
+                    AndorCCD.GetAvailableCameras(ref cameranum);
+                    break;
+                case CCDType.PROEM_CCD:
+
+                    break;
+            }
+
+            return cameranum;
+        }
+
+        public smbCCD(CCDType ccd, int CCDNum)
         {
             m_CCDType = ccd;
+            int CCDHandle = 0;
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
+                    AndorCCD.GetCameraHandle(CCDNum, ref CCDHandle);
+                    AndorCCD.SetCurrentCamera(CCDHandle);
                     AndorCCD.Initialize("");
                     AndorCCD.GetTemperature(ref m_CCDTemp);
                     this.SetBinSize(1);

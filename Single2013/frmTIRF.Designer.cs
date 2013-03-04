@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -134,6 +134,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -165,7 +166,6 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -909,44 +909,44 @@
             // 
             // ChartAFFOM
             // 
-            chartArea3.AxisX.LabelStyle.Format = "0.##";
-            chartArea3.AxisY.LabelStyle.Format = "0.##";
-            chartArea3.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.LabelStyle.Format = "0.##";
+            chartArea1.AxisY.LabelStyle.Format = "0.##";
+            chartArea1.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea1);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend1);
             this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series1);
             this.ChartAFFOM.Size = new System.Drawing.Size(363, 226);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea4.AxisX.LabelStyle.Format = "0.##";
-            chartArea4.AxisY.LabelStyle.Format = "0.##";
-            chartArea4.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea4);
+            chartArea2.AxisX.LabelStyle.Format = "0.##";
+            chartArea2.AxisY.LabelStyle.Format = "0.##";
+            chartArea2.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea2);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend4);
+            legend2.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend2);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series5.Legend = "Legend1";
-            series5.Name = "FOM";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series5);
-            this.ChartAFDistance.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "FOM";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series2);
+            this.ChartAFDistance.Series.Add(series3);
             this.ChartAFDistance.Size = new System.Drawing.Size(362, 226);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1378,6 +1378,16 @@
             this.columnHeader10.Text = "Direction";
             this.columnHeader10.Width = 65;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 21);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Temperature";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 21);
@@ -1500,9 +1510,24 @@
             this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDStopFrame.Location = new System.Drawing.Point(131, 14);
+            this.NUDStopFrame.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.NUDStopFrame.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NUDStopFrame.Name = "NUDStopFrame";
             this.NUDStopFrame.Size = new System.Drawing.Size(152, 21);
             this.NUDStopFrame.TabIndex = 12;
+            this.NUDStopFrame.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // CheckBoxAutoStop
             // 
@@ -1803,16 +1828,6 @@
             this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 21);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1076, 324);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Temperature";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // frmTIRF
             // 
