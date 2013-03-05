@@ -103,7 +103,8 @@ namespace SMBdevices
             }
         }
 
-        public void RunWithSettings(double diameter, unitType units, runMode mode, double volume, double rate) {
+        private void PumpThread(double diameter, unitType units, runMode mode, double volume, double rate)
+        {
             switch (m_pump)
             {
                 case pumpType.CHEMYX_FUSION:
@@ -141,6 +142,11 @@ namespace SMBdevices
                     Thread.Sleep(200);
                     break;
             }
+        }
+
+        public void RunWithSettings(double diameter, unitType units, runMode mode, double volume, double rate) {
+            Thread t = new Thread(delegate() { PumpThread(diameter, units, mode, volume, rate); });
+            t.Start();
         }
 
         public smbPump(pumpType pump, string port)
