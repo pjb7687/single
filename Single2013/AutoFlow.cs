@@ -86,6 +86,7 @@ namespace Single2013
             int fn, i;
             while (m_autoflow)
             {
+                Thread.Sleep(10);
                 if (rules.Count == 0 || !m_imgdrawer.m_filming) continue;
                 fn = m_imgdrawer.m_framenum;
                 for (i = 0; i < rules.Count; i++)
@@ -109,7 +110,7 @@ namespace Single2013
         {
             m_autoflow = true;
             m_autoflowThread = new Thread(new ThreadStart(AutoFlowThread));
-            m_autoflowThread.Priority = ThreadPriority.BelowNormal;
+            m_autoflowThread.Priority = ThreadPriority.Normal;
             m_autoflowThread.IsBackground = true;
             m_autoflowThread.Start();
         }

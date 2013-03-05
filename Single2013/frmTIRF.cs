@@ -695,6 +695,7 @@ namespace Single2013
         #region Auto Flow
         private void ButtonAFLFindDevices_Click(object sender, EventArgs e)
         {
+            ButtonAFLFindDevices.Enabled = false;
             if (m_autoflow == null)
             {
                 m_autoflow = new AutoFlow(m_ccd, m_imgdrawer, this);
@@ -710,6 +711,7 @@ namespace Single2013
             foreach (smbPump pump in m_autoflow.m_pumps)
                 ListViewAFLPumps.Items.Add(new ListViewItem(new string[] { smbPump.GetPumpName(pump.m_pump), pump.m_port }));
             ButtonAFLEnable.Enabled = true;
+            ButtonAFLFindDevices.Enabled = true;
         }
 
         private void ListViewAFLPumps_Click(object sender, EventArgs e)

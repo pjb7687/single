@@ -106,11 +106,21 @@ namespace SMBdevices
                     Thread.Sleep(200);
                     break;
                 case pumpType.HARVARD_2000:
-                    m_serialport.Write("TGT " + (volume/1000.0).ToString() + "\r");
+                    m_serialport.ReadExisting();
+                    m_serialport.Write("TGT " + (volume / 1000.0).ToString("0.0000") + "\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
                     m_serialport.Write("MOD VOL\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
                     if (mode == runMode.REFILL) m_serialport.Write("DIR REF\r");
                     else m_serialport.Write("DIR INF\r");
-                    m_serialport.Write("RFR " + rate.ToString() + " UM\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
+                    if (mode == runMode.REFILL) m_serialport.Write("RFR " + rate.ToString("0.0000") + " UM\r");
+                    else m_serialport.Write("RAT " + rate.ToString("0.0000") + " UM\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
                     m_serialport.Write("RUN\r");
                     Thread.Sleep(200);
                     break;
@@ -169,6 +179,11 @@ namespace SMBdevices
                         Thread.Sleep(200);
                         test = m_serialport.ReadExisting();
                         if (test == "") throw new Exception();
+
+                        m_maxrate = 31001;
+                        m_minrate = 0;
+                        m_maxvolume = 10000;
+                        m_minvolume = 0;
                     }
                     catch
                     {

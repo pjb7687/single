@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace SMBdevices
 {
@@ -191,7 +192,7 @@ namespace SMBdevices
             {
                 case CCDType.ANDOR_CCD:
                     AndorCCD.PrepareAcquisition();
-                    AndorCCD.SetShutter(1, 1, 0, 1);
+                    AndorCCD.SetShutter(1, 1, 1, 1);
                     AndorCCD.StartAcquisition();
                     break;
                 case CCDType.PROEM_CCD:

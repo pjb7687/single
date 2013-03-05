@@ -242,9 +242,9 @@
             // 
             // SplitConSubs
             // 
-            this.SplitConSubs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.SplitConSubs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SplitConSubs.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.SplitConSubs.IsSplitterFixed = true;
             this.SplitConSubs.Location = new System.Drawing.Point(6, 128);
@@ -306,8 +306,8 @@
             // 
             // ListViewCounters
             // 
-            this.ListViewCounters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewCounters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListViewCounters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4,
@@ -344,8 +344,8 @@
             // 
             // ListViewLasers
             // 
-            this.ListViewLasers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewLasers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListViewLasers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
@@ -370,8 +370,8 @@
             // 
             // ButtonSaveDAQSettings
             // 
-            this.ButtonSaveDAQSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSaveDAQSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveDAQSettings.Location = new System.Drawing.Point(15, 272);
             this.ButtonSaveDAQSettings.Name = "ButtonSaveDAQSettings";
             this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(241, 22);
@@ -529,8 +529,8 @@
             // 
             // ComboBoxCCDModel
             // 
-            this.ComboBoxCCDModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxCCDModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxCCDModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCCDModel.FormattingEnabled = true;
             this.ComboBoxCCDModel.Items.AddRange(new object[] {
@@ -552,8 +552,8 @@
             // 
             // ComboBoxZoomMode
             // 
-            this.ComboBoxZoomMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxZoomMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxZoomMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxZoomMode.FormattingEnabled = true;
             this.ComboBoxZoomMode.Items.AddRange(new object[] {
@@ -567,8 +567,8 @@
             // 
             // ButtonSaveCCDSettings
             // 
-            this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 123);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(242, 23);
@@ -588,8 +588,8 @@
             // 
             // ComboBoxBinSize
             // 
-            this.ComboBoxBinSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxBinSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxBinSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxBinSize.FormattingEnabled = true;
             this.ComboBoxBinSize.Items.AddRange(new object[] {
@@ -628,8 +628,8 @@
             // 
             // ButtonSaveFilmingSettings
             // 
-            this.ButtonSaveFilmingSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSaveFilmingSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveFilmingSettings.Location = new System.Drawing.Point(15, 68);
             this.ButtonSaveFilmingSettings.Name = "ButtonSaveFilmingSettings";
             this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(241, 23);
@@ -672,8 +672,8 @@
             // 
             // SetTempButton
             // 
-            this.SetTempButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetTempButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SetTempButton.Location = new System.Drawing.Point(142, 49);
             this.SetTempButton.Name = "SetTempButton";
             this.SetTempButton.Size = new System.Drawing.Size(133, 25);
@@ -736,8 +736,8 @@
             // 
             // TempLabel
             // 
-            this.TempLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TempLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TempLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TempLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TempLabel.Location = new System.Drawing.Point(142, 23);
@@ -1104,9 +1104,9 @@
             // 
             // ListViewAFLPumps
             // 
-            this.ListViewAFLPumps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewAFLPumps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListViewAFLPumps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader12,
             this.columnHeader13});
@@ -1183,6 +1183,11 @@
             // NUDAFLRate
             // 
             this.NUDAFLRate.Location = new System.Drawing.Point(290, 140);
+            this.NUDAFLRate.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
             this.NUDAFLRate.Name = "NUDAFLRate";
             this.NUDAFLRate.Size = new System.Drawing.Size(58, 21);
             this.NUDAFLRate.TabIndex = 21;
@@ -1203,6 +1208,11 @@
             // NUDAFLVolume
             // 
             this.NUDAFLVolume.Location = new System.Drawing.Point(165, 84);
+            this.NUDAFLVolume.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
             this.NUDAFLVolume.Name = "NUDAFLVolume";
             this.NUDAFLVolume.Size = new System.Drawing.Size(183, 21);
             this.NUDAFLVolume.TabIndex = 20;
@@ -1297,7 +1307,7 @@
             // TrackBarAFLRate
             // 
             this.TrackBarAFLRate.Location = new System.Drawing.Point(165, 142);
-            this.TrackBarAFLRate.Maximum = 17190;
+            this.TrackBarAFLRate.Maximum = 50000;
             this.TrackBarAFLRate.Minimum = 1;
             this.TrackBarAFLRate.Name = "TrackBarAFLRate";
             this.TrackBarAFLRate.Size = new System.Drawing.Size(119, 42);
@@ -1356,8 +1366,8 @@
             // 
             // ButtonAFLEnable
             // 
-            this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAFLEnable.Enabled = false;
             this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 284);
             this.ButtonAFLEnable.Name = "ButtonAFLEnable";
@@ -1380,9 +1390,9 @@
             // 
             // ListViewAFLRules
             // 
-            this.ListViewAFLRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewAFLRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListViewAFLRules.CheckBoxes = true;
             this.ListViewAFLRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
@@ -1474,8 +1484,8 @@
             // 
             // NUDChannelNum
             // 
-            this.NUDChannelNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDChannelNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDChannelNum.Location = new System.Drawing.Point(142, 101);
             this.NUDChannelNum.Maximum = new decimal(new int[] {
             8,
@@ -1561,8 +1571,8 @@
             // 
             // NUDStopFrame
             // 
-            this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDStopFrame.Location = new System.Drawing.Point(131, 14);
             this.NUDStopFrame.Maximum = new decimal(new int[] {
             -1530494976,
@@ -1665,8 +1675,8 @@
             // 
             // TextBoxExptime
             // 
-            this.TextBoxExptime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxExptime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxExptime.Location = new System.Drawing.Point(142, 73);
             this.TextBoxExptime.Name = "TextBoxExptime";
             this.TextBoxExptime.Size = new System.Drawing.Size(133, 21);
@@ -1677,8 +1687,8 @@
             // 
             // TextBoxScaler
             // 
-            this.TextBoxScaler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxScaler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxScaler.Location = new System.Drawing.Point(142, 46);
             this.TextBoxScaler.Name = "TextBoxScaler";
             this.TextBoxScaler.Size = new System.Drawing.Size(133, 21);
@@ -1712,8 +1722,8 @@
             // 
             // NUDGain
             // 
-            this.NUDGain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDGain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NUDGain.Increment = new decimal(new int[] {
             10,
             0,
@@ -1751,8 +1761,8 @@
             // 
             // SetGainButton
             // 
-            this.SetGainButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetGainButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SetGainButton.Location = new System.Drawing.Point(12, 182);
             this.SetGainButton.Name = "SetGainButton";
             this.SetGainButton.Size = new System.Drawing.Size(263, 24);

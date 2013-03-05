@@ -18,7 +18,7 @@ namespace Single2013
         uint[,] colortable = new uint[256, 3];
 
         public Semaphore dumparray_sem = new Semaphore(1, 1);
-        public Semaphore displayarray_sem = new Semaphore(1, 1);
+        //public Semaphore displayarray_sem = new Semaphore(1, 1);
 
         public byte[,] dump_array;
         public int[] display_array;
@@ -42,7 +42,7 @@ namespace Single2013
 
         private FileStream m_filestream;
         private BinaryWriter m_bw;
-        private string m_pmafilename;
+        //private string m_pmafilename;
 
         public int m_framenum;
         public bool m_auto;
@@ -167,10 +167,10 @@ namespace Single2013
                     }
                     dumparray_sem.Release();
 
-                    if (m_framenum % 20 == 0)
+                    if (m_framenum % 1 == 0)
                     {
                         Bitmap bitmap;
-                        displayarray_sem.WaitOne();
+                        //displayarray_sem.WaitOne();
                         unsafe
                         {
                             fixed (int* intPtr = &display_array[0])
@@ -179,8 +179,8 @@ namespace Single2013
                             }
                         }
                         m_pb.Image = bitmap;
+                        //displayarray_sem.Release();
                     }
-                    displayarray_sem.Release();
                 }
                 catch { }
             }
@@ -241,7 +241,11 @@ namespace Single2013
         public void StopDrawing()
         {
             m_drawflag = false;
-            if (m_ccd != null) m_ccd.m_gettingimage = false;
+            try
+            {
+                m_ccd.m_gettingimage = false;
+            }
+            catch { }
         }
     }
 }

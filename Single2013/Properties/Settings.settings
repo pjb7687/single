@@ -18,28 +18,22 @@
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;string&gt;Green&lt;/string&gt;
-  &lt;string&gt;dev1/port0/line24&lt;/string&gt;
+  &lt;string&gt;dev3/port0/line24&lt;/string&gt;
   &lt;string&gt;Red&lt;/string&gt;
-  &lt;string&gt;dev1/port0/line20&lt;/string&gt;
-  &lt;string&gt;Blue&lt;/string&gt;
-  &lt;string&gt;dev1/port0/line28&lt;/string&gt;
+  &lt;string&gt;dev3/port0/line28&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="Counters" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;string&gt;Green&lt;/string&gt;
-  &lt;string&gt;dev1/ctr3&lt;/string&gt;
-  &lt;string&gt;/dev1/20MhzTimebase&lt;/string&gt;
-  &lt;string&gt;/dev1/PFI35&lt;/string&gt;
+  &lt;string&gt;dev3/ctr3&lt;/string&gt;
+  &lt;string&gt;/dev3/20MhzTimebase&lt;/string&gt;
+  &lt;string&gt;/dev3/PFI35&lt;/string&gt;
   &lt;string&gt;Red&lt;/string&gt;
-  &lt;string&gt;dev1/ctr4&lt;/string&gt;
-  &lt;string&gt;/dev1/20MhzTimebase&lt;/string&gt;
-  &lt;string&gt;/dev1/PFI35&lt;/string&gt;
-  &lt;string&gt;Blue&lt;/string&gt;
-  &lt;string&gt;dev1/ctr2&lt;/string&gt;
-  &lt;string&gt;/dev1/20MhzTimebase&lt;/string&gt;
-  &lt;string&gt;/dev1/PFI35&lt;/string&gt;
+  &lt;string&gt;dev3/ctr2&lt;/string&gt;
+  &lt;string&gt;/dev3/20MhzTimebase&lt;/string&gt;
+  &lt;string&gt;/dev3/PFI35&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="Colortable" Type="System.String" Scope="User">
