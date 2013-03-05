@@ -50,7 +50,13 @@ namespace Single2013
                 {
                     m_pumps.Add(new smbPump(smbPump.pumpType.CHEMYX_FUSION, port));
                 }
-                catch { }
+                catch
+                {
+                    try
+                    {
+                        m_pumps.Add(new smbPump(smbPump.pumpType.HARVARD_2000, port));
+                    } catch {}
+                }
             }
 
         }
