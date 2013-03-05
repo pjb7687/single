@@ -21,6 +21,7 @@ namespace SMBdevices
         private double m_diameter;
         private double m_rate;
         private double m_volume;
+        private runMode m_mode;
         
         public enum pumpType
         {
@@ -86,6 +87,15 @@ namespace SMBdevices
                     m_serialport.ReadExisting();
                     break;
                 case pumpType.HARVARD_2000:
+                    m_serialport.Write("MOD VOL\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
+
+                    m_serialport.Write("DIR REF\r");
+                    m_serialport.ReadChar();
+                    m_serialport.ReadExisting();
+
+                    m_mode = runMode.REFILL;
                     m_volume = 85;
                     m_rate = 31001;
                     m_diameter = 14.32;
@@ -107,20 +117,26 @@ namespace SMBdevices
                     break;
                 case pumpType.HARVARD_2000:
                     m_serialport.ReadExisting();
-                    m_serialport.Write("TGT " + (volume / 1000.0).ToString("0.0000") + "\r");
-                    m_serialport.ReadChar();
-                    m_serialport.ReadExisting();
-                    m_serialport.Write("MOD VOL\r");
-                    m_serialport.ReadChar();
-                    m_serialport.ReadExisting();
-                    if (mode == runMode.REFILL) m_serialport.Write("DIR REF\r");
-                    else m_serialport.Write("DIR INF\r");
-                    m_serialport.ReadChar();
-                    m_serialport.ReadExisting();
-                    if (mode == runMode.REFILL) m_serialport.Write("RFR " + rate.ToString("0.0000") + " UM\r");
-                    else m_serialport.Write("RAT " + rate.ToString("0.0000") + " UM\r");
-                    m_serialport.ReadChar();
-                    m_serialport.ReadExisting();
+                    if (volume != m_volume)
+                    {
+                        m_serialport.Write("TGT " + (volume / 1000.0).ToString("0.0000") + "\r");
+                        m_serialport.ReadChar();
+                        m_serialport.ReadExisting();
+                    }
+                    if (mode != m_mode)
+                    {
+                        if (mode == runMode.REFILL) m_serialport.Write("DIR REF\r");
+                        else m_serialport.Write("DIR INF\r");
+                        m_serialport.ReadChar();
+                        m_serialport.ReadExisting();
+                    }
+                    if (rate != m_rate)
+                    {
+                        if (mode == runMode.REFILL) m_serialport.Write("RFR " + rate.ToString("0.0000") + " UM\r");
+                        else m_serialport.Write("RAT " + rate.ToString("0.0000") + " UM\r");
+                        m_serialport.ReadChar();
+                        m_serialport.ReadExisting();
+                    }
                     m_serialport.Write("RUN\r");
                     Thread.Sleep(200);
                     break;
