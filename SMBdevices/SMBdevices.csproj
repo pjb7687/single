@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ATMCD32CS">
+      <HintPath>..\Single2013\bin\Release\ATMCD32CS.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NationalInstruments.Common, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -56,7 +59,6 @@
   <ItemGroup>
     <Compile Include="LowLevel\Madlib.cs" />
     <Compile Include="smbCCD.cs" />
-    <Compile Include="LowLevel\EndorCCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="smbPump.cs" />
     <Compile Include="smbShutter.cs" />

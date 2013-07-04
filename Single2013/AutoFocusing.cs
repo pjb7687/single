@@ -242,7 +242,7 @@ namespace Single2013
             if (pointnum < 10) pointnum = 10;
 
             m_focusing = true;
-            m_stage.MoveToDist(m_stage.m_distz + m_calibdistdelta * m_calibcnt/2, 3);
+            //m_stage.MoveToDist(m_stage.m_distz + m_calibdistdelta * m_calibcnt/2, 3);
             Thread.Sleep(50);
             fom = CalcFOM();
             distdelta = -fom * m_fitvals[1] / 2;

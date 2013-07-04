@@ -37,7 +37,8 @@ namespace SMBdevices
             switch (ccd)
             {
                 case CCDType.ANDOR_CCD:
-                    AndorCCD.GetAvailableCameras(ref cameranum);
+                    ATMCD32CS.AndorSDK tmp = new ATMCD32CS.AndorSDK();
+                    tmp.GetAvailableCameras(ref cameranum);
                     break;
                 case CCDType.PROEM_CCD:
 
@@ -47,6 +48,8 @@ namespace SMBdevices
             return cameranum;
         }
 
+        private ATMCD32CS.AndorSDK AndorCCD;
+
         public smbCCD(CCDType ccd, int CCDNum)
         {
             m_CCDType = ccd;
@@ -54,18 +57,22 @@ namespace SMBdevices
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
+                    float vsspeed = 0;
+                    int vsspeed_index = 0;
+                    AndorCCD = new ATMCD32CS.AndorSDK();
                     AndorCCD.GetCameraHandle(CCDNum, ref CCDHandle);
                     AndorCCD.SetCurrentCamera(CCDHandle);
                     AndorCCD.Initialize("");
                     AndorCCD.GetTemperature(ref m_CCDTemp);
                     this.SetBinSize(1);
 
-                    AndorCCD.SetExposureTime(0.1f);
+                    AndorCCD.SetExposureTime(0.1f); 
                     AndorCCD.SetHSSpeed(0, 0);
-                    AndorCCD.SetVSSpeed(3);
-                    AndorCCD.SetAcquisitionMode(5);
-                    AndorCCD.SetFrameTransferMode(1);
-                    AndorCCD.SetTriggerMode(0);
+                    AndorCCD.GetFastestRecommendedVSSpeed(ref vsspeed_index, ref vsspeed);
+                    AndorCCD.SetVSSpeed(vsspeed_index);
+                    AndorCCD.SetAcquisitionMode(5); // Run till about
+                    AndorCCD.SetFrameTransferMode(1); // Frame transfer mode on: 1, off: 0
+                    AndorCCD.SetTriggerMode(0); // Internal trigger mode
                     break;
                 case CCDType.PROEM_CCD:
                     m_CCDTemp = 0;
@@ -178,7 +185,7 @@ namespace SMBdevices
                 case CCDType.ANDOR_CCD:
                     while (m_gettingimage)
                     {
-                        if (AndorCCD.GetOldestImage(imagebuf, m_Bufsize) == AndorCCD.DRV_SUCCESS) break;
+                        if (AndorCCD.GetOldestImage(imagebuf, m_Bufsize) == ATMCD32CS.AndorSDK.DRV_SUCCESS) break;
                     }
                     break;
                 case CCDType.PROEM_CCD:

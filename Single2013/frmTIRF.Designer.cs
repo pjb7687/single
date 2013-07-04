@@ -275,10 +275,10 @@
             this.DeviceSettings.Controls.Add(this.GroupBoxDAQSettings);
             this.DeviceSettings.Controls.Add(this.GroupBoxCCDSettings);
             this.DeviceSettings.Controls.Add(this.GroupBoxFilmingSettings);
-            this.DeviceSettings.Location = new System.Drawing.Point(4, 21);
+            this.DeviceSettings.Location = new System.Drawing.Point(4, 22);
             this.DeviceSettings.Name = "DeviceSettings";
             this.DeviceSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.DeviceSettings.Size = new System.Drawing.Size(292, 527);
+            this.DeviceSettings.Size = new System.Drawing.Size(292, 526);
             this.DeviceSettings.TabIndex = 1;
             this.DeviceSettings.Text = "Settings";
             this.DeviceSettings.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 257);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
-            this.GroupBoxDAQSettings.Size = new System.Drawing.Size(270, 299);
+            this.GroupBoxDAQSettings.Size = new System.Drawing.Size(269, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
             this.GroupBoxDAQSettings.TabStop = false;
             this.GroupBoxDAQSettings.Text = "DAQ && CounterBoard";
@@ -318,7 +318,7 @@
             this.ListViewCounters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ListViewCounters.Location = new System.Drawing.Point(16, 165);
             this.ListViewCounters.Name = "ListViewCounters";
-            this.ListViewCounters.Size = new System.Drawing.Size(241, 75);
+            this.ListViewCounters.Size = new System.Drawing.Size(240, 75);
             this.ListViewCounters.TabIndex = 11;
             this.ListViewCounters.UseCompatibleStateImageBehavior = false;
             this.ListViewCounters.View = System.Windows.Forms.View.Details;
@@ -354,7 +354,7 @@
             this.ListViewLasers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ListViewLasers.Location = new System.Drawing.Point(15, 34);
             this.ListViewLasers.Name = "ListViewLasers";
-            this.ListViewLasers.Size = new System.Drawing.Size(241, 75);
+            this.ListViewLasers.Size = new System.Drawing.Size(240, 75);
             this.ListViewLasers.TabIndex = 7;
             this.ListViewLasers.UseCompatibleStateImageBehavior = false;
             this.ListViewLasers.View = System.Windows.Forms.View.Details;
@@ -374,7 +374,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveDAQSettings.Location = new System.Drawing.Point(15, 272);
             this.ButtonSaveDAQSettings.Name = "ButtonSaveDAQSettings";
-            this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(241, 22);
+            this.ButtonSaveDAQSettings.Size = new System.Drawing.Size(240, 22);
             this.ButtonSaveDAQSettings.TabIndex = 15;
             this.ButtonSaveDAQSettings.Text = "Save && Apply DAQ Settings";
             this.ButtonSaveDAQSettings.UseVisualStyleBackColor = true;
@@ -383,7 +383,7 @@
             // ButtonRemoveCounter
             // 
             this.ButtonRemoveCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveCounter.Location = new System.Drawing.Point(193, 246);
+            this.ButtonRemoveCounter.Location = new System.Drawing.Point(192, 246);
             this.ButtonRemoveCounter.Name = "ButtonRemoveCounter";
             this.ButtonRemoveCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonRemoveCounter.TabIndex = 14;
@@ -394,7 +394,7 @@
             // ButtonModifyCounter
             // 
             this.ButtonModifyCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonModifyCounter.Location = new System.Drawing.Point(124, 246);
+            this.ButtonModifyCounter.Location = new System.Drawing.Point(123, 246);
             this.ButtonModifyCounter.Name = "ButtonModifyCounter";
             this.ButtonModifyCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonModifyCounter.TabIndex = 13;
@@ -405,7 +405,7 @@
             // ButtonAddCounter
             // 
             this.ButtonAddCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddCounter.Location = new System.Drawing.Point(55, 246);
+            this.ButtonAddCounter.Location = new System.Drawing.Point(54, 246);
             this.ButtonAddCounter.Name = "ButtonAddCounter";
             this.ButtonAddCounter.Size = new System.Drawing.Size(63, 22);
             this.ButtonAddCounter.TabIndex = 12;
@@ -416,7 +416,7 @@
             // ButtonRemoveLaser
             // 
             this.ButtonRemoveLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveLaser.Location = new System.Drawing.Point(193, 116);
+            this.ButtonRemoveLaser.Location = new System.Drawing.Point(192, 116);
             this.ButtonRemoveLaser.Name = "ButtonRemoveLaser";
             this.ButtonRemoveLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonRemoveLaser.TabIndex = 10;
@@ -427,7 +427,7 @@
             // ButtonModifyLaser
             // 
             this.ButtonModifyLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonModifyLaser.Location = new System.Drawing.Point(124, 116);
+            this.ButtonModifyLaser.Location = new System.Drawing.Point(123, 116);
             this.ButtonModifyLaser.Name = "ButtonModifyLaser";
             this.ButtonModifyLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonModifyLaser.TabIndex = 9;
@@ -438,7 +438,7 @@
             // ButtonAddLaser
             // 
             this.ButtonAddLaser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddLaser.Location = new System.Drawing.Point(55, 116);
+            this.ButtonAddLaser.Location = new System.Drawing.Point(54, 116);
             this.ButtonAddLaser.Name = "ButtonAddLaser";
             this.ButtonAddLaser.Size = new System.Drawing.Size(63, 22);
             this.ButtonAddLaser.TabIndex = 8;
@@ -479,7 +479,7 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(270, 155);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 155);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
@@ -538,7 +538,7 @@
             "ProEM CCD"});
             this.ComboBoxCCDModel.Location = new System.Drawing.Point(123, 15);
             this.ComboBoxCCDModel.Name = "ComboBoxCCDModel";
-            this.ComboBoxCCDModel.Size = new System.Drawing.Size(133, 20);
+            this.ComboBoxCCDModel.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxCCDModel.TabIndex = 3;
             // 
             // label13
@@ -562,7 +562,7 @@
             "Scale"});
             this.ComboBoxZoomMode.Location = new System.Drawing.Point(123, 67);
             this.ComboBoxZoomMode.Name = "ComboBoxZoomMode";
-            this.ComboBoxZoomMode.Size = new System.Drawing.Size(133, 20);
+            this.ComboBoxZoomMode.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxZoomMode.TabIndex = 5;
             // 
             // ButtonSaveCCDSettings
@@ -571,7 +571,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 123);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
-            this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(242, 23);
+            this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
             this.ButtonSaveCCDSettings.Text = "Save && Apply CCD Settings";
             this.ButtonSaveCCDSettings.UseVisualStyleBackColor = true;
@@ -599,7 +599,7 @@
             "8"});
             this.ComboBoxBinSize.Location = new System.Drawing.Point(123, 41);
             this.ComboBoxBinSize.Name = "ComboBoxBinSize";
-            this.ComboBoxBinSize.Size = new System.Drawing.Size(133, 20);
+            this.ComboBoxBinSize.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxBinSize.TabIndex = 4;
             // 
             // label6
@@ -621,7 +621,7 @@
             this.GroupBoxFilmingSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxFilmingSettings.Location = new System.Drawing.Point(3, 3);
             this.GroupBoxFilmingSettings.Name = "GroupBoxFilmingSettings";
-            this.GroupBoxFilmingSettings.Size = new System.Drawing.Size(270, 99);
+            this.GroupBoxFilmingSettings.Size = new System.Drawing.Size(269, 99);
             this.GroupBoxFilmingSettings.TabIndex = 3;
             this.GroupBoxFilmingSettings.TabStop = false;
             this.GroupBoxFilmingSettings.Text = "Filming";
@@ -632,7 +632,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveFilmingSettings.Location = new System.Drawing.Point(15, 68);
             this.ButtonSaveFilmingSettings.Name = "ButtonSaveFilmingSettings";
-            this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(241, 23);
+            this.ButtonSaveFilmingSettings.Size = new System.Drawing.Size(240, 23);
             this.ButtonSaveFilmingSettings.TabIndex = 2;
             this.ButtonSaveFilmingSettings.Text = "Save && Apply Filming Settings";
             this.ButtonSaveFilmingSettings.UseVisualStyleBackColor = true;
@@ -784,10 +784,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 21);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage3.Size = new System.Drawing.Size(1076, 323);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -804,7 +804,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1070, 318);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1070, 317);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // splitContainer5
@@ -823,7 +823,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer5.Size = new System.Drawing.Size(743, 312);
+            this.splitContainer5.Size = new System.Drawing.Size(743, 311);
             this.splitContainer5.SplitterDistance = 56;
             this.splitContainer5.TabIndex = 0;
             this.splitContainer5.TabStop = false;
@@ -941,7 +941,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(743, 252);
+            this.groupBox3.Size = new System.Drawing.Size(743, 251);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Linear fit of FOMs / Histogram of FOMs";
@@ -958,7 +958,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 232);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 231);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ChartAFFOM
@@ -973,10 +973,11 @@
             this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
             series1.Legend = "Legend1";
             series1.Name = "FOM";
             this.ChartAFFOM.Series.Add(series1);
-            this.ChartAFFOM.Size = new System.Drawing.Size(363, 226);
+            this.ChartAFFOM.Size = new System.Drawing.Size(363, 225);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
@@ -1001,7 +1002,7 @@
             series3.Name = "Linear Fit of FOM";
             this.ChartAFDistance.Series.Add(series2);
             this.ChartAFDistance.Series.Add(series3);
-            this.ChartAFDistance.Size = new System.Drawing.Size(362, 226);
+            this.ChartAFDistance.Size = new System.Drawing.Size(362, 225);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
             // 
@@ -1012,7 +1013,7 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(752, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(315, 312);
+            this.groupBox6.Size = new System.Drawing.Size(315, 311);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Settings / Focusing Info";
@@ -1041,10 +1042,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.splitContainer6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 21);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage4.Size = new System.Drawing.Size(1076, 323);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1064,7 +1065,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox8);
-            this.splitContainer6.Size = new System.Drawing.Size(1070, 318);
+            this.splitContainer6.Size = new System.Drawing.Size(1070, 317);
             this.splitContainer6.SplitterDistance = 499;
             this.splitContainer6.TabIndex = 0;
             this.splitContainer6.TabStop = false;
@@ -1085,8 +1086,8 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer7.Size = new System.Drawing.Size(499, 318);
-            this.splitContainer7.SplitterDistance = 100;
+            this.splitContainer7.Size = new System.Drawing.Size(499, 317);
+            this.splitContainer7.SplitterDistance = 99;
             this.splitContainer7.TabIndex = 1;
             this.splitContainer7.TabStop = false;
             // 
@@ -1097,7 +1098,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(499, 100);
+            this.groupBox9.Size = new System.Drawing.Size(499, 99);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Syringe Pumps";
@@ -1116,7 +1117,7 @@
             this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
             this.ListViewAFLPumps.MultiSelect = false;
             this.ListViewAFLPumps.Name = "ListViewAFLPumps";
-            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 66);
+            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 65);
             this.ListViewAFLPumps.TabIndex = 9;
             this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
@@ -1310,7 +1311,7 @@
             this.TrackBarAFLRate.Maximum = 50000;
             this.TrackBarAFLRate.Minimum = 1;
             this.TrackBarAFLRate.Name = "TrackBarAFLRate";
-            this.TrackBarAFLRate.Size = new System.Drawing.Size(119, 42);
+            this.TrackBarAFLRate.Size = new System.Drawing.Size(119, 45);
             this.TrackBarAFLRate.TabIndex = 8;
             this.TrackBarAFLRate.TickFrequency = 1000;
             this.TrackBarAFLRate.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1359,7 +1360,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(567, 318);
+            this.groupBox8.Size = new System.Drawing.Size(567, 317);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
@@ -1369,7 +1370,7 @@
             this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAFLEnable.Enabled = false;
-            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 284);
+            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 283);
             this.ButtonAFLEnable.Name = "ButtonAFLEnable";
             this.ButtonAFLEnable.Size = new System.Drawing.Size(551, 28);
             this.ButtonAFLEnable.TabIndex = 4;
@@ -1380,7 +1381,7 @@
             // ButtonAFLRemoveRules
             // 
             this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(397, 238);
+            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(397, 237);
             this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
             this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
             this.ButtonAFLRemoveRules.TabIndex = 3;
@@ -1407,7 +1408,7 @@
             this.ListViewAFLRules.Location = new System.Drawing.Point(7, 20);
             this.ListViewAFLRules.MultiSelect = false;
             this.ListViewAFLRules.Name = "ListViewAFLRules";
-            this.ListViewAFLRules.Size = new System.Drawing.Size(551, 212);
+            this.ListViewAFLRules.Size = new System.Drawing.Size(551, 211);
             this.ListViewAFLRules.TabIndex = 0;
             this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
@@ -1444,40 +1445,40 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 21);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage1.Size = new System.Drawing.Size(1076, 323);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 21);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage5.Size = new System.Drawing.Size(1076, 323);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Pulse";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 21);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage6.Size = new System.Drawing.Size(1076, 323);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Realtime Trace";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 21);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1076, 324);
+            this.tabPage7.Size = new System.Drawing.Size(1076, 323);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1549,10 +1550,10 @@
             this.DashBoard.Controls.Add(this.groupBox4);
             this.DashBoard.Controls.Add(this.GainGroupBox);
             this.DashBoard.Controls.Add(this.TemperatureGroupBox);
-            this.DashBoard.Location = new System.Drawing.Point(4, 21);
+            this.DashBoard.Location = new System.Drawing.Point(4, 22);
             this.DashBoard.Name = "DashBoard";
             this.DashBoard.Padding = new System.Windows.Forms.Padding(3);
-            this.DashBoard.Size = new System.Drawing.Size(292, 527);
+            this.DashBoard.Size = new System.Drawing.Size(292, 526);
             this.DashBoard.TabIndex = 0;
             this.DashBoard.Text = "Dashboard";
             this.DashBoard.UseVisualStyleBackColor = true;

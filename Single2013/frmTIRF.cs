@@ -126,6 +126,7 @@ namespace Single2013
             Log("[Auto Focusing]", new string[] { "STDEV: " + stdev.ToString() });
             ChartAFFOM.Series.Clear();
             ChartAFFOM.Series.Add("Freq. Count of FOM");
+            ChartAFFOM.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
 
             binstart = foms.Min(); binend = binstart + binstep;
             for (i = 0; i < 10; i++)
@@ -136,6 +137,8 @@ namespace Single2013
                 binstart += binstep; binend += binstep;
                 ChartAFFOM.Series[0].Points.AddY(cnt);
             }
+            ChartAFFOM.ChartAreas[0].AxisY.Minimum = 0;
+            ChartAFFOM.ChartAreas[0].AxisY.Maximum = ChartAFFOM.Series[0].Points.FindMaxByValue().YValues[0];
             ButtonAFCalibration.Enabled = true;
             ButtonAFStart.Enabled = true;
         }
