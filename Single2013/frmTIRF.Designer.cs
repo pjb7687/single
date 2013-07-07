@@ -170,6 +170,8 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.NUDCameraIndex = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -238,6 +240,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).BeginInit();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -297,7 +300,7 @@
             this.GroupBoxDAQSettings.Controls.Add(this.label8);
             this.GroupBoxDAQSettings.Controls.Add(this.label7);
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 257);
+            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 281);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
             this.GroupBoxDAQSettings.Size = new System.Drawing.Size(269, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
@@ -465,6 +468,8 @@
             // 
             // GroupBoxCCDSettings
             // 
+            this.GroupBoxCCDSettings.Controls.Add(this.label25);
+            this.GroupBoxCCDSettings.Controls.Add(this.NUDCameraIndex);
             this.GroupBoxCCDSettings.Controls.Add(this.label24);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingHeight);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingWidth);
@@ -479,7 +484,7 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 155);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 179);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
@@ -569,7 +574,7 @@
             // 
             this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 123);
+            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 147);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
@@ -1894,6 +1899,28 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
+            // NUDCameraIndex
+            // 
+            this.NUDCameraIndex.Location = new System.Drawing.Point(124, 120);
+            this.NUDCameraIndex.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.NUDCameraIndex.Name = "NUDCameraIndex";
+            this.NUDCameraIndex.Size = new System.Drawing.Size(132, 21);
+            this.NUDCameraIndex.TabIndex = 11;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 12);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Camera Index :";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmTIRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1983,6 +2010,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2124,6 +2152,8 @@
         private System.Windows.Forms.NumericUpDown NUDImagingHeight;
         private System.Windows.Forms.NumericUpDown NUDImagingWidth;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown NUDCameraIndex;
 
     }
 }

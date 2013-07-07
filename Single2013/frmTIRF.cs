@@ -155,41 +155,6 @@ namespace Single2013
         #endregion
 
         #region Helper Methods
-        private void AddLaserToListBox(string lasername, string lines)
-        {
-            m_shutter.AddLaser(lines);
-            LaserCheckedListBox.Items.Add(lasername);
-        }
-
-        private void AddCounterBoardToListBox(string lasername, string counter, string countersrc, string triggersrc)
-        {
-            m_shutter.AddCounterBoard(counter, countersrc, triggersrc);
-            ALEXCheckedListBox.Items.Add(lasername);
-        }
-
-        private void OffAllLaser()
-        {
-            for (int i = 0; i < LaserCheckedListBox.Items.Count; i++)
-                m_shutter.LaserOff(i);
-        }
-
-        private void Log(string mainissue, string[] issues)
-        {
-            string crlf = "\r\n";
-            LogTextBox.Text += crlf + crlf + mainissue;
-            for (int i=0; i<issues.Length; i++)
-                LogTextBox.Text += crlf + issues[i];
-            LogTextBox.SelectionStart = LogTextBox.Text.Length;
-            LogTextBox.ScrollToCaret();
-        }
-
-        private void Log(string mainissue)
-        {
-            string crlf = "\r\n";
-            LogTextBox.Text += crlf + crlf + mainissue;
-            LogTextBox.SelectionStart = LogTextBox.Text.Length;
-            LogTextBox.ScrollToCaret();
-        }
 
         private void LoadAllSettings()
         {
@@ -199,9 +164,10 @@ namespace Single2013
             ComboBoxCCDModel.SelectedIndex = Properties.Settings.Default.CCDModelIndex;
             NUDImagingWidth.Value = Properties.Settings.Default.ImagingWidth;
             NUDImagingHeight.Value = Properties.Settings.Default.ImagingHeight;
+            NUDCameraIndex.Value = Properties.Settings.Default.CameraIndex;
 
             if (m_ccd != null) m_ccd.Dispose();
-            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, 0);
+            m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, Properties.Settings.Default.CameraIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetRange((int)NUDImagingWidth.Value, (int)NUDImagingHeight.Value);
             m_ccd.SetTemp(-85);
@@ -256,6 +222,42 @@ namespace Single2013
             m_pmafiledir = Properties.Settings.Default.PMASavePath;
             m_pmafilenamehead = Properties.Settings.Default.PMAhead;
 
+        }
+
+        private void AddLaserToListBox(string lasername, string lines)
+        {
+            m_shutter.AddLaser(lines);
+            LaserCheckedListBox.Items.Add(lasername);
+        }
+
+        private void AddCounterBoardToListBox(string lasername, string counter, string countersrc, string triggersrc)
+        {
+            m_shutter.AddCounterBoard(counter, countersrc, triggersrc);
+            ALEXCheckedListBox.Items.Add(lasername);
+        }
+
+        private void OffAllLaser()
+        {
+            for (int i = 0; i < LaserCheckedListBox.Items.Count; i++)
+                m_shutter.LaserOff(i);
+        }
+
+        private void Log(string mainissue, string[] issues)
+        {
+            string crlf = "\r\n";
+            LogTextBox.Text += crlf + crlf + mainissue;
+            for (int i=0; i<issues.Length; i++)
+                LogTextBox.Text += crlf + issues[i];
+            LogTextBox.SelectionStart = LogTextBox.Text.Length;
+            LogTextBox.ScrollToCaret();
+        }
+
+        private void Log(string mainissue)
+        {
+            string crlf = "\r\n";
+            LogTextBox.Text += crlf + crlf + mainissue;
+            LogTextBox.SelectionStart = LogTextBox.Text.Length;
+            LogTextBox.ScrollToCaret();
         }
         #endregion
 
@@ -611,6 +613,7 @@ namespace Single2013
             Properties.Settings.Default.CCDModelIndex = ComboBoxCCDModel.SelectedIndex;
             Properties.Settings.Default.ImagingWidth = (int)NUDImagingWidth.Value;
             Properties.Settings.Default.ImagingHeight = (int)NUDImagingHeight.Value;
+            Properties.Settings.Default.CameraIndex = (int)NUDCameraIndex.Value;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();
