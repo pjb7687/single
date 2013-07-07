@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO.Ports;
+using System.Threading;
 
 namespace SMBdevices
 {
@@ -20,6 +22,7 @@ namespace SMBdevices
         public double m_distx = 0;
         public double m_disty = 0;
         public double m_distz = 0;
+        private SerialPort m_serialport;
 
         public smbStage(StageType stage)
         {
@@ -34,6 +37,46 @@ namespace SMBdevices
                     m_distz = Cal * .50;
                     break;
                 case StageType.PI_ZSTAGE:
+                    string[] ports = SerialPort.GetPortNames();
+                    foreach (string port in ports)
+                    {
+                        try
+                        {
+                            m_serialport = new SerialPort(port);
+
+                            m_serialport.BaudRate = 9600;
+                            m_serialport.DataBits = 8;
+                            m_serialport.Parity = Parity.None;
+                            m_serialport.StopBits = StopBits.One;
+                            m_serialport.Handshake = Handshake.None;
+
+                            m_serialport.Open();
+
+                            m_serialport.Write("*IDN?\n");
+                            Thread.Sleep(200);
+                            if (m_serialport.ReadExisting().Substring(0, 4) == "E516")
+                            {
+                                // Found Device
+                                m_serialport.Write("ONL 1\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("VCO A1\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("VEL A100\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("NLM A19\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("MOV A60.00\n");
+                                m_distz = 60.0;
+                                break;
+                            }
+                            else { m_serialport.Close(); };
+                        }
+                        catch
+                        {
+                            m_serialport.Close();
+                        }
+                    }
+                    if (!m_serialport.IsOpen) throw new Exception();
                     break;
                 case StageType.PI_XYZNANOSTAGE:
                     break;
@@ -48,6 +91,7 @@ namespace SMBdevices
                     Madlib.MCL_ReleaseAllHandles();
                     break;
                 case StageType.PI_ZSTAGE:
+                    m_serialport.Close();
                     break;
                 case StageType.PI_XYZNANOSTAGE:
                     break;
@@ -56,6 +100,8 @@ namespace SMBdevices
 
         public void MoveToDist(double dist, uint axis)
         {
+            // dist: in um
+            // axis: 1 means x, 2 means y, and 3 means z
             switch (m_stage)
             {
                 case StageType.MCL_CFOCUS:
@@ -64,6 +110,9 @@ namespace SMBdevices
                     m_distz = dist;
                     break;
                 case StageType.PI_ZSTAGE:
+                    if (axis != 3) return;
+                    m_serialport.Write(String.Format("MOV A{0:0.000}\n", dist));
+                    m_distz = dist;
                     break;
                 case StageType.PI_XYZNANOSTAGE:
                     break;
