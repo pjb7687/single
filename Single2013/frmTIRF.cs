@@ -517,6 +517,11 @@ namespace Single2013
             else
                 m_imgdrawer.m_autostopframenum = 0;
         }
+
+        private void CheckBoxShowGuidelines_CheckedChanged(object sender, EventArgs e)
+        {
+            m_imgdrawer.ToggleGuidelines(CheckBoxAutoStop.Checked);
+        }
         #endregion
 
         #region 'Device Settings' Tab Related

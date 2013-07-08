@@ -57,6 +57,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.GroupBoxCCDSettings = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.NUDCameraIndex = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.NUDImagingHeight = new System.Windows.Forms.NumericUpDown();
             this.NUDImagingWidth = new System.Windows.Forms.NumericUpDown();
@@ -170,14 +172,15 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.NUDCameraIndex = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
+            this.CheckBoxShowGuidelines = new System.Windows.Forms.CheckBox();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
             this.DeviceSettings.SuspendLayout();
             this.GroupBoxDAQSettings.SuspendLayout();
             this.GroupBoxCCDSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDImagingHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDImagingWidth)).BeginInit();
             this.GroupBoxFilmingSettings.SuspendLayout();
@@ -240,7 +243,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
+            this.splitContainer8.Panel1.SuspendLayout();
+            this.splitContainer8.Panel2.SuspendLayout();
+            this.splitContainer8.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -488,6 +494,28 @@
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 12);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Camera Index :";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // NUDCameraIndex
+            // 
+            this.NUDCameraIndex.Location = new System.Drawing.Point(124, 120);
+            this.NUDCameraIndex.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.NUDCameraIndex.Name = "NUDCameraIndex";
+            this.NUDCameraIndex.Size = new System.Drawing.Size(132, 21);
+            this.NUDCameraIndex.TabIndex = 11;
             // 
             // label24
             // 
@@ -1550,9 +1578,8 @@
             // DashBoard
             // 
             this.DashBoard.AutoScroll = true;
+            this.DashBoard.Controls.Add(this.splitContainer8);
             this.DashBoard.Controls.Add(this.groupBox7);
-            this.DashBoard.Controls.Add(this.groupBox1);
-            this.DashBoard.Controls.Add(this.groupBox4);
             this.DashBoard.Controls.Add(this.GainGroupBox);
             this.DashBoard.Controls.Add(this.TemperatureGroupBox);
             this.DashBoard.Location = new System.Drawing.Point(4, 22);
@@ -1568,7 +1595,7 @@
             this.groupBox7.Controls.Add(this.NUDStopFrame);
             this.groupBox7.Controls.Add(this.CheckBoxAutoStop);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox7.Location = new System.Drawing.Point(3, 466);
+            this.groupBox7.Location = new System.Drawing.Point(3, 303);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(286, 42);
             this.groupBox7.TabIndex = 4;
@@ -1613,10 +1640,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ALEXCheckedListBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(3, 383);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(286, 83);
+            this.groupBox1.Size = new System.Drawing.Size(142, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ALEX";
@@ -1628,7 +1655,7 @@
             this.ALEXCheckedListBox.FormattingEnabled = true;
             this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
             this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
-            this.ALEXCheckedListBox.Size = new System.Drawing.Size(280, 63);
+            this.ALEXCheckedListBox.Size = new System.Drawing.Size(136, 80);
             this.ALEXCheckedListBox.TabIndex = 10;
             this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
             this.ALEXCheckedListBox.UseTabStops = false;
@@ -1637,10 +1664,10 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.LaserCheckedListBox);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(3, 303);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(286, 80);
+            this.groupBox4.Size = new System.Drawing.Size(143, 100);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Shutter Control";
@@ -1652,7 +1679,7 @@
             this.LaserCheckedListBox.FormattingEnabled = true;
             this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
             this.LaserCheckedListBox.Name = "LaserCheckedListBox";
-            this.LaserCheckedListBox.Size = new System.Drawing.Size(280, 60);
+            this.LaserCheckedListBox.Size = new System.Drawing.Size(137, 80);
             this.LaserCheckedListBox.TabIndex = 9;
             this.LaserCheckedListBox.ThreeDCheckBoxes = true;
             this.LaserCheckedListBox.UseTabStops = false;
@@ -1660,6 +1687,7 @@
             // 
             // GainGroupBox
             // 
+            this.GainGroupBox.Controls.Add(this.CheckBoxShowGuidelines);
             this.GainGroupBox.Controls.Add(this.TextBoxExptime);
             this.GainGroupBox.Controls.Add(this.TextBoxScaler);
             this.GainGroupBox.Controls.Add(this.CheckBoxAuto);
@@ -1709,7 +1737,7 @@
             this.CheckBoxAuto.AutoSize = true;
             this.CheckBoxAuto.Checked = true;
             this.CheckBoxAuto.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxAuto.Location = new System.Drawing.Point(20, 160);
+            this.CheckBoxAuto.Location = new System.Drawing.Point(20, 164);
             this.CheckBoxAuto.Name = "CheckBoxAuto";
             this.CheckBoxAuto.Size = new System.Drawing.Size(49, 16);
             this.CheckBoxAuto.TabIndex = 1000;
@@ -1780,7 +1808,7 @@
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(148, 14);
+            this.LabelTime.Location = new System.Drawing.Point(252, 12);
             this.LabelTime.Name = "LabelTime";
             this.LabelTime.Size = new System.Drawing.Size(151, 12);
             this.LabelTime.TabIndex = 4;
@@ -1837,7 +1865,7 @@
             // LabelFramenum
             // 
             this.LabelFramenum.AutoSize = true;
-            this.LabelFramenum.Location = new System.Drawing.Point(7, 12);
+            this.LabelFramenum.Location = new System.Drawing.Point(109, 12);
             this.LabelFramenum.Name = "LabelFramenum";
             this.LabelFramenum.Size = new System.Drawing.Size(69, 12);
             this.LabelFramenum.TabIndex = 3;
@@ -1845,7 +1873,7 @@
             // 
             // OpenCameraButton
             // 
-            this.OpenCameraButton.Location = new System.Drawing.Point(303, 3);
+            this.OpenCameraButton.Location = new System.Drawing.Point(3, 3);
             this.OpenCameraButton.Name = "OpenCameraButton";
             this.OpenCameraButton.Size = new System.Drawing.Size(100, 31);
             this.OpenCameraButton.TabIndex = 0;
@@ -1899,27 +1927,38 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
-            // NUDCameraIndex
+            // CheckBoxShowGuidelines
             // 
-            this.NUDCameraIndex.Location = new System.Drawing.Point(124, 120);
-            this.NUDCameraIndex.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.NUDCameraIndex.Name = "NUDCameraIndex";
-            this.NUDCameraIndex.Size = new System.Drawing.Size(132, 21);
-            this.NUDCameraIndex.TabIndex = 11;
+            this.CheckBoxShowGuidelines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CheckBoxShowGuidelines.AutoSize = true;
+            this.CheckBoxShowGuidelines.Checked = true;
+            this.CheckBoxShowGuidelines.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBoxShowGuidelines.Location = new System.Drawing.Point(75, 164);
+            this.CheckBoxShowGuidelines.Name = "CheckBoxShowGuidelines";
+            this.CheckBoxShowGuidelines.Size = new System.Drawing.Size(120, 16);
+            this.CheckBoxShowGuidelines.TabIndex = 1002;
+            this.CheckBoxShowGuidelines.Text = "Show Guidelines";
+            this.CheckBoxShowGuidelines.UseVisualStyleBackColor = true;
+            this.CheckBoxShowGuidelines.CheckedChanged += new System.EventHandler(this.CheckBoxShowGuidelines_CheckedChanged);
             // 
-            // label25
+            // splitContainer8
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(20, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 12);
-            this.label25.TabIndex = 12;
-            this.label25.Text = "Camera Index :";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer8.IsSplitterFixed = true;
+            this.splitContainer8.Location = new System.Drawing.Point(3, 345);
+            this.splitContainer8.Name = "splitContainer8";
+            // 
+            // splitContainer8.Panel1
+            // 
+            this.splitContainer8.Panel1.Controls.Add(this.groupBox4);
+            // 
+            // splitContainer8.Panel2
+            // 
+            this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer8.Size = new System.Drawing.Size(286, 100);
+            this.splitContainer8.SplitterDistance = 143;
+            this.splitContainer8.SplitterWidth = 1;
+            this.splitContainer8.TabIndex = 1003;
             // 
             // frmTIRF
             // 
@@ -1940,6 +1979,7 @@
             this.GroupBoxDAQSettings.PerformLayout();
             this.GroupBoxCCDSettings.ResumeLayout(false);
             this.GroupBoxCCDSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDImagingHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDImagingWidth)).EndInit();
             this.GroupBoxFilmingSettings.ResumeLayout(false);
@@ -2010,7 +2050,10 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.NUDCameraIndex)).EndInit();
+            this.splitContainer8.Panel1.ResumeLayout(false);
+            this.splitContainer8.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
+            this.splitContainer8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2154,6 +2197,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.NumericUpDown NUDCameraIndex;
+        private System.Windows.Forms.CheckBox CheckBoxShowGuidelines;
+        private System.Windows.Forms.SplitContainer splitContainer8;
 
     }
 }

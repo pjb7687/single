@@ -49,6 +49,8 @@ namespace Single2013
 
         public int m_autostopframenum = -1;
         public List<string> m_autoflowcommands = new List<string>();
+
+        private bool m_guidelines;
         
         private void LoadColors(string path)
         {
@@ -151,6 +153,18 @@ namespace Single2013
                             }
                         }
                     }
+
+                    if (m_guidelines)
+                    {
+                        for (k = 0; k < m_frm.m_chanum; k++)
+                        {
+                            for (j = 0; j < m_ccd.m_imageheight; j++)
+                            {
+                                display_array[m_ccd.m_imagewidth * j + m_ccd.m_imagewidth / m_frm.m_chanum * k] = 166 + 97 * 256 + 243 * 256 * 256;
+                            }
+                        }
+                    }
+
                     //displayarray_sem.Release();
                     AFFlag = false;
 
@@ -246,6 +260,11 @@ namespace Single2013
                 m_ccd.m_gettingimage = false;
             }
             catch { }
+        }
+
+        public void ToggleGuidelines(bool guidestatus)
+        {
+            m_guidelines = guidestatus;
         }
     }
 }
