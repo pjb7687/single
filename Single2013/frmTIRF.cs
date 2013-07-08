@@ -263,7 +263,7 @@ namespace Single2013
         #region Control Events
         private void frmTIRF_Load(object sender, EventArgs e)
         {
-            LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park";
+            LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park\n\nThis program has been inspired by the original 'single' program by SH and WS.";
 
             // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
