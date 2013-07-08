@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -996,45 +996,45 @@
             // 
             // ChartAFFOM
             // 
-            chartArea1.AxisX.LabelStyle.Format = "0.##";
-            chartArea1.AxisY.LabelStyle.Format = "0.##";
-            chartArea1.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea1);
+            chartArea15.AxisX.LabelStyle.Format = "0.##";
+            chartArea15.AxisY.LabelStyle.Format = "0.##";
+            chartArea15.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea15);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend1);
+            legend15.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend15);
             this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series1.Legend = "Legend1";
-            series1.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series1);
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series22.Legend = "Legend1";
+            series22.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series22);
             this.ChartAFFOM.Size = new System.Drawing.Size(363, 225);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea2.AxisX.LabelStyle.Format = "0.##";
-            chartArea2.AxisY.LabelStyle.Format = "0.##";
-            chartArea2.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea2);
+            chartArea16.AxisX.LabelStyle.Format = "0.##";
+            chartArea16.AxisY.LabelStyle.Format = "0.##";
+            chartArea16.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea16);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend2);
+            legend16.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend16);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series2.Legend = "Legend1";
-            series2.Name = "FOM";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series2);
-            this.ChartAFDistance.Series.Add(series3);
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series23.Legend = "Legend1";
+            series23.Name = "FOM";
+            series24.ChartArea = "ChartArea1";
+            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series24.Legend = "Legend1";
+            series24.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series23);
+            this.ChartAFDistance.Series.Add(series24);
             this.ChartAFDistance.Size = new System.Drawing.Size(362, 225);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1594,7 +1594,7 @@
             // 
             this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitContainer8.IsSplitterFixed = true;
-            this.splitContainer8.Location = new System.Drawing.Point(3, 345);
+            this.splitContainer8.Location = new System.Drawing.Point(3, 377);
             this.splitContainer8.Name = "splitContainer8";
             // 
             // splitContainer8.Panel1
@@ -1659,12 +1659,13 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.StartFilmingButton);
             this.groupBox7.Controls.Add(this.NUDStopFrame);
             this.groupBox7.Controls.Add(this.CheckBoxAutoStop);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Location = new System.Drawing.Point(3, 303);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(286, 42);
+            this.groupBox7.Size = new System.Drawing.Size(286, 74);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Fliming";
@@ -1673,7 +1674,7 @@
             // 
             this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NUDStopFrame.Location = new System.Drawing.Point(131, 14);
+            this.NUDStopFrame.Location = new System.Drawing.Point(142, 14);
             this.NUDStopFrame.Maximum = new decimal(new int[] {
             -1530494976,
             232830,
@@ -1685,7 +1686,7 @@
             0,
             0});
             this.NUDStopFrame.Name = "NUDStopFrame";
-            this.NUDStopFrame.Size = new System.Drawing.Size(152, 21);
+            this.NUDStopFrame.Size = new System.Drawing.Size(133, 21);
             this.NUDStopFrame.TabIndex = 12;
             this.NUDStopFrame.Value = new decimal(new int[] {
             1,
@@ -1696,7 +1697,7 @@
             // CheckBoxAutoStop
             // 
             this.CheckBoxAutoStop.AutoSize = true;
-            this.CheckBoxAutoStop.Location = new System.Drawing.Point(6, 15);
+            this.CheckBoxAutoStop.Location = new System.Drawing.Point(12, 14);
             this.CheckBoxAutoStop.Name = "CheckBoxAutoStop";
             this.CheckBoxAutoStop.Size = new System.Drawing.Size(119, 16);
             this.CheckBoxAutoStop.TabIndex = 11;
@@ -1839,7 +1840,7 @@
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(252, 12);
+            this.LabelTime.Location = new System.Drawing.Point(250, 12);
             this.LabelTime.Name = "LabelTime";
             this.LabelTime.Size = new System.Drawing.Size(151, 12);
             this.LabelTime.TabIndex = 4;
@@ -1872,7 +1873,6 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.StartFilmingButton);
             this.splitContainer3.Panel2.Controls.Add(this.LabelTime);
             this.splitContainer3.Panel2.Controls.Add(this.LabelFramenum);
             this.splitContainer3.Panel2.Controls.Add(this.OpenCameraButton);
@@ -1885,9 +1885,9 @@
             // StartFilmingButton
             // 
             this.StartFilmingButton.Enabled = false;
-            this.StartFilmingButton.Location = new System.Drawing.Point(409, 3);
+            this.StartFilmingButton.Location = new System.Drawing.Point(12, 41);
             this.StartFilmingButton.Name = "StartFilmingButton";
-            this.StartFilmingButton.Size = new System.Drawing.Size(100, 31);
+            this.StartFilmingButton.Size = new System.Drawing.Size(263, 25);
             this.StartFilmingButton.TabIndex = 5;
             this.StartFilmingButton.Text = "Start Filming";
             this.StartFilmingButton.UseVisualStyleBackColor = true;
@@ -1896,7 +1896,7 @@
             // LabelFramenum
             // 
             this.LabelFramenum.AutoSize = true;
-            this.LabelFramenum.Location = new System.Drawing.Point(109, 12);
+            this.LabelFramenum.Location = new System.Drawing.Point(14, 12);
             this.LabelFramenum.Name = "LabelFramenum";
             this.LabelFramenum.Size = new System.Drawing.Size(69, 12);
             this.LabelFramenum.TabIndex = 3;
@@ -1904,7 +1904,7 @@
             // 
             // OpenCameraButton
             // 
-            this.OpenCameraButton.Location = new System.Drawing.Point(3, 3);
+            this.OpenCameraButton.Location = new System.Drawing.Point(407, 3);
             this.OpenCameraButton.Name = "OpenCameraButton";
             this.OpenCameraButton.Size = new System.Drawing.Size(100, 31);
             this.OpenCameraButton.TabIndex = 0;
