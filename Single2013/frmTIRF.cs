@@ -221,7 +221,6 @@ namespace Single2013
             // PMA file path setting
             m_pmafiledir = Properties.Settings.Default.PMASavePath;
             m_pmafilenamehead = Properties.Settings.Default.PMAhead;
-
         }
 
         private void AddLaserToListBox(string lasername, string lines)
@@ -520,7 +519,7 @@ namespace Single2013
 
         private void CheckBoxShowGuidelines_CheckedChanged(object sender, EventArgs e)
         {
-            m_imgdrawer.ToggleGuidelines(CheckBoxAutoStop.Checked);
+            m_imgdrawer.ToggleGuidelines(CheckBoxShowGuidelines.Checked);
         }
         #endregion
 

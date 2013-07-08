@@ -148,14 +148,16 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.TabControlMain = new System.Windows.Forms.TabControl();
             this.DashBoard = new System.Windows.Forms.TabPage();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.LaserCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ALEXCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.NUDStopFrame = new System.Windows.Forms.NumericUpDown();
             this.CheckBoxAutoStop = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ALEXCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.LaserCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.GainGroupBox = new System.Windows.Forms.GroupBox();
+            this.CheckBoxShowGuidelines = new System.Windows.Forms.CheckBox();
             this.TextBoxExptime = new System.Windows.Forms.TextBox();
             this.TextBoxScaler = new System.Windows.Forms.TextBox();
             this.CheckBoxAuto = new System.Windows.Forms.CheckBox();
@@ -172,8 +174,6 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.CheckBoxShowGuidelines = new System.Windows.Forms.CheckBox();
-            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -224,10 +224,14 @@
             this.splitContainer4.SuspendLayout();
             this.TabControlMain.SuspendLayout();
             this.DashBoard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
+            this.splitContainer8.Panel1.SuspendLayout();
+            this.splitContainer8.Panel2.SuspendLayout();
+            this.splitContainer8.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDStopFrame)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.GainGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDGain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CCDWindow)).BeginInit();
@@ -243,10 +247,6 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
-            this.splitContainer8.Panel1.SuspendLayout();
-            this.splitContainer8.Panel2.SuspendLayout();
-            this.splitContainer8.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -1590,6 +1590,73 @@
             this.DashBoard.Text = "Dashboard";
             this.DashBoard.UseVisualStyleBackColor = true;
             // 
+            // splitContainer8
+            // 
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer8.IsSplitterFixed = true;
+            this.splitContainer8.Location = new System.Drawing.Point(3, 345);
+            this.splitContainer8.Name = "splitContainer8";
+            // 
+            // splitContainer8.Panel1
+            // 
+            this.splitContainer8.Panel1.Controls.Add(this.groupBox4);
+            // 
+            // splitContainer8.Panel2
+            // 
+            this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer8.Size = new System.Drawing.Size(286, 100);
+            this.splitContainer8.SplitterDistance = 143;
+            this.splitContainer8.SplitterWidth = 1;
+            this.splitContainer8.TabIndex = 1003;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.LaserCheckedListBox);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(143, 100);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Shutter Control";
+            // 
+            // LaserCheckedListBox
+            // 
+            this.LaserCheckedListBox.CheckOnClick = true;
+            this.LaserCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LaserCheckedListBox.FormattingEnabled = true;
+            this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
+            this.LaserCheckedListBox.Name = "LaserCheckedListBox";
+            this.LaserCheckedListBox.Size = new System.Drawing.Size(137, 80);
+            this.LaserCheckedListBox.TabIndex = 9;
+            this.LaserCheckedListBox.ThreeDCheckBoxes = true;
+            this.LaserCheckedListBox.UseTabStops = false;
+            this.LaserCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.LaserCheckedListBox_ItemCheck);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ALEXCheckedListBox);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(142, 100);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ALEX";
+            // 
+            // ALEXCheckedListBox
+            // 
+            this.ALEXCheckedListBox.CheckOnClick = true;
+            this.ALEXCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ALEXCheckedListBox.FormattingEnabled = true;
+            this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
+            this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
+            this.ALEXCheckedListBox.Size = new System.Drawing.Size(136, 80);
+            this.ALEXCheckedListBox.TabIndex = 10;
+            this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
+            this.ALEXCheckedListBox.UseTabStops = false;
+            this.ALEXCheckedListBox.SelectedValueChanged += new System.EventHandler(this.ALEXCheckedListBox_SelectedValueChanged);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.NUDStopFrame);
@@ -1637,54 +1704,6 @@
             this.CheckBoxAutoStop.UseVisualStyleBackColor = true;
             this.CheckBoxAutoStop.CheckedChanged += new System.EventHandler(this.CheckBoxAutoStop_CheckedChanged);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ALEXCheckedListBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(142, 100);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ALEX";
-            // 
-            // ALEXCheckedListBox
-            // 
-            this.ALEXCheckedListBox.CheckOnClick = true;
-            this.ALEXCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ALEXCheckedListBox.FormattingEnabled = true;
-            this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
-            this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
-            this.ALEXCheckedListBox.Size = new System.Drawing.Size(136, 80);
-            this.ALEXCheckedListBox.TabIndex = 10;
-            this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
-            this.ALEXCheckedListBox.UseTabStops = false;
-            this.ALEXCheckedListBox.SelectedValueChanged += new System.EventHandler(this.ALEXCheckedListBox_SelectedValueChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.LaserCheckedListBox);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(143, 100);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Shutter Control";
-            // 
-            // LaserCheckedListBox
-            // 
-            this.LaserCheckedListBox.CheckOnClick = true;
-            this.LaserCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LaserCheckedListBox.FormattingEnabled = true;
-            this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
-            this.LaserCheckedListBox.Name = "LaserCheckedListBox";
-            this.LaserCheckedListBox.Size = new System.Drawing.Size(137, 80);
-            this.LaserCheckedListBox.TabIndex = 9;
-            this.LaserCheckedListBox.ThreeDCheckBoxes = true;
-            this.LaserCheckedListBox.UseTabStops = false;
-            this.LaserCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.LaserCheckedListBox_ItemCheck);
-            // 
             // GainGroupBox
             // 
             this.GainGroupBox.Controls.Add(this.CheckBoxShowGuidelines);
@@ -1706,6 +1725,18 @@
             this.GainGroupBox.TabIndex = 1;
             this.GainGroupBox.TabStop = false;
             this.GainGroupBox.Text = "Gain && Scaler";
+            // 
+            // CheckBoxShowGuidelines
+            // 
+            this.CheckBoxShowGuidelines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CheckBoxShowGuidelines.AutoSize = true;
+            this.CheckBoxShowGuidelines.Location = new System.Drawing.Point(75, 164);
+            this.CheckBoxShowGuidelines.Name = "CheckBoxShowGuidelines";
+            this.CheckBoxShowGuidelines.Size = new System.Drawing.Size(120, 16);
+            this.CheckBoxShowGuidelines.TabIndex = 1002;
+            this.CheckBoxShowGuidelines.Text = "Show Guidelines";
+            this.CheckBoxShowGuidelines.UseVisualStyleBackColor = true;
+            this.CheckBoxShowGuidelines.CheckedChanged += new System.EventHandler(this.CheckBoxShowGuidelines_CheckedChanged);
             // 
             // TextBoxExptime
             // 
@@ -1927,39 +1958,6 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
-            // CheckBoxShowGuidelines
-            // 
-            this.CheckBoxShowGuidelines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CheckBoxShowGuidelines.AutoSize = true;
-            this.CheckBoxShowGuidelines.Checked = true;
-            this.CheckBoxShowGuidelines.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxShowGuidelines.Location = new System.Drawing.Point(75, 164);
-            this.CheckBoxShowGuidelines.Name = "CheckBoxShowGuidelines";
-            this.CheckBoxShowGuidelines.Size = new System.Drawing.Size(120, 16);
-            this.CheckBoxShowGuidelines.TabIndex = 1002;
-            this.CheckBoxShowGuidelines.Text = "Show Guidelines";
-            this.CheckBoxShowGuidelines.UseVisualStyleBackColor = true;
-            this.CheckBoxShowGuidelines.CheckedChanged += new System.EventHandler(this.CheckBoxShowGuidelines_CheckedChanged);
-            // 
-            // splitContainer8
-            // 
-            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainer8.IsSplitterFixed = true;
-            this.splitContainer8.Location = new System.Drawing.Point(3, 345);
-            this.splitContainer8.Name = "splitContainer8";
-            // 
-            // splitContainer8.Panel1
-            // 
-            this.splitContainer8.Panel1.Controls.Add(this.groupBox4);
-            // 
-            // splitContainer8.Panel2
-            // 
-            this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer8.Size = new System.Drawing.Size(286, 100);
-            this.splitContainer8.SplitterDistance = 143;
-            this.splitContainer8.SplitterWidth = 1;
-            this.splitContainer8.TabIndex = 1003;
-            // 
             // frmTIRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -2028,11 +2026,15 @@
             this.splitContainer4.ResumeLayout(false);
             this.TabControlMain.ResumeLayout(false);
             this.DashBoard.ResumeLayout(false);
+            this.splitContainer8.Panel1.ResumeLayout(false);
+            this.splitContainer8.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
+            this.splitContainer8.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDStopFrame)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.GainGroupBox.ResumeLayout(false);
             this.GainGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDGain)).EndInit();
@@ -2050,10 +2052,6 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.splitContainer8.Panel1.ResumeLayout(false);
-            this.splitContainer8.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
-            this.splitContainer8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
