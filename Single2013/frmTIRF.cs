@@ -99,14 +99,14 @@ namespace Single2013
             Log("[Auto Focusing]", new string[] { "Roughly finding the best focal point..." });
 
             ChartAFDistance.Series.Clear();
-            ChartAFDistance.Series.Add("FOM");
+            ChartAFDistance.Series.Add("Dists");
             ChartAFDistance.Series.Add("Linear Fit");
             ChartAFDistance.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             ChartAFDistance.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             for (i = 0; i < dists.Length; i++)
-                ChartAFDistance.Series[0].Points.AddXY(dists[i], foms[i]);
-            ChartAFDistance.Series[1].Points.AddXY(dists[0], fitvals[0] + fitvals[1] * dists[0]);
-            ChartAFDistance.Series[1].Points.AddXY(dists[dists.Length - 1], fitvals[0] + fitvals[1] * dists[dists.Length - 1]);
+                ChartAFDistance.Series[0].Points.AddXY(foms[i], dists[i]);
+            ChartAFDistance.Series[1].Points.AddXY(foms[0], fitvals[0] + fitvals[1] * foms[0]);
+            ChartAFDistance.Series[1].Points.AddXY(foms[foms.Length - 1], fitvals[0] + fitvals[1] * foms[foms.Length - 1]);
             ChartAFDistance.ChartAreas[0].AxisY.Minimum = ChartAFDistance.Series[0].Points.FindMinByValue().YValues[0] - 0.01;
             ChartAFDistance.ChartAreas[0].AxisY.Maximum = ChartAFDistance.Series[0].Points.FindMaxByValue().YValues[0] + 0.01;
             m_autofocusing.FindingFocalPoint();

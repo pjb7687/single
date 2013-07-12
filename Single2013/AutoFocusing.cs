@@ -20,7 +20,7 @@ namespace Single2013
 
         private double m_exptime;
         private int m_calibcnt = 10;
-        private double m_calibdistdelta = 0.04;
+        private double m_calibdistdelta = 0.02;
         private double m_stdev;
 
         private double[] m_fitvals = new double[2];
@@ -176,7 +176,8 @@ namespace Single2013
 
         private void CalibrateThread()
         {
-            int i;
+            int i, j;
+            int N = 10;
 
             double[] foms = new double[m_calibcnt+1];
             double[] dists = new double[m_calibcnt+1];
@@ -186,8 +187,13 @@ namespace Single2013
             for (i = 0; i < m_calibcnt; i++)
             {
                 Thread.Sleep(100);
-                foms[i] = CalcFOM();
-                dists[i] = m_stage.m_distz;
+                for (j = 0; j < N; j++)
+                {
+                    foms[i] += CalcFOM();
+                    dists[i] += m_stage.m_distz;
+                }
+                foms[i] /= N;
+                dists[i] /= N;
                 m_stage.MoveToDist(m_stage.m_distz + m_calibdistdelta, 3);
             }
             foms[foms.Length-1] = CalcFOM();
@@ -195,7 +201,8 @@ namespace Single2013
             Thread.Sleep(100);
             dists[dists.Length - 1] = m_stage.m_distz;
 
-            LinearFit(dists, foms, m_calibcnt, m_fitvals);
+            LinearFit(foms, dists, m_calibcnt, m_fitvals);
+
             try
             {
                 m_frm.Invoke(new frmTIRF.CalibrateDoneDelegate(m_frm.CalibrateDone), new object[] { dists, foms, m_fitvals });
