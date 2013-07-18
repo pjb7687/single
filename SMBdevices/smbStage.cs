@@ -13,7 +13,8 @@ namespace SMBdevices
         {
             MCL_CFOCUS,
             PI_ZSTAGE,
-            PI_XYZNANOSTAGE
+            PI_XYZNANOSTAGE,
+            PI_PIEZOMIRROR
         }
 
         private StageType m_stage;
@@ -26,6 +27,8 @@ namespace SMBdevices
 
         public smbStage(StageType stage)
         {
+            string[] ports;
+
             m_stage = stage;
             switch (m_stage)
             {
@@ -37,7 +40,7 @@ namespace SMBdevices
                     m_distz = Cal * .50;
                     break;
                 case StageType.PI_ZSTAGE:
-                    string[] ports = SerialPort.GetPortNames();
+                    ports = SerialPort.GetPortNames();
                     foreach (string port in ports)
                     {
                         try
@@ -79,6 +82,49 @@ namespace SMBdevices
                     if (!m_serialport.IsOpen) throw new Exception();
                     break;
                 case StageType.PI_XYZNANOSTAGE:
+                    break;
+
+                case StageType.PI_PIEZOMIRROR:
+                    ports = SerialPort.GetPortNames();
+                    foreach (string port in ports)
+                    {
+                        try
+                        {
+                            m_serialport = new SerialPort(port);
+
+                            m_serialport.BaudRate = 9600;
+                            m_serialport.DataBits = 8;
+                            m_serialport.Parity = Parity.None;
+                            m_serialport.StopBits = StopBits.One;
+                            m_serialport.Handshake = Handshake.None;
+
+                            m_serialport.Open();
+
+                            m_serialport.Write("*IDN?\n");
+                            Thread.Sleep(200);
+                            if (m_serialport.ReadExisting().Substring(0, 4) == "E501")
+                            {
+                                // Found Device
+                                m_serialport.Write("ONL 1\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("VCO A1\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("VEL A100\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("NLM A19\n");
+                                Thread.Sleep(100);
+                                m_serialport.Write("MOV A60.00\n");
+                                m_distz = 60.0;
+                                break;
+                            }
+                            else { m_serialport.Close(); };
+                        }
+                        catch
+                        {
+                            m_serialport.Close();
+                        }
+                    }
+                    if (!m_serialport.IsOpen) throw new Exception();
                     break;
             }
         }
