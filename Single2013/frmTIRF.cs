@@ -25,6 +25,7 @@ namespace Single2013
         private ImageDrawer m_imgdrawer;
         private AutoFocusing m_autofocusing;
         private AutoFlow m_autoflow;
+        private ActiveDriftCorrection m_adc;
 
         public bool m_CCDon = false;
 
@@ -811,5 +812,94 @@ namespace Single2013
             e.NewValue = e.CurrentValue;
         }
         #endregion
+
+        #region Active Drift Correction
+        private void ButtonADCInitialize_Click(object sender, EventArgs e)
+        {
+            double[] ref_pos = { 0, 0 };
+
+            MessageBox.Show(this, "Please remove prism NOW! And reinstall it after initialization.\r\n\r\nPress OK button to continue...", "Warning!");
+
+            m_adc = new ActiveDriftCorrection((int)NUDADCPiezomirrorNum.Value, ref_pos);
+
+            for (int i = 0; i < (int)NUDADCPiezomirrorNum.Value; i++)
+            {
+                ComboADCMirrorNum.Items.Add(i + 1);
+            }
+
+            showXYZstagePos();
+
+            ButtonADCInitialize.Enabled = false;
+        }
+
+        private void ButtonADCIncreaseX_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffXYZstage(Convert.ToDouble(TextBoxADCNanostageStepSize.Text), 1);
+            showXYZstagePos();
+        }
+
+        private void ButtonADCDecreaseX_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffXYZstage(-Convert.ToDouble(TextBoxADCNanostageStepSize.Text), 1);
+            showXYZstagePos();
+        }
+
+        private void ButtonADCIncreaseY_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffXYZstage(-Convert.ToDouble(TextBoxADCNanostageStepSize.Text), 2);
+            showXYZstagePos();
+        }
+
+        private void ButtonADCDecreaseY_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffXYZstage(Convert.ToDouble(TextBoxADCNanostageStepSize.Text), 2);
+            showXYZstagePos();
+        }
+
+        private void showXYZstagePos()
+        {
+            double[] pos = m_adc.getCurrentPosXYZstage();
+            LabelADCCurrentPos.Text = string.Format("X: {0:0.000} um\r\nY: {1:0.000} um\r\nZ: {2:0.000} um", pos[0], pos[1], pos[2]);
+        }
+
+        private void ButtonADCIncreaseTheta_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffPiezomirror(-Convert.ToDouble(TextBoxADCPiezomirrorStepSize.Text), 2);
+            showPiezomirrorPos();
+        }
+
+        private void ButtonADCDecreaseTheta_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffPiezomirror(Convert.ToDouble(TextBoxADCPiezomirrorStepSize.Text), 2);
+            showPiezomirrorPos();
+        }
+
+        private void ButtonADCIncreasePhi_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffPiezomirror(Convert.ToDouble(TextBoxADCPiezomirrorStepSize.Text), 1);
+            showPiezomirrorPos();
+        }
+
+        private void ButtonADCDecreasePhi_Click(object sender, EventArgs e)
+        {
+            m_adc.moveDiffPiezomirror(-Convert.ToDouble(TextBoxADCPiezomirrorStepSize.Text), 1);
+            showPiezomirrorPos();
+        }
+
+        private void showPiezomirrorPos()
+        {
+            double[] angle = m_adc.getCurrentAnglePiezomirror();
+            LabelADCCurrentAngle.Text = string.Format("θ: {0:0.000} mrad\r\nφ: {1:0.000} mrad", angle[0], angle[1]);
+        }
+
+        private void ComboADCMirrorNum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            m_adc.setPiezomirrorIndex(ComboADCMirrorNum.SelectedIndex);
+            showPiezomirrorPos();
+        }
+        
+        #endregion
+
+
     }
 }

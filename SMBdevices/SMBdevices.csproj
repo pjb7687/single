@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LowLevel\E7XX_GCS2.cs" />
     <Compile Include="LowLevel\Madlib.cs" />
     <Compile Include="smbCCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
