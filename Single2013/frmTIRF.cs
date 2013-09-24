@@ -407,7 +407,7 @@ namespace Single2013
                 StartFilmingButton.Text = "Start Filming";
                 m_shutter.StopALEX();
                 if (m_autofocusing != null)
-                    m_autofocusing.m_ignoredarkframe = false;
+                    m_autofocusing.m_ignoredarkframe = 0;
                 LaserCheckedListBox.Enabled = true;
                 for (int i = 0; i < LaserCheckedListBox.Items.Count; i++)
                 {
@@ -459,8 +459,8 @@ namespace Single2013
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
-                    if (m_autofocusing != null)
-                        m_autofocusing.m_ignoredarkframe = CheckBoxAFIgnoreDarkFrame.Checked;
+                    if (m_autofocusing != null && CheckBoxAFIgnoreDarkFrame.Checked)
+                        m_autofocusing.m_ignoredarkframe = ALEXCheckedListBox.CheckedItems.Count;
                     m_shutter.StartALEX(m_ccd.m_exptime);
                 }
             }

@@ -26,7 +26,7 @@ namespace Single2013
         private double[] m_fitvals = new double[2];
 
         public bool m_focusing;
-        public bool m_ignoredarkframe = false;
+        public int m_ignoredarkframe = 0;
 
         private double m_frameintensity;
 
@@ -102,16 +102,36 @@ namespace Single2013
         private void FocusingThread()
         {
             double fom, distdelta;
-            double lastintensity;
+            List <double> lastintensities = new List<double> { };
+            int ALEXcount = 0;
+            bool isignore = false;
+            int i;
             while (m_focusing)
             {
+                if (m_ignoredarkframe != 0)
+                {
+                    lastintensities.Add(m_frameintensity);
+                    if (ALEXcount == m_ignoredarkframe - 1)
+                        lastintensities.RemoveAt(0);
+                    else
+                        ALEXcount++;
+                }
 
-                lastintensity = m_frameintensity;
                 fom = CalcFOM();
-
-                if (m_ignoredarkframe && (lastintensity > m_frameintensity))
-                    continue;
-
+                
+                if (m_ignoredarkframe != 0)
+                {
+                    isignore = false;
+                    foreach (double lastintensity in lastintensities)
+                    {
+                        if (lastintensity > m_frameintensity)
+                        {
+                            isignore = true;
+                            break;
+                        }
+                    }
+                    if (isignore) continue;
+                }
                 if (Math.Abs(fom) > 4 * m_stdev)
                 {
                     distdelta = -fom * m_fitvals[1] / 2;
