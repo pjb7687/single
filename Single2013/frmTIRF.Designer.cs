@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend28 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -144,7 +144,23 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.ComboADCMirrorNum = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.ButtonADCIncreasePhi = new System.Windows.Forms.Button();
+            this.ButtonADCDecreasePhi = new System.Windows.Forms.Button();
+            this.ButtonADCIncreaseTheta = new System.Windows.Forms.Button();
+            this.ButtonADCDecreaseTheta = new System.Windows.Forms.Button();
+            this.LabelADCCurrentAngle = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.TextBoxADCPiezomirrorStepSize = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.LabelADCCurrentPos = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -189,22 +205,11 @@
             this.OpenCameraButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.LabelADCCurrentAngle = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.TextBoxADCPiezomirrorStepSize = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.ButtonADCDecreaseTheta = new System.Windows.Forms.Button();
-            this.ButtonADCIncreaseTheta = new System.Windows.Forms.Button();
-            this.ButtonADCIncreasePhi = new System.Windows.Forms.Button();
-            this.ButtonADCDecreasePhi = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
-            this.ComboADCMirrorNum = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ComboBoxImageRotation = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.TextBoxColortablePath = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -249,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -283,7 +289,6 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -343,12 +348,12 @@
             this.GroupBoxDAQSettings.Controls.Add(this.label8);
             this.GroupBoxDAQSettings.Controls.Add(this.label7);
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 281);
+            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 340);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
             this.GroupBoxDAQSettings.Size = new System.Drawing.Size(269, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
             this.GroupBoxDAQSettings.TabStop = false;
-            this.GroupBoxDAQSettings.Text = "DAQ && CounterBoard";
+            this.GroupBoxDAQSettings.Text = "DAQ && Counterboard";
             // 
             // ListViewCounters
             // 
@@ -490,15 +495,16 @@
             this.ButtonAddLaser.TabIndex = 8;
             this.ButtonAddLaser.Text = "Add";
             this.ButtonAddLaser.UseVisualStyleBackColor = true;
+            this.ButtonAddLaser.Click += new System.EventHandler(this.ButtonAddLaser_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(17, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 12);
+            this.label8.Size = new System.Drawing.Size(89, 12);
             this.label8.TabIndex = 4;
-            this.label8.Text = "CounterBoards :";
+            this.label8.Text = "Counterboard :";
             // 
             // label7
             // 
@@ -511,14 +517,19 @@
             // 
             // GroupBoxCCDSettings
             // 
+            this.GroupBoxCCDSettings.Controls.Add(this.label36);
             this.GroupBoxCCDSettings.Controls.Add(this.label25);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDCameraIndex);
+            this.GroupBoxCCDSettings.Controls.Add(this.TextBoxColortablePath);
             this.GroupBoxCCDSettings.Controls.Add(this.label24);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingHeight);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingWidth);
             this.GroupBoxCCDSettings.Controls.Add(this.label15);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxCCDModel);
+            this.GroupBoxCCDSettings.Controls.Add(this.label37);
+            this.GroupBoxCCDSettings.Controls.Add(this.label35);
             this.GroupBoxCCDSettings.Controls.Add(this.label13);
+            this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxImageRotation);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxZoomMode);
             this.GroupBoxCCDSettings.Controls.Add(this.ButtonSaveCCDSettings);
             this.GroupBoxCCDSettings.Controls.Add(this.label9);
@@ -527,7 +538,7 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 179);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 238);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
@@ -614,11 +625,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(39, 18);
+            this.label13.Location = new System.Drawing.Point(35, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 12);
+            this.label13.Size = new System.Drawing.Size(78, 12);
             this.label13.TabIndex = 6;
-            this.label13.Text = "CCD Model:";
+            this.label13.Text = "CCD Model :";
             // 
             // ComboBoxZoomMode
             // 
@@ -639,7 +650,7 @@
             // 
             this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 147);
+            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 206);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
@@ -1034,45 +1045,45 @@
             // 
             // ChartAFFOM
             // 
-            chartArea27.AxisX.LabelStyle.Format = "0.##";
-            chartArea27.AxisY.LabelStyle.Format = "0.##";
-            chartArea27.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea27);
+            chartArea3.AxisX.LabelStyle.Format = "0.##";
+            chartArea3.AxisY.LabelStyle.Format = "0.##";
+            chartArea3.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea3);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend27.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend27);
+            legend3.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend3);
             this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series40.ChartArea = "ChartArea1";
-            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series40.Legend = "Legend1";
-            series40.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series40);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series4.Legend = "Legend1";
+            series4.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series4);
             this.ChartAFFOM.Size = new System.Drawing.Size(363, 225);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea28.AxisX.LabelStyle.Format = "0.##";
-            chartArea28.AxisY.LabelStyle.Format = "0.##";
-            chartArea28.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea28);
+            chartArea4.AxisX.LabelStyle.Format = "0.##";
+            chartArea4.AxisY.LabelStyle.Format = "0.##";
+            chartArea4.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea4);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend28.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend28);
+            legend4.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend4);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series41.ChartArea = "ChartArea1";
-            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series41.Legend = "Legend1";
-            series41.Name = "FOM";
-            series42.ChartArea = "ChartArea1";
-            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series42.Legend = "Legend1";
-            series42.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series41);
-            this.ChartAFDistance.Series.Add(series42);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series5.Legend = "Legend1";
+            series5.Name = "FOM";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series5);
+            this.ChartAFDistance.Series.Add(series6);
             this.ChartAFDistance.Size = new System.Drawing.Size(362, 225);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1558,6 +1569,130 @@
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox13.Controls.Add(this.ComboADCMirrorNum);
+            this.groupBox13.Controls.Add(this.label34);
+            this.groupBox13.Controls.Add(this.ButtonADCIncreasePhi);
+            this.groupBox13.Controls.Add(this.ButtonADCDecreasePhi);
+            this.groupBox13.Controls.Add(this.ButtonADCIncreaseTheta);
+            this.groupBox13.Controls.Add(this.ButtonADCDecreaseTheta);
+            this.groupBox13.Controls.Add(this.LabelADCCurrentAngle);
+            this.groupBox13.Controls.Add(this.label31);
+            this.groupBox13.Controls.Add(this.TextBoxADCPiezomirrorStepSize);
+            this.groupBox13.Controls.Add(this.label32);
+            this.groupBox13.Controls.Add(this.label33);
+            this.groupBox13.Location = new System.Drawing.Point(12, 176);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(426, 134);
+            this.groupBox13.TabIndex = 8;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Manual Control - Piezomirrors";
+            // 
+            // ComboADCMirrorNum
+            // 
+            this.ComboADCMirrorNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboADCMirrorNum.FormattingEnabled = true;
+            this.ComboADCMirrorNum.Location = new System.Drawing.Point(83, 26);
+            this.ComboADCMirrorNum.Name = "ComboADCMirrorNum";
+            this.ComboADCMirrorNum.Size = new System.Drawing.Size(122, 20);
+            this.ComboADCMirrorNum.TabIndex = 19;
+            this.ComboADCMirrorNum.SelectedIndexChanged += new System.EventHandler(this.ComboADCMirrorNum_SelectedIndexChanged);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(25, 29);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(52, 12);
+            this.label34.TabIndex = 18;
+            this.label34.Text = "Mirror #:";
+            // 
+            // ButtonADCIncreasePhi
+            // 
+            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(292, 27);
+            this.ButtonADCIncreasePhi.Name = "ButtonADCIncreasePhi";
+            this.ButtonADCIncreasePhi.Size = new System.Drawing.Size(40, 40);
+            this.ButtonADCIncreasePhi.TabIndex = 16;
+            this.ButtonADCIncreasePhi.Text = "▲";
+            this.ButtonADCIncreasePhi.UseVisualStyleBackColor = true;
+            this.ButtonADCIncreasePhi.Click += new System.EventHandler(this.ButtonADCIncreasePhi_Click);
+            // 
+            // ButtonADCDecreasePhi
+            // 
+            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(292, 73);
+            this.ButtonADCDecreasePhi.Name = "ButtonADCDecreasePhi";
+            this.ButtonADCDecreasePhi.Size = new System.Drawing.Size(40, 40);
+            this.ButtonADCDecreasePhi.TabIndex = 17;
+            this.ButtonADCDecreasePhi.Text = "▼";
+            this.ButtonADCDecreasePhi.UseVisualStyleBackColor = true;
+            this.ButtonADCDecreasePhi.Click += new System.EventHandler(this.ButtonADCDecreasePhi_Click);
+            // 
+            // ButtonADCIncreaseTheta
+            // 
+            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(347, 49);
+            this.ButtonADCIncreaseTheta.Name = "ButtonADCIncreaseTheta";
+            this.ButtonADCIncreaseTheta.Size = new System.Drawing.Size(40, 40);
+            this.ButtonADCIncreaseTheta.TabIndex = 10;
+            this.ButtonADCIncreaseTheta.Text = "▶";
+            this.ButtonADCIncreaseTheta.UseVisualStyleBackColor = true;
+            this.ButtonADCIncreaseTheta.Click += new System.EventHandler(this.ButtonADCIncreaseTheta_Click);
+            // 
+            // ButtonADCDecreaseTheta
+            // 
+            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(236, 49);
+            this.ButtonADCDecreaseTheta.Name = "ButtonADCDecreaseTheta";
+            this.ButtonADCDecreaseTheta.Size = new System.Drawing.Size(40, 40);
+            this.ButtonADCDecreaseTheta.TabIndex = 15;
+            this.ButtonADCDecreaseTheta.Text = "◀";
+            this.ButtonADCDecreaseTheta.UseVisualStyleBackColor = true;
+            this.ButtonADCDecreaseTheta.Click += new System.EventHandler(this.ButtonADCDecreaseTheta_Click);
+            // 
+            // LabelADCCurrentAngle
+            // 
+            this.LabelADCCurrentAngle.Location = new System.Drawing.Point(126, 90);
+            this.LabelADCCurrentAngle.Name = "LabelADCCurrentAngle";
+            this.LabelADCCurrentAngle.Size = new System.Drawing.Size(95, 25);
+            this.LabelADCCurrentAngle.TabIndex = 14;
+            this.LabelADCCurrentAngle.Text = "θ:  0.0 mrad\r\nφ:  0.0 mrad";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(27, 90);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(96, 12);
+            this.label31.TabIndex = 13;
+            this.label31.Text = "Current Angle of";
+            // 
+            // TextBoxADCPiezomirrorStepSize
+            // 
+            this.TextBoxADCPiezomirrorStepSize.Location = new System.Drawing.Point(83, 56);
+            this.TextBoxADCPiezomirrorStepSize.Name = "TextBoxADCPiezomirrorStepSize";
+            this.TextBoxADCPiezomirrorStepSize.Size = new System.Drawing.Size(82, 21);
+            this.TextBoxADCPiezomirrorStepSize.TabIndex = 12;
+            this.TextBoxADCPiezomirrorStepSize.Text = "0.05";
+            this.TextBoxADCPiezomirrorStepSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(171, 59);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(34, 12);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "mrad";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(14, 59);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(63, 12);
+            this.label33.TabIndex = 10;
+            this.label33.Text = "Step Size:";
+            // 
             // groupBox12
             // 
             this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1573,6 +1708,42 @@
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Control Panel";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(37, 131);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(109, 12);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "Reference Points :";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(320, 199);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(269, 67);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Stop";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(39, 199);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(269, 67);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Start";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(39, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(550, 62);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Select Reference Dots";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
@@ -1915,6 +2086,8 @@
             0,
             0,
             0});
+            this.NUDStopFrame.ValueChanged += new System.EventHandler(this.NUDStopFrame_ValueChanged);
+            this.NUDStopFrame.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUDStopFrame_KeyPress);
             // 
             // CheckBoxAutoStop
             // 
@@ -2169,165 +2342,55 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
             // 
-            // groupBox13
+            // label35
             // 
-            this.groupBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox13.Controls.Add(this.ComboADCMirrorNum);
-            this.groupBox13.Controls.Add(this.label34);
-            this.groupBox13.Controls.Add(this.ButtonADCIncreasePhi);
-            this.groupBox13.Controls.Add(this.ButtonADCDecreasePhi);
-            this.groupBox13.Controls.Add(this.ButtonADCIncreaseTheta);
-            this.groupBox13.Controls.Add(this.ButtonADCDecreaseTheta);
-            this.groupBox13.Controls.Add(this.LabelADCCurrentAngle);
-            this.groupBox13.Controls.Add(this.label31);
-            this.groupBox13.Controls.Add(this.TextBoxADCPiezomirrorStepSize);
-            this.groupBox13.Controls.Add(this.label32);
-            this.groupBox13.Controls.Add(this.label33);
-            this.groupBox13.Location = new System.Drawing.Point(12, 176);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(426, 134);
-            this.groupBox13.TabIndex = 8;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Manual Control - Piezomirrors";
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(55, 150);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(58, 12);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "Rotation :";
             // 
-            // LabelADCCurrentAngle
+            // ComboBoxImageRotation
             // 
-            this.LabelADCCurrentAngle.Location = new System.Drawing.Point(126, 90);
-            this.LabelADCCurrentAngle.Name = "LabelADCCurrentAngle";
-            this.LabelADCCurrentAngle.Size = new System.Drawing.Size(95, 25);
-            this.LabelADCCurrentAngle.TabIndex = 14;
-            this.LabelADCCurrentAngle.Text = "θ:  0.0 mrad\r\nφ:  0.0 mrad";
+            this.ComboBoxImageRotation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxImageRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxImageRotation.FormattingEnabled = true;
+            this.ComboBoxImageRotation.Items.AddRange(new object[] {
+            "0",
+            "90",
+            "180",
+            "270"});
+            this.ComboBoxImageRotation.Location = new System.Drawing.Point(123, 147);
+            this.ComboBoxImageRotation.Name = "ComboBoxImageRotation";
+            this.ComboBoxImageRotation.Size = new System.Drawing.Size(95, 20);
+            this.ComboBoxImageRotation.TabIndex = 5;
             // 
-            // label31
+            // label36
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(27, 90);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(96, 12);
-            this.label31.TabIndex = 13;
-            this.label31.Text = "Current Angle of";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(224, 150);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(31, 12);
+            this.label36.TabIndex = 13;
+            this.label36.Text = "Deg.";
             // 
-            // TextBoxADCPiezomirrorStepSize
+            // label37
             // 
-            this.TextBoxADCPiezomirrorStepSize.Location = new System.Drawing.Point(83, 56);
-            this.TextBoxADCPiezomirrorStepSize.Name = "TextBoxADCPiezomirrorStepSize";
-            this.TextBoxADCPiezomirrorStepSize.Size = new System.Drawing.Size(82, 21);
-            this.TextBoxADCPiezomirrorStepSize.TabIndex = 12;
-            this.TextBoxADCPiezomirrorStepSize.Text = "0.05";
-            this.TextBoxADCPiezomirrorStepSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(14, 178);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(99, 12);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "Colortable Path :";
             // 
-            // label32
+            // TextBoxColortablePath
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(171, 59);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(34, 12);
-            this.label32.TabIndex = 11;
-            this.label32.Text = "mrad";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(14, 59);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(63, 12);
-            this.label33.TabIndex = 10;
-            this.label33.Text = "Step Size:";
-            // 
-            // ButtonADCDecreaseTheta
-            // 
-            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(236, 49);
-            this.ButtonADCDecreaseTheta.Name = "ButtonADCDecreaseTheta";
-            this.ButtonADCDecreaseTheta.Size = new System.Drawing.Size(40, 40);
-            this.ButtonADCDecreaseTheta.TabIndex = 15;
-            this.ButtonADCDecreaseTheta.Text = "◀";
-            this.ButtonADCDecreaseTheta.UseVisualStyleBackColor = true;
-            this.ButtonADCDecreaseTheta.Click += new System.EventHandler(this.ButtonADCDecreaseTheta_Click);
-            // 
-            // ButtonADCIncreaseTheta
-            // 
-            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(347, 49);
-            this.ButtonADCIncreaseTheta.Name = "ButtonADCIncreaseTheta";
-            this.ButtonADCIncreaseTheta.Size = new System.Drawing.Size(40, 40);
-            this.ButtonADCIncreaseTheta.TabIndex = 10;
-            this.ButtonADCIncreaseTheta.Text = "▶";
-            this.ButtonADCIncreaseTheta.UseVisualStyleBackColor = true;
-            this.ButtonADCIncreaseTheta.Click += new System.EventHandler(this.ButtonADCIncreaseTheta_Click);
-            // 
-            // ButtonADCIncreasePhi
-            // 
-            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(292, 27);
-            this.ButtonADCIncreasePhi.Name = "ButtonADCIncreasePhi";
-            this.ButtonADCIncreasePhi.Size = new System.Drawing.Size(40, 40);
-            this.ButtonADCIncreasePhi.TabIndex = 16;
-            this.ButtonADCIncreasePhi.Text = "▲";
-            this.ButtonADCIncreasePhi.UseVisualStyleBackColor = true;
-            this.ButtonADCIncreasePhi.Click += new System.EventHandler(this.ButtonADCIncreasePhi_Click);
-            // 
-            // ButtonADCDecreasePhi
-            // 
-            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(292, 73);
-            this.ButtonADCDecreasePhi.Name = "ButtonADCDecreasePhi";
-            this.ButtonADCDecreasePhi.Size = new System.Drawing.Size(40, 40);
-            this.ButtonADCDecreasePhi.TabIndex = 17;
-            this.ButtonADCDecreasePhi.Text = "▼";
-            this.ButtonADCDecreasePhi.UseVisualStyleBackColor = true;
-            this.ButtonADCDecreasePhi.Click += new System.EventHandler(this.ButtonADCDecreasePhi_Click);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(25, 29);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(52, 12);
-            this.label34.TabIndex = 18;
-            this.label34.Text = "Mirror #:";
-            // 
-            // ComboADCMirrorNum
-            // 
-            this.ComboADCMirrorNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboADCMirrorNum.FormattingEnabled = true;
-            this.ComboADCMirrorNum.Location = new System.Drawing.Point(83, 26);
-            this.ComboADCMirrorNum.Name = "ComboADCMirrorNum";
-            this.ComboADCMirrorNum.Size = new System.Drawing.Size(122, 20);
-            this.ComboADCMirrorNum.TabIndex = 19;
-            this.ComboADCMirrorNum.SelectedIndexChanged += new System.EventHandler(this.ComboADCMirrorNum_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(550, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select Reference Dots";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(39, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 67);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(320, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(269, 67);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Stop";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(37, 131);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(109, 12);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "Reference Points :";
+            this.TextBoxColortablePath.Location = new System.Drawing.Point(123, 175);
+            this.TextBoxColortablePath.Name = "TextBoxColortablePath";
+            this.TextBoxColortablePath.Size = new System.Drawing.Size(132, 21);
+            this.TextBoxColortablePath.TabIndex = 0;
             // 
             // frmTIRF
             // 
@@ -2391,6 +2454,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -2431,8 +2496,6 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2609,6 +2672,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox ComboBoxImageRotation;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox TextBoxColortablePath;
 
     }
 }

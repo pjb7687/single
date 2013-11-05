@@ -178,6 +178,29 @@ namespace SMBdevices
             AndorCCD.SetExposureTime((float)exptime);
         }
 
+        public void SetRotation(int rotation)
+        {
+            switch (rotation)
+            {
+                case 0: // 0 Degree
+                    AndorCCD.SetImageFlip(0, 0);
+                    AndorCCD.SetImageRotate(0);
+                    break;
+                case 1: // 90 Degree
+                    AndorCCD.SetImageFlip(0, 0);
+                    AndorCCD.SetImageRotate(1);
+                    break;
+                case 2: // 180 Degree
+                    AndorCCD.SetImageFlip(1, 1);
+                    AndorCCD.SetImageRotate(0);
+                    break;
+                case 3: // 270 Degree
+                    AndorCCD.SetImageFlip(0, 0);
+                    AndorCCD.SetImageRotate(2);
+                    break;
+            }
+        }
+
         public void GetImage(int[] imagebuf)
         {
             switch (m_CCDType)

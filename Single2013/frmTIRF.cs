@@ -166,11 +166,14 @@ namespace Single2013
             NUDImagingWidth.Value = Properties.Settings.Default.ImagingWidth;
             NUDImagingHeight.Value = Properties.Settings.Default.ImagingHeight;
             NUDCameraIndex.Value = Properties.Settings.Default.CameraIndex;
+            ComboBoxImageRotation.SelectedIndex = Properties.Settings.Default.RotationIndex;
+            TextBoxColortablePath.Text = Properties.Settings.Default.Colortable;
 
             if (m_ccd != null) m_ccd.Dispose();
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, Properties.Settings.Default.CameraIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetRange((int)NUDImagingWidth.Value, (int)NUDImagingHeight.Value);
+            m_ccd.SetRotation(Properties.Settings.Default.RotationIndex);
             m_ccd.SetTemp(-85);
 
             switch (ComboBoxZoomMode.SelectedIndex)
@@ -518,6 +521,16 @@ namespace Single2013
                 m_imgdrawer.m_autostopframenum = 0;
         }
 
+        private void NUDStopFrame_ValueChanged(object sender, EventArgs e)
+        {
+            CheckBoxAutoStop.Checked = false;
+        }
+
+        private void NUDStopFrame_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckBoxAutoStop.Checked = false;
+        }
+
         private void CheckBoxShowGuidelines_CheckedChanged(object sender, EventArgs e)
         {
             m_imgdrawer.ToggleGuidelines(CheckBoxShowGuidelines.Checked);
@@ -543,9 +556,8 @@ namespace Single2013
             frm.static2 = "Port/Channel: ";
             frm.static3 = "Timebase: ";
             frm.static4 = "Trigger: ";
-            if (frm.ShowDialog() != DialogResult.OK) return;
-            
-            ListViewLasers.Items.Add(new ListViewItem(new string[] { frm.text1, frm.text2, frm.text3, frm.text4 }));
+            if (frm.ShowDialog() == DialogResult.OK)            
+                ListViewCounters.Items.Add(new ListViewItem(new string[] { frm.text1, frm.text2, frm.text3, frm.text4 }));
         }
 
         private void ButtonModifyLaser_Click(object sender, EventArgs e)
@@ -619,6 +631,8 @@ namespace Single2013
             Properties.Settings.Default.ImagingWidth = (int)NUDImagingWidth.Value;
             Properties.Settings.Default.ImagingHeight = (int)NUDImagingHeight.Value;
             Properties.Settings.Default.CameraIndex = (int)NUDCameraIndex.Value;
+            Properties.Settings.Default.RotationIndex = (int)ComboBoxImageRotation.SelectedIndex;
+            Properties.Settings.Default.Colortable = TextBoxColortablePath.Text;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();
@@ -899,7 +913,5 @@ namespace Single2013
         }
         
         #endregion
-
-
     }
 }

@@ -105,7 +105,6 @@ namespace Single2013
             List <double> lastintensities = new List<double> { };
             int ALEXcount = 0;
             bool isignore = false;
-            int i;
             while (m_focusing)
             {
                 if (m_ignoredarkframe != 0)
