@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -1293,7 +1293,7 @@
             this.TabControlModules.Location = new System.Drawing.Point(0, 0);
             this.TabControlModules.Name = "TabControlModules";
             this.TabControlModules.SelectedIndex = 0;
-            this.TabControlModules.Size = new System.Drawing.Size(1101, 447);
+            this.TabControlModules.Size = new System.Drawing.Size(1101, 450);
             this.TabControlModules.TabIndex = 0;
             // 
             // tabPage3
@@ -1304,7 +1304,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1093, 421);
+            this.tabPage3.Size = new System.Drawing.Size(1093, 424);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1360,45 +1360,45 @@
             // 
             // ChartAFFOM
             // 
-            chartArea11.AxisX.LabelStyle.Format = "0.##";
-            chartArea11.AxisY.LabelStyle.Format = "0.##";
-            chartArea11.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea11);
+            chartArea1.AxisX.LabelStyle.Format = "0.##";
+            chartArea1.AxisY.LabelStyle.Format = "0.##";
+            chartArea1.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea1);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend11.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend11);
+            legend1.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend1);
             this.ChartAFFOM.Location = new System.Drawing.Point(377, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series16.Legend = "Legend1";
-            series16.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series16);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Legend = "Legend1";
+            series1.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series1);
             this.ChartAFFOM.Size = new System.Drawing.Size(368, 244);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea12.AxisX.LabelStyle.Format = "0.##";
-            chartArea12.AxisY.LabelStyle.Format = "0.##";
-            chartArea12.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea12);
+            chartArea2.AxisX.LabelStyle.Format = "0.##";
+            chartArea2.AxisY.LabelStyle.Format = "0.##";
+            chartArea2.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea2);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend12.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend12);
+            legend2.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend2);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series17.Legend = "Legend1";
-            series17.Name = "FOM";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series18.Legend = "Legend1";
-            series18.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series17);
-            this.ChartAFDistance.Series.Add(series18);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "FOM";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series2);
+            this.ChartAFDistance.Series.Add(series3);
             this.ChartAFDistance.Size = new System.Drawing.Size(368, 244);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1471,7 +1471,6 @@
             // 
             // ButtonAFSave
             // 
-            this.ButtonAFSave.Enabled = false;
             this.ButtonAFSave.Location = new System.Drawing.Point(556, 47);
             this.ButtonAFSave.Name = "ButtonAFSave";
             this.ButtonAFSave.Size = new System.Drawing.Size(185, 22);
@@ -1482,7 +1481,6 @@
             // 
             // ButtonAFLoad
             // 
-            this.ButtonAFLoad.Enabled = false;
             this.ButtonAFLoad.Location = new System.Drawing.Point(669, 20);
             this.ButtonAFLoad.Name = "ButtonAFLoad";
             this.ButtonAFLoad.Size = new System.Drawing.Size(72, 22);
@@ -1608,7 +1606,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1093, 421);
+            this.tabPage4.Size = new System.Drawing.Size(1093, 424);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1628,7 +1626,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox8);
-            this.splitContainer6.Size = new System.Drawing.Size(1087, 415);
+            this.splitContainer6.Size = new System.Drawing.Size(1087, 418);
             this.splitContainer6.SplitterDistance = 499;
             this.splitContainer6.TabIndex = 0;
             this.splitContainer6.TabStop = false;
@@ -1649,8 +1647,8 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer7.Size = new System.Drawing.Size(499, 415);
-            this.splitContainer7.SplitterDistance = 200;
+            this.splitContainer7.Size = new System.Drawing.Size(499, 418);
+            this.splitContainer7.SplitterDistance = 203;
             this.splitContainer7.TabIndex = 1;
             this.splitContainer7.TabStop = false;
             // 
@@ -1662,7 +1660,7 @@
             this.groupBox9.Controls.Add(this.ButtonAFLFindDevices);
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(499, 197);
+            this.groupBox9.Size = new System.Drawing.Size(499, 200);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Syringe Pumps";
@@ -1681,7 +1679,7 @@
             this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
             this.ListViewAFLPumps.MultiSelect = false;
             this.ListViewAFLPumps.Name = "ListViewAFLPumps";
-            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 161);
+            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 164);
             this.ListViewAFLPumps.TabIndex = 9;
             this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
@@ -1926,7 +1924,7 @@
             this.groupBox8.Controls.Add(this.ListViewAFLRules);
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(584, 412);
+            this.groupBox8.Size = new System.Drawing.Size(584, 415);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
@@ -1936,7 +1934,7 @@
             this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAFLEnable.Enabled = false;
-            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 478);
+            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 481);
             this.ButtonAFLEnable.Name = "ButtonAFLEnable";
             this.ButtonAFLEnable.Size = new System.Drawing.Size(568, 28);
             this.ButtonAFLEnable.TabIndex = 4;
@@ -1947,7 +1945,7 @@
             // ButtonAFLRemoveRules
             // 
             this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(414, 432);
+            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(414, 435);
             this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
             this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
             this.ButtonAFLRemoveRules.TabIndex = 3;
@@ -1974,7 +1972,7 @@
             this.ListViewAFLRules.Location = new System.Drawing.Point(7, 20);
             this.ListViewAFLRules.MultiSelect = false;
             this.ListViewAFLRules.Name = "ListViewAFLRules";
-            this.ListViewAFLRules.Size = new System.Drawing.Size(568, 386);
+            this.ListViewAFLRules.Size = new System.Drawing.Size(568, 389);
             this.ListViewAFLRules.TabIndex = 0;
             this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
@@ -2014,7 +2012,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1093, 421);
+            this.tabPage1.Size = new System.Drawing.Size(1093, 424);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2030,7 +2028,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1093, 421);
+            this.tabPage7.Size = new System.Drawing.Size(1093, 424);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
