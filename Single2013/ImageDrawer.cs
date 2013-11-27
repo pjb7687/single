@@ -30,7 +30,7 @@ namespace Single2013
         private bool m_drawflag = false;
         private Thread m_drawingThread;
         private PictureBox m_pb;
-        
+
         private frmTIRF m_frm;
         public bool m_filming = false;
 
@@ -51,7 +51,8 @@ namespace Single2013
         public List<string> m_autoflowcommands = new List<string>();
 
         private bool m_guidelines;
-        
+        public int[,] ADCCursorXYs = new int[3, 2] {{-1, -1}, {-1, -1}, {-1, -1}};
+
         private void LoadColors(string path)
         {
             int i;
@@ -65,7 +66,7 @@ namespace Single2013
                 line = sr.ReadLine();
                 string[] words = line.Split(' ');
                 n = 0;
-                for (i=0; i<words.Length; i++)
+                for (i = 0; i < words.Length; i++)
                 {
                     if (words[i] != "")
                         colortable[counter, n++] = Convert.ToUInt32(words[i].Trim());
@@ -105,11 +106,11 @@ namespace Single2013
                     {
                         if (m_buf[j * m_ccd.m_imagewidth + i] > m_max)
                             m_max = m_buf[j * m_ccd.m_imagewidth + i]; //search the max intensity
-                        if (m_buf[j * m_ccd.m_imagewidth  + i] < m_min[k])
+                        if (m_buf[j * m_ccd.m_imagewidth + i] < m_min[k])
                             m_min[k] = m_buf[j * m_ccd.m_imagewidth + i]; //search the min intensity 
                     }
                 }
-            }            
+            }
         }
 
         private void DrawingThread()
@@ -122,81 +123,116 @@ namespace Single2013
                 Thread.Sleep(0);
                 try
                 {
-                    m_ccd.m_gettingimage = true;
                     m_ccd.GetImage(m_buf);
-                    m_ccd.m_gettingimage = false;
+                }
+                catch { 
+                    m_drawflag = false;
+                    return;
+                }
 
-                    if (m_auto)
+                if (m_auto)
+                {
+                    // Direct insertion of the values in a thread doesn't work.
+                    // Instead, we should use 'Invoke' method to put the values to the controls...
+                    CalMaxMin();
+                    try
                     {
-                        // Direct insertion of the values in a thread doesn't work.
-                        // Instead, we should use 'Invoke' method to put the values to the controls...
-                        CalMaxMin();
                         m_frm.Invoke(new frmTIRF.updateAutoScaleInfoDelegate(m_frm.updateAutoScaleInfo), new object[] { m_max, m_min });
-                        m_subs = m_min;
-                        m_scaler = ((double)(m_max - m_min[0])) / 256;
-                        if (m_scaler < 1) m_scaler = 1;
-                    }
+                    } catch {}
+                    m_subs = m_min;
+                    m_scaler = ((double)(m_max - m_min[0])) / 256;
+                    if (m_scaler < 1) m_scaler = 1;
+                }
 
-                    dumparray_sem.WaitOne();
-                    //displayarray_sem.WaitOne();
-                    for (j = 0; j < m_ccd.m_imageheight; j++)
+                dumparray_sem.WaitOne();
+                //displayarray_sem.WaitOne();
+                for (j = 0; j < m_ccd.m_imageheight; j++)
+                {
+                    for (k = 0; k < m_frm.m_chanum; k++)
                     {
-                        for (k = 0; k < m_frm.m_chanum; k++)
+                        for (i = k * m_ccd.m_imagewidth / m_frm.m_chanum; i < (k + 1) * m_ccd.m_imagewidth / m_frm.m_chanum; i++)
                         {
-                            for (i = k * m_ccd.m_imagewidth / m_frm.m_chanum; i < (k + 1) * m_ccd.m_imagewidth / m_frm.m_chanum; i++)
-                            {
-                                t = high - (j * m_ccd.m_imagewidth + (m_ccd.m_imagewidth - i));
-                                dump_array[j, i] = (byte)(((m_buf[t] - m_subs[k]) / m_scaler));
-                                if (m_buf[t] - m_subs[k] < 0) dump_array[j, i] = 0;
-                                else if ((m_buf[t] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
-                                display_array[j * m_ccd.m_imagewidth + i] = ColorMaker(dump_array[j, i]);
-                            }
+                            t = high - (j * m_ccd.m_imagewidth + (m_ccd.m_imagewidth - i));
+                            dump_array[j, i] = (byte)(((m_buf[t] - m_subs[k]) / m_scaler));
+                            if (m_buf[t] - m_subs[k] < 0) dump_array[j, i] = 0;
+                            else if ((m_buf[t] - m_subs[k]) / m_scaler > 255) dump_array[j, i] = 255;
+                            display_array[j * m_ccd.m_imagewidth + i] = ColorMaker(dump_array[j, i]);
                         }
-                    }
-
-                    if (m_guidelines)
-                    {
-                        for (k = 0; k < m_frm.m_chanum; k++)
-                        {
-                            for (j = 0; j < m_ccd.m_imageheight; j++)
-                            {
-                                display_array[m_ccd.m_imagewidth * j + m_ccd.m_imagewidth / m_frm.m_chanum * k] = 166 + 97 * 256 + 243 * 256 * 256;
-                            }
-                        }
-                    }
-
-                    //displayarray_sem.Release();
-                    AFFlag = false;
-
-                    if (m_filming)
-                    {
-                        m_framenum++;
-                        m_frm.Invoke(new frmTIRF.updateFilmingInfoDelegate(m_frm.updateFilmingInfo), new object[] { m_framenum });
-                        for (i = 0; i < m_ccd.m_imageheight; i++)
-                            for (j = 0; j < m_ccd.m_imagewidth; j++)
-                                m_bw.Write(dump_array[i, j]);
-
-                        if (m_autostopframenum > 0 && m_autostopframenum == m_framenum)
-                            m_frm.Invoke(new frmTIRF.AutoStopDelegate(m_frm.AutoStop), new object[] { });
-                    }
-                    dumparray_sem.Release();
-
-                    if (m_framenum % 1 == 0)
-                    {
-                        Bitmap bitmap;
-                        //displayarray_sem.WaitOne();
-                        unsafe
-                        {
-                            fixed (int* intPtr = &display_array[0])
-                            {
-                                bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
-                            }
-                        }
-                        m_pb.Image = bitmap;
-                        //displayarray_sem.Release();
                     }
                 }
-                catch { }
+
+                if (m_guidelines)
+                {
+                    for (k = 0; k < m_frm.m_chanum; k++)
+                    {
+                        for (j = 0; j < m_ccd.m_imageheight; j++)
+                        {
+                            display_array[m_ccd.m_imagewidth * j + m_ccd.m_imagewidth / m_frm.m_chanum * k] = 166 + 97 * 256 + 243 * 256 * 256;
+                        }
+                    }
+                }
+
+                if (m_frm.cursorXY[0] != -1 && m_frm.cursorXY[1] != -1)
+                {
+                    for (k = m_frm.cursorXY[0] - 5; k < m_frm.cursorXY[0] + 6; k++)
+                    {
+                        display_array[m_ccd.m_imagewidth * k + m_frm.cursorXY[1] + 5] = 255 + 255 * 256 + 255 * 256 * 256;
+                        display_array[m_ccd.m_imagewidth * k + m_frm.cursorXY[1] - 5] = 255 + 255 * 256 + 255 * 256 * 256;
+                    }
+                    for (k = m_frm.cursorXY[1] - 5; k < m_frm.cursorXY[1] + 6; k++)
+                    {
+                        display_array[m_ccd.m_imagewidth * (m_frm.cursorXY[0] + 5) + k] = 255 + 255 * 256 + 255 * 256 * 256;
+                        display_array[m_ccd.m_imagewidth * (m_frm.cursorXY[0] - 5) + k] = 255 + 255 * 256 + 255 * 256 * 256;
+                    }
+                }
+
+                for (j = 0; j < 3; j++)
+                {
+                    if (ADCCursorXYs[j, 0] != -1 && ADCCursorXYs[j, 1] != -1)
+                    {
+                        for (k = ADCCursorXYs[j, 0] - 3; k < ADCCursorXYs[j, 0] + 4; k++)
+                        {
+                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] + 3] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] - 3] = 255 * 256 + 255 * 256 * 256;
+                        }
+                        for (k = ADCCursorXYs[j, 1] - 3; k < ADCCursorXYs[j, 1] + 4; k++)
+                        {
+                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] + 3) + k] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] - 3) + k] = 255 * 256 + 255 * 256 * 256;
+                        }
+                    }
+                }
+
+                //displayarray_sem.Release();
+                AFFlag = false;
+
+                if (m_filming)
+                {
+                    m_framenum++;
+                    m_frm.Invoke(new frmTIRF.updateFilmingInfoDelegate(m_frm.updateFilmingInfo), new object[] { m_framenum });
+                    for (i = 0; i < m_ccd.m_imageheight; i++)
+                        for (j = 0; j < m_ccd.m_imagewidth; j++)
+                            m_bw.Write(dump_array[i, j]);
+
+                    if (m_autostopframenum > 0 && m_autostopframenum == m_framenum)
+                        m_frm.Invoke(new frmTIRF.AutoStopDelegate(m_frm.AutoStop), new object[] { });
+                }
+                dumparray_sem.Release();
+
+                if (m_framenum % 1 == 0)
+                {
+                    Bitmap bitmap;
+                    //displayarray_sem.WaitOne();
+                    unsafe
+                    {
+                        fixed (int* intPtr = &display_array[0])
+                        {
+                            bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
+                        }
+                    }
+                    m_pb.Image = bitmap;
+                    //displayarray_sem.Release();
+                }
             }
         }
 
@@ -213,7 +249,7 @@ namespace Single2013
             m_bw.Close();
             m_filestream.Close();
         }
-        
+
         public ImageDrawer(string colormappath, frmTIRF f, smbCCD ccd)
         {
             m_frm = f;
@@ -236,8 +272,7 @@ namespace Single2013
         ~ImageDrawer()
         {
             m_drawflag = false;
-            if ( m_drawingThread != null ) m_drawingThread.Join();
-
+            if (m_drawingThread != null) m_drawingThread.Join();
         }
 
         public void StartDrawing(PictureBox pb, smbCCD ccd)
@@ -255,11 +290,6 @@ namespace Single2013
         public void StopDrawing()
         {
             m_drawflag = false;
-            try
-            {
-                m_ccd.m_gettingimage = false;
-            }
-            catch { }
         }
 
         public void ToggleGuidelines(bool guidestatus)

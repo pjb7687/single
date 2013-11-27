@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,7 +53,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8C08A294C1E544844438FD3D6A0B07D3DD28B82D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E8398C8D642053752960AA2C5C1E3266941004F7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Single2013_TemporaryKey.pfx</ManifestKeyFile>
@@ -99,6 +99,7 @@
     <Compile Include="frmTIRF.Designer.cs">
       <DependentUpon>frmTIRF.cs</DependentUpon>
     </Compile>
+    <Compile Include="gaussFit.cs" />
     <Compile Include="ImageDrawer.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,7 +125,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="shrcol.tbl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,14 +163,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Atmcd32d.dll" />
-    <Content Include="E7XX_GCS2_DLL.dll" />
-    <Content Include="E7XX_GCS2_DLL_x64.dll" />
-    <Content Include="Madlib.dll" />
-    <Content Include="Madlibx32.dll" />
-    <Content Include="wdapi1010.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

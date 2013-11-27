@@ -118,6 +118,7 @@ namespace SMBdevices
                     break;
                 case pumpType.HARVARD_2000:
                     m_serialport.ReadExisting();
+                    /*
                     if (volume != m_volume)
                     {
                         m_serialport.Write("TGT " + (volume / 1000.0).ToString("0.0000") + "\r");
@@ -138,6 +139,7 @@ namespace SMBdevices
                         m_serialport.ReadChar();
                         m_serialport.ReadExisting();
                     }
+                     */
                     m_serialport.Write("RUN\r");
                     Thread.Sleep(200);
                     break;

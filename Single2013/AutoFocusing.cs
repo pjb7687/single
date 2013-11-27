@@ -13,8 +13,6 @@ namespace Single2013
         private smbStage m_stage;
         private smbCCD m_ccd;
 
-        private int m_selectedchannel;
-
         private frmTIRF m_frm;
         private ImageDrawer m_imgdrawer;
 
@@ -23,14 +21,41 @@ namespace Single2013
         private double m_calibdistdelta = 0.02;
         private double m_stdev;
 
-        private double[] m_fitvals = new double[2];
+        private double[] m_fitvals = new double[2]; // y-intercept and slope
 
+        public int m_selectedchannel;
         public bool m_focusing;
         public int m_ignoredarkframe = 0;
+        public bool m_applyingkalman;
 
         private double m_frameintensity;
 
         private Thread m_focusingThread;
+
+        private double m_kalmanP = 1.0;
+        private double m_kalmanX = 0;
+
+        public void SetCalibration(double slope, double stdev)
+        {
+            m_fitvals[1] = slope;
+            m_stdev = stdev;
+        }
+
+        private double kalmanNext(double fom) {
+            double Q = 1e-5; // process variance
+            double R = 0.01; //  estimate of measurement variance, change to see effect
+
+            // time update
+            double Xminus = m_kalmanX;
+            double Pminus = m_kalmanP + Q;
+
+            // measurement update
+            double K = Pminus/(Pminus+R);
+            m_kalmanX = Xminus+K*(fom-Xminus);
+            m_kalmanP = (1-K)*Pminus;
+
+            return m_kalmanX;
+        }
 
         private double CalcFOM()
         {
@@ -92,10 +117,10 @@ namespace Single2013
             AVGy = SUMy / dataSize;
             AVGx = SUMx / dataSize;
 
-            //slope or a1
+            //slope
             fit_vals[1] = (dataSize * SUMxy - SUMx * SUMy) / (dataSize * SUMxx - SUMx * SUMx);
 
-            //y intercept or a0
+            //y intercept
             fit_vals[0] = AVGy - fit_vals[1] * AVGx;
         }
 
@@ -116,7 +141,14 @@ namespace Single2013
                         ALEXcount++;
                 }
 
-                fom = CalcFOM();
+                if (m_applyingkalman)
+                {
+                    fom = kalmanNext(CalcFOM());
+                } 
+                else
+                {
+                    fom = CalcFOM();
+                }
                 
                 if (m_ignoredarkframe != 0)
                 {

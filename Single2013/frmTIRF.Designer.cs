@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -84,25 +84,61 @@
             this.TempLabel = new System.Windows.Forms.Label();
             this.GetTempButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.NUDChannelNum = new System.Windows.Forms.NumericUpDown();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.TabControlMain = new System.Windows.Forms.TabControl();
+            this.DashBoard = new System.Windows.Forms.TabPage();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.LaserCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ALEXCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.StartFilmingButton = new System.Windows.Forms.Button();
+            this.NUDStopFrame = new System.Windows.Forms.NumericUpDown();
+            this.CheckBoxAutoStop = new System.Windows.Forms.CheckBox();
+            this.GainGroupBox = new System.Windows.Forms.GroupBox();
+            this.CheckBoxShowGuidelines = new System.Windows.Forms.CheckBox();
+            this.TextBoxExptime = new System.Windows.Forms.TextBox();
+            this.TextBoxScaler = new System.Windows.Forms.TextBox();
+            this.CheckBoxAuto = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NUDGain = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SetGainButton = new System.Windows.Forms.Button();
+            this.LabelTime = new System.Windows.Forms.Label();
+            this.CCDWindow = new System.Windows.Forms.PictureBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.LabelFramenum = new System.Windows.Forms.Label();
+            this.OpenCameraButton = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.TabControlModules = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.NUDAFRange = new System.Windows.Forms.NumericUpDown();
-            this.ButtonAFStart = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ComboBoxAFDevices = new System.Windows.Forms.ComboBox();
-            this.ButtonAFCalibration = new System.Windows.Forms.Button();
-            this.ButtonAFConnect = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.LabelAFInfo = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ChartAFFOM = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartAFDistance = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.TextBoxAFStdev = new System.Windows.Forms.TextBox();
+            this.TextBoxAFSlope = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.ButtonAFSave = new System.Windows.Forms.Button();
+            this.ButtonAFLoad = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.NUDAFRange = new System.Windows.Forms.NumericUpDown();
+            this.CheckBoxAFKalman = new System.Windows.Forms.CheckBox();
+            this.ButtonAFStart = new System.Windows.Forms.Button();
             this.CheckBoxAFIgnoreDarkFrame = new System.Windows.Forms.CheckBox();
-            this.LabelAFInfo = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ComboBoxAFDevices = new System.Windows.Forms.ComboBox();
+            this.ButtonAFCalibration = new System.Windows.Forms.Button();
+            this.ButtonAFConnect = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
@@ -141,10 +177,11 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.GroupBoxManualPiezomirrors = new System.Windows.Forms.GroupBox();
             this.ComboADCMirrorNum = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.ButtonADCIncreasePhi = new System.Windows.Forms.Button();
@@ -157,11 +194,14 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.ButtonADCSelectObject = new System.Windows.Forms.Button();
+            this.ButtonADCSelectPinhole2 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.NUDADCPiezomirrorNum = new System.Windows.Forms.NumericUpDown();
+            this.ButtonADCInitialize = new System.Windows.Forms.Button();
+            this.ButtonADCStart = new System.Windows.Forms.Button();
+            this.ButtonADCSelectPinhole1 = new System.Windows.Forms.Button();
+            this.GroupBoxManualNanostage = new System.Windows.Forms.GroupBox();
             this.LabelADCCurrentPos = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.TextBoxADCNanostageStepSize = new System.Windows.Forms.TextBox();
@@ -171,45 +211,6 @@
             this.ButtonADCIncreaseX = new System.Windows.Forms.Button();
             this.ButtonADCIncreaseY = new System.Windows.Forms.Button();
             this.ButtonADCDecreaseY = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.NUDADCPiezomirrorNum = new System.Windows.Forms.NumericUpDown();
-            this.ButtonADCInitialize = new System.Windows.Forms.Button();
-            this.NUDChannelNum = new System.Windows.Forms.NumericUpDown();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.TabControlMain = new System.Windows.Forms.TabControl();
-            this.DashBoard = new System.Windows.Forms.TabPage();
-            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.LaserCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ALEXCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.StartFilmingButton = new System.Windows.Forms.Button();
-            this.NUDStopFrame = new System.Windows.Forms.NumericUpDown();
-            this.CheckBoxAutoStop = new System.Windows.Forms.CheckBox();
-            this.GainGroupBox = new System.Windows.Forms.GroupBox();
-            this.CheckBoxShowGuidelines = new System.Windows.Forms.CheckBox();
-            this.TextBoxExptime = new System.Windows.Forms.TextBox();
-            this.TextBoxScaler = new System.Windows.Forms.TextBox();
-            this.CheckBoxAuto = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.NUDGain = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SetGainButton = new System.Windows.Forms.Button();
-            this.LabelTime = new System.Windows.Forms.Label();
-            this.CCDWindow = new System.Windows.Forms.PictureBox();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.LabelFramenum = new System.Windows.Forms.Label();
-            this.OpenCameraButton = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label35 = new System.Windows.Forms.Label();
-            this.ComboBoxImageRotation = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.TextBoxColortablePath = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -223,42 +224,6 @@
             this.LogGroupBox.SuspendLayout();
             this.TemperatureGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDTemp)).BeginInit();
-            this.TabControlModules.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
-            this.splitContainer6.Panel1.SuspendLayout();
-            this.splitContainer6.Panel2.SuspendLayout();
-            this.splitContainer6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
-            this.splitContainer7.Panel1.SuspendLayout();
-            this.splitContainer7.Panel2.SuspendLayout();
-            this.splitContainer7.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDChannelNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -289,6 +254,36 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.TabControlModules.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.GroupBoxManualPiezomirrors.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).BeginInit();
+            this.GroupBoxManualNanostage.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -348,12 +343,12 @@
             this.GroupBoxDAQSettings.Controls.Add(this.label8);
             this.GroupBoxDAQSettings.Controls.Add(this.label7);
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 340);
+            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 281);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
             this.GroupBoxDAQSettings.Size = new System.Drawing.Size(269, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
             this.GroupBoxDAQSettings.TabStop = false;
-            this.GroupBoxDAQSettings.Text = "DAQ && Counterboard";
+            this.GroupBoxDAQSettings.Text = "DAQ && CounterBoard";
             // 
             // ListViewCounters
             // 
@@ -502,9 +497,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(17, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 12);
+            this.label8.Size = new System.Drawing.Size(97, 12);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Counterboard :";
+            this.label8.Text = "CounterBoards :";
             // 
             // label7
             // 
@@ -517,19 +512,14 @@
             // 
             // GroupBoxCCDSettings
             // 
-            this.GroupBoxCCDSettings.Controls.Add(this.label36);
             this.GroupBoxCCDSettings.Controls.Add(this.label25);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDCameraIndex);
-            this.GroupBoxCCDSettings.Controls.Add(this.TextBoxColortablePath);
             this.GroupBoxCCDSettings.Controls.Add(this.label24);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingHeight);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDImagingWidth);
             this.GroupBoxCCDSettings.Controls.Add(this.label15);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxCCDModel);
-            this.GroupBoxCCDSettings.Controls.Add(this.label37);
-            this.GroupBoxCCDSettings.Controls.Add(this.label35);
             this.GroupBoxCCDSettings.Controls.Add(this.label13);
-            this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxImageRotation);
             this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxZoomMode);
             this.GroupBoxCCDSettings.Controls.Add(this.ButtonSaveCCDSettings);
             this.GroupBoxCCDSettings.Controls.Add(this.label9);
@@ -538,7 +528,7 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 238);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 179);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
@@ -625,11 +615,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 18);
+            this.label13.Location = new System.Drawing.Point(39, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 12);
+            this.label13.Size = new System.Drawing.Size(74, 12);
             this.label13.TabIndex = 6;
-            this.label13.Text = "CCD Model :";
+            this.label13.Text = "CCD Model:";
             // 
             // ComboBoxZoomMode
             // 
@@ -650,7 +640,7 @@
             // 
             this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 206);
+            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 147);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
@@ -769,7 +759,7 @@
             this.LogGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LogGroupBox.Location = new System.Drawing.Point(0, 0);
             this.LogGroupBox.Name = "LogGroupBox";
-            this.LogGroupBox.Size = new System.Drawing.Size(270, 552);
+            this.LogGroupBox.Size = new System.Drawing.Size(287, 552);
             this.LogGroupBox.TabIndex = 0;
             this.LogGroupBox.TabStop = false;
             this.LogGroupBox.Text = "Log";
@@ -781,7 +771,7 @@
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LogTextBox.Size = new System.Drawing.Size(264, 532);
+            this.LogTextBox.Size = new System.Drawing.Size(281, 532);
             this.LogTextBox.TabIndex = 0;
             // 
             // TemperatureGroupBox
@@ -848,183 +838,508 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Channel Number";
             // 
+            // NUDChannelNum
+            // 
+            this.NUDChannelNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDChannelNum.Location = new System.Drawing.Point(142, 101);
+            this.NUDChannelNum.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.NUDChannelNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDChannelNum.Name = "NUDChannelNum";
+            this.NUDChannelNum.Size = new System.Drawing.Size(133, 21);
+            this.NUDChannelNum.TabIndex = 6;
+            this.NUDChannelNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUDChannelNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDChannelNum.ValueChanged += new System.EventHandler(this.NUDChannelNum_ValueChanged);
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer4.IsSplitterFixed = true;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.TabControlMain);
+            this.splitContainer4.Panel1MinSize = 300;
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.LogGroupBox);
+            this.splitContainer4.Size = new System.Drawing.Size(588, 552);
+            this.splitContainer4.SplitterDistance = 300;
+            this.splitContainer4.SplitterWidth = 1;
+            this.splitContainer4.TabIndex = 0;
+            this.splitContainer4.TabStop = false;
+            // 
+            // TabControlMain
+            // 
+            this.TabControlMain.Controls.Add(this.DashBoard);
+            this.TabControlMain.Controls.Add(this.DeviceSettings);
+            this.TabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControlMain.Location = new System.Drawing.Point(0, 0);
+            this.TabControlMain.Name = "TabControlMain";
+            this.TabControlMain.SelectedIndex = 0;
+            this.TabControlMain.Size = new System.Drawing.Size(300, 552);
+            this.TabControlMain.TabIndex = 4;
+            // 
+            // DashBoard
+            // 
+            this.DashBoard.AutoScroll = true;
+            this.DashBoard.Controls.Add(this.splitContainer8);
+            this.DashBoard.Controls.Add(this.groupBox7);
+            this.DashBoard.Controls.Add(this.GainGroupBox);
+            this.DashBoard.Controls.Add(this.TemperatureGroupBox);
+            this.DashBoard.Location = new System.Drawing.Point(4, 22);
+            this.DashBoard.Name = "DashBoard";
+            this.DashBoard.Padding = new System.Windows.Forms.Padding(3);
+            this.DashBoard.Size = new System.Drawing.Size(292, 526);
+            this.DashBoard.TabIndex = 0;
+            this.DashBoard.Text = "Dashboard";
+            this.DashBoard.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer8
+            // 
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer8.IsSplitterFixed = true;
+            this.splitContainer8.Location = new System.Drawing.Point(3, 377);
+            this.splitContainer8.Name = "splitContainer8";
+            // 
+            // splitContainer8.Panel1
+            // 
+            this.splitContainer8.Panel1.Controls.Add(this.groupBox4);
+            // 
+            // splitContainer8.Panel2
+            // 
+            this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer8.Size = new System.Drawing.Size(286, 100);
+            this.splitContainer8.SplitterDistance = 143;
+            this.splitContainer8.SplitterWidth = 1;
+            this.splitContainer8.TabIndex = 1003;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.LaserCheckedListBox);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(143, 100);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Shutter Control";
+            // 
+            // LaserCheckedListBox
+            // 
+            this.LaserCheckedListBox.CheckOnClick = true;
+            this.LaserCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LaserCheckedListBox.FormattingEnabled = true;
+            this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
+            this.LaserCheckedListBox.Name = "LaserCheckedListBox";
+            this.LaserCheckedListBox.Size = new System.Drawing.Size(137, 80);
+            this.LaserCheckedListBox.TabIndex = 9;
+            this.LaserCheckedListBox.ThreeDCheckBoxes = true;
+            this.LaserCheckedListBox.UseTabStops = false;
+            this.LaserCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.LaserCheckedListBox_ItemCheck);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ALEXCheckedListBox);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(142, 100);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ALEX";
+            // 
+            // ALEXCheckedListBox
+            // 
+            this.ALEXCheckedListBox.CheckOnClick = true;
+            this.ALEXCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ALEXCheckedListBox.FormattingEnabled = true;
+            this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
+            this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
+            this.ALEXCheckedListBox.Size = new System.Drawing.Size(136, 80);
+            this.ALEXCheckedListBox.TabIndex = 10;
+            this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
+            this.ALEXCheckedListBox.UseTabStops = false;
+            this.ALEXCheckedListBox.SelectedValueChanged += new System.EventHandler(this.ALEXCheckedListBox_SelectedValueChanged);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.StartFilmingButton);
+            this.groupBox7.Controls.Add(this.NUDStopFrame);
+            this.groupBox7.Controls.Add(this.CheckBoxAutoStop);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox7.Location = new System.Drawing.Point(3, 303);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(286, 74);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Fliming";
+            // 
+            // StartFilmingButton
+            // 
+            this.StartFilmingButton.Enabled = false;
+            this.StartFilmingButton.Location = new System.Drawing.Point(12, 41);
+            this.StartFilmingButton.Name = "StartFilmingButton";
+            this.StartFilmingButton.Size = new System.Drawing.Size(263, 25);
+            this.StartFilmingButton.TabIndex = 5;
+            this.StartFilmingButton.Text = "Start Filming";
+            this.StartFilmingButton.UseVisualStyleBackColor = true;
+            this.StartFilmingButton.Click += new System.EventHandler(this.StartFilmingButton_Click);
+            // 
+            // NUDStopFrame
+            // 
+            this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDStopFrame.Location = new System.Drawing.Point(142, 14);
+            this.NUDStopFrame.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.NUDStopFrame.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDStopFrame.Name = "NUDStopFrame";
+            this.NUDStopFrame.Size = new System.Drawing.Size(133, 21);
+            this.NUDStopFrame.TabIndex = 12;
+            this.NUDStopFrame.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CheckBoxAutoStop
+            // 
+            this.CheckBoxAutoStop.AutoSize = true;
+            this.CheckBoxAutoStop.Location = new System.Drawing.Point(12, 14);
+            this.CheckBoxAutoStop.Name = "CheckBoxAutoStop";
+            this.CheckBoxAutoStop.Size = new System.Drawing.Size(119, 16);
+            this.CheckBoxAutoStop.TabIndex = 11;
+            this.CheckBoxAutoStop.Text = "Stop Filiming at :";
+            this.CheckBoxAutoStop.UseVisualStyleBackColor = true;
+            this.CheckBoxAutoStop.CheckedChanged += new System.EventHandler(this.CheckBoxAutoStop_CheckedChanged);
+            // 
+            // GainGroupBox
+            // 
+            this.GainGroupBox.Controls.Add(this.CheckBoxShowGuidelines);
+            this.GainGroupBox.Controls.Add(this.TextBoxExptime);
+            this.GainGroupBox.Controls.Add(this.TextBoxScaler);
+            this.GainGroupBox.Controls.Add(this.CheckBoxAuto);
+            this.GainGroupBox.Controls.Add(this.label1);
+            this.GainGroupBox.Controls.Add(this.NUDGain);
+            this.GainGroupBox.Controls.Add(this.SplitConSubs);
+            this.GainGroupBox.Controls.Add(this.NUDChannelNum);
+            this.GainGroupBox.Controls.Add(this.label3);
+            this.GainGroupBox.Controls.Add(this.label5);
+            this.GainGroupBox.Controls.Add(this.label4);
+            this.GainGroupBox.Controls.Add(this.SetGainButton);
+            this.GainGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GainGroupBox.Location = new System.Drawing.Point(3, 87);
+            this.GainGroupBox.Name = "GainGroupBox";
+            this.GainGroupBox.Size = new System.Drawing.Size(286, 216);
+            this.GainGroupBox.TabIndex = 1;
+            this.GainGroupBox.TabStop = false;
+            this.GainGroupBox.Text = "Gain && Scaler";
+            // 
+            // CheckBoxShowGuidelines
+            // 
+            this.CheckBoxShowGuidelines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CheckBoxShowGuidelines.AutoSize = true;
+            this.CheckBoxShowGuidelines.Location = new System.Drawing.Point(75, 164);
+            this.CheckBoxShowGuidelines.Name = "CheckBoxShowGuidelines";
+            this.CheckBoxShowGuidelines.Size = new System.Drawing.Size(120, 16);
+            this.CheckBoxShowGuidelines.TabIndex = 1002;
+            this.CheckBoxShowGuidelines.Text = "Show Guidelines";
+            this.CheckBoxShowGuidelines.UseVisualStyleBackColor = true;
+            this.CheckBoxShowGuidelines.CheckedChanged += new System.EventHandler(this.CheckBoxShowGuidelines_CheckedChanged);
+            // 
+            // TextBoxExptime
+            // 
+            this.TextBoxExptime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxExptime.Location = new System.Drawing.Point(142, 73);
+            this.TextBoxExptime.Name = "TextBoxExptime";
+            this.TextBoxExptime.Size = new System.Drawing.Size(133, 21);
+            this.TextBoxExptime.TabIndex = 5;
+            this.TextBoxExptime.Text = "0.1";
+            this.TextBoxExptime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxExptime.TextChanged += new System.EventHandler(this.TextBoxExptime_TextChanged);
+            // 
+            // TextBoxScaler
+            // 
+            this.TextBoxScaler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxScaler.Location = new System.Drawing.Point(142, 46);
+            this.TextBoxScaler.Name = "TextBoxScaler";
+            this.TextBoxScaler.Size = new System.Drawing.Size(133, 21);
+            this.TextBoxScaler.TabIndex = 4;
+            this.TextBoxScaler.Text = "1";
+            this.TextBoxScaler.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxScaler.TextChanged += new System.EventHandler(this.TextBoxScaler_TextChanged);
+            // 
+            // CheckBoxAuto
+            // 
+            this.CheckBoxAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CheckBoxAuto.AutoSize = true;
+            this.CheckBoxAuto.Checked = true;
+            this.CheckBoxAuto.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBoxAuto.Location = new System.Drawing.Point(20, 164);
+            this.CheckBoxAuto.Name = "CheckBoxAuto";
+            this.CheckBoxAuto.Size = new System.Drawing.Size(49, 16);
+            this.CheckBoxAuto.TabIndex = 1000;
+            this.CheckBoxAuto.Text = "Auto";
+            this.CheckBoxAuto.UseVisualStyleBackColor = true;
+            this.CheckBoxAuto.CheckedChanged += new System.EventHandler(this.CheckBoxAuto_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(100, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 12);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Gain";
+            // 
+            // NUDGain
+            // 
+            this.NUDGain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NUDGain.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.NUDGain.Location = new System.Drawing.Point(142, 20);
+            this.NUDGain.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.NUDGain.Name = "NUDGain";
+            this.NUDGain.Size = new System.Drawing.Size(133, 21);
+            this.NUDGain.TabIndex = 3;
+            this.NUDGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUDGain.ValueChanged += new System.EventHandler(this.NUDGain_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 12);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Exposure Time (s)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(61, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 12);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Data Scaler";
+            // 
+            // SetGainButton
+            // 
+            this.SetGainButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetGainButton.Location = new System.Drawing.Point(12, 182);
+            this.SetGainButton.Name = "SetGainButton";
+            this.SetGainButton.Size = new System.Drawing.Size(263, 24);
+            this.SetGainButton.TabIndex = 1001;
+            this.SetGainButton.Text = "Set Values";
+            this.SetGainButton.UseVisualStyleBackColor = true;
+            this.SetGainButton.Click += new System.EventHandler(this.SetGainButton_Click);
+            // 
+            // LabelTime
+            // 
+            this.LabelTime.AutoSize = true;
+            this.LabelTime.Location = new System.Drawing.Point(250, 12);
+            this.LabelTime.Name = "LabelTime";
+            this.LabelTime.Size = new System.Drawing.Size(151, 12);
+            this.LabelTime.TabIndex = 4;
+            this.LabelTime.Text = "Time: 00h 00m 00s 000ms";
+            // 
+            // CCDWindow
+            // 
+            this.CCDWindow.BackColor = System.Drawing.Color.Transparent;
+            this.CCDWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CCDWindow.Location = new System.Drawing.Point(0, 0);
+            this.CCDWindow.Name = "CCDWindow";
+            this.CCDWindow.Size = new System.Drawing.Size(512, 512);
+            this.CCDWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CCDWindow.TabIndex = 0;
+            this.CCDWindow.TabStop = false;
+            this.CCDWindow.Click += new System.EventHandler(this.CCDWindow_Click);
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.IsSplitterFixed = true;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainer3.Panel1.Controls.Add(this.CCDWindow);
+            this.splitContainer3.Panel1MinSize = 512;
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.LabelTime);
+            this.splitContainer3.Panel2.Controls.Add(this.LabelFramenum);
+            this.splitContainer3.Panel2.Controls.Add(this.OpenCameraButton);
+            this.splitContainer3.Size = new System.Drawing.Size(512, 552);
+            this.splitContainer3.SplitterDistance = 512;
+            this.splitContainer3.SplitterWidth = 1;
+            this.splitContainer3.TabIndex = 0;
+            this.splitContainer3.TabStop = false;
+            // 
+            // LabelFramenum
+            // 
+            this.LabelFramenum.AutoSize = true;
+            this.LabelFramenum.Location = new System.Drawing.Point(14, 12);
+            this.LabelFramenum.Name = "LabelFramenum";
+            this.LabelFramenum.Size = new System.Drawing.Size(69, 12);
+            this.LabelFramenum.TabIndex = 3;
+            this.LabelFramenum.Text = "Frame #:  0";
+            // 
+            // OpenCameraButton
+            // 
+            this.OpenCameraButton.Location = new System.Drawing.Point(407, 3);
+            this.OpenCameraButton.Name = "OpenCameraButton";
+            this.OpenCameraButton.Size = new System.Drawing.Size(100, 31);
+            this.OpenCameraButton.TabIndex = 0;
+            this.OpenCameraButton.Text = "Open Camera";
+            this.OpenCameraButton.UseVisualStyleBackColor = true;
+            this.OpenCameraButton.Click += new System.EventHandler(this.OpenCameraButton_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel1MinSize = 552;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.TabControlModules);
+            this.splitContainer1.Size = new System.Drawing.Size(1101, 970);
+            this.splitContainer1.SplitterDistance = 552;
+            this.splitContainer1.SplitterWidth = 1;
+            this.splitContainer1.TabIndex = 4;
+            this.splitContainer1.TabStop = false;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Panel1MinSize = 512;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
+            this.splitContainer2.Size = new System.Drawing.Size(1101, 552);
+            this.splitContainer2.SplitterDistance = 512;
+            this.splitContainer2.SplitterWidth = 1;
+            this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.TabStop = false;
+            // 
             // TabControlModules
             // 
+            this.TabControlModules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControlModules.Controls.Add(this.tabPage3);
             this.TabControlModules.Controls.Add(this.tabPage4);
             this.TabControlModules.Controls.Add(this.tabPage1);
-            this.TabControlModules.Controls.Add(this.tabPage5);
-            this.TabControlModules.Controls.Add(this.tabPage6);
             this.TabControlModules.Controls.Add(this.tabPage7);
-            this.TabControlModules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlModules.Location = new System.Drawing.Point(0, 0);
             this.TabControlModules.Name = "TabControlModules";
             this.TabControlModules.SelectedIndex = 0;
-            this.TabControlModules.Size = new System.Drawing.Size(1084, 349);
+            this.TabControlModules.Size = new System.Drawing.Size(1101, 447);
             this.TabControlModules.TabIndex = 0;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1076, 323);
+            this.tabPage3.Size = new System.Drawing.Size(1093, 421);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel2
+            // groupBox6
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Controls.Add(this.splitContainer5, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox6, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1070, 317);
-            this.tableLayoutPanel2.TabIndex = 7;
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.LabelAFInfo);
+            this.groupBox6.Location = new System.Drawing.Point(766, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(321, 382);
+            this.groupBox6.TabIndex = 10;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Focusing Information";
             // 
-            // splitContainer5
+            // LabelAFInfo
             // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer5.IsSplitterFixed = true;
-            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.groupBox5);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer5.Size = new System.Drawing.Size(743, 311);
-            this.splitContainer5.SplitterDistance = 56;
-            this.splitContainer5.TabIndex = 0;
-            this.splitContainer5.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.NUDAFRange);
-            this.groupBox5.Controls.Add(this.ButtonAFStart);
-            this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.ComboBoxAFDevices);
-            this.groupBox5.Controls.Add(this.ButtonAFCalibration);
-            this.groupBox5.Controls.Add(this.ButtonAFConnect);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(743, 56);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Settings";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(333, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 12);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Range:";
-            // 
-            // NUDAFRange
-            // 
-            this.NUDAFRange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NUDAFRange.Location = new System.Drawing.Point(387, 22);
-            this.NUDAFRange.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.NUDAFRange.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDAFRange.Name = "NUDAFRange";
-            this.NUDAFRange.Size = new System.Drawing.Size(65, 21);
-            this.NUDAFRange.TabIndex = 14;
-            this.NUDAFRange.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // ButtonAFStart
-            // 
-            this.ButtonAFStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFStart.Enabled = false;
-            this.ButtonAFStart.Location = new System.Drawing.Point(600, 18);
-            this.ButtonAFStart.Name = "ButtonAFStart";
-            this.ButtonAFStart.Size = new System.Drawing.Size(125, 25);
-            this.ButtonAFStart.TabIndex = 13;
-            this.ButtonAFStart.Text = "Start Focusing";
-            this.ButtonAFStart.UseVisualStyleBackColor = true;
-            this.ButtonAFStart.Click += new System.EventHandler(this.ButtonAFStart_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 24);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 12);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Device:";
-            // 
-            // ComboBoxAFDevices
-            // 
-            this.ComboBoxAFDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxAFDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxAFDevices.FormattingEnabled = true;
-            this.ComboBoxAFDevices.Items.AddRange(new object[] {
-            "MCL - C Focus",
-            "PI - Z Piezo"});
-            this.ComboBoxAFDevices.Location = new System.Drawing.Point(71, 21);
-            this.ComboBoxAFDevices.Name = "ComboBoxAFDevices";
-            this.ComboBoxAFDevices.Size = new System.Drawing.Size(120, 20);
-            this.ComboBoxAFDevices.TabIndex = 3;
-            // 
-            // ButtonAFCalibration
-            // 
-            this.ButtonAFCalibration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFCalibration.Enabled = false;
-            this.ButtonAFCalibration.Location = new System.Drawing.Point(469, 18);
-            this.ButtonAFCalibration.Name = "ButtonAFCalibration";
-            this.ButtonAFCalibration.Size = new System.Drawing.Size(125, 25);
-            this.ButtonAFCalibration.TabIndex = 5;
-            this.ButtonAFCalibration.Text = "Calibration";
-            this.ButtonAFCalibration.UseVisualStyleBackColor = true;
-            this.ButtonAFCalibration.Click += new System.EventHandler(this.ButtonAFCalibration_Click);
-            // 
-            // ButtonAFConnect
-            // 
-            this.ButtonAFConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFConnect.Location = new System.Drawing.Point(197, 18);
-            this.ButtonAFConnect.Name = "ButtonAFConnect";
-            this.ButtonAFConnect.Size = new System.Drawing.Size(125, 25);
-            this.ButtonAFConnect.TabIndex = 2;
-            this.ButtonAFConnect.Text = "Initialize Device";
-            this.ButtonAFConnect.UseVisualStyleBackColor = true;
-            this.ButtonAFConnect.Click += new System.EventHandler(this.ButtonAFConnect_Click);
+            this.LabelAFInfo.AutoSize = true;
+            this.LabelAFInfo.Location = new System.Drawing.Point(17, 31);
+            this.LabelAFInfo.Name = "LabelAFInfo";
+            this.LabelAFInfo.Size = new System.Drawing.Size(110, 12);
+            this.LabelAFInfo.TabIndex = 11;
+            this.LabelAFInfo.Text = "Auto Focusing Info";
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Location = new System.Drawing.Point(6, 121);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(743, 251);
-            this.groupBox3.TabIndex = 0;
+            this.groupBox3.Size = new System.Drawing.Size(754, 270);
+            this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Linear fit of FOMs / Histogram of FOMs";
             // 
@@ -1040,86 +1355,252 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 231);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(748, 250);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ChartAFFOM
             // 
-            chartArea3.AxisX.LabelStyle.Format = "0.##";
-            chartArea3.AxisY.LabelStyle.Format = "0.##";
-            chartArea3.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea3);
+            chartArea11.AxisX.LabelStyle.Format = "0.##";
+            chartArea11.AxisY.LabelStyle.Format = "0.##";
+            chartArea11.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea11);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend3);
-            this.ChartAFFOM.Location = new System.Drawing.Point(371, 3);
+            legend11.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend11);
+            this.ChartAFFOM.Location = new System.Drawing.Point(377, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series4.Legend = "Legend1";
-            series4.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series4);
-            this.ChartAFFOM.Size = new System.Drawing.Size(363, 225);
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series16.Legend = "Legend1";
+            series16.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series16);
+            this.ChartAFFOM.Size = new System.Drawing.Size(368, 244);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea4.AxisX.LabelStyle.Format = "0.##";
-            chartArea4.AxisY.LabelStyle.Format = "0.##";
-            chartArea4.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea4);
+            chartArea12.AxisX.LabelStyle.Format = "0.##";
+            chartArea12.AxisY.LabelStyle.Format = "0.##";
+            chartArea12.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea12);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend4);
+            legend12.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend12);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series5.Legend = "Legend1";
-            series5.Name = "FOM";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series5);
-            this.ChartAFDistance.Series.Add(series6);
-            this.ChartAFDistance.Size = new System.Drawing.Size(362, 225);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series17.Legend = "Legend1";
+            series17.Name = "FOM";
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series18.Legend = "Legend1";
+            series18.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series17);
+            this.ChartAFDistance.Series.Add(series18);
+            this.ChartAFDistance.Size = new System.Drawing.Size(368, 244);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
             // 
-            // groupBox6
+            // groupBox5
             // 
-            this.groupBox6.Controls.Add(this.CheckBoxAFIgnoreDarkFrame);
-            this.groupBox6.Controls.Add(this.LabelAFInfo);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(752, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(315, 311);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Settings / Focusing Info";
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.TextBoxAFStdev);
+            this.groupBox5.Controls.Add(this.TextBoxAFSlope);
+            this.groupBox5.Controls.Add(this.label37);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.ButtonAFSave);
+            this.groupBox5.Controls.Add(this.ButtonAFLoad);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.NUDAFRange);
+            this.groupBox5.Controls.Add(this.CheckBoxAFKalman);
+            this.groupBox5.Controls.Add(this.ButtonAFStart);
+            this.groupBox5.Controls.Add(this.CheckBoxAFIgnoreDarkFrame);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.ComboBoxAFDevices);
+            this.groupBox5.Controls.Add(this.ButtonAFCalibration);
+            this.groupBox5.Controls.Add(this.ButtonAFConnect);
+            this.groupBox5.Location = new System.Drawing.Point(6, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(756, 109);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Auto Focusing Settings";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(647, 25);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(16, 12);
+            this.label35.TabIndex = 21;
+            this.label35.Text = "or";
+            // 
+            // TextBoxAFStdev
+            // 
+            this.TextBoxAFStdev.Location = new System.Drawing.Point(440, 47);
+            this.TextBoxAFStdev.Name = "TextBoxAFStdev";
+            this.TextBoxAFStdev.Size = new System.Drawing.Size(99, 21);
+            this.TextBoxAFStdev.TabIndex = 20;
+            // 
+            // TextBoxAFSlope
+            // 
+            this.TextBoxAFSlope.Location = new System.Drawing.Point(440, 21);
+            this.TextBoxAFSlope.Name = "TextBoxAFSlope";
+            this.TextBoxAFSlope.Size = new System.Drawing.Size(99, 21);
+            this.TextBoxAFSlope.TabIndex = 20;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(376, 50);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(64, 12);
+            this.label37.TabIndex = 19;
+            this.label37.Text = "Std. Dev.: ";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(395, 24);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(45, 12);
+            this.label36.TabIndex = 19;
+            this.label36.Text = "Slope: ";
+            // 
+            // ButtonAFSave
+            // 
+            this.ButtonAFSave.Enabled = false;
+            this.ButtonAFSave.Location = new System.Drawing.Point(556, 47);
+            this.ButtonAFSave.Name = "ButtonAFSave";
+            this.ButtonAFSave.Size = new System.Drawing.Size(185, 22);
+            this.ButtonAFSave.TabIndex = 17;
+            this.ButtonAFSave.Text = "Save...";
+            this.ButtonAFSave.UseVisualStyleBackColor = true;
+            this.ButtonAFSave.Click += new System.EventHandler(this.ButtonAFSave_Click);
+            // 
+            // ButtonAFLoad
+            // 
+            this.ButtonAFLoad.Enabled = false;
+            this.ButtonAFLoad.Location = new System.Drawing.Point(669, 20);
+            this.ButtonAFLoad.Name = "ButtonAFLoad";
+            this.ButtonAFLoad.Size = new System.Drawing.Size(72, 22);
+            this.ButtonAFLoad.TabIndex = 16;
+            this.ButtonAFLoad.Text = "Load...";
+            this.ButtonAFLoad.UseVisualStyleBackColor = true;
+            this.ButtonAFLoad.Click += new System.EventHandler(this.ButtonAFLoad_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 12);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Target Channel:";
+            // 
+            // NUDAFRange
+            // 
+            this.NUDAFRange.Location = new System.Drawing.Point(114, 46);
+            this.NUDAFRange.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.NUDAFRange.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDAFRange.Name = "NUDAFRange";
+            this.NUDAFRange.Size = new System.Drawing.Size(122, 21);
+            this.NUDAFRange.TabIndex = 14;
+            this.NUDAFRange.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDAFRange.ValueChanged += new System.EventHandler(this.NUDAFRange_ValueChanged);
+            // 
+            // CheckBoxAFKalman
+            // 
+            this.CheckBoxAFKalman.AutoSize = true;
+            this.CheckBoxAFKalman.Enabled = false;
+            this.CheckBoxAFKalman.Location = new System.Drawing.Point(206, 78);
+            this.CheckBoxAFKalman.Name = "CheckBoxAFKalman";
+            this.CheckBoxAFKalman.Size = new System.Drawing.Size(151, 16);
+            this.CheckBoxAFKalman.TabIndex = 12;
+            this.CheckBoxAFKalman.Text = "Applying Kalman Filter";
+            this.CheckBoxAFKalman.UseVisualStyleBackColor = true;
+            this.CheckBoxAFKalman.CheckedChanged += new System.EventHandler(this.CheckBoxAFKalman_CheckedChanged);
+            // 
+            // ButtonAFStart
+            // 
+            this.ButtonAFStart.Enabled = false;
+            this.ButtonAFStart.Location = new System.Drawing.Point(380, 73);
+            this.ButtonAFStart.Name = "ButtonAFStart";
+            this.ButtonAFStart.Size = new System.Drawing.Size(361, 24);
+            this.ButtonAFStart.TabIndex = 13;
+            this.ButtonAFStart.Text = "Start Focusing";
+            this.ButtonAFStart.UseVisualStyleBackColor = true;
+            this.ButtonAFStart.Click += new System.EventHandler(this.ButtonAFStart_Click);
             // 
             // CheckBoxAFIgnoreDarkFrame
             // 
             this.CheckBoxAFIgnoreDarkFrame.AutoSize = true;
             this.CheckBoxAFIgnoreDarkFrame.Checked = true;
             this.CheckBoxAFIgnoreDarkFrame.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxAFIgnoreDarkFrame.Location = new System.Drawing.Point(15, 31);
+            this.CheckBoxAFIgnoreDarkFrame.Enabled = false;
+            this.CheckBoxAFIgnoreDarkFrame.Location = new System.Drawing.Point(14, 78);
             this.CheckBoxAFIgnoreDarkFrame.Name = "CheckBoxAFIgnoreDarkFrame";
             this.CheckBoxAFIgnoreDarkFrame.Size = new System.Drawing.Size(173, 16);
             this.CheckBoxAFIgnoreDarkFrame.TabIndex = 12;
             this.CheckBoxAFIgnoreDarkFrame.Text = "Ignore Dark Frame (ALEX)";
             this.CheckBoxAFIgnoreDarkFrame.UseVisualStyleBackColor = true;
+            this.CheckBoxAFIgnoreDarkFrame.CheckedChanged += new System.EventHandler(this.CheckBoxAFIgnoreDarkFrame_CheckedChanged);
             // 
-            // LabelAFInfo
+            // label12
             // 
-            this.LabelAFInfo.AutoSize = true;
-            this.LabelAFInfo.Location = new System.Drawing.Point(13, 75);
-            this.LabelAFInfo.Name = "LabelAFInfo";
-            this.LabelAFInfo.Size = new System.Drawing.Size(110, 12);
-            this.LabelAFInfo.TabIndex = 11;
-            this.LabelAFInfo.Text = "Auto Focusing Info";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(59, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 12);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Device:";
+            // 
+            // ComboBoxAFDevices
+            // 
+            this.ComboBoxAFDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxAFDevices.FormattingEnabled = true;
+            this.ComboBoxAFDevices.Items.AddRange(new object[] {
+            "MCL - C Focus",
+            "PI - Z Piezo"});
+            this.ComboBoxAFDevices.Location = new System.Drawing.Point(114, 21);
+            this.ComboBoxAFDevices.Name = "ComboBoxAFDevices";
+            this.ComboBoxAFDevices.Size = new System.Drawing.Size(122, 20);
+            this.ComboBoxAFDevices.TabIndex = 3;
+            // 
+            // ButtonAFCalibration
+            // 
+            this.ButtonAFCalibration.Enabled = false;
+            this.ButtonAFCalibration.Location = new System.Drawing.Point(556, 21);
+            this.ButtonAFCalibration.Name = "ButtonAFCalibration";
+            this.ButtonAFCalibration.Size = new System.Drawing.Size(85, 21);
+            this.ButtonAFCalibration.TabIndex = 5;
+            this.ButtonAFCalibration.Text = "Calibrate";
+            this.ButtonAFCalibration.UseVisualStyleBackColor = true;
+            this.ButtonAFCalibration.Click += new System.EventHandler(this.ButtonAFCalibration_Click);
+            // 
+            // ButtonAFConnect
+            // 
+            this.ButtonAFConnect.Location = new System.Drawing.Point(243, 18);
+            this.ButtonAFConnect.Name = "ButtonAFConnect";
+            this.ButtonAFConnect.Size = new System.Drawing.Size(125, 25);
+            this.ButtonAFConnect.TabIndex = 2;
+            this.ButtonAFConnect.Text = "Initialize Device";
+            this.ButtonAFConnect.UseVisualStyleBackColor = true;
+            this.ButtonAFConnect.Click += new System.EventHandler(this.ButtonAFConnect_Click);
             // 
             // tabPage4
             // 
@@ -1127,7 +1608,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1076, 323);
+            this.tabPage4.Size = new System.Drawing.Size(1093, 421);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1147,7 +1628,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox8);
-            this.splitContainer6.Size = new System.Drawing.Size(1070, 317);
+            this.splitContainer6.Size = new System.Drawing.Size(1087, 415);
             this.splitContainer6.SplitterDistance = 499;
             this.splitContainer6.TabIndex = 0;
             this.splitContainer6.TabStop = false;
@@ -1168,19 +1649,20 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer7.Size = new System.Drawing.Size(499, 317);
-            this.splitContainer7.SplitterDistance = 99;
+            this.splitContainer7.Size = new System.Drawing.Size(499, 415);
+            this.splitContainer7.SplitterDistance = 200;
             this.splitContainer7.TabIndex = 1;
             this.splitContainer7.TabStop = false;
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox9.Controls.Add(this.ListViewAFLPumps);
             this.groupBox9.Controls.Add(this.ButtonAFLFindDevices);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(499, 99);
+            this.groupBox9.Size = new System.Drawing.Size(499, 197);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Syringe Pumps";
@@ -1199,7 +1681,7 @@
             this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
             this.ListViewAFLPumps.MultiSelect = false;
             this.ListViewAFLPumps.Name = "ListViewAFLPumps";
-            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 65);
+            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 161);
             this.ListViewAFLPumps.TabIndex = 9;
             this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
@@ -1227,6 +1709,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.ButtonAFLSetValuesToDevice);
             this.groupBox2.Controls.Add(this.NUDAFLRate);
             this.groupBox2.Controls.Add(this.NUDAFLFrameNumber);
@@ -1245,10 +1728,9 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.TextBoxAFLDiameter);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(499, 214);
+            this.groupBox2.Size = new System.Drawing.Size(499, 211);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rule Settings";
@@ -1436,13 +1918,15 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.ButtonAFLEnable);
             this.groupBox8.Controls.Add(this.ButtonAFLRemoveRules);
             this.groupBox8.Controls.Add(this.ListViewAFLRules);
-            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(567, 317);
+            this.groupBox8.Size = new System.Drawing.Size(584, 412);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
@@ -1452,9 +1936,9 @@
             this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAFLEnable.Enabled = false;
-            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 283);
+            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 478);
             this.ButtonAFLEnable.Name = "ButtonAFLEnable";
-            this.ButtonAFLEnable.Size = new System.Drawing.Size(551, 28);
+            this.ButtonAFLEnable.Size = new System.Drawing.Size(568, 28);
             this.ButtonAFLEnable.TabIndex = 4;
             this.ButtonAFLEnable.Text = "Enable Auto Flow";
             this.ButtonAFLEnable.UseVisualStyleBackColor = true;
@@ -1463,7 +1947,7 @@
             // ButtonAFLRemoveRules
             // 
             this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(397, 237);
+            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(414, 432);
             this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
             this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
             this.ButtonAFLRemoveRules.TabIndex = 3;
@@ -1490,7 +1974,7 @@
             this.ListViewAFLRules.Location = new System.Drawing.Point(7, 20);
             this.ListViewAFLRules.MultiSelect = false;
             this.ListViewAFLRules.Name = "ListViewAFLRules";
-            this.ListViewAFLRules.Size = new System.Drawing.Size(551, 211);
+            this.ListViewAFLRules.Size = new System.Drawing.Size(568, 386);
             this.ListViewAFLRules.TabIndex = 0;
             this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
             this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
@@ -1530,65 +2014,80 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1076, 323);
+            this.tabPage1.Size = new System.Drawing.Size(1093, 421);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1076, 323);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Pulse";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1076, 323);
-            this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "Realtime Trace";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.groupBox13);
-            this.tabPage7.Controls.Add(this.groupBox12);
-            this.tabPage7.Controls.Add(this.groupBox11);
+            this.tabPage7.Controls.Add(this.groupBox15);
+            this.tabPage7.Controls.Add(this.groupBox14);
             this.tabPage7.Controls.Add(this.groupBox10);
+            this.tabPage7.Controls.Add(this.GroupBoxManualPiezomirrors);
+            this.tabPage7.Controls.Add(this.groupBox12);
+            this.tabPage7.Controls.Add(this.GroupBoxManualNanostage);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1076, 323);
+            this.tabPage7.Size = new System.Drawing.Size(1093, 421);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // groupBox13
+            // groupBox15
             // 
-            this.groupBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox13.Controls.Add(this.ComboADCMirrorNum);
-            this.groupBox13.Controls.Add(this.label34);
-            this.groupBox13.Controls.Add(this.ButtonADCIncreasePhi);
-            this.groupBox13.Controls.Add(this.ButtonADCDecreasePhi);
-            this.groupBox13.Controls.Add(this.ButtonADCIncreaseTheta);
-            this.groupBox13.Controls.Add(this.ButtonADCDecreaseTheta);
-            this.groupBox13.Controls.Add(this.LabelADCCurrentAngle);
-            this.groupBox13.Controls.Add(this.label31);
-            this.groupBox13.Controls.Add(this.TextBoxADCPiezomirrorStepSize);
-            this.groupBox13.Controls.Add(this.label32);
-            this.groupBox13.Controls.Add(this.label33);
-            this.groupBox13.Location = new System.Drawing.Point(12, 176);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(426, 134);
-            this.groupBox13.TabIndex = 8;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Manual Control - Piezomirrors";
+            this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox15.Location = new System.Drawing.Point(867, 6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(218, 377);
+            this.groupBox15.TabIndex = 11;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Active Drift Correction Information";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox14.Location = new System.Drawing.Point(470, 254);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(391, 129);
+            this.groupBox14.TabIndex = 10;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Piezomirrors / Nanostage informations";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox10.Location = new System.Drawing.Point(3, 139);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(461, 244);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Graphs";
+            // 
+            // GroupBoxManualPiezomirrors
+            // 
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.ComboADCMirrorNum);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.label34);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCIncreasePhi);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCDecreasePhi);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCIncreaseTheta);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCDecreaseTheta);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.LabelADCCurrentAngle);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.label31);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.TextBoxADCPiezomirrorStepSize);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.label32);
+            this.GroupBoxManualPiezomirrors.Controls.Add(this.label33);
+            this.GroupBoxManualPiezomirrors.Location = new System.Drawing.Point(470, 6);
+            this.GroupBoxManualPiezomirrors.Name = "GroupBoxManualPiezomirrors";
+            this.GroupBoxManualPiezomirrors.Size = new System.Drawing.Size(391, 127);
+            this.GroupBoxManualPiezomirrors.TabIndex = 8;
+            this.GroupBoxManualPiezomirrors.TabStop = false;
+            this.GroupBoxManualPiezomirrors.Text = "Manual Control - Piezomirrors";
             // 
             // ComboADCMirrorNum
             // 
@@ -1611,7 +2110,7 @@
             // 
             // ButtonADCIncreasePhi
             // 
-            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(292, 27);
+            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(277, 22);
             this.ButtonADCIncreasePhi.Name = "ButtonADCIncreasePhi";
             this.ButtonADCIncreasePhi.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreasePhi.TabIndex = 16;
@@ -1621,7 +2120,7 @@
             // 
             // ButtonADCDecreasePhi
             // 
-            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(292, 73);
+            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(277, 68);
             this.ButtonADCDecreasePhi.Name = "ButtonADCDecreasePhi";
             this.ButtonADCDecreasePhi.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreasePhi.TabIndex = 17;
@@ -1631,7 +2130,7 @@
             // 
             // ButtonADCIncreaseTheta
             // 
-            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(347, 49);
+            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(332, 44);
             this.ButtonADCIncreaseTheta.Name = "ButtonADCIncreaseTheta";
             this.ButtonADCIncreaseTheta.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseTheta.TabIndex = 10;
@@ -1641,7 +2140,7 @@
             // 
             // ButtonADCDecreaseTheta
             // 
-            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(236, 49);
+            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(221, 44);
             this.ButtonADCDecreaseTheta.Name = "ButtonADCDecreaseTheta";
             this.ButtonADCDecreaseTheta.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseTheta.TabIndex = 15;
@@ -1651,7 +2150,7 @@
             // 
             // LabelADCCurrentAngle
             // 
-            this.LabelADCCurrentAngle.Location = new System.Drawing.Point(126, 90);
+            this.LabelADCCurrentAngle.Location = new System.Drawing.Point(126, 83);
             this.LabelADCCurrentAngle.Name = "LabelADCCurrentAngle";
             this.LabelADCCurrentAngle.Size = new System.Drawing.Size(95, 25);
             this.LabelADCCurrentAngle.TabIndex = 14;
@@ -1660,7 +2159,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(27, 90);
+            this.label31.Location = new System.Drawing.Point(27, 83);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(96, 12);
             this.label31.TabIndex = 13;
@@ -1668,7 +2167,7 @@
             // 
             // TextBoxADCPiezomirrorStepSize
             // 
-            this.TextBoxADCPiezomirrorStepSize.Location = new System.Drawing.Point(83, 56);
+            this.TextBoxADCPiezomirrorStepSize.Location = new System.Drawing.Point(83, 53);
             this.TextBoxADCPiezomirrorStepSize.Name = "TextBoxADCPiezomirrorStepSize";
             this.TextBoxADCPiezomirrorStepSize.Size = new System.Drawing.Size(82, 21);
             this.TextBoxADCPiezomirrorStepSize.TabIndex = 12;
@@ -1678,7 +2177,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(171, 59);
+            this.label32.Location = new System.Drawing.Point(171, 56);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(34, 12);
             this.label32.TabIndex = 11;
@@ -1687,7 +2186,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(14, 59);
+            this.label33.Location = new System.Drawing.Point(14, 56);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(63, 12);
             this.label33.TabIndex = 10;
@@ -1695,74 +2194,117 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox12.Controls.Add(this.label30);
-            this.groupBox12.Controls.Add(this.button3);
-            this.groupBox12.Controls.Add(this.button2);
-            this.groupBox12.Controls.Add(this.button1);
-            this.groupBox12.Location = new System.Drawing.Point(444, 13);
+            this.groupBox12.Controls.Add(this.ButtonADCSelectObject);
+            this.groupBox12.Controls.Add(this.ButtonADCSelectPinhole2);
+            this.groupBox12.Controls.Add(this.label26);
+            this.groupBox12.Controls.Add(this.NUDADCPiezomirrorNum);
+            this.groupBox12.Controls.Add(this.ButtonADCInitialize);
+            this.groupBox12.Controls.Add(this.ButtonADCStart);
+            this.groupBox12.Controls.Add(this.ButtonADCSelectPinhole1);
+            this.groupBox12.Location = new System.Drawing.Point(3, 6);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(624, 298);
+            this.groupBox12.Size = new System.Drawing.Size(461, 127);
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Control Panel";
             // 
-            // label30
+            // ButtonADCSelectObject
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(37, 131);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(109, 12);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "Reference Points :";
+            this.ButtonADCSelectObject.Enabled = false;
+            this.ButtonADCSelectObject.Location = new System.Drawing.Point(306, 53);
+            this.ButtonADCSelectObject.Name = "ButtonADCSelectObject";
+            this.ButtonADCSelectObject.Size = new System.Drawing.Size(142, 25);
+            this.ButtonADCSelectObject.TabIndex = 8;
+            this.ButtonADCSelectObject.Text = "Select Object";
+            this.ButtonADCSelectObject.UseVisualStyleBackColor = true;
+            this.ButtonADCSelectObject.Click += new System.EventHandler(this.ButtonADCSelectObject_Click);
             // 
-            // button3
+            // ButtonADCSelectPinhole2
             // 
-            this.button3.Location = new System.Drawing.Point(320, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(269, 67);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Stop";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ButtonADCSelectPinhole2.Enabled = false;
+            this.ButtonADCSelectPinhole2.Location = new System.Drawing.Point(158, 53);
+            this.ButtonADCSelectPinhole2.Name = "ButtonADCSelectPinhole2";
+            this.ButtonADCSelectPinhole2.Size = new System.Drawing.Size(142, 25);
+            this.ButtonADCSelectPinhole2.TabIndex = 7;
+            this.ButtonADCSelectPinhole2.Text = "Select Pinhole (Right)";
+            this.ButtonADCSelectPinhole2.UseVisualStyleBackColor = true;
+            this.ButtonADCSelectPinhole2.Click += new System.EventHandler(this.ButtonADCSelectPinhole2_Click);
             // 
-            // button2
+            // label26
             // 
-            this.button2.Location = new System.Drawing.Point(39, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 67);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(29, 25);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(144, 12);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Number of Piezomirrors:";
             // 
-            // button1
+            // NUDADCPiezomirrorNum
             // 
-            this.button1.Location = new System.Drawing.Point(39, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(550, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select Reference Dots";
-            this.button1.UseVisualStyleBackColor = true;
+            this.NUDADCPiezomirrorNum.Location = new System.Drawing.Point(189, 23);
+            this.NUDADCPiezomirrorNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDADCPiezomirrorNum.Name = "NUDADCPiezomirrorNum";
+            this.NUDADCPiezomirrorNum.Size = new System.Drawing.Size(83, 21);
+            this.NUDADCPiezomirrorNum.TabIndex = 5;
+            this.NUDADCPiezomirrorNum.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
-            // groupBox11
+            // ButtonADCInitialize
             // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox11.Controls.Add(this.LabelADCCurrentPos);
-            this.groupBox11.Controls.Add(this.label29);
-            this.groupBox11.Controls.Add(this.TextBoxADCNanostageStepSize);
-            this.groupBox11.Controls.Add(this.label28);
-            this.groupBox11.Controls.Add(this.label27);
-            this.groupBox11.Controls.Add(this.ButtonADCDecreaseX);
-            this.groupBox11.Controls.Add(this.ButtonADCIncreaseX);
-            this.groupBox11.Controls.Add(this.ButtonADCIncreaseY);
-            this.groupBox11.Controls.Add(this.ButtonADCDecreaseY);
-            this.groupBox11.Location = new System.Drawing.Point(12, 73);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(426, 103);
-            this.groupBox11.TabIndex = 6;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Manual Control - Nanostage";
+            this.ButtonADCInitialize.Location = new System.Drawing.Point(293, 18);
+            this.ButtonADCInitialize.Name = "ButtonADCInitialize";
+            this.ButtonADCInitialize.Size = new System.Drawing.Size(142, 26);
+            this.ButtonADCInitialize.TabIndex = 4;
+            this.ButtonADCInitialize.Text = "Initialize Devices";
+            this.ButtonADCInitialize.UseVisualStyleBackColor = true;
+            this.ButtonADCInitialize.Click += new System.EventHandler(this.ButtonADCInitialize_Click);
+            // 
+            // ButtonADCStart
+            // 
+            this.ButtonADCStart.Enabled = false;
+            this.ButtonADCStart.Location = new System.Drawing.Point(10, 86);
+            this.ButtonADCStart.Name = "ButtonADCStart";
+            this.ButtonADCStart.Size = new System.Drawing.Size(438, 23);
+            this.ButtonADCStart.TabIndex = 1;
+            this.ButtonADCStart.Text = "Start Active Drift Correction";
+            this.ButtonADCStart.UseVisualStyleBackColor = true;
+            this.ButtonADCStart.Click += new System.EventHandler(this.ButtonADCStart_Click);
+            // 
+            // ButtonADCSelectPinhole1
+            // 
+            this.ButtonADCSelectPinhole1.Enabled = false;
+            this.ButtonADCSelectPinhole1.Location = new System.Drawing.Point(10, 53);
+            this.ButtonADCSelectPinhole1.Name = "ButtonADCSelectPinhole1";
+            this.ButtonADCSelectPinhole1.Size = new System.Drawing.Size(142, 25);
+            this.ButtonADCSelectPinhole1.TabIndex = 0;
+            this.ButtonADCSelectPinhole1.Text = "Select Pinhole (Left)";
+            this.ButtonADCSelectPinhole1.UseVisualStyleBackColor = true;
+            this.ButtonADCSelectPinhole1.Click += new System.EventHandler(this.buttonADCSelectPinhole1_Click);
+            // 
+            // GroupBoxManualNanostage
+            // 
+            this.GroupBoxManualNanostage.Controls.Add(this.LabelADCCurrentPos);
+            this.GroupBoxManualNanostage.Controls.Add(this.label29);
+            this.GroupBoxManualNanostage.Controls.Add(this.TextBoxADCNanostageStepSize);
+            this.GroupBoxManualNanostage.Controls.Add(this.label28);
+            this.GroupBoxManualNanostage.Controls.Add(this.label27);
+            this.GroupBoxManualNanostage.Controls.Add(this.ButtonADCDecreaseX);
+            this.GroupBoxManualNanostage.Controls.Add(this.ButtonADCIncreaseX);
+            this.GroupBoxManualNanostage.Controls.Add(this.ButtonADCIncreaseY);
+            this.GroupBoxManualNanostage.Controls.Add(this.ButtonADCDecreaseY);
+            this.GroupBoxManualNanostage.Location = new System.Drawing.Point(470, 139);
+            this.GroupBoxManualNanostage.Name = "GroupBoxManualNanostage";
+            this.GroupBoxManualNanostage.Size = new System.Drawing.Size(391, 109);
+            this.GroupBoxManualNanostage.TabIndex = 6;
+            this.GroupBoxManualNanostage.TabStop = false;
+            this.GroupBoxManualNanostage.Text = "Manual Control - Nanostage";
             // 
             // LabelADCCurrentPos
             // 
@@ -1810,7 +2352,7 @@
             // 
             // ButtonADCDecreaseX
             // 
-            this.ButtonADCDecreaseX.Location = new System.Drawing.Point(236, 36);
+            this.ButtonADCDecreaseX.Location = new System.Drawing.Point(221, 40);
             this.ButtonADCDecreaseX.Name = "ButtonADCDecreaseX";
             this.ButtonADCDecreaseX.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseX.TabIndex = 2;
@@ -1820,7 +2362,7 @@
             // 
             // ButtonADCIncreaseX
             // 
-            this.ButtonADCIncreaseX.Location = new System.Drawing.Point(347, 36);
+            this.ButtonADCIncreaseX.Location = new System.Drawing.Point(332, 40);
             this.ButtonADCIncreaseX.Name = "ButtonADCIncreaseX";
             this.ButtonADCIncreaseX.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseX.TabIndex = 3;
@@ -1830,7 +2372,7 @@
             // 
             // ButtonADCIncreaseY
             // 
-            this.ButtonADCIncreaseY.Location = new System.Drawing.Point(292, 11);
+            this.ButtonADCIncreaseY.Location = new System.Drawing.Point(277, 15);
             this.ButtonADCIncreaseY.Name = "ButtonADCIncreaseY";
             this.ButtonADCIncreaseY.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseY.TabIndex = 1;
@@ -1840,7 +2382,7 @@
             // 
             // ButtonADCDecreaseY
             // 
-            this.ButtonADCDecreaseY.Location = new System.Drawing.Point(292, 57);
+            this.ButtonADCDecreaseY.Location = new System.Drawing.Point(277, 61);
             this.ButtonADCDecreaseY.Name = "ButtonADCDecreaseY";
             this.ButtonADCDecreaseY.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseY.TabIndex = 4;
@@ -1848,555 +2390,11 @@
             this.ButtonADCDecreaseY.UseVisualStyleBackColor = true;
             this.ButtonADCDecreaseY.Click += new System.EventHandler(this.ButtonADCDecreaseY_Click);
             // 
-            // groupBox10
-            // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox10.Controls.Add(this.label26);
-            this.groupBox10.Controls.Add(this.NUDADCPiezomirrorNum);
-            this.groupBox10.Controls.Add(this.ButtonADCInitialize);
-            this.groupBox10.Location = new System.Drawing.Point(12, 13);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(426, 54);
-            this.groupBox10.TabIndex = 5;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Initialization";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 23);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(144, 12);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Number of Piezomirrors:";
-            // 
-            // NUDADCPiezomirrorNum
-            // 
-            this.NUDADCPiezomirrorNum.Location = new System.Drawing.Point(177, 21);
-            this.NUDADCPiezomirrorNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDADCPiezomirrorNum.Name = "NUDADCPiezomirrorNum";
-            this.NUDADCPiezomirrorNum.Size = new System.Drawing.Size(61, 21);
-            this.NUDADCPiezomirrorNum.TabIndex = 1;
-            this.NUDADCPiezomirrorNum.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // ButtonADCInitialize
-            // 
-            this.ButtonADCInitialize.Location = new System.Drawing.Point(262, 16);
-            this.ButtonADCInitialize.Name = "ButtonADCInitialize";
-            this.ButtonADCInitialize.Size = new System.Drawing.Size(140, 26);
-            this.ButtonADCInitialize.TabIndex = 0;
-            this.ButtonADCInitialize.Text = "Initialize ADC";
-            this.ButtonADCInitialize.UseVisualStyleBackColor = true;
-            this.ButtonADCInitialize.Click += new System.EventHandler(this.ButtonADCInitialize_Click);
-            // 
-            // NUDChannelNum
-            // 
-            this.NUDChannelNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NUDChannelNum.Location = new System.Drawing.Point(142, 101);
-            this.NUDChannelNum.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.NUDChannelNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDChannelNum.Name = "NUDChannelNum";
-            this.NUDChannelNum.Size = new System.Drawing.Size(133, 21);
-            this.NUDChannelNum.TabIndex = 6;
-            this.NUDChannelNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NUDChannelNum.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDChannelNum.ValueChanged += new System.EventHandler(this.NUDChannelNum_ValueChanged);
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer4.IsSplitterFixed = true;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.TabControlMain);
-            this.splitContainer4.Panel1MinSize = 300;
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.LogGroupBox);
-            this.splitContainer4.Size = new System.Drawing.Size(571, 552);
-            this.splitContainer4.SplitterDistance = 300;
-            this.splitContainer4.SplitterWidth = 1;
-            this.splitContainer4.TabIndex = 0;
-            this.splitContainer4.TabStop = false;
-            // 
-            // TabControlMain
-            // 
-            this.TabControlMain.Controls.Add(this.DashBoard);
-            this.TabControlMain.Controls.Add(this.DeviceSettings);
-            this.TabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControlMain.Location = new System.Drawing.Point(0, 0);
-            this.TabControlMain.Name = "TabControlMain";
-            this.TabControlMain.SelectedIndex = 0;
-            this.TabControlMain.Size = new System.Drawing.Size(300, 552);
-            this.TabControlMain.TabIndex = 4;
-            // 
-            // DashBoard
-            // 
-            this.DashBoard.AutoScroll = true;
-            this.DashBoard.Controls.Add(this.splitContainer8);
-            this.DashBoard.Controls.Add(this.groupBox7);
-            this.DashBoard.Controls.Add(this.GainGroupBox);
-            this.DashBoard.Controls.Add(this.TemperatureGroupBox);
-            this.DashBoard.Location = new System.Drawing.Point(4, 22);
-            this.DashBoard.Name = "DashBoard";
-            this.DashBoard.Padding = new System.Windows.Forms.Padding(3);
-            this.DashBoard.Size = new System.Drawing.Size(292, 526);
-            this.DashBoard.TabIndex = 0;
-            this.DashBoard.Text = "Dashboard";
-            this.DashBoard.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer8
-            // 
-            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainer8.IsSplitterFixed = true;
-            this.splitContainer8.Location = new System.Drawing.Point(3, 377);
-            this.splitContainer8.Name = "splitContainer8";
-            // 
-            // splitContainer8.Panel1
-            // 
-            this.splitContainer8.Panel1.Controls.Add(this.groupBox4);
-            // 
-            // splitContainer8.Panel2
-            // 
-            this.splitContainer8.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer8.Size = new System.Drawing.Size(286, 100);
-            this.splitContainer8.SplitterDistance = 143;
-            this.splitContainer8.SplitterWidth = 1;
-            this.splitContainer8.TabIndex = 1003;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.LaserCheckedListBox);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(143, 100);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Shutter Control";
-            // 
-            // LaserCheckedListBox
-            // 
-            this.LaserCheckedListBox.CheckOnClick = true;
-            this.LaserCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LaserCheckedListBox.FormattingEnabled = true;
-            this.LaserCheckedListBox.Location = new System.Drawing.Point(3, 17);
-            this.LaserCheckedListBox.Name = "LaserCheckedListBox";
-            this.LaserCheckedListBox.Size = new System.Drawing.Size(137, 80);
-            this.LaserCheckedListBox.TabIndex = 9;
-            this.LaserCheckedListBox.ThreeDCheckBoxes = true;
-            this.LaserCheckedListBox.UseTabStops = false;
-            this.LaserCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.LaserCheckedListBox_ItemCheck);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ALEXCheckedListBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(142, 100);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ALEX";
-            // 
-            // ALEXCheckedListBox
-            // 
-            this.ALEXCheckedListBox.CheckOnClick = true;
-            this.ALEXCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ALEXCheckedListBox.FormattingEnabled = true;
-            this.ALEXCheckedListBox.Location = new System.Drawing.Point(3, 17);
-            this.ALEXCheckedListBox.Name = "ALEXCheckedListBox";
-            this.ALEXCheckedListBox.Size = new System.Drawing.Size(136, 80);
-            this.ALEXCheckedListBox.TabIndex = 10;
-            this.ALEXCheckedListBox.ThreeDCheckBoxes = true;
-            this.ALEXCheckedListBox.UseTabStops = false;
-            this.ALEXCheckedListBox.SelectedValueChanged += new System.EventHandler(this.ALEXCheckedListBox_SelectedValueChanged);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.StartFilmingButton);
-            this.groupBox7.Controls.Add(this.NUDStopFrame);
-            this.groupBox7.Controls.Add(this.CheckBoxAutoStop);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox7.Location = new System.Drawing.Point(3, 303);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(286, 74);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Fliming";
-            // 
-            // StartFilmingButton
-            // 
-            this.StartFilmingButton.Enabled = false;
-            this.StartFilmingButton.Location = new System.Drawing.Point(12, 41);
-            this.StartFilmingButton.Name = "StartFilmingButton";
-            this.StartFilmingButton.Size = new System.Drawing.Size(263, 25);
-            this.StartFilmingButton.TabIndex = 5;
-            this.StartFilmingButton.Text = "Start Filming";
-            this.StartFilmingButton.UseVisualStyleBackColor = true;
-            this.StartFilmingButton.Click += new System.EventHandler(this.StartFilmingButton_Click);
-            // 
-            // NUDStopFrame
-            // 
-            this.NUDStopFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NUDStopFrame.Location = new System.Drawing.Point(142, 14);
-            this.NUDStopFrame.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.NUDStopFrame.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDStopFrame.Name = "NUDStopFrame";
-            this.NUDStopFrame.Size = new System.Drawing.Size(133, 21);
-            this.NUDStopFrame.TabIndex = 12;
-            this.NUDStopFrame.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDStopFrame.ValueChanged += new System.EventHandler(this.NUDStopFrame_ValueChanged);
-            this.NUDStopFrame.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUDStopFrame_KeyPress);
-            // 
-            // CheckBoxAutoStop
-            // 
-            this.CheckBoxAutoStop.AutoSize = true;
-            this.CheckBoxAutoStop.Location = new System.Drawing.Point(12, 14);
-            this.CheckBoxAutoStop.Name = "CheckBoxAutoStop";
-            this.CheckBoxAutoStop.Size = new System.Drawing.Size(119, 16);
-            this.CheckBoxAutoStop.TabIndex = 11;
-            this.CheckBoxAutoStop.Text = "Stop Filiming at :";
-            this.CheckBoxAutoStop.UseVisualStyleBackColor = true;
-            this.CheckBoxAutoStop.CheckedChanged += new System.EventHandler(this.CheckBoxAutoStop_CheckedChanged);
-            // 
-            // GainGroupBox
-            // 
-            this.GainGroupBox.Controls.Add(this.CheckBoxShowGuidelines);
-            this.GainGroupBox.Controls.Add(this.TextBoxExptime);
-            this.GainGroupBox.Controls.Add(this.TextBoxScaler);
-            this.GainGroupBox.Controls.Add(this.CheckBoxAuto);
-            this.GainGroupBox.Controls.Add(this.label1);
-            this.GainGroupBox.Controls.Add(this.NUDGain);
-            this.GainGroupBox.Controls.Add(this.SplitConSubs);
-            this.GainGroupBox.Controls.Add(this.NUDChannelNum);
-            this.GainGroupBox.Controls.Add(this.label3);
-            this.GainGroupBox.Controls.Add(this.label5);
-            this.GainGroupBox.Controls.Add(this.label4);
-            this.GainGroupBox.Controls.Add(this.SetGainButton);
-            this.GainGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GainGroupBox.Location = new System.Drawing.Point(3, 87);
-            this.GainGroupBox.Name = "GainGroupBox";
-            this.GainGroupBox.Size = new System.Drawing.Size(286, 216);
-            this.GainGroupBox.TabIndex = 1;
-            this.GainGroupBox.TabStop = false;
-            this.GainGroupBox.Text = "Gain && Scaler";
-            // 
-            // CheckBoxShowGuidelines
-            // 
-            this.CheckBoxShowGuidelines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CheckBoxShowGuidelines.AutoSize = true;
-            this.CheckBoxShowGuidelines.Location = new System.Drawing.Point(75, 164);
-            this.CheckBoxShowGuidelines.Name = "CheckBoxShowGuidelines";
-            this.CheckBoxShowGuidelines.Size = new System.Drawing.Size(120, 16);
-            this.CheckBoxShowGuidelines.TabIndex = 1002;
-            this.CheckBoxShowGuidelines.Text = "Show Guidelines";
-            this.CheckBoxShowGuidelines.UseVisualStyleBackColor = true;
-            this.CheckBoxShowGuidelines.CheckedChanged += new System.EventHandler(this.CheckBoxShowGuidelines_CheckedChanged);
-            // 
-            // TextBoxExptime
-            // 
-            this.TextBoxExptime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxExptime.Location = new System.Drawing.Point(142, 73);
-            this.TextBoxExptime.Name = "TextBoxExptime";
-            this.TextBoxExptime.Size = new System.Drawing.Size(133, 21);
-            this.TextBoxExptime.TabIndex = 5;
-            this.TextBoxExptime.Text = "0.1";
-            this.TextBoxExptime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextBoxExptime.TextChanged += new System.EventHandler(this.TextBoxExptime_TextChanged);
-            // 
-            // TextBoxScaler
-            // 
-            this.TextBoxScaler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxScaler.Location = new System.Drawing.Point(142, 46);
-            this.TextBoxScaler.Name = "TextBoxScaler";
-            this.TextBoxScaler.Size = new System.Drawing.Size(133, 21);
-            this.TextBoxScaler.TabIndex = 4;
-            this.TextBoxScaler.Text = "1";
-            this.TextBoxScaler.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextBoxScaler.TextChanged += new System.EventHandler(this.TextBoxScaler_TextChanged);
-            // 
-            // CheckBoxAuto
-            // 
-            this.CheckBoxAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CheckBoxAuto.AutoSize = true;
-            this.CheckBoxAuto.Checked = true;
-            this.CheckBoxAuto.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxAuto.Location = new System.Drawing.Point(20, 164);
-            this.CheckBoxAuto.Name = "CheckBoxAuto";
-            this.CheckBoxAuto.Size = new System.Drawing.Size(49, 16);
-            this.CheckBoxAuto.TabIndex = 1000;
-            this.CheckBoxAuto.Text = "Auto";
-            this.CheckBoxAuto.UseVisualStyleBackColor = true;
-            this.CheckBoxAuto.CheckedChanged += new System.EventHandler(this.CheckBoxAuto_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 12);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Gain";
-            // 
-            // NUDGain
-            // 
-            this.NUDGain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NUDGain.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.NUDGain.Location = new System.Drawing.Point(142, 20);
-            this.NUDGain.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.NUDGain.Name = "NUDGain";
-            this.NUDGain.Size = new System.Drawing.Size(133, 21);
-            this.NUDGain.TabIndex = 3;
-            this.NUDGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NUDGain.ValueChanged += new System.EventHandler(this.NUDGain_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 12);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Exposure Time (s)";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 12);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Data Scaler";
-            // 
-            // SetGainButton
-            // 
-            this.SetGainButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SetGainButton.Location = new System.Drawing.Point(12, 182);
-            this.SetGainButton.Name = "SetGainButton";
-            this.SetGainButton.Size = new System.Drawing.Size(263, 24);
-            this.SetGainButton.TabIndex = 1001;
-            this.SetGainButton.Text = "Set Values";
-            this.SetGainButton.UseVisualStyleBackColor = true;
-            this.SetGainButton.Click += new System.EventHandler(this.SetGainButton_Click);
-            // 
-            // LabelTime
-            // 
-            this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(250, 12);
-            this.LabelTime.Name = "LabelTime";
-            this.LabelTime.Size = new System.Drawing.Size(151, 12);
-            this.LabelTime.TabIndex = 4;
-            this.LabelTime.Text = "Time: 00h 00m 00s 000ms";
-            // 
-            // CCDWindow
-            // 
-            this.CCDWindow.BackColor = System.Drawing.Color.Transparent;
-            this.CCDWindow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CCDWindow.Location = new System.Drawing.Point(0, 0);
-            this.CCDWindow.Name = "CCDWindow";
-            this.CCDWindow.Size = new System.Drawing.Size(512, 512);
-            this.CCDWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.CCDWindow.TabIndex = 0;
-            this.CCDWindow.TabStop = false;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.IsSplitterFixed = true;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.BackColor = System.Drawing.Color.Black;
-            this.splitContainer3.Panel1.Controls.Add(this.CCDWindow);
-            this.splitContainer3.Panel1MinSize = 512;
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.LabelTime);
-            this.splitContainer3.Panel2.Controls.Add(this.LabelFramenum);
-            this.splitContainer3.Panel2.Controls.Add(this.OpenCameraButton);
-            this.splitContainer3.Size = new System.Drawing.Size(512, 552);
-            this.splitContainer3.SplitterDistance = 512;
-            this.splitContainer3.SplitterWidth = 1;
-            this.splitContainer3.TabIndex = 0;
-            this.splitContainer3.TabStop = false;
-            // 
-            // LabelFramenum
-            // 
-            this.LabelFramenum.AutoSize = true;
-            this.LabelFramenum.Location = new System.Drawing.Point(14, 12);
-            this.LabelFramenum.Name = "LabelFramenum";
-            this.LabelFramenum.Size = new System.Drawing.Size(69, 12);
-            this.LabelFramenum.TabIndex = 3;
-            this.LabelFramenum.Text = "Frame #:  0";
-            // 
-            // OpenCameraButton
-            // 
-            this.OpenCameraButton.Location = new System.Drawing.Point(407, 3);
-            this.OpenCameraButton.Name = "OpenCameraButton";
-            this.OpenCameraButton.Size = new System.Drawing.Size(100, 31);
-            this.OpenCameraButton.TabIndex = 0;
-            this.OpenCameraButton.Text = "Open Camera";
-            this.OpenCameraButton.UseVisualStyleBackColor = true;
-            this.OpenCameraButton.Click += new System.EventHandler(this.OpenCameraButton_Click);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel1MinSize = 552;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.TabControlModules);
-            this.splitContainer1.Size = new System.Drawing.Size(1084, 902);
-            this.splitContainer1.SplitterDistance = 552;
-            this.splitContainer1.SplitterWidth = 1;
-            this.splitContainer1.TabIndex = 4;
-            this.splitContainer1.TabStop = false;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.IsSplitterFixed = true;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Panel1MinSize = 512;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(1084, 552);
-            this.splitContainer2.SplitterDistance = 512;
-            this.splitContainer2.SplitterWidth = 1;
-            this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(55, 150);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(58, 12);
-            this.label35.TabIndex = 6;
-            this.label35.Text = "Rotation :";
-            // 
-            // ComboBoxImageRotation
-            // 
-            this.ComboBoxImageRotation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxImageRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxImageRotation.FormattingEnabled = true;
-            this.ComboBoxImageRotation.Items.AddRange(new object[] {
-            "0",
-            "90",
-            "180",
-            "270"});
-            this.ComboBoxImageRotation.Location = new System.Drawing.Point(123, 147);
-            this.ComboBoxImageRotation.Name = "ComboBoxImageRotation";
-            this.ComboBoxImageRotation.Size = new System.Drawing.Size(95, 20);
-            this.ComboBoxImageRotation.TabIndex = 5;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(224, 150);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(31, 12);
-            this.label36.TabIndex = 13;
-            this.label36.Text = "Deg.";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(14, 178);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(99, 12);
-            this.label37.TabIndex = 6;
-            this.label37.Text = "Colortable Path :";
-            // 
-            // TextBoxColortablePath
-            // 
-            this.TextBoxColortablePath.Location = new System.Drawing.Point(123, 175);
-            this.TextBoxColortablePath.Name = "TextBoxColortablePath";
-            this.TextBoxColortablePath.Size = new System.Drawing.Size(132, 21);
-            this.TextBoxColortablePath.TabIndex = 0;
-            // 
             // frmTIRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 902);
+            this.ClientSize = new System.Drawing.Size(1101, 970);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmTIRF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2420,49 +2418,6 @@
             this.LogGroupBox.PerformLayout();
             this.TemperatureGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NUDTemp)).EndInit();
-            this.TabControlModules.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.splitContainer6.Panel1.ResumeLayout(false);
-            this.splitContainer6.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
-            this.splitContainer6.ResumeLayout(false);
-            this.splitContainer7.Panel1.ResumeLayout(false);
-            this.splitContainer7.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
-            this.splitContainer7.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDChannelNum)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -2496,6 +2451,42 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.TabControlModules.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFFOM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartAFDistance)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.GroupBoxManualPiezomirrors.ResumeLayout(false);
+            this.GroupBoxManualPiezomirrors.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).EndInit();
+            this.GroupBoxManualNanostage.ResumeLayout(false);
+            this.GroupBoxManualNanostage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2512,12 +2503,6 @@
         private System.Windows.Forms.Label TempLabel;
         private System.Windows.Forms.Button GetTempButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabControl TabControlModules;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.NumericUpDown NUDChannelNum;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.TabControl TabControlMain;
@@ -2573,66 +2558,12 @@
         private System.Windows.Forms.Button ButtonSaveFilmingSettings;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button ButtonAFConnect;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox ComboBoxAFDevices;
-        private System.Windows.Forms.Button ButtonAFCalibration;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFFOM;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFDistance;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label LabelAFInfo;
-        private System.Windows.Forms.Button ButtonAFStart;
         private System.Windows.Forms.ComboBox ComboBoxCCDModel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button StartFilmingButton;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.NumericUpDown NUDStopFrame;
         private System.Windows.Forms.CheckBox CheckBoxAutoStop;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown NUDAFRange;
-        private System.Windows.Forms.CheckBox CheckBoxAFIgnoreDarkFrame;
-        private System.Windows.Forms.SplitContainer splitContainer6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton RadioButtonAFLRefill;
-        private System.Windows.Forms.RadioButton RadioButtonAFLInfusion;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TrackBar TrackBarAFLRate;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox TextBoxAFLDiameter;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button ButtonAFLRemoveRules;
-        private System.Windows.Forms.ListView ListViewAFLRules;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.Button ButtonAFLEnable;
-        private System.Windows.Forms.SplitContainer splitContainer7;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button ButtonAFLFindDevices;
-        private System.Windows.Forms.ListView ListViewAFLPumps;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.Button ButtonAFLInstantRun;
-        private System.Windows.Forms.Button ButtonAFLAddRule;
-        private System.Windows.Forms.NumericUpDown NUDAFLRate;
-        private System.Windows.Forms.NumericUpDown NUDAFLVolume;
-        private System.Windows.Forms.Button ButtonAFLSetValuesToDevice;
-        private System.Windows.Forms.NumericUpDown NUDAFLFrameNumber;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.NumericUpDown NUDImagingHeight;
         private System.Windows.Forms.NumericUpDown NUDImagingWidth;
@@ -2641,42 +2572,103 @@
         private System.Windows.Forms.NumericUpDown NUDCameraIndex;
         private System.Windows.Forms.CheckBox CheckBoxShowGuidelines;
         private System.Windows.Forms.SplitContainer splitContainer8;
-        private System.Windows.Forms.Button ButtonADCDecreaseY;
-        private System.Windows.Forms.Button ButtonADCIncreaseX;
-        private System.Windows.Forms.Button ButtonADCDecreaseX;
-        private System.Windows.Forms.Button ButtonADCIncreaseY;
-        private System.Windows.Forms.Button ButtonADCInitialize;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox TextBoxADCNanostageStepSize;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TabControl TabControlModules;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label LabelAFInfo;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFFOM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAFDistance;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox TextBoxAFStdev;
+        private System.Windows.Forms.TextBox TextBoxAFSlope;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button ButtonAFSave;
+        private System.Windows.Forms.Button ButtonAFLoad;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown NUDAFRange;
+        private System.Windows.Forms.CheckBox CheckBoxAFKalman;
+        private System.Windows.Forms.Button ButtonAFStart;
+        private System.Windows.Forms.CheckBox CheckBoxAFIgnoreDarkFrame;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox ComboBoxAFDevices;
+        private System.Windows.Forms.Button ButtonAFCalibration;
+        private System.Windows.Forms.Button ButtonAFConnect;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.ListView ListViewAFLPumps;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.Button ButtonAFLFindDevices;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button ButtonAFLSetValuesToDevice;
+        private System.Windows.Forms.NumericUpDown NUDAFLRate;
+        private System.Windows.Forms.NumericUpDown NUDAFLFrameNumber;
+        private System.Windows.Forms.NumericUpDown NUDAFLVolume;
+        private System.Windows.Forms.Button ButtonAFLAddRule;
+        private System.Windows.Forms.Button ButtonAFLInstantRun;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.RadioButton RadioButtonAFLRefill;
+        private System.Windows.Forms.RadioButton RadioButtonAFLInfusion;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TrackBar TrackBarAFLRate;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox TextBoxAFLDiameter;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button ButtonAFLEnable;
+        private System.Windows.Forms.Button ButtonAFLRemoveRules;
+        private System.Windows.Forms.ListView ListViewAFLRules;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.NumericUpDown NUDADCPiezomirrorNum;
-        private System.Windows.Forms.Label LabelADCCurrentPos;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.GroupBox GroupBoxManualPiezomirrors;
+        private System.Windows.Forms.ComboBox ComboADCMirrorNum;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button ButtonADCIncreasePhi;
+        private System.Windows.Forms.Button ButtonADCDecreasePhi;
+        private System.Windows.Forms.Button ButtonADCIncreaseTheta;
+        private System.Windows.Forms.Button ButtonADCDecreaseTheta;
         private System.Windows.Forms.Label LabelADCCurrentAngle;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox TextBoxADCPiezomirrorStepSize;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Button ButtonADCIncreaseTheta;
-        private System.Windows.Forms.Button ButtonADCDecreaseTheta;
-        private System.Windows.Forms.Button ButtonADCIncreasePhi;
-        private System.Windows.Forms.Button ButtonADCDecreasePhi;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox ComboADCMirrorNum;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox ComboBoxImageRotation;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox TextBoxColortablePath;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.NumericUpDown NUDADCPiezomirrorNum;
+        private System.Windows.Forms.Button ButtonADCInitialize;
+        private System.Windows.Forms.Button ButtonADCStart;
+        private System.Windows.Forms.Button ButtonADCSelectPinhole1;
+        private System.Windows.Forms.GroupBox GroupBoxManualNanostage;
+        private System.Windows.Forms.Label LabelADCCurrentPos;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox TextBoxADCNanostageStepSize;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button ButtonADCDecreaseX;
+        private System.Windows.Forms.Button ButtonADCIncreaseX;
+        private System.Windows.Forms.Button ButtonADCIncreaseY;
+        private System.Windows.Forms.Button ButtonADCDecreaseY;
+        private System.Windows.Forms.Button ButtonADCSelectObject;
+        private System.Windows.Forms.Button ButtonADCSelectPinhole2;
 
     }
 }

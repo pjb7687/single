@@ -16,8 +16,8 @@ namespace SMBdevices
 
         public CCDType m_CCDType;
         public int m_CCDTemp;
-        public bool m_gettingimage;
         public double m_exptime = 0.1;
+        public int m_maxretrynum = 3;
 
         public int m_clipsize;
         public int m_imagewidth;
@@ -78,7 +78,6 @@ namespace SMBdevices
                     m_CCDTemp = 0;
                     break;
             }
-            m_gettingimage = false;
         }
 
         public void SetGain(int gain)
@@ -178,37 +177,24 @@ namespace SMBdevices
             AndorCCD.SetExposureTime((float)exptime);
         }
 
-        public void SetRotation(int rotation)
-        {
-            switch (rotation)
-            {
-                case 0: // 0 Degree
-                    AndorCCD.SetImageFlip(0, 0);
-                    AndorCCD.SetImageRotate(0);
-                    break;
-                case 1: // 90 Degree
-                    AndorCCD.SetImageFlip(0, 0);
-                    AndorCCD.SetImageRotate(1);
-                    break;
-                case 2: // 180 Degree
-                    AndorCCD.SetImageFlip(1, 1);
-                    AndorCCD.SetImageRotate(0);
-                    break;
-                case 3: // 270 Degree
-                    AndorCCD.SetImageFlip(0, 0);
-                    AndorCCD.SetImageRotate(2);
-                    break;
-            }
-        }
-
         public void GetImage(int[] imagebuf)
         {
+            int retrynum = 0;
+            uint err;
+            bool successflag = false;
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
-                    while (m_gettingimage)
-                    {
-                        if (AndorCCD.GetOldestImage(imagebuf, m_Bufsize) == ATMCD32CS.AndorSDK.DRV_SUCCESS) break;
+                    while (!successflag) {
+                        do 
+                        {
+                             err = AndorCCD.GetOldestImage(imagebuf, m_Bufsize);
+                        } while (err == ATMCD32CS.AndorSDK.DRV_NO_NEW_DATA);
+
+                        if (err == ATMCD32CS.AndorSDK.DRV_SUCCESS) successflag = true;
+                        else retrynum++;
+
+                        if (retrynum > m_maxretrynum) throw new Exception();
                     }
                     break;
                 case CCDType.PROEM_CCD:

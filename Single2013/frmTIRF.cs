@@ -27,6 +27,8 @@ namespace Single2013
         private AutoFlow m_autoflow;
         private ActiveDriftCorrection m_adc;
 
+        public int[] cursorXY = new int[2] {-1, -1};
+
         public bool m_CCDon = false;
 
         private string m_pmafiledir;
@@ -110,6 +112,7 @@ namespace Single2013
             ChartAFDistance.Series[1].Points.AddXY(foms[foms.Length - 1], fitvals[0] + fitvals[1] * foms[foms.Length - 1]);
             ChartAFDistance.ChartAreas[0].AxisY.Minimum = ChartAFDistance.Series[0].Points.FindMinByValue().YValues[0] - 0.01;
             ChartAFDistance.ChartAreas[0].AxisY.Maximum = ChartAFDistance.Series[0].Points.FindMaxByValue().YValues[0] + 0.01;
+            TextBoxAFSlope.Text = fitvals[1].ToString();
             m_autofocusing.FindingFocalPoint();
         }
 
@@ -140,6 +143,7 @@ namespace Single2013
             }
             ChartAFFOM.ChartAreas[0].AxisY.Minimum = 0;
             ChartAFFOM.ChartAreas[0].AxisY.Maximum = ChartAFFOM.Series[0].Points.FindMaxByValue().YValues[0];
+            TextBoxAFStdev.Text = stdev.ToString();
             ButtonAFCalibration.Enabled = true;
             ButtonAFStart.Enabled = true;
         }
@@ -166,14 +170,11 @@ namespace Single2013
             NUDImagingWidth.Value = Properties.Settings.Default.ImagingWidth;
             NUDImagingHeight.Value = Properties.Settings.Default.ImagingHeight;
             NUDCameraIndex.Value = Properties.Settings.Default.CameraIndex;
-            ComboBoxImageRotation.SelectedIndex = Properties.Settings.Default.RotationIndex;
-            TextBoxColortablePath.Text = Properties.Settings.Default.Colortable;
 
             if (m_ccd != null) m_ccd.Dispose();
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, Properties.Settings.Default.CameraIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetRange((int)NUDImagingWidth.Value, (int)NUDImagingHeight.Value);
-            m_ccd.SetRotation(Properties.Settings.Default.RotationIndex);
             m_ccd.SetTemp(-85);
 
             switch (ComboBoxZoomMode.SelectedIndex)
@@ -297,7 +298,6 @@ namespace Single2013
                 m_autoflow.m_autoflow = false;
             m_imgdrawer.m_auto = false;
             m_imgdrawer.m_filming = false;
-            m_ccd.m_gettingimage = false;
             m_imgdrawer.StopDrawing();
             OffAllLaser();
         }
@@ -521,19 +521,23 @@ namespace Single2013
                 m_imgdrawer.m_autostopframenum = 0;
         }
 
-        private void NUDStopFrame_ValueChanged(object sender, EventArgs e)
-        {
-            CheckBoxAutoStop.Checked = false;
-        }
-
-        private void NUDStopFrame_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CheckBoxAutoStop.Checked = false;
-        }
-
         private void CheckBoxShowGuidelines_CheckedChanged(object sender, EventArgs e)
         {
             m_imgdrawer.ToggleGuidelines(CheckBoxShowGuidelines.Checked);
+        }
+
+        private void CCDWindow_Click(object sender, EventArgs e)
+        {
+            if (((MouseEventArgs)e).Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                int[] xy = new int[2] {((MouseEventArgs)e).Y, ((MouseEventArgs)e).X};
+                if (xy[0] > 5 && xy[0] < 507 && xy[1] > 5 && xy[1] < 507)
+                    cursorXY = xy;
+            }
+            else
+            {
+                cursorXY = new int[2] { -1, -1 };
+            }
         }
         #endregion
 
@@ -556,8 +560,9 @@ namespace Single2013
             frm.static2 = "Port/Channel: ";
             frm.static3 = "Timebase: ";
             frm.static4 = "Trigger: ";
-            if (frm.ShowDialog() == DialogResult.OK)            
-                ListViewCounters.Items.Add(new ListViewItem(new string[] { frm.text1, frm.text2, frm.text3, frm.text4 }));
+            if (frm.ShowDialog() != DialogResult.OK) return;
+            
+            ListViewLasers.Items.Add(new ListViewItem(new string[] { frm.text1, frm.text2, frm.text3, frm.text4 }));
         }
 
         private void ButtonModifyLaser_Click(object sender, EventArgs e)
@@ -631,8 +636,6 @@ namespace Single2013
             Properties.Settings.Default.ImagingWidth = (int)NUDImagingWidth.Value;
             Properties.Settings.Default.ImagingHeight = (int)NUDImagingHeight.Value;
             Properties.Settings.Default.CameraIndex = (int)NUDCameraIndex.Value;
-            Properties.Settings.Default.RotationIndex = (int)ComboBoxImageRotation.SelectedIndex;
-            Properties.Settings.Default.Colortable = TextBoxColortablePath.Text;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();
@@ -682,6 +685,8 @@ namespace Single2013
                 MessageBox.Show("Initialization Failed! Did you turned your device on?", "Single 2013");
                 return;
             }
+            CheckBoxAFIgnoreDarkFrame.Enabled = true;
+            CheckBoxAFKalman.Enabled = true;
             ButtonAFCalibration.Enabled = true;
         }
 
@@ -704,6 +709,7 @@ namespace Single2013
                 ChartAFDistance.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 ChartAFFOM.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
+                m_autofocusing.SetCalibration(Convert.ToInt32(TextBoxAFSlope.Text), Convert.ToInt32(TextBoxAFStdev.Text));
                 m_autofocusing.StartFocusing();
                 ButtonAFStart.Text = "Stop Focusing";
             }
@@ -714,6 +720,49 @@ namespace Single2013
             ButtonAFCalibration.Enabled = false;
             Log("[Auto Focusing]", new string[] { "Calibrating..." });
             m_autofocusing.Calibrate(m_ccd.m_exptime);
+        }
+
+        private void ButtonAFLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.ShowDialog();
+
+            if (d.FileName != "")
+            {
+                string[] lines = System.IO.File.ReadAllLines(d.FileName);
+                if (lines.Length < 2) return;
+                TextBoxAFSlope.Text = lines[0];
+                TextBoxAFStdev.Text = lines[1];
+            }
+        }
+
+        private void ButtonAFSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog d = new SaveFileDialog();
+            d.ShowDialog();
+
+            if (d.FileName != "")
+            {
+                System.IO.File.WriteAllLines(d.FileName, new string[] { TextBoxAFSlope.Text, TextBoxAFStdev.Text });
+            }
+        }
+
+        private void CheckBoxAFKalman_CheckedChanged(object sender, EventArgs e)
+        {
+            if (m_autofocusing != null)
+                m_autofocusing.m_applyingkalman = CheckBoxAFKalman.Checked;
+        }
+
+        private void CheckBoxAFIgnoreDarkFrame_CheckedChanged(object sender, EventArgs e)
+        {
+            if (m_autofocusing != null && CheckBoxAFIgnoreDarkFrame.Checked)
+                m_autofocusing.m_ignoredarkframe = ALEXCheckedListBox.CheckedItems.Count;
+        }
+
+        private void NUDAFRange_ValueChanged(object sender, EventArgs e)
+        {
+            if (m_autofocusing != null && NUDAFRange.Value <= NUDChannelNum.Value)
+                m_autofocusing.m_selectedchannel = (int)NUDAFRange.Value;
         }
         #endregion
 
@@ -833,17 +882,27 @@ namespace Single2013
             double[] ref_pos = { 0, 0 };
 
             MessageBox.Show(this, "Please remove prism NOW! And reinstall it after initialization.\r\n\r\nPress OK button to continue...", "Warning!");
-
-            m_adc = new ActiveDriftCorrection((int)NUDADCPiezomirrorNum.Value, ref_pos);
+            try
+            {
+                m_adc = new ActiveDriftCorrection((int)NUDADCPiezomirrorNum.Value, ref_pos, m_imgdrawer);
+            }
+            catch
+            {
+                MessageBox.Show("Initialization Failed! Did you turned your device on?", "Single 2013");
+                return;
+            }
 
             for (int i = 0; i < (int)NUDADCPiezomirrorNum.Value; i++)
             {
                 ComboADCMirrorNum.Items.Add(i + 1);
             }
-
             showXYZstagePos();
 
             ButtonADCInitialize.Enabled = false;
+            ButtonADCSelectPinhole1.Enabled = true;
+            ButtonADCSelectPinhole2.Enabled = true;
+            ButtonADCSelectObject.Enabled = true;
+            ButtonADCStart.Enabled = true;
         }
 
         private void ButtonADCIncreaseX_Click(object sender, EventArgs e)
@@ -912,6 +971,38 @@ namespace Single2013
             showPiezomirrorPos();
         }
         
+        private void buttonADCSelectPinhole1_Click(object sender, EventArgs e)
+        {
+            m_adc.setXY(0, cursorXY);
+        }
+
+        private void ButtonADCSelectPinhole2_Click(object sender, EventArgs e)
+        {
+            m_adc.setXY(1, cursorXY);
+        }
+
+        private void ButtonADCSelectObject_Click(object sender, EventArgs e)
+        {
+            m_adc.setXY(2, cursorXY);
+        }
+
+        private void ButtonADCStart_Click(object sender, EventArgs e)
+        {
+            if (m_adc.m_activedriftcorrection)
+            {
+                m_adc.StopADC();
+                ButtonAFStart.Text = "Start Active Drift Correction";
+                GroupBoxManualNanostage.Enabled = true;
+                GroupBoxManualPiezomirrors.Enabled = true;
+            }
+            else
+            {
+                m_adc.StartADC();
+                ButtonADCStart.Text = "Stop Active Drift Correction";
+                GroupBoxManualNanostage.Enabled = false;
+                GroupBoxManualPiezomirrors.Enabled = false;
+            }
+        }
         #endregion
     }
 }
