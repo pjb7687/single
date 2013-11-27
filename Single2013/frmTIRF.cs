@@ -709,7 +709,7 @@ namespace Single2013
                 ChartAFDistance.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 ChartAFFOM.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
-                m_autofocusing.SetCalibration(Convert.ToInt32(TextBoxAFSlope.Text), Convert.ToInt32(TextBoxAFStdev.Text));
+                m_autofocusing.SetCalibration(Convert.ToDouble(TextBoxAFSlope.Text), Convert.ToDouble(TextBoxAFStdev.Text));
                 m_autofocusing.StartFocusing();
                 ButtonAFStart.Text = "Stop Focusing";
             }
@@ -884,7 +884,7 @@ namespace Single2013
             MessageBox.Show(this, "Please remove prism NOW! And reinstall it after initialization.\r\n\r\nPress OK button to continue...", "Warning!");
             try
             {
-                m_adc = new ActiveDriftCorrection((int)NUDADCPiezomirrorNum.Value, ref_pos, m_imgdrawer);
+                m_adc = new ActiveDriftCorrection((int)NUDADCPiezomirrorNum.Value, ref_pos, m_imgdrawer, PictureBoxADCPinhole1, PictureBoxADCPinhole2, PictureBoxADCObject);
             }
             catch
             {
@@ -991,7 +991,7 @@ namespace Single2013
             if (m_adc.m_activedriftcorrection)
             {
                 m_adc.StopADC();
-                ButtonAFStart.Text = "Start Active Drift Correction";
+                ButtonADCStart.Text = "Start Active Drift Correction";
                 GroupBoxManualNanostage.Enabled = true;
                 GroupBoxManualPiezomirrors.Enabled = true;
             }

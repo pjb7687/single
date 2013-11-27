@@ -18,7 +18,7 @@ namespace Single2013
         uint[,] colortable = new uint[256, 3];
 
         public Semaphore dumparray_sem = new Semaphore(1, 1);
-        //public Semaphore displayarray_sem = new Semaphore(1, 1);
+        public Semaphore displayarray_sem = new Semaphore(1, 1);
 
         public byte[,] dump_array;
         public int[] display_array;
@@ -145,7 +145,7 @@ namespace Single2013
                 }
 
                 dumparray_sem.WaitOne();
-                //displayarray_sem.WaitOne();
+                displayarray_sem.WaitOne();
                 for (j = 0; j < m_ccd.m_imageheight; j++)
                 {
                     for (k = 0; k < m_frm.m_chanum; k++)
@@ -190,20 +190,20 @@ namespace Single2013
                 {
                     if (ADCCursorXYs[j, 0] != -1 && ADCCursorXYs[j, 1] != -1)
                     {
-                        for (k = ADCCursorXYs[j, 0] - 3; k < ADCCursorXYs[j, 0] + 4; k++)
+                        for (k = ADCCursorXYs[j, 0] - 4; k < ADCCursorXYs[j, 0] + 5; k++)
                         {
-                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] + 3] = 255 * 256 + 255 * 256 * 256;
-                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] - 3] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] + 4] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * k + ADCCursorXYs[j, 1] - 4] = 255 * 256 + 255 * 256 * 256;
                         }
-                        for (k = ADCCursorXYs[j, 1] - 3; k < ADCCursorXYs[j, 1] + 4; k++)
+                        for (k = ADCCursorXYs[j, 1] - 4; k < ADCCursorXYs[j, 1] + 5; k++)
                         {
-                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] + 3) + k] = 255 * 256 + 255 * 256 * 256;
-                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] - 3) + k] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] + 4) + k] = 255 * 256 + 255 * 256 * 256;
+                            display_array[m_ccd.m_imagewidth * (ADCCursorXYs[j, 0] - 4) + k] = 255 * 256 + 255 * 256 * 256;
                         }
                     }
                 }
 
-                //displayarray_sem.Release();
+                displayarray_sem.Release();
                 AFFlag = false;
 
                 if (m_filming)
