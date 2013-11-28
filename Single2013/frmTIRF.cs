@@ -143,6 +143,8 @@ namespace Single2013
             }
             ChartAFFOM.ChartAreas[0].AxisY.Minimum = 0;
             ChartAFFOM.ChartAreas[0].AxisY.Maximum = ChartAFFOM.Series[0].Points.FindMaxByValue().YValues[0];
+            TextBoxAFStdev.Enabled = true;
+            TextBoxAFSlope.Enabled = true;
             TextBoxAFStdev.Text = stdev.ToString();
             ButtonAFCalibration.Enabled = true;
             ButtonAFStart.Enabled = true;
@@ -718,6 +720,9 @@ namespace Single2013
         private void ButtonAFCalibration_Click(object sender, EventArgs e)
         {
             ButtonAFCalibration.Enabled = false;
+            ButtonAFStart.Enabled = false;
+            TextBoxAFStdev.Enabled = false;
+            TextBoxAFSlope.Enabled = false;
             Log("[Auto Focusing]", new string[] { "Calibrating..." });
             m_autofocusing.Calibrate(m_ccd.m_exptime);
         }
@@ -764,6 +769,19 @@ namespace Single2013
             if (m_autofocusing != null && NUDAFRange.Value <= NUDChannelNum.Value)
                 m_autofocusing.m_selectedchannel = (int)NUDAFRange.Value;
         }
+
+        private void TextBoxAFSlope_TextChanged(object sender, EventArgs e)
+        {
+            if (TextBoxAFSlope.Text != "" && TextBoxAFStdev.Text != "" && ButtonAFCalibration.Enabled == true) 
+                ButtonAFStart.Enabled = true;
+        }
+
+        private void TextBoxAFStdev_TextChanged(object sender, EventArgs e)
+        {
+            if (TextBoxAFSlope.Text != "" && TextBoxAFStdev.Text != "" && ButtonAFCalibration.Enabled == true)
+                ButtonAFStart.Enabled = true;
+        }
+
         #endregion
 
         #region Auto Flow
