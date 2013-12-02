@@ -29,7 +29,6 @@ namespace Single2013
         private int[] m_buf;
         private bool m_drawflag = false;
         private Thread m_drawingThread;
-        private PictureBox m_pb;
 
         private frmTIRF m_frm;
         public bool m_filming = false;
@@ -279,11 +278,8 @@ namespace Single2013
             if (m_drawingThread != null) m_drawingThread.Join();
         }
 
-        public void StartDrawing(PictureBox pb, smbCCD ccd)
+        public void StartDrawing()
         {
-            m_ccd = ccd;
-            m_pb = pb;
-
             m_drawflag = true;
             m_drawingThread = new Thread(new ThreadStart(DrawingThread));
             m_drawingThread.Priority = ThreadPriority.Normal;

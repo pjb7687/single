@@ -322,7 +322,7 @@ namespace Single2013
                 OpenCameraButton.Text = "Close Camera";
                 m_ccd.ShutterOn();
                 m_imgdrawer.m_auto = CheckBoxAuto.Checked;
-                m_imgdrawer.StartDrawing(CCDWindow, m_ccd);
+                m_imgdrawer.StartDrawing();
                 Log("[Camera]", new string[] { "Shutter Opened.", "Bin Size: " + m_ccd.m_binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
             }
             else
