@@ -116,7 +116,7 @@ namespace Single2013
         {
             int i, j, k, t;
             int high = m_ccd.m_imagewidth * m_ccd.m_imageheight;
-
+            m_ccd.ShutterOn();
             while (m_drawflag)
             {
                 Thread.Sleep(0);
@@ -237,6 +237,7 @@ namespace Single2013
                     catch { }
                 }
             }
+            m_ccd.ShutterOff();
         }
 
         public void StartFilming(string pmafilename)

@@ -321,7 +321,6 @@ namespace Single2013
             if (!m_CCDon)
             {
                 OpenCameraButton.Text = "Close Camera";
-                m_ccd.ShutterOn();
                 m_imgdrawer.m_auto = CheckBoxAuto.Checked;
                 m_imgdrawer.StartDrawing();
                 Log("[Camera]", new string[] { "Shutter Opened.", "Bin Size: " + m_ccd.m_binsize.ToString(), "Stretch Mode: " + CCDWindow.SizeMode.ToString() });
@@ -330,7 +329,6 @@ namespace Single2013
             {
                 if (m_imgdrawer.m_filming) StartFilmingButton_Click(sender, e);
                 m_imgdrawer.StopDrawing();
-                m_ccd.ShutterOff();
                 OpenCameraButton.Text = "Open Camera";
                 Log("[Camera]", new string[] {"Shutter Closed."});
             }
