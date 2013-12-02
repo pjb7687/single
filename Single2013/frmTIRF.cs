@@ -298,9 +298,14 @@ namespace Single2013
                 m_autofocusing.m_focusing = false;
             if (m_autoflow != null)
                 m_autoflow.m_autoflow = false;
-            m_imgdrawer.m_auto = false;
-            m_imgdrawer.m_filming = false;
-            m_imgdrawer.StopDrawing();
+            if (m_adc != null)
+                m_adc.m_activedriftcorrection = false;
+            if (m_imgdrawer != null)
+            {
+                m_imgdrawer.m_auto = false;
+                m_imgdrawer.m_filming = false;
+                m_imgdrawer.StopDrawing();
+            }
             OffAllLaser();
         }
 
