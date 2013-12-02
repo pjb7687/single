@@ -232,7 +232,7 @@ namespace Single2013
         public void StartADC()
         {
             m_adcThread = new Thread(new ThreadStart(ActiveDriftCorrectionThread));
-            m_adcThread.Priority = ThreadPriority.BelowNormal;
+            m_adcThread.Priority = ThreadPriority.Normal;
             m_activedriftcorrection = true;
             m_adcThread.IsBackground = true;
             m_adcThread.Start();

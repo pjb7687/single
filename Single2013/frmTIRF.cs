@@ -251,7 +251,8 @@ namespace Single2013
         private void OffAllLaser()
         {
             for (int i = 0; i < LaserCheckedListBox.Items.Count; i++)
-                m_shutter.LaserOff(i);
+                if (m_shutter != null)
+                    m_shutter.LaserOff(i);
         }
 
         private void Log(string mainissue, string[] issues)

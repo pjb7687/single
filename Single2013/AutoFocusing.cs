@@ -192,7 +192,7 @@ namespace Single2013
         public void StartFocusing()
         {
             m_focusingThread = new Thread(new ThreadStart(FocusingThread));
-            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Priority = ThreadPriority.Normal;
             m_focusing = true;
             m_focusingThread.IsBackground = true;
             m_focusingThread.Start();
@@ -208,14 +208,14 @@ namespace Single2013
         {
             m_exptime = exptime;
             m_focusingThread = new Thread(new ThreadStart(CalibrateThread));
-            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Priority = ThreadPriority.Normal;
             m_focusingThread.Start();
         }
 
         public void FindingFocalPoint()
         {
             m_focusingThread = new Thread(new ThreadStart(FindingFocalPointThread));
-            m_focusingThread.Priority = ThreadPriority.BelowNormal;
+            m_focusingThread.Priority = ThreadPriority.Normal;
             m_focusingThread.Start();
         }
 
