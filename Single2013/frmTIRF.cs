@@ -295,12 +295,6 @@ namespace Single2013
 
         private void frmTIRF_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*
-            if (m_ccd.GetTemp() < -20)
-            {
-                MessageBox.Show("In order to shutdown whole system, Temperature of CCD should be above -20 C.", "Single 2013");
-                e.Cancel = true;
-            }*/
             if (m_autofocusing != null)
                 m_autofocusing.m_focusing = false;
             if (m_autoflow != null)

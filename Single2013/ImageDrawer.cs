@@ -275,7 +275,7 @@ namespace Single2013
         }
         ~ImageDrawer()
         {
-            m_drawflag = false;
+            StopDrawing();
             if (m_drawingThread != null) m_drawingThread.Join();
         }
 
