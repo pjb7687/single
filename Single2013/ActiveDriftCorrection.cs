@@ -245,6 +245,7 @@ namespace Single2013
 
         ~ActiveDriftCorrection()
         {
+            StopADC();
             if (m_adcThread != null) m_adcThread.Join();
         }
     }
