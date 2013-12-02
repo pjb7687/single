@@ -42,6 +42,12 @@ namespace Single2013
         }
 
         #region Delegates For MultiThreading
+        public delegate void DrawFrameDelegate(Bitmap bitmap);
+        public void DrawFrame(Bitmap bitmap)
+        {
+            CCDWindow.Image = bitmap;
+        }
+
         public delegate void updateAutoScaleInfoDelegate(int theMax, int[] theMin);
         public void updateAutoScaleInfo(int theMax, int[] theMin)
         {

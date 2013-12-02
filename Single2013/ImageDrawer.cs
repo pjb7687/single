@@ -222,7 +222,7 @@ namespace Single2013
                 if (m_framenum % 1 == 0)
                 {
                     Bitmap bitmap;
-                    //displayarray_sem.WaitOne();
+                    displayarray_sem.WaitOne();
                     unsafe
                     {
                         fixed (int* intPtr = &display_array[0])
@@ -230,8 +230,12 @@ namespace Single2013
                             bitmap = new Bitmap(m_ccd.m_imagewidth, m_ccd.m_imageheight, 4 * ((m_ccd.m_imagewidth * 4 + 3) / 4), PixelFormat.Format32bppRgb, new IntPtr(intPtr));
                         }
                     }
-                    m_pb.Image = bitmap;
-                    //displayarray_sem.Release();
+                    displayarray_sem.Release();
+                    try
+                    {
+                        m_frm.Invoke(new frmTIRF.DrawFrameDelegate(m_frm.DrawFrame), new object[] { bitmap });
+                    }
+                    catch { }
                 }
             }
         }

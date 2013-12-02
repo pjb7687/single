@@ -201,6 +201,7 @@ namespace Single2013
         public void StopFocusing()
         {
             m_focusing = false;
+            if (m_focusingThread != null) m_focusingThread.Join();
         }
 
         public void Calibrate(double exptime)
@@ -339,7 +340,6 @@ namespace Single2013
         ~AutoFocusing()
         {
             StopFocusing();
-            if (m_focusingThread != null) m_focusingThread.Join();
         }
     }
 }
