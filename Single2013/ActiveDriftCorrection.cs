@@ -156,10 +156,7 @@ namespace Single2013
                     {
                         for (n = 0; n < 3; n++)
                         {
-                            if (i == (int)fit_xye[0] || j == (int)fit_xye[1])
-                                displaywindows[n][j * 7 + i] = 255 + 255 * 256 + 255 * 256 * 256;
-                            else
-                                displaywindows[n][j * 7 + i] = m_imgdrawer.display_array[((int)m_y[n] - 3 + j) * 512 + (int)m_x[n] - 3 + i];
+                            displaywindows[n][j * 7 + i] = m_imgdrawer.display_array[((int)m_y[n] - 3 + j) * 512 + (int)m_x[n] - 3 + i];
                         }
                     }
                 }

@@ -984,7 +984,7 @@ namespace Single2013
         private void showPiezomirrorPos()
         {
             double[] angle = m_adc.getCurrentAnglePiezomirror();
-            LabelADCCurrentAngle.Text = string.Format("θ: {0:0.000} mrad\r\nφ: {1:0.000} mrad", angle[0], angle[1]);
+            LabelADCCurrentAngle1.Text = string.Format("θ: {0:0.000} mrad\r\nφ: {1:0.000} mrad", angle[0], angle[1]);
         }
 
         private void ComboADCMirrorNum_SelectedIndexChanged(object sender, EventArgs e)

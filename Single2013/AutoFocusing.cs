@@ -69,7 +69,10 @@ namespace Single2013
             int xend = (m_ccd.m_imagewidth / m_frm.m_chanum) * m_selectedchannel;
             int ystart = 0; int yend = m_ccd.m_imageheight;
 
-            while (m_focusing && m_imgdrawer.AFFlag) Thread.Sleep(10);
+            while (m_imgdrawer.AFFlag) {
+                Thread.Sleep(10);
+                if (!m_focusing) return 0;
+            }
             m_imgdrawer.AFFlag = true;
 
             if (m_imgdrawer.dump_array != null) m_imgdrawer.dumparray_sem.WaitOne();

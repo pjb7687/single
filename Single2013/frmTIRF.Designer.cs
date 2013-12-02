@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -140,11 +143,16 @@
             this.ButtonAFCalibration = new System.Windows.Forms.Button();
             this.ButtonAFConnect = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.ListViewAFLPumps = new System.Windows.Forms.ListView();
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ButtonAFLFindDevices = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.ButtonAFLEnable = new System.Windows.Forms.Button();
+            this.ButtonAFLRemoveRules = new System.Windows.Forms.Button();
+            this.ListViewAFLRules = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ButtonAFLSetValuesToDevice = new System.Windows.Forms.Button();
             this.NUDAFLRate = new System.Windows.Forms.NumericUpDown();
@@ -164,16 +172,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.TextBoxAFLDiameter = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.ButtonAFLEnable = new System.Windows.Forms.Button();
-            this.ButtonAFLRemoveRules = new System.Windows.Forms.Button();
-            this.ListViewAFLRules = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.ListViewAFLPumps = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ButtonAFLFindDevices = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -189,7 +192,7 @@
             this.ButtonADCDecreasePhi = new System.Windows.Forms.Button();
             this.ButtonADCIncreaseTheta = new System.Windows.Forms.Button();
             this.ButtonADCDecreaseTheta = new System.Windows.Forms.Button();
-            this.LabelADCCurrentAngle = new System.Windows.Forms.Label();
+            this.LabelADCCurrentAngle1 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.TextBoxADCPiezomirrorStepSize = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -212,6 +215,9 @@
             this.ButtonADCIncreaseX = new System.Windows.Forms.Button();
             this.ButtonADCIncreaseY = new System.Windows.Forms.Button();
             this.ButtonADCDecreaseY = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LabelADCCurrentAngle2 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -265,14 +271,16 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).BeginInit();
-            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxADCObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxADCPinhole2)).BeginInit();
@@ -281,6 +289,7 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).BeginInit();
             this.GroupBoxManualNanostage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // SplitConSubs
@@ -1290,7 +1299,7 @@
             this.TabControlModules.Location = new System.Drawing.Point(3, 5);
             this.TabControlModules.Name = "TabControlModules";
             this.TabControlModules.SelectedIndex = 0;
-            this.TabControlModules.Size = new System.Drawing.Size(1095, 409);
+            this.TabControlModules.Size = new System.Drawing.Size(1095, 412);
             this.TabControlModules.TabIndex = 0;
             // 
             // tabPage3
@@ -1301,7 +1310,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1087, 383);
+            this.tabPage3.Size = new System.Drawing.Size(1087, 386);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1357,45 +1366,45 @@
             // 
             // ChartAFFOM
             // 
-            chartArea3.AxisX.LabelStyle.Format = "0.##";
-            chartArea3.AxisY.LabelStyle.Format = "0.##";
-            chartArea3.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.LabelStyle.Format = "0.##";
+            chartArea1.AxisY.LabelStyle.Format = "0.##";
+            chartArea1.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea1);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend1);
             this.ChartAFFOM.Location = new System.Drawing.Point(377, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series4.Legend = "Legend1";
-            series4.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Legend = "Legend1";
+            series1.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series1);
             this.ChartAFFOM.Size = new System.Drawing.Size(368, 230);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea4.AxisX.LabelStyle.Format = "0.##";
-            chartArea4.AxisY.LabelStyle.Format = "0.##";
-            chartArea4.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea4);
+            chartArea2.AxisX.LabelStyle.Format = "0.##";
+            chartArea2.AxisY.LabelStyle.Format = "0.##";
+            chartArea2.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea2);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend4);
+            legend2.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend2);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series5.Legend = "Legend1";
-            series5.Name = "FOM";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series5);
-            this.ChartAFDistance.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "FOM";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series2);
+            this.ChartAFDistance.Series.Add(series3);
             this.ChartAFDistance.Size = new System.Drawing.Size(368, 230);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1607,63 +1616,103 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1087, 383);
+            this.tabPage4.Size = new System.Drawing.Size(1087, 386);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // groupBox9
+            // groupBox8
             // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox9.Controls.Add(this.ListViewAFLPumps);
-            this.groupBox9.Controls.Add(this.ButtonAFLFindDevices);
-            this.groupBox9.Location = new System.Drawing.Point(3, 3);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(499, 158);
-            this.groupBox9.TabIndex = 0;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Syringe Pumps";
-            // 
-            // ListViewAFLPumps
-            // 
-            this.ListViewAFLPumps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewAFLPumps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12,
-            this.columnHeader13});
-            this.ListViewAFLPumps.FullRowSelect = true;
-            this.ListViewAFLPumps.GridLines = true;
-            this.ListViewAFLPumps.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
-            this.ListViewAFLPumps.MultiSelect = false;
-            this.ListViewAFLPumps.Name = "ListViewAFLPumps";
-            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 122);
-            this.ListViewAFLPumps.TabIndex = 9;
-            this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
-            this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
-            this.ListViewAFLPumps.Click += new System.EventHandler(this.ListViewAFLPumps_Click);
+            this.groupBox8.Controls.Add(this.ButtonAFLEnable);
+            this.groupBox8.Controls.Add(this.ButtonAFLRemoveRules);
+            this.groupBox8.Controls.Add(this.ListViewAFLRules);
+            this.groupBox8.Location = new System.Drawing.Point(508, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(578, 375);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
             // 
-            // columnHeader12
+            // ButtonAFLEnable
             // 
-            this.columnHeader12.Text = "Pump Model";
-            this.columnHeader12.Width = 226;
+            this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLEnable.Enabled = false;
+            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 342);
+            this.ButtonAFLEnable.Name = "ButtonAFLEnable";
+            this.ButtonAFLEnable.Size = new System.Drawing.Size(562, 28);
+            this.ButtonAFLEnable.TabIndex = 4;
+            this.ButtonAFLEnable.Text = "Enable Auto Flow";
+            this.ButtonAFLEnable.UseVisualStyleBackColor = true;
+            this.ButtonAFLEnable.Click += new System.EventHandler(this.ButtonAFLEnable_Click);
             // 
-            // columnHeader13
+            // ButtonAFLRemoveRules
             // 
-            this.columnHeader13.Text = "Port";
-            this.columnHeader13.Width = 76;
+            this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(408, 395);
+            this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
+            this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
+            this.ButtonAFLRemoveRules.TabIndex = 3;
+            this.ButtonAFLRemoveRules.Text = "Remove Selected";
+            this.ButtonAFLRemoveRules.UseVisualStyleBackColor = true;
+            this.ButtonAFLRemoveRules.Click += new System.EventHandler(this.ButtonAFLRemoveRules_Click);
             // 
-            // ButtonAFLFindDevices
+            // ListViewAFLRules
             // 
-            this.ButtonAFLFindDevices.Location = new System.Drawing.Point(354, 20);
-            this.ButtonAFLFindDevices.Name = "ButtonAFLFindDevices";
-            this.ButtonAFLFindDevices.Size = new System.Drawing.Size(139, 24);
-            this.ButtonAFLFindDevices.TabIndex = 8;
-            this.ButtonAFLFindDevices.Text = "Find Devices";
-            this.ButtonAFLFindDevices.UseVisualStyleBackColor = true;
-            this.ButtonAFLFindDevices.Click += new System.EventHandler(this.ButtonAFLFindDevices_Click);
+            this.ListViewAFLRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListViewAFLRules.CheckBoxes = true;
+            this.ListViewAFLRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader11,
+            this.columnHeader14,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.ListViewAFLRules.FullRowSelect = true;
+            this.ListViewAFLRules.GridLines = true;
+            this.ListViewAFLRules.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewAFLRules.Location = new System.Drawing.Point(10, 20);
+            this.ListViewAFLRules.MultiSelect = false;
+            this.ListViewAFLRules.Name = "ListViewAFLRules";
+            this.ListViewAFLRules.Size = new System.Drawing.Size(562, 316);
+            this.ListViewAFLRules.TabIndex = 0;
+            this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
+            this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
+            this.ListViewAFLRules.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListViewAFLRules_ItemCheck);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Frame #";
+            this.columnHeader7.Width = 65;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Pump";
+            this.columnHeader11.Width = 240;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Diameter";
+            this.columnHeader14.Width = 70;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Volume";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Rate";
+            this.columnHeader9.Width = 45;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Direction";
+            this.columnHeader10.Width = 65;
             // 
             // groupBox2
             // 
@@ -1874,105 +1923,65 @@
             this.TextBoxAFLDiameter.Size = new System.Drawing.Size(183, 21);
             this.TextBoxAFLDiameter.TabIndex = 3;
             // 
-            // groupBox8
+            // groupBox9
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox9.Controls.Add(this.ListViewAFLPumps);
+            this.groupBox9.Controls.Add(this.ButtonAFLFindDevices);
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(499, 158);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Syringe Pumps";
+            // 
+            // ListViewAFLPumps
+            // 
+            this.ListViewAFLPumps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.ButtonAFLEnable);
-            this.groupBox8.Controls.Add(this.ButtonAFLRemoveRules);
-            this.groupBox8.Controls.Add(this.ListViewAFLRules);
-            this.groupBox8.Location = new System.Drawing.Point(508, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(578, 375);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Auto Flow Rules (Checked = Flowed)";
+            this.ListViewAFLPumps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13});
+            this.ListViewAFLPumps.FullRowSelect = true;
+            this.ListViewAFLPumps.GridLines = true;
+            this.ListViewAFLPumps.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewAFLPumps.Location = new System.Drawing.Point(14, 20);
+            this.ListViewAFLPumps.MultiSelect = false;
+            this.ListViewAFLPumps.Name = "ListViewAFLPumps";
+            this.ListViewAFLPumps.Size = new System.Drawing.Size(334, 122);
+            this.ListViewAFLPumps.TabIndex = 9;
+            this.ListViewAFLPumps.UseCompatibleStateImageBehavior = false;
+            this.ListViewAFLPumps.View = System.Windows.Forms.View.Details;
+            this.ListViewAFLPumps.Click += new System.EventHandler(this.ListViewAFLPumps_Click);
             // 
-            // ButtonAFLEnable
+            // columnHeader12
             // 
-            this.ButtonAFLEnable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFLEnable.Enabled = false;
-            this.ButtonAFLEnable.Location = new System.Drawing.Point(10, 342);
-            this.ButtonAFLEnable.Name = "ButtonAFLEnable";
-            this.ButtonAFLEnable.Size = new System.Drawing.Size(562, 28);
-            this.ButtonAFLEnable.TabIndex = 4;
-            this.ButtonAFLEnable.Text = "Enable Auto Flow";
-            this.ButtonAFLEnable.UseVisualStyleBackColor = true;
-            this.ButtonAFLEnable.Click += new System.EventHandler(this.ButtonAFLEnable_Click);
+            this.columnHeader12.Text = "Pump Model";
+            this.columnHeader12.Width = 226;
             // 
-            // ButtonAFLRemoveRules
+            // columnHeader13
             // 
-            this.ButtonAFLRemoveRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAFLRemoveRules.Location = new System.Drawing.Point(408, 395);
-            this.ButtonAFLRemoveRules.Name = "ButtonAFLRemoveRules";
-            this.ButtonAFLRemoveRules.Size = new System.Drawing.Size(164, 26);
-            this.ButtonAFLRemoveRules.TabIndex = 3;
-            this.ButtonAFLRemoveRules.Text = "Remove Selected";
-            this.ButtonAFLRemoveRules.UseVisualStyleBackColor = true;
-            this.ButtonAFLRemoveRules.Click += new System.EventHandler(this.ButtonAFLRemoveRules_Click);
+            this.columnHeader13.Text = "Port";
+            this.columnHeader13.Width = 76;
             // 
-            // ListViewAFLRules
+            // ButtonAFLFindDevices
             // 
-            this.ListViewAFLRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewAFLRules.CheckBoxes = true;
-            this.ListViewAFLRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader11,
-            this.columnHeader14,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10});
-            this.ListViewAFLRules.FullRowSelect = true;
-            this.ListViewAFLRules.GridLines = true;
-            this.ListViewAFLRules.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ListViewAFLRules.Location = new System.Drawing.Point(10, 20);
-            this.ListViewAFLRules.MultiSelect = false;
-            this.ListViewAFLRules.Name = "ListViewAFLRules";
-            this.ListViewAFLRules.Size = new System.Drawing.Size(562, 316);
-            this.ListViewAFLRules.TabIndex = 0;
-            this.ListViewAFLRules.UseCompatibleStateImageBehavior = false;
-            this.ListViewAFLRules.View = System.Windows.Forms.View.Details;
-            this.ListViewAFLRules.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListViewAFLRules_ItemCheck);
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Frame #";
-            this.columnHeader7.Width = 65;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Pump";
-            this.columnHeader11.Width = 240;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Diameter";
-            this.columnHeader14.Width = 70;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Volume";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Rate";
-            this.columnHeader9.Width = 45;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Direction";
-            this.columnHeader10.Width = 65;
+            this.ButtonAFLFindDevices.Location = new System.Drawing.Point(354, 20);
+            this.ButtonAFLFindDevices.Name = "ButtonAFLFindDevices";
+            this.ButtonAFLFindDevices.Size = new System.Drawing.Size(139, 24);
+            this.ButtonAFLFindDevices.TabIndex = 8;
+            this.ButtonAFLFindDevices.Text = "Find Devices";
+            this.ButtonAFLFindDevices.UseVisualStyleBackColor = true;
+            this.ButtonAFLFindDevices.Click += new System.EventHandler(this.ButtonAFLFindDevices_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1087, 383);
+            this.tabPage1.Size = new System.Drawing.Size(1087, 386);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1988,7 +1997,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1087, 383);
+            this.tabPage7.Size = new System.Drawing.Size(1087, 386);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1998,9 +2007,15 @@
             this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox15.Location = new System.Drawing.Point(867, 6);
+            this.groupBox15.Controls.Add(this.LabelADCCurrentPos);
+            this.groupBox15.Controls.Add(this.LabelADCCurrentAngle2);
+            this.groupBox15.Controls.Add(this.LabelADCCurrentAngle1);
+            this.groupBox15.Controls.Add(this.label29);
+            this.groupBox15.Controls.Add(this.label38);
+            this.groupBox15.Controls.Add(this.label31);
+            this.groupBox15.Location = new System.Drawing.Point(848, 6);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(212, 371);
+            this.groupBox15.Size = new System.Drawing.Size(231, 371);
             this.groupBox15.TabIndex = 11;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Active Drift Correction Information";
@@ -2009,12 +2024,13 @@
             // 
             this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox14.Controls.Add(this.chart1);
             this.groupBox14.Location = new System.Drawing.Point(470, 254);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(391, 123);
+            this.groupBox14.Size = new System.Drawing.Size(372, 123);
             this.groupBox14.TabIndex = 10;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Z-axis drift correction";
+            this.groupBox14.Text = "QPD Information";
             // 
             // groupBox10
             // 
@@ -2028,7 +2044,7 @@
             this.groupBox10.Size = new System.Drawing.Size(461, 238);
             this.groupBox10.TabIndex = 9;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Fitting imformations";
+            this.groupBox10.Text = "Fitting informations";
             // 
             // PictureBoxADCObject
             // 
@@ -2065,14 +2081,12 @@
             this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCDecreasePhi);
             this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCIncreaseTheta);
             this.GroupBoxManualPiezomirrors.Controls.Add(this.ButtonADCDecreaseTheta);
-            this.GroupBoxManualPiezomirrors.Controls.Add(this.LabelADCCurrentAngle);
-            this.GroupBoxManualPiezomirrors.Controls.Add(this.label31);
             this.GroupBoxManualPiezomirrors.Controls.Add(this.TextBoxADCPiezomirrorStepSize);
             this.GroupBoxManualPiezomirrors.Controls.Add(this.label32);
             this.GroupBoxManualPiezomirrors.Controls.Add(this.label33);
             this.GroupBoxManualPiezomirrors.Location = new System.Drawing.Point(470, 6);
             this.GroupBoxManualPiezomirrors.Name = "GroupBoxManualPiezomirrors";
-            this.GroupBoxManualPiezomirrors.Size = new System.Drawing.Size(391, 127);
+            this.GroupBoxManualPiezomirrors.Size = new System.Drawing.Size(372, 127);
             this.GroupBoxManualPiezomirrors.TabIndex = 8;
             this.GroupBoxManualPiezomirrors.TabStop = false;
             this.GroupBoxManualPiezomirrors.Text = "Manual Control - Piezomirrors";
@@ -2083,7 +2097,7 @@
             this.ComboADCMirrorNum.FormattingEnabled = true;
             this.ComboADCMirrorNum.Location = new System.Drawing.Point(83, 26);
             this.ComboADCMirrorNum.Name = "ComboADCMirrorNum";
-            this.ComboADCMirrorNum.Size = new System.Drawing.Size(122, 20);
+            this.ComboADCMirrorNum.Size = new System.Drawing.Size(75, 20);
             this.ComboADCMirrorNum.TabIndex = 19;
             this.ComboADCMirrorNum.SelectedIndexChanged += new System.EventHandler(this.ComboADCMirrorNum_SelectedIndexChanged);
             // 
@@ -2098,7 +2112,7 @@
             // 
             // ButtonADCIncreasePhi
             // 
-            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(277, 22);
+            this.ButtonADCIncreasePhi.Location = new System.Drawing.Point(261, 22);
             this.ButtonADCIncreasePhi.Name = "ButtonADCIncreasePhi";
             this.ButtonADCIncreasePhi.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreasePhi.TabIndex = 16;
@@ -2108,7 +2122,7 @@
             // 
             // ButtonADCDecreasePhi
             // 
-            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(277, 68);
+            this.ButtonADCDecreasePhi.Location = new System.Drawing.Point(261, 68);
             this.ButtonADCDecreasePhi.Name = "ButtonADCDecreasePhi";
             this.ButtonADCDecreasePhi.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreasePhi.TabIndex = 17;
@@ -2118,7 +2132,7 @@
             // 
             // ButtonADCIncreaseTheta
             // 
-            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(332, 44);
+            this.ButtonADCIncreaseTheta.Location = new System.Drawing.Point(316, 44);
             this.ButtonADCIncreaseTheta.Name = "ButtonADCIncreaseTheta";
             this.ButtonADCIncreaseTheta.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseTheta.TabIndex = 10;
@@ -2128,7 +2142,7 @@
             // 
             // ButtonADCDecreaseTheta
             // 
-            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(221, 44);
+            this.ButtonADCDecreaseTheta.Location = new System.Drawing.Point(205, 44);
             this.ButtonADCDecreaseTheta.Name = "ButtonADCDecreaseTheta";
             this.ButtonADCDecreaseTheta.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseTheta.TabIndex = 15;
@@ -2136,28 +2150,28 @@
             this.ButtonADCDecreaseTheta.UseVisualStyleBackColor = true;
             this.ButtonADCDecreaseTheta.Click += new System.EventHandler(this.ButtonADCDecreaseTheta_Click);
             // 
-            // LabelADCCurrentAngle
+            // LabelADCCurrentAngle1
             // 
-            this.LabelADCCurrentAngle.Location = new System.Drawing.Point(126, 83);
-            this.LabelADCCurrentAngle.Name = "LabelADCCurrentAngle";
-            this.LabelADCCurrentAngle.Size = new System.Drawing.Size(95, 25);
-            this.LabelADCCurrentAngle.TabIndex = 14;
-            this.LabelADCCurrentAngle.Text = "θ:  0.0 mrad\r\nφ:  0.0 mrad";
+            this.LabelADCCurrentAngle1.Location = new System.Drawing.Point(27, 49);
+            this.LabelADCCurrentAngle1.Name = "LabelADCCurrentAngle1";
+            this.LabelADCCurrentAngle1.Size = new System.Drawing.Size(95, 25);
+            this.LabelADCCurrentAngle1.TabIndex = 14;
+            this.LabelADCCurrentAngle1.Text = "θ:  0.0 mrad\r\nφ:  0.0 mrad";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(27, 83);
+            this.label31.Location = new System.Drawing.Point(6, 29);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(96, 12);
+            this.label31.Size = new System.Drawing.Size(179, 12);
             this.label31.TabIndex = 13;
-            this.label31.Text = "Current Angle of";
+            this.label31.Text = "Current Angle of Pizeomirror 1:";
             // 
             // TextBoxADCPiezomirrorStepSize
             // 
             this.TextBoxADCPiezomirrorStepSize.Location = new System.Drawing.Point(83, 53);
             this.TextBoxADCPiezomirrorStepSize.Name = "TextBoxADCPiezomirrorStepSize";
-            this.TextBoxADCPiezomirrorStepSize.Size = new System.Drawing.Size(82, 21);
+            this.TextBoxADCPiezomirrorStepSize.Size = new System.Drawing.Size(75, 21);
             this.TextBoxADCPiezomirrorStepSize.TabIndex = 12;
             this.TextBoxADCPiezomirrorStepSize.Text = "0.05";
             this.TextBoxADCPiezomirrorStepSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2165,7 +2179,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(171, 56);
+            this.label32.Location = new System.Drawing.Point(164, 53);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(34, 12);
             this.label32.TabIndex = 11;
@@ -2278,8 +2292,6 @@
             // 
             // GroupBoxManualNanostage
             // 
-            this.GroupBoxManualNanostage.Controls.Add(this.LabelADCCurrentPos);
-            this.GroupBoxManualNanostage.Controls.Add(this.label29);
             this.GroupBoxManualNanostage.Controls.Add(this.TextBoxADCNanostageStepSize);
             this.GroupBoxManualNanostage.Controls.Add(this.label28);
             this.GroupBoxManualNanostage.Controls.Add(this.label27);
@@ -2289,14 +2301,14 @@
             this.GroupBoxManualNanostage.Controls.Add(this.ButtonADCDecreaseY);
             this.GroupBoxManualNanostage.Location = new System.Drawing.Point(470, 139);
             this.GroupBoxManualNanostage.Name = "GroupBoxManualNanostage";
-            this.GroupBoxManualNanostage.Size = new System.Drawing.Size(391, 109);
+            this.GroupBoxManualNanostage.Size = new System.Drawing.Size(372, 109);
             this.GroupBoxManualNanostage.TabIndex = 6;
             this.GroupBoxManualNanostage.TabStop = false;
             this.GroupBoxManualNanostage.Text = "Manual Control - Nanostage";
             // 
             // LabelADCCurrentPos
             // 
-            this.LabelADCCurrentPos.Location = new System.Drawing.Point(126, 55);
+            this.LabelADCCurrentPos.Location = new System.Drawing.Point(27, 180);
             this.LabelADCCurrentPos.Name = "LabelADCCurrentPos";
             this.LabelADCCurrentPos.Size = new System.Drawing.Size(84, 38);
             this.LabelADCCurrentPos.TabIndex = 9;
@@ -2305,11 +2317,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(14, 55);
+            this.label29.Location = new System.Drawing.Point(6, 158);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(109, 12);
+            this.label29.Size = new System.Drawing.Size(178, 12);
             this.label29.TabIndex = 8;
-            this.label29.Text = "Current Position of";
+            this.label29.Text = "Current Position of Nanostage:";
             // 
             // TextBoxADCNanostageStepSize
             // 
@@ -2340,7 +2352,7 @@
             // 
             // ButtonADCDecreaseX
             // 
-            this.ButtonADCDecreaseX.Location = new System.Drawing.Point(221, 40);
+            this.ButtonADCDecreaseX.Location = new System.Drawing.Point(205, 41);
             this.ButtonADCDecreaseX.Name = "ButtonADCDecreaseX";
             this.ButtonADCDecreaseX.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseX.TabIndex = 2;
@@ -2350,7 +2362,7 @@
             // 
             // ButtonADCIncreaseX
             // 
-            this.ButtonADCIncreaseX.Location = new System.Drawing.Point(332, 40);
+            this.ButtonADCIncreaseX.Location = new System.Drawing.Point(316, 41);
             this.ButtonADCIncreaseX.Name = "ButtonADCIncreaseX";
             this.ButtonADCIncreaseX.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseX.TabIndex = 3;
@@ -2360,7 +2372,7 @@
             // 
             // ButtonADCIncreaseY
             // 
-            this.ButtonADCIncreaseY.Location = new System.Drawing.Point(277, 15);
+            this.ButtonADCIncreaseY.Location = new System.Drawing.Point(261, 16);
             this.ButtonADCIncreaseY.Name = "ButtonADCIncreaseY";
             this.ButtonADCIncreaseY.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCIncreaseY.TabIndex = 1;
@@ -2370,13 +2382,46 @@
             // 
             // ButtonADCDecreaseY
             // 
-            this.ButtonADCDecreaseY.Location = new System.Drawing.Point(277, 61);
+            this.ButtonADCDecreaseY.Location = new System.Drawing.Point(261, 62);
             this.ButtonADCDecreaseY.Name = "ButtonADCDecreaseY";
             this.ButtonADCDecreaseY.Size = new System.Drawing.Size(40, 40);
             this.ButtonADCDecreaseY.TabIndex = 4;
             this.ButtonADCDecreaseY.Text = "▼";
             this.ButtonADCDecreaseY.UseVisualStyleBackColor = true;
             this.ButtonADCDecreaseY.Click += new System.EventHandler(this.ButtonADCDecreaseY_Click);
+            // 
+            // chart1
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(6, 20);
+            this.chart1.Name = "chart1";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(360, 97);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
+            // 
+            // LabelADCCurrentAngle2
+            // 
+            this.LabelADCCurrentAngle2.Location = new System.Drawing.Point(27, 113);
+            this.LabelADCCurrentAngle2.Name = "LabelADCCurrentAngle2";
+            this.LabelADCCurrentAngle2.Size = new System.Drawing.Size(95, 25);
+            this.LabelADCCurrentAngle2.TabIndex = 14;
+            this.LabelADCCurrentAngle2.Text = "θ:  0.0 mrad\r\nφ:  0.0 mrad";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 94);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(179, 12);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "Current Angle of Pizeomirror 2:";
             // 
             // frmTIRF
             // 
@@ -2451,15 +2496,18 @@
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFRange)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLFrameNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDAFLVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarAFLRate)).EndInit();
-            this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxADCObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxADCPinhole2)).EndInit();
@@ -2471,6 +2519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUDADCPiezomirrorNum)).EndInit();
             this.GroupBoxManualNanostage.ResumeLayout(false);
             this.GroupBoxManualNanostage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2628,7 +2677,7 @@
         private System.Windows.Forms.Button ButtonADCDecreasePhi;
         private System.Windows.Forms.Button ButtonADCIncreaseTheta;
         private System.Windows.Forms.Button ButtonADCDecreaseTheta;
-        private System.Windows.Forms.Label LabelADCCurrentAngle;
+        private System.Windows.Forms.Label LabelADCCurrentAngle1;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox TextBoxADCPiezomirrorStepSize;
         private System.Windows.Forms.Label label32;
@@ -2654,6 +2703,9 @@
         private System.Windows.Forms.PictureBox PictureBoxADCObject;
         private System.Windows.Forms.PictureBox PictureBoxADCPinhole2;
         private System.Windows.Forms.PictureBox PictureBoxADCPinhole1;
+        private System.Windows.Forms.Label LabelADCCurrentAngle2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 
     }
 }
