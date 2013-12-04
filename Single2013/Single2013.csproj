@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="AutoFlow.cs" />
     <Compile Include="AutoFocusing.cs" />
+    <Compile Include="AutoMove.cs" />
     <Compile Include="frmTIRF.cs">
       <SubType>Form</SubType>
     </Compile>

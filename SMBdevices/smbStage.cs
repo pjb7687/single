@@ -15,7 +15,8 @@ namespace SMBdevices
             MCL_CFOCUS,
             PI_ZSTAGE,
             PI_XYZNANOSTAGE,
-            PI_PIEZOMIRROR
+            PI_PIEZOMIRROR,
+            ASI_MS2000
         }
 
         private StageType m_stage;
@@ -35,6 +36,43 @@ namespace SMBdevices
             m_stage = stage;
             switch (m_stage)
             {
+                case StageType.ASI_MS2000:
+                    ports = SerialPort.GetPortNames();
+                    foreach (string port in ports)
+                    {
+                        try
+                        {
+                            m_serialport = new SerialPort(port);
+
+                            m_serialport.BaudRate = 9600;
+                            m_serialport.DataBits = 8;
+                            m_serialport.Parity = Parity.None;
+                            m_serialport.StopBits = StopBits.One;
+                            m_serialport.Handshake = Handshake.None;
+
+                            m_serialport.Open();
+
+                            m_serialport.Write("N\r");
+                            Thread.Sleep(200);
+                            if (m_serialport.ReadExisting().Substring(7, 6) == "MS2000")
+                            {
+                                // Found Device
+                                m_serialport.Write("W X Y Z\r");
+                                Thread.Sleep(100);
+                                string[] dists = m_serialport.ReadExisting().Split(' ');
+                                m_distx = Convert.ToDouble(dists[1]);
+                                m_disty = Convert.ToDouble(dists[2]);
+                                m_distz = Convert.ToDouble(dists[3]);
+                                break;
+                            }
+                            else { m_serialport.Close(); };
+                        }
+                        catch
+                        {
+                            m_serialport.Close();
+                        }
+                    }
+                    break;
                 case StageType.MCL_CFOCUS:
                     m_handle = Madlib.MCL_InitHandle();
                     if (m_handle == 0) throw new Exception();
@@ -157,6 +195,9 @@ namespace SMBdevices
                 case StageType.PI_PIEZOMIRROR:
                     m_serialport.Close();
                     break;
+                case StageType.ASI_MS2000:
+                    m_serialport.Close();
+                    break;
                 case StageType.PI_XYZNANOSTAGE:
                     PI.GCS2.CloseConnection(m_iControllerId);
                     break;
@@ -206,6 +247,16 @@ namespace SMBdevices
                         m_disty = dist;
                     }
                     m_serialport.Write(String.Format("{0:0.000}\n", dist));
+                    break;
+                case StageType.ASI_MS2000:
+                    if (axis == 1) {
+                        m_distx = dist;
+                    } else if (axis == 2) {
+                        m_disty = dist;
+                    } else {
+                        m_distz = dist;
+                    }
+                    m_serialport.Write(String.Format("M X={0:0} Y={1:0} Z={2:0}\r", m_distx, m_disty, m_distz));
                     break;
             }
         }

@@ -26,13 +26,15 @@ namespace Single2013
         private AutoFocusing m_autofocusing;
         private AutoFlow m_autoflow;
         private ActiveDriftCorrection m_adc;
+        private AutoMove m_automove;
 
-        public int[] cursorXY = new int[2] {-1, -1};
+        public int[] cursorXY = new int[2] { -1, -1 };
 
         public bool m_CCDon = false;
 
         private string m_pmafiledir;
         private string m_pmafilenamehead;
+        public string m_filename = "";
 
         public int m_chanum;
 
@@ -42,6 +44,13 @@ namespace Single2013
         }
 
         #region Delegates For MultiThreading
+        public delegate void startFilmingDelegate();
+        public void startFilming()
+        {
+            StartFilmingButton_Click(new object(), new EventArgs());
+        }
+
+
         public delegate void DrawFrameDelegate(Bitmap bitmap);
         public void DrawFrame(Bitmap bitmap)
         {
@@ -68,12 +77,12 @@ namespace Single2013
         public void updateFilmingInfo(int framenum)
         {
             LabelFramenum.Text = "Frame #: " + framenum.ToString();
-            TimeSpan t = TimeSpan.FromSeconds( framenum * Convert.ToDouble(TextBoxExptime.Text) );
-            string time = string.Format("{0:D2}h {1:D2}m {2:D2}s {3:D3}ms", 
-    		                            	t.Hours, 
-    			                            t.Minutes, 
-    			                            t.Seconds, 
-    			                            t.Milliseconds);
+            TimeSpan t = TimeSpan.FromSeconds(framenum * Convert.ToDouble(TextBoxExptime.Text));
+            string time = string.Format("{0:D2}h {1:D2}m {2:D2}s {3:D3}ms",
+                                            t.Hours,
+                                            t.Minutes,
+                                            t.Seconds,
+                                            t.Milliseconds);
             LabelTime.Text = "Time: " + time;
         }
 
@@ -124,7 +133,7 @@ namespace Single2013
 
         public void FindingFocalPointDone()
         {
-            Log("[Auto Focusing]", new string[] { "Calculating STDEV..."});
+            Log("[Auto Focusing]", new string[] { "Calculating STDEV..." });
             m_autofocusing.CalculateSTDEV();
         }
 
@@ -162,7 +171,7 @@ namespace Single2013
             ListViewAFLRules.ItemCheck -= new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
             ListViewAFLRules.Items[index].Checked = true;
             ListViewAFLRules.ItemCheck += new ItemCheckEventHandler(ListViewAFLRules_ItemCheck);
-            Log("[Auto Flow]", new string[] {"Flowed volume: " + volume.ToString()});
+            Log("[Auto Flow]", new string[] { "Flowed volume: " + volume.ToString() });
         }
 
         #endregion
@@ -259,7 +268,7 @@ namespace Single2013
         {
             string crlf = "\r\n";
             LogTextBox.Text += crlf + crlf + mainissue;
-            for (int i=0; i<issues.Length; i++)
+            for (int i = 0; i < issues.Length; i++)
                 LogTextBox.Text += crlf + issues[i];
             LogTextBox.SelectionStart = LogTextBox.Text.Length;
             LogTextBox.ScrollToCaret();
@@ -324,7 +333,7 @@ namespace Single2013
                 if (m_imgdrawer.m_filming) StartFilmingButton_Click(sender, e);
                 m_imgdrawer.StopDrawing();
                 OpenCameraButton.Text = "Open Camera";
-                Log("[Camera]", new string[] {"Shutter Closed."});
+                Log("[Camera]", new string[] { "Shutter Closed." });
             }
             StartFilmingButton.Enabled = !m_CCDon;
             SetTempButton.Enabled = m_CCDon;
@@ -359,11 +368,11 @@ namespace Single2013
                 sub.TextAlign = HorizontalAlignment.Center;
                 sub.ValueChanged += new EventHandler(NUDsub_TextChanged);
             }
-            for (int i = SplitConSubs.Panel2.Controls.Count-1; i >= (int)NUDChannelNum.Value; i--)
+            for (int i = SplitConSubs.Panel2.Controls.Count - 1; i >= (int)NUDChannelNum.Value; i--)
             {
                 SplitConSubs.Panel2.Controls.RemoveAt(i);
             }
-            GainGroupBox.Height = 190+SplitConSubs.Panel2.Controls[0].Height * (int)NUDChannelNum.Value + SplitConSubs.Panel2.Padding.Bottom + SplitConSubs.Panel2.Padding.Top;
+            GainGroupBox.Height = 190 + SplitConSubs.Panel2.Controls[0].Height * (int)NUDChannelNum.Value + SplitConSubs.Panel2.Padding.Bottom + SplitConSubs.Panel2.Padding.Top;
             NUDChannelNum.BackColor = System.Drawing.Color.LightPink;
         }
 
@@ -379,9 +388,9 @@ namespace Single2013
         private void SetGainButton_Click(object sender, EventArgs e)
         {
             double scaler, exptime;
-            
-            if (!double.TryParse(TextBoxScaler.Text, out scaler)) {scaler = 1; TextBoxScaler.Text = "1";}
-            if (!double.TryParse(TextBoxExptime.Text, out exptime)) {exptime = 0.1; TextBoxExptime.Text = "0.1";}
+
+            if (!double.TryParse(TextBoxScaler.Text, out scaler)) { scaler = 1; TextBoxScaler.Text = "1"; }
+            if (!double.TryParse(TextBoxExptime.Text, out exptime)) { exptime = 0.1; TextBoxExptime.Text = "0.1"; }
 
             int[] subs = new int[SplitConSubs.Panel2.Controls.Count];
             NumericUpDown tmp;
@@ -411,7 +420,8 @@ namespace Single2013
 
         private void StartFilmingButton_Click(object sender, EventArgs e)
         {
-            if (m_imgdrawer.m_filming) {
+            if (m_imgdrawer.m_filming)
+            {
                 m_imgdrawer.StopFilming();
                 StartFilmingButton.Text = "Start Filming";
                 m_shutter.StopALEX();
@@ -426,21 +436,21 @@ namespace Single2013
                 if (m_autoflow != null)
                     if (m_autoflow.m_autoflow)
                         ButtonAFLEnable_Click(sender, e);
-                Log("[Filming]", new string[] {"Filming Stopped."});
+                Log("[Filming]", new string[] { "Filming Stopped." });
             }
             else
             {
                 m_imgdrawer.m_framenum = 0;
                 int filecnt = 1;
-                string filename = "";
+
                 string logfilename = "";
 
                 do
                 {
-                    filename = m_pmafiledir + "\\" + m_pmafilenamehead + filecnt.ToString() + ".pma";
+                    m_filename = m_pmafiledir + "\\" + m_pmafilenamehead + filecnt.ToString() + ".pma";
                     logfilename = m_pmafiledir + "\\" + m_pmafilenamehead + filecnt.ToString() + ".log";
                     filecnt++;
-                } while (File.Exists(filename));
+                } while (File.Exists(m_filename));
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(logfilename))
                 {
@@ -454,17 +464,17 @@ namespace Single2013
                     file.WriteLine(str);
                 }
 
-                Log("[Filming]", new string [] { "Filming Started.", "File Name: " + filename });
+                Log("[Filming]", new string[] { "Filming Started.", "File Name: " + m_filename });
                 StartFilmingButton.Text = "Stop Filming";
-                using (var fileStream = new FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None))
+                using (var fileStream = new FileStream(m_filename, FileMode.Create, FileAccess.Write, FileShare.None))
                 using (var bw = new BinaryWriter(fileStream))
                 {
                     bw.Write(BitConverter.GetBytes((short)m_ccd.m_imagewidth));
                     bw.Write(BitConverter.GetBytes((short)m_ccd.m_imageheight));
                 }
 
-                m_imgdrawer.StartFilming(filename);
-                
+                m_imgdrawer.StartFilming(m_filename);
+
                 if (ALEXCheckedListBox.CheckedItems.Count > 1)
                 {
                     LaserCheckedListBox.Enabled = false;
@@ -536,7 +546,7 @@ namespace Single2013
         {
             if (((MouseEventArgs)e).Button == System.Windows.Forms.MouseButtons.Left)
             {
-                int[] xy = new int[2] {((MouseEventArgs)e).Y, ((MouseEventArgs)e).X};
+                int[] xy = new int[2] { ((MouseEventArgs)e).Y, ((MouseEventArgs)e).X };
                 if (xy[0] > 5 && xy[0] < 507 && xy[1] > 5 && xy[1] < 507)
                     cursorXY = xy;
             }
@@ -545,6 +555,12 @@ namespace Single2013
                 cursorXY = new int[2] { -1, -1 };
             }
         }
+
+        private void NUDStopFrame_ValueChanged(object sender, EventArgs e)
+        {
+            CheckBoxAutoStop.Checked = false;
+        }
+
         #endregion
 
         #region 'Device Settings' Tab Related
@@ -567,7 +583,7 @@ namespace Single2013
             frm.static3 = "Timebase: ";
             frm.static4 = "Trigger: ";
             if (frm.ShowDialog() != DialogResult.OK) return;
-            
+
             ListViewLasers.Items.Add(new ListViewItem(new string[] { frm.text1, frm.text2, frm.text3, frm.text4 }));
         }
 
@@ -652,7 +668,7 @@ namespace Single2013
             System.Collections.Specialized.StringCollection lasers = new System.Collections.Specialized.StringCollection();
             System.Collections.Specialized.StringCollection counters = new System.Collections.Specialized.StringCollection();
 
-            for (int i = 0; i < ListViewLasers.Items.Count; i ++)
+            for (int i = 0; i < ListViewLasers.Items.Count; i++)
             {
                 lasers.Add(ListViewLasers.Items[i].SubItems[0].Text);
                 lasers.Add(ListViewLasers.Items[i].SubItems[1].Text);
@@ -687,7 +703,9 @@ namespace Single2013
                 if (m_stage == null)
                     m_stage = new smbStage((smbStage.StageType)ComboBoxAFDevices.SelectedIndex);
                 m_autofocusing = new AutoFocusing(m_stage, m_ccd, this, m_imgdrawer, (int)NUDAFRange.Value);
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 MessageBox.Show("Initialization Failed! Did you turned your device on?", "Single 2013");
                 return;
             }
@@ -776,7 +794,7 @@ namespace Single2013
 
         private void TextBoxAFSlope_TextChanged(object sender, EventArgs e)
         {
-            if (TextBoxAFSlope.Text != "" && TextBoxAFStdev.Text != "" && ButtonAFCalibration.Enabled == true) 
+            if (TextBoxAFSlope.Text != "" && TextBoxAFStdev.Text != "" && ButtonAFCalibration.Enabled == true)
                 ButtonAFStart.Enabled = true;
         }
 
@@ -785,7 +803,6 @@ namespace Single2013
             if (TextBoxAFSlope.Text != "" && TextBoxAFStdev.Text != "" && ButtonAFCalibration.Enabled == true)
                 ButtonAFStart.Enabled = true;
         }
-
         #endregion
 
         #region Auto Flow
@@ -802,7 +819,7 @@ namespace Single2013
                 if (m_autoflow.m_autoflow)
                     ButtonAFLEnable_Click(sender, e);
             }
-            
+
             ListViewAFLPumps.Items.Clear();
             foreach (smbPump pump in m_autoflow.m_pumps)
                 ListViewAFLPumps.Items.Add(new ListViewItem(new string[] { smbPump.GetPumpName(pump.m_pump), pump.m_port }));
@@ -834,7 +851,7 @@ namespace Single2013
                 RadioButtonAFLInfusion.Checked = false;
                 RadioButtonAFLRefill.Checked = true;
             }
-            
+
         }
 
         private void TrackBarAFLRate_Scroll(object sender, EventArgs e)
@@ -992,7 +1009,7 @@ namespace Single2013
             m_adc.setPiezomirrorIndex(ComboADCMirrorNum.SelectedIndex);
             showPiezomirrorPos();
         }
-        
+
         private void buttonADCSelectPinhole1_Click(object sender, EventArgs e)
         {
             m_adc.setXY(0, cursorXY);
@@ -1024,6 +1041,26 @@ namespace Single2013
                 GroupBoxManualNanostage.Enabled = false;
                 GroupBoxManualPiezomirrors.Enabled = false;
             }
+        }
+        #endregion
+
+        #region Auto Move
+        private void ButtonAMInitialize_Click(object sender, EventArgs e)
+        {
+            ButtonAMInitialize.Enabled = false;
+            try
+            {
+                m_automove = new AutoMove(m_imgdrawer, this);
+            }
+            catch { }
+            ButtonAMInitialize.Enabled = true;
+            ButtonAMMoveAndTake.Enabled = true;
+
+        }
+
+        private void ButtonAMMoveAndTake_Click(object sender, EventArgs e)
+        {
+            m_automove.StartAutoMove(Convert.ToInt32(TextBoxAMCount.Text), new int[] { Convert.ToInt32(TextBoxAMX.Text), Convert.ToInt32(TextBoxAMY.Text), Convert.ToInt32(TextBoxAMZ.Text) });
         }
         #endregion
     }
