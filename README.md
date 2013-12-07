@@ -11,5 +11,5 @@ Single is written in C#, and completely free to use!
 License
 ======
 
-Single is distributed under the new BSD license (3-clauses).
+Single is distributed under the BSD license.
 See LICENSE for more information!
