@@ -229,6 +229,11 @@
             this.TextBoxAMX = new System.Windows.Forms.TextBox();
             this.TextBoxAMCount = new System.Windows.Forms.TextBox();
             this.ButtonAMInitialize = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.ComboBoxImageRotation = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.TextBoxColortablePath = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -361,7 +366,7 @@
             this.GroupBoxDAQSettings.Controls.Add(this.label8);
             this.GroupBoxDAQSettings.Controls.Add(this.label7);
             this.GroupBoxDAQSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 281);
+            this.GroupBoxDAQSettings.Location = new System.Drawing.Point(3, 333);
             this.GroupBoxDAQSettings.Name = "GroupBoxDAQSettings";
             this.GroupBoxDAQSettings.Size = new System.Drawing.Size(269, 299);
             this.GroupBoxDAQSettings.TabIndex = 6;
@@ -530,6 +535,11 @@
             // 
             // GroupBoxCCDSettings
             // 
+            this.GroupBoxCCDSettings.Controls.Add(this.TextBoxColortablePath);
+            this.GroupBoxCCDSettings.Controls.Add(this.label44);
+            this.GroupBoxCCDSettings.Controls.Add(this.label42);
+            this.GroupBoxCCDSettings.Controls.Add(this.ComboBoxImageRotation);
+            this.GroupBoxCCDSettings.Controls.Add(this.label43);
             this.GroupBoxCCDSettings.Controls.Add(this.label25);
             this.GroupBoxCCDSettings.Controls.Add(this.NUDCameraIndex);
             this.GroupBoxCCDSettings.Controls.Add(this.label24);
@@ -546,7 +556,7 @@
             this.GroupBoxCCDSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBoxCCDSettings.Location = new System.Drawing.Point(3, 102);
             this.GroupBoxCCDSettings.Name = "GroupBoxCCDSettings";
-            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 179);
+            this.GroupBoxCCDSettings.Size = new System.Drawing.Size(269, 231);
             this.GroupBoxCCDSettings.TabIndex = 5;
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
@@ -554,7 +564,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(20, 122);
+            this.label25.Location = new System.Drawing.Point(20, 121);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(93, 12);
             this.label25.TabIndex = 12;
@@ -563,7 +573,7 @@
             // 
             // NUDCameraIndex
             // 
-            this.NUDCameraIndex.Location = new System.Drawing.Point(124, 120);
+            this.NUDCameraIndex.Location = new System.Drawing.Point(124, 119);
             this.NUDCameraIndex.Maximum = new decimal(new int[] {
             512,
             0,
@@ -576,7 +586,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(25, 95);
+            this.label24.Location = new System.Drawing.Point(25, 94);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(88, 12);
             this.label24.TabIndex = 10;
@@ -597,7 +607,7 @@
             // 
             // NUDImagingWidth
             // 
-            this.NUDImagingWidth.Location = new System.Drawing.Point(124, 93);
+            this.NUDImagingWidth.Location = new System.Drawing.Point(124, 92);
             this.NUDImagingWidth.Maximum = new decimal(new int[] {
             512,
             0,
@@ -610,7 +620,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(183, 95);
+            this.label15.Location = new System.Drawing.Point(183, 94);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(12, 12);
             this.label15.TabIndex = 7;
@@ -625,7 +635,7 @@
             this.ComboBoxCCDModel.Items.AddRange(new object[] {
             "Generic Andor EMCCD",
             "ProEM CCD"});
-            this.ComboBoxCCDModel.Location = new System.Drawing.Point(123, 15);
+            this.ComboBoxCCDModel.Location = new System.Drawing.Point(123, 14);
             this.ComboBoxCCDModel.Name = "ComboBoxCCDModel";
             this.ComboBoxCCDModel.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxCCDModel.TabIndex = 3;
@@ -633,7 +643,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(39, 18);
+            this.label13.Location = new System.Drawing.Point(39, 17);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 12);
             this.label13.TabIndex = 6;
@@ -649,7 +659,7 @@
             "Center",
             "Stretch",
             "Scale"});
-            this.ComboBoxZoomMode.Location = new System.Drawing.Point(123, 67);
+            this.ComboBoxZoomMode.Location = new System.Drawing.Point(123, 66);
             this.ComboBoxZoomMode.Name = "ComboBoxZoomMode";
             this.ComboBoxZoomMode.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxZoomMode.TabIndex = 5;
@@ -658,7 +668,7 @@
             // 
             this.ButtonSaveCCDSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 147);
+            this.ButtonSaveCCDSettings.Location = new System.Drawing.Point(14, 200);
             this.ButtonSaveCCDSettings.Name = "ButtonSaveCCDSettings";
             this.ButtonSaveCCDSettings.Size = new System.Drawing.Size(241, 23);
             this.ButtonSaveCCDSettings.TabIndex = 6;
@@ -669,7 +679,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 70);
+            this.label9.Location = new System.Drawing.Point(31, 69);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 12);
             this.label9.TabIndex = 3;
@@ -686,7 +696,7 @@
             "2",
             "4",
             "8"});
-            this.ComboBoxBinSize.Location = new System.Drawing.Point(123, 41);
+            this.ComboBoxBinSize.Location = new System.Drawing.Point(123, 40);
             this.ComboBoxBinSize.Name = "ComboBoxBinSize";
             this.ComboBoxBinSize.Size = new System.Drawing.Size(132, 20);
             this.ComboBoxBinSize.TabIndex = 4;
@@ -694,7 +704,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(53, 44);
+            this.label6.Location = new System.Drawing.Point(53, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 12);
             this.label6.TabIndex = 0;
@@ -1313,7 +1323,7 @@
             this.TabControlModules.Location = new System.Drawing.Point(3, 5);
             this.TabControlModules.Name = "TabControlModules";
             this.TabControlModules.SelectedIndex = 0;
-            this.TabControlModules.Size = new System.Drawing.Size(1095, 418);
+            this.TabControlModules.Size = new System.Drawing.Size(1095, 421);
             this.TabControlModules.TabIndex = 0;
             // 
             // tabPage3
@@ -1324,7 +1334,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1087, 392);
+            this.tabPage3.Size = new System.Drawing.Size(1087, 395);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1630,7 +1640,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1087, 392);
+            this.tabPage4.Size = new System.Drawing.Size(1087, 395);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1995,7 +2005,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1087, 392);
+            this.tabPage1.Size = new System.Drawing.Size(1087, 395);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2011,7 +2021,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1087, 392);
+            this.tabPage7.Size = new System.Drawing.Size(1087, 395);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2452,7 +2462,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1087, 392);
+            this.tabPage2.Size = new System.Drawing.Size(1087, 395);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Auto Move";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2466,7 +2476,6 @@
             this.ButtonAMMoveAndTake.TabIndex = 3;
             this.ButtonAMMoveAndTake.Text = "Move and Take";
             this.ButtonAMMoveAndTake.UseVisualStyleBackColor = true;
-            this.ButtonAMMoveAndTake.Click += new System.EventHandler(this.ButtonAMMoveAndTake_Click);
             // 
             // label41
             // 
@@ -2544,7 +2553,57 @@
             this.ButtonAMInitialize.TabIndex = 0;
             this.ButtonAMInitialize.Text = "Initialize";
             this.ButtonAMInitialize.UseVisualStyleBackColor = true;
-            this.ButtonAMInitialize.Click += new System.EventHandler(this.ButtonAMInitialize_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(224, 150);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(31, 12);
+            this.label42.TabIndex = 17;
+            this.label42.Text = "Deg.";
+            // 
+            // ComboBoxImageRotation
+            // 
+            this.ComboBoxImageRotation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxImageRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxImageRotation.FormattingEnabled = true;
+            this.ComboBoxImageRotation.Items.AddRange(new object[] {
+            "0",
+            "90",
+            "180",
+            "270"});
+            this.ComboBoxImageRotation.Location = new System.Drawing.Point(124, 146);
+            this.ComboBoxImageRotation.Name = "ComboBoxImageRotation";
+            this.ComboBoxImageRotation.Size = new System.Drawing.Size(94, 20);
+            this.ComboBoxImageRotation.TabIndex = 16;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(26, 149);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(87, 12);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Rotate Image :";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TextBoxColortablePath
+            // 
+            this.TextBoxColortablePath.Location = new System.Drawing.Point(124, 172);
+            this.TextBoxColortablePath.Name = "TextBoxColortablePath";
+            this.TextBoxColortablePath.Size = new System.Drawing.Size(132, 21);
+            this.TextBoxColortablePath.TabIndex = 18;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(15, 176);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(99, 12);
+            this.label44.TabIndex = 19;
+            this.label44.Text = "Colortable Path :";
             // 
             // frmTIRF
             // 
@@ -2842,6 +2901,11 @@
         private System.Windows.Forms.TextBox TextBoxAMZ;
         private System.Windows.Forms.TextBox TextBoxAMY;
         private System.Windows.Forms.TextBox TextBoxAMX;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ComboBox ComboBoxImageRotation;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox TextBoxColortablePath;
+        private System.Windows.Forms.Label label44;
 
     }
 }

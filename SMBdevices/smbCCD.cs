@@ -177,29 +177,27 @@ namespace SMBdevices
             AndorCCD.SetExposureTime((float)exptime);
         }
 
-        public void GetImage(int[] imagebuf)
+        public int GetImage(int[] imagebuf)
         {
             int retrynum = 0;
             uint err;
-            bool successflag = false;
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
-                    while (!successflag) {
-                        do 
-                        {
-                             err = AndorCCD.GetOldestImage(imagebuf, m_Bufsize);
-                        } while (err == ATMCD32CS.AndorSDK.DRV_NO_NEW_DATA);
+                    err = AndorCCD.GetOldestImage(imagebuf, m_Bufsize);
 
-                        if (err == ATMCD32CS.AndorSDK.DRV_SUCCESS) successflag = true;
-                        else retrynum++;
+                    if (err == ATMCD32CS.AndorSDK.DRV_SUCCESS) return 0;
+                    else if (err == ATMCD32CS.AndorSDK.DRV_NO_NEW_DATA) return 2;
+                    else retrynum++;
 
-                        if (retrynum > m_maxretrynum) throw new Exception();
-                    }
+                    if (retrynum > m_maxretrynum)
+                        return 1;
+
                     break;
                 case CCDType.PROEM_CCD:
                     break;
             }
+            return 0;
         }
 
         public void ShutterOn()
@@ -229,6 +227,35 @@ namespace SMBdevices
             }
         }
 
+        public void SetRotation(int rotation)
+        {
+            switch (m_CCDType)
+            {
+                case CCDType.ANDOR_CCD:
+                    switch (rotation)
+                    {
+                        case 0:
+                            AndorCCD.SetImageFlip(0, 0);
+                            AndorCCD.SetImageRotate(0);
+                            break;
+                        case 1:
+                            AndorCCD.SetImageFlip(0, 0);
+                            AndorCCD.SetImageRotate(1);
+                            break;
+                        case 2:
+                            AndorCCD.SetImageFlip(1, 1);
+                            AndorCCD.SetImageRotate(0);
+                            break;
+                        case 3:
+                            AndorCCD.SetImageFlip(0, 0);
+                            AndorCCD.SetImageRotate(2);
+                            break;
+                    }
+                    break;
+                case CCDType.PROEM_CCD:
+                    break;
+            }
+        }
         public void Dispose()
         {
             if (m_disposed) return;

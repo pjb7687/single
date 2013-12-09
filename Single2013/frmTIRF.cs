@@ -26,7 +26,7 @@ namespace Single2013
         private AutoFocusing m_autofocusing;
         private AutoFlow m_autoflow;
         private ActiveDriftCorrection m_adc;
-        private AutoMove m_automove;
+        // private AutoMove m_automove;
 
         public int[] cursorXY = new int[2] { -1, -1 };
 
@@ -187,11 +187,14 @@ namespace Single2013
             NUDImagingWidth.Value = Properties.Settings.Default.ImagingWidth;
             NUDImagingHeight.Value = Properties.Settings.Default.ImagingHeight;
             NUDCameraIndex.Value = Properties.Settings.Default.CameraIndex;
+            ComboBoxImageRotation.SelectedIndex = Properties.Settings.Default.RotateImageIndex;
+            TextBoxColortablePath.Text = Properties.Settings.Default.Colortable;
 
             if (m_ccd != null) m_ccd.Dispose();
             m_ccd = new smbCCD((smbCCD.CCDType)Properties.Settings.Default.CCDModelIndex, Properties.Settings.Default.CameraIndex);
             m_ccd.SetBinSize(Convert.ToInt32(ComboBoxBinSize.Items[Properties.Settings.Default.BinSizeIndex]));
             m_ccd.SetRange((int)NUDImagingWidth.Value, (int)NUDImagingHeight.Value);
+            m_ccd.SetRotation(Properties.Settings.Default.RotateImageIndex);
             m_ccd.SetTemp(-85);
 
             switch (ComboBoxZoomMode.SelectedIndex)
@@ -658,6 +661,8 @@ namespace Single2013
             Properties.Settings.Default.ImagingWidth = (int)NUDImagingWidth.Value;
             Properties.Settings.Default.ImagingHeight = (int)NUDImagingHeight.Value;
             Properties.Settings.Default.CameraIndex = (int)NUDCameraIndex.Value;
+            Properties.Settings.Default.RotateImageIndex = (int)ComboBoxImageRotation.SelectedIndex;
+            Properties.Settings.Default.Colortable = TextBoxColortablePath.Text;
             Properties.Settings.Default.Save();
             MessageBox.Show("Settings are successfully saved.", "Settings");
             LoadAllSettings();
@@ -1043,7 +1048,7 @@ namespace Single2013
             }
         }
         #endregion
-
+        /*
         #region Auto Move
         private void ButtonAMInitialize_Click(object sender, EventArgs e)
         {
@@ -1063,5 +1068,6 @@ namespace Single2013
             m_automove.StartAutoMove(Convert.ToInt32(TextBoxAMCount.Text), new int[] { Convert.ToInt32(TextBoxAMX.Text), Convert.ToInt32(TextBoxAMY.Text), Convert.ToInt32(TextBoxAMZ.Text) });
         }
         #endregion
+         */
     }
 }

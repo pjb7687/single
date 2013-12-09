@@ -29,6 +29,7 @@ namespace Single2013
         private int[] m_buf;
         private bool m_drawflag = false;
         private Thread m_drawingThread;
+        private bool m_threadworking = false;
 
         private frmTIRF m_frm;
         public bool m_filming = false;
@@ -116,18 +117,13 @@ namespace Single2013
         {
             int i, j, k, t;
             int high = m_ccd.m_imagewidth * m_ccd.m_imageheight;
+            m_threadworking = true;
             m_ccd.ShutterOn();
             while (m_drawflag)
             {
                 Thread.Sleep(0);
-                try
-                {
-                    m_ccd.GetImage(m_buf);
-                }
-                catch { 
-                    m_drawflag = false;
-                    return;
-                }
+                while (m_ccd.GetImage(m_buf) != 0)
+                    if (m_drawflag == false) break;
 
                 if (m_auto)
                 {
@@ -238,6 +234,7 @@ namespace Single2013
                 }
             }
             m_ccd.ShutterOff();
+            m_threadworking = false;
         }
 
         public void StartFilming(string pmafilename)
