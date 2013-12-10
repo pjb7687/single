@@ -26,7 +26,7 @@ namespace Single2013
         private AutoFocusing m_autofocusing;
         private AutoFlow m_autoflow;
         private ActiveDriftCorrection m_adc;
-        // private AutoMove m_automove;
+        private AutoMove m_automove;
 
         public int[] cursorXY = new int[2] { -1, -1 };
 
@@ -1048,7 +1048,7 @@ namespace Single2013
             }
         }
         #endregion
-        /*
+        
         #region Auto Move
         private void ButtonAMInitialize_Click(object sender, EventArgs e)
         {
@@ -1068,6 +1068,5 @@ namespace Single2013
             m_automove.StartAutoMove(Convert.ToInt32(TextBoxAMCount.Text), new int[] { Convert.ToInt32(TextBoxAMX.Text), Convert.ToInt32(TextBoxAMY.Text), Convert.ToInt32(TextBoxAMZ.Text) });
         }
         #endregion
-         */
     }
 }
