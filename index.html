@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Single : An ultimate single-molecule imaging program in C#">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Single</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pjb7687/single">View on GitHub</a>
+
+          <h1 id="project_title">Single</h1>
+          <h2 id="project_tagline">An ultimate single-molecule imaging program in C#</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pjb7687/single/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pjb7687/single/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="single" class="anchor" href="#single" aria-hidden="true"><span class="octicon octicon-link"></span></a>Single</h1>
+
+<p>Single is an easy-to-use single-molecule imaging program!</p>
+
+<p>Single allows to control unlimited number of shutters,
+also supports N-color alternate excitation(ALEX), automatic focusing, and automatic flow features.</p>
+
+<p>Single is written in C#, and completely free to use.</p>
+
+<h2>
+<a id="compatible-hardwares" class="anchor" href="#compatible-hardwares" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compatible Hardwares</h2>
+
+<ol>
+<li>
+<p>Basic Imaging / ALEX</p>
+
+<ol>
+<li>Any EMCCD from Andor.</li>
+<li>Any ProEM EMCCDs from Princeton Instruments.</li>
+<li>Counterboards from National Instruments(NI). Currently the program has been tested with NI PCI-6601/2 (<a href="http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875">http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875</a>), however, The program uses NI standard interface (a.k.a. VISA, Virtual Instrument Software Architecture) to communicate with counterboards, so any VISA-compatible counterboards will work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.</li>
+<li>Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).</li>
+</ol>
+</li>
+<li>
+<p>Automatic Focusing</p>
+
+<ol>
+<li>Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported. For more information, read this article: <a href="http://dx.doi.org/10.1364/OE.20.029353">http://dx.doi.org/10.1364/OE.20.029353</a>
+</li>
+</ol>
+</li>
+<li>
+<p>Automatic Pump Control</p>
+
+<ol>
+<li>Any Chemyx Fusion series syringe pumps.</li>
+<li>Harvard PHD 2000 syringe pump.</li>
+</ol>
+</li>
+</ol>
+
+<h2>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<ol>
+<li>All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).</li>
+<li>NI VISA with Visual Studio Examples. To install it properly, you should <em>customize</em> your setup and ensure to install <em>Development Support</em>-<em>.Net Framework xxx Lauguages Support</em>-<em>Examples</em>. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 3.5, Visual Studio 2013 == .Net 4.0)</li>
+<li>NI DAQmx with Visual Studio Examples. To install it properly, you should <em>customize</em> your setup and ensure to install <em>Development Support</em>-<em>.Net Framework xxx Lauguages Support</em>-<em>Examples</em>. It installs not only examples but also required .Net DLLs.</li>
+<li>DotNet framework. If you have Visual Studio, then you can skip it.</li>
+</ol>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2013, Jeongbin Park
+All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:</p>
+
+<ol>
+<li><p>Redistributions of source code must retain the above copyright notice, this list
+of conditions and the following disclaimer.</p></li>
+<li><p>Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.</p></li>
+</ol>
+
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Single maintained by <a href="https://github.com/pjb7687">pjb7687</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
