@@ -31,6 +31,13 @@ Prerequisites
 3. NI DAQmx with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs.
 4. DotNet framework. If you have Visual Studio, then you can skip it.
 
+Installation
+---
+1. Download Binary distribition here: https://github.com/pjb7687/single/archive/v1.0.zip
+   or Build your own binary.
+2. Download and install all prerequisites. See above section.
+3. Run Single2013.exe!
+
 License
 ---
 
