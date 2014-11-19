@@ -34,7 +34,7 @@ Prerequisites
 
 Installation
 ---
-1. Download Binary distribition here: https://github.com/pjb7687/single/archive/v1.0.zip
+1. Download Binary distribition here: https://github.com/pjb7687/single/releases/download/v1.0/Singlev1.0.zip
    or Build your own binary from source code.
 2. Download and install all prerequisites. See above section.
 3. Run Single2013.exe.
