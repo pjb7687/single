@@ -8,12 +8,6 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 
 Single is written in C#, and completely free to use.
 
-License
-------
-
-Single is distributed under the BSD license.
-See LICENSE for more information!
-
 Compatible Hardwares
 ---
 
@@ -32,3 +26,14 @@ Compatible Hardwares
   1. Any Chemyx Fusion series syringe pumps.
   2. Harvard PHD 2000 syringe pump.
 
+Prerequisites
+---
+1. All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).
+2. NI Visa with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*Examples*. It installs not only examples but also required .Net DLLs.
+3. DotNet framework. If you have Visual Studio, then you can skip it.
+
+License
+---
+
+Single is distributed under the BSD license.
+See LICENSE for more information!
