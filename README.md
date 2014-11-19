@@ -26,6 +26,7 @@ Compatible Hardwares
 
 Prerequisites
 ---
+0. Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be equal or more than 1080 pixels.
 1. All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).
 2. NI VISA with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 3.5, Visual Studio 2013 == .Net 4.0)
 3. NI DAQmx with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs.
@@ -34,9 +35,10 @@ Prerequisites
 Installation
 ---
 1. Download Binary distribition here: https://github.com/pjb7687/single/archive/v1.0.zip
-   or Build your own binary.
+   or Build your own binary from source code.
 2. Download and install all prerequisites. See above section.
-3. Run Single2013.exe!
+3. Run Single2013.exe.
+4. In *Settings* tab, change all values as your setup.
 
 License
 ---
