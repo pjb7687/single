@@ -28,7 +28,7 @@ Prerequisites
 ---
 0. Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be equal or more than 1080 pixels.
 1. All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).
-2. NI VISA with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 3.5, Visual Studio 2013 == .Net 4.0)
+2. NI VISA with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 4.0, Visual Studio 2013 == .Net 4.5)
 3. NI DAQmx with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs.
 4. DotNet framework. If you have Visual Studio, then you can skip it.
 
