@@ -18,7 +18,9 @@ Compatible Hardwares
   4. Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).
 
 3. Automatic Focusing
-  1. Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported. For more information, read this article: http://dx.doi.org/10.1364/OE.20.029353
+  1. Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported.
+     
+     For more information, read this article: [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
 
 4. Automatic Pump Control
   1. Any Chemyx Fusion series syringe pumps.
@@ -26,7 +28,7 @@ Compatible Hardwares
 
 Prerequisites
 ---
-0. Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be equal or more than 1080 pixels.
+0. Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be more than 1050 pixels.
 1. All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).
 2. NI VISA with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 4.0, Visual Studio 2013 == .Net 4.5)
 3. NI DAQmx with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs.
