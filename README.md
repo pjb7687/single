@@ -40,7 +40,7 @@ Installation
    or Build your own binary from source code.
 2. Download and install all prerequisites. See above section.
 3. Run Single2013.exe.
-4. In *Settings* tab, change all values as your setup.
+4. In *Settings* tab, set all values according to your setup.
 
 License
 ---
