@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="LowLevel\E7XX_GCS2.cs" />
     <Compile Include="LowLevel\Madlib.cs" />
+    <Compile Include="LowLevel\NIDAQmx.cs" />
     <Compile Include="smbCCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="smbPump.cs" />

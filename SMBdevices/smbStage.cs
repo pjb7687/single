@@ -5,6 +5,7 @@ using System.Text;
 using System.IO.Ports;
 using System.Threading;
 using PI;
+using Madlib;
 
 namespace SMBdevices
 {
@@ -74,10 +75,10 @@ namespace SMBdevices
                     }
                     break;
                 case StageType.MCL_CFOCUS:
-                    m_handle = Madlib.MCL_InitHandle();
+                    m_handle = CFocus.MCL_InitHandle();
                     if (m_handle == 0) throw new Exception();
-                    double Cal = Madlib.MCL_GetCalibration(3, m_handle);
-                    Madlib.MCL_SingleWriteN(Cal * .50, 3, m_handle);
+                    double Cal = CFocus.MCL_GetCalibration(3, m_handle);
+                    CFocus.MCL_SingleWriteN(Cal * .50, 3, m_handle);
                     m_distz = Cal * .50;
                     break;
                 case StageType.PI_ZSTAGE:
@@ -125,15 +126,15 @@ namespace SMBdevices
                 case StageType.PI_XYZNANOSTAGE:
                     StringBuilder sUsbController = new StringBuilder(1024);
 
-                    PI.GCS2.EnumerateUSB(sUsbController, 1024, "PI E-712");
-                    m_iControllerId = PI.GCS2.ConnectUSB(sUsbController.ToString());
+                    GCS2.EnumerateUSB(sUsbController, 1024, "PI E-712");
+                    m_iControllerId = GCS2.ConnectUSB(sUsbController.ToString());
 
                     if (m_iControllerId < 0) throw new Exception();
 
-                    PI.GCS2.ONL(m_iControllerId, new int [] {1, 2, 3}, new int[] {1, 1, 1}, 3);
+                    GCS2.ONL(m_iControllerId, new int [] {1, 2, 3}, new int[] {1, 1, 1}, 3);
 
-                    PI.GCS2.SVO(m_iControllerId, "1 2 3", new int[] { 1, 1, 1 });
-                    PI.GCS2.MOV(m_iControllerId, "1 2 3", new double[] { 0, 0, 0 });
+                    GCS2.SVO(m_iControllerId, "1 2 3", new int[] { 1, 1, 1 });
+                    GCS2.MOV(m_iControllerId, "1 2 3", new double[] { 0, 0, 0 });
                     break;
 
                 case StageType.PI_PIEZOMIRROR:
@@ -187,7 +188,7 @@ namespace SMBdevices
             switch (m_stage)
             {
                 case StageType.MCL_CFOCUS:
-                    Madlib.MCL_ReleaseAllHandles();
+                    CFocus.MCL_ReleaseAllHandles();
                     break;
                 case StageType.PI_ZSTAGE:
                     m_serialport.Close();
@@ -199,7 +200,7 @@ namespace SMBdevices
                     m_serialport.Close();
                     break;
                 case StageType.PI_XYZNANOSTAGE:
-                    PI.GCS2.CloseConnection(m_iControllerId);
+                    GCS2.CloseConnection(m_iControllerId);
                     break;
             }
         }
@@ -213,7 +214,7 @@ namespace SMBdevices
             {
                 case StageType.MCL_CFOCUS:
                     if (axis != 3) return;
-                    Madlib.MCL_SingleWriteN(dist, axis, m_handle);
+                    CFocus.MCL_SingleWriteN(dist, axis, m_handle);
                     m_distz = dist;
                     break;
                 case StageType.PI_ZSTAGE:
@@ -233,7 +234,7 @@ namespace SMBdevices
                         axistring = "3";
                         m_distz = dist;
                     }
-                    PI.GCS2.MOV(m_iControllerId, axistring, new double [] { dist });
+                    GCS2.MOV(m_iControllerId, axistring, new double [] { dist });
                     break;
                 case StageType.PI_PIEZOMIRROR:
                     if (axis == 1)

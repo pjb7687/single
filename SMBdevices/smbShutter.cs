@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NationalInstruments;
-using NationalInstruments.DAQmx;
+using NIDAQmx;
 
 namespace SMBdevices
 {
     public class smbShutter
     {
-        private List<DigitalSingleChannelWriter> m_writers = new List<DigitalSingleChannelWriter> { };
-        private List<Task> m_countertasks = new List<Task> { };
+        private List<int> m_lasertaskhandles = new List<int> { };
+        private List<int> m_countertaskhandles = new List<int> { };
         private List<int> m_alexindex = new List<int> { };
 
         public enum ShutterType
@@ -26,7 +25,7 @@ namespace SMBdevices
 
         ~smbShutter()
         {
-
+            ClearALEX();
         }
 
         public void AddLaser(string lines)
@@ -34,10 +33,10 @@ namespace SMBdevices
             switch (m_shuttertype)
             {
                 case ShutterType.NI_DAQ:
-                    Task task = new Task();
-                    task.DOChannels.CreateChannel(lines, "", ChannelLineGrouping.OneChannelForEachLine);
-                    DigitalSingleChannelWriter writer = new DigitalSingleChannelWriter(task.Stream);
-                    m_writers.Add(writer);
+                    int taskHandle = 0;
+                    CounterBoard.DAQmxCreateTask("", ref taskHandle);
+                    CounterBoard.DAQmxCreateDOChan(taskHandle, lines, "", CounterBoard.DAQmx_Val_ChanPerLine);
+                    m_lasertaskhandles.Add(taskHandle);
                     break;
             }
         }
@@ -47,13 +46,12 @@ namespace SMBdevices
             switch (m_shuttertype)
             {
                 case ShutterType.NI_DAQ:
-                    Task task = new Task();
-                    task.COChannels.CreatePulseChannelTicks(counter, "", countersrc, COPulseIdleState.Low, 2, 2, 2);
-                    task.Triggers.StartTrigger.Type = StartTriggerType.DigitalEdge;
-                    task.Triggers.StartTrigger.DigitalEdge.Edge = DigitalEdgeStartTriggerEdge.Rising;
-                    task.Triggers.StartTrigger.DigitalEdge.Source = triggersrc;
-                    task.Triggers.StartTrigger.Retriggerable = true;
-                    m_countertasks.Add(task);
+                    int taskHandle = 0;
+                    CounterBoard.DAQmxCreateTask("", ref taskHandle);
+                    CounterBoard.DAQmxCreateCOPulseChanTicks(taskHandle, counter, "alex_chan", countersrc, CounterBoard.DAQmx_Val_Low, 2, 2, 2);
+                    CounterBoard.DAQmxCfgDigEdgeStartTrig(taskHandle, triggersrc, 0); // 0: Rising Edge
+                    CounterBoard.DAQmxSetStartTrigRetriggerable(taskHandle, true);
+                    m_countertaskhandles.Add(taskHandle);
                     break;
             }
         }
@@ -70,38 +68,47 @@ namespace SMBdevices
             int TimeInterVening = 6400; // ccd intervening time 320 us
             int PreEnd = 28000 + 6400; // mechanical shutter closing time 1400us + 320us
 
-            Task task;
+            int taskHandle;
             for (int i = 0; i < m_alexindex.Count;  i++)
             {
-                task = m_countertasks[m_alexindex[i]];
-                task.COChannels[0].PulseHighTicks = ExpTicks - PreEnd;
-                task.COChannels[0].PulseLowTicks = ExpTicks * (m_alexindex.Count-1);
-                task.COChannels[0].PulseTicksInitialDelay = initdelay;
+                taskHandle = m_countertaskhandles[m_alexindex[i]];
+
+                CounterBoard.DAQmxSetCOPulseHighTicks(taskHandle, "alex_chan", ExpTicks - PreEnd);
+                CounterBoard.DAQmxSetCOPulseLowTicks(taskHandle, "alex_chan", ExpTicks * (m_alexindex.Count-1));
+                CounterBoard.DAQmxSetCOPulseTicksInitialDelay(taskHandle, "alex_chan", initdelay);
                 initdelay += ExpTicks + TimeInterVening - 300;
-                task.Start();
+
+                CounterBoard.DAQmxStartTask(taskHandle);
             }
         }
 
         public void StopALEX()
         {
             for (int i = 0; i < m_alexindex.Count; i++)
-                m_countertasks[m_alexindex[i]].Stop();
+                CounterBoard.DAQmxStopTask(m_countertaskhandles[m_alexindex[i]]);
         }
 
         public void ClearALEX()
         {
+            int i;
             StopALEX();
+            for (i=0; i < m_lasertaskhandles.Count; i++)
+                CounterBoard.DAQmxClearTask(m_lasertaskhandles[i]);
+            for (i = 0; i < m_countertaskhandles.Count; i++)
+                CounterBoard.DAQmxClearTask(m_countertaskhandles[i]);
             m_alexindex.Clear();
         }
 
         public void LaserOn(int index)
         {
-            m_writers[index].WriteSingleSampleSingleLine(true, true);
+            ushort[] data = { 1 }; int written = 1;
+            CounterBoard.DAQmxWriteDigitalLines(m_lasertaskhandles[index], 1, true, 0, false, data, ref written, IntPtr.Zero);
         }
 
         public void LaserOff(int index)
         {
-            m_writers[index].WriteSingleSampleSingleLine(true, false);
+            ushort[] data = { 0 }; int written = 1;
+            CounterBoard.DAQmxWriteDigitalLines(m_lasertaskhandles[index], 1, true, 0, false, data, ref written, IntPtr.Zero);
         }
     }
 }
