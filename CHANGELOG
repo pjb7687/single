@@ -2,6 +2,7 @@
 
 - Removed National Instruments .Net DLL dependencies (using native DLLs instead)
 - Added an automatic updater
+- Now using .Net framework 4.5
 
 1.0.0 (2014 Nov 19)
 
