@@ -1,3 +1,8 @@
-1.0.0 (2015 May 21)
+1.0.1 (2015 May 22)
+
+- Removed National Instruments .Net DLL dependencies (using native DLLs instead)
+- Added an automatic updater
+
+1.0.0 (2014 Nov 19)
 
 - Initial release
