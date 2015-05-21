@@ -28,11 +28,9 @@ Compatible Hardwares
 
 Prerequisites
 ---
-0. Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be more than 1050 pixels.
-1. All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).
-2. NI VISA with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 4.0, Visual Studio 2013 == .Net 4.5.2). If you want to use binary distribution of Single, you should use the same version of NI VISA compiled with the binary. Download it here: http://www.ni.com/download/ni-visa-5.4/4230/en/
-3. NI DAQmx with Visual Studio Examples. To install it properly, you should *customize* your setup and ensure to install *Development Support*-*.Net Framework xxx Lauguages Support*-*Examples*. It installs not only examples but also required .Net DLLs. If you want to use binary distribution of Single, you should use the same version of NI DAQmx compiled with the binary. Download it here: http://www.ni.com/download/ni-daqmx-14.1/4953/en/
-4. DotNet framework. If you have Visual Studio, then you can skip it. If you want to use binary distribution of Single, you should use the same version of DotNet framework compiled with the binary. Download it here: http://www.microsoft.com/en-us/download/details.aspx?id=42643
+1. Auto-focusing and Auto flow runs in seperate threads, so *CPU with quad core or more cores is recommended*. Also vertical screen resolution should be more than 1050 pixels in order to display settings panel properly.
+2. NI DAQmx. Download it here: http://www.ni.com/download/ni-daqmx-14.1/4953/en/
+3. All other required device drivers (EMCCD, counterboards, Z-axis stages, etc.). Note that DLL for Andor CCD (atmcd32cs.dll and atmcd32d.dll), PI GCS2 piezo stage (E7XX_GCS2_DLL.dll), and for Mad City Labs' C-Focus (Madlib.dll) is already included with the distribution; you can exchange one of the dlls to the one working with your setup.
 
 Installation
 ---
