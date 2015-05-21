@@ -100,6 +100,18 @@
     <Compile Include="frmTIRF.Designer.cs">
       <DependentUpon>frmTIRF.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateNotifier.Designer.cs">
+      <DependentUpon>frmUpdateNotifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdater.Designer.cs">
+      <DependentUpon>frmUpdater.cs</DependentUpon>
+    </Compile>
     <Compile Include="gaussFit.cs" />
     <Compile Include="ImageDrawer.cs" />
     <Compile Include="main.cs" />
@@ -117,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTIRF.resx">
       <DependentUpon>frmTIRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateNotifier.resx">
+      <DependentUpon>frmUpdateNotifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdater.resx">
+      <DependentUpon>frmUpdater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,7 +164,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4%28x86 및 x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -166,6 +184,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)..\SingleUpdater\bin\Release\SingleUpdater.exe" "$(ProjectDir)$(OutDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
