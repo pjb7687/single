@@ -14,7 +14,7 @@ Compatible Hardwares
 1. Basic Imaging / ALEX
   1. Any EMCCD from Andor.
   2. Any ProEM EMCCDs from Princeton Instruments.
-  3. Counterboards from National Instruments(NI). Currently the program has been tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875), however, The program uses NI standard interface (a.k.a. VISA, Virtual Instrument Software Architecture) to communicate with counterboards, so any VISA-compatible counterboards will work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
+  3. Counterboards from National Instruments(NI). Currently the program has been only tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/en/nid/211875), however, any NI counterboards should also work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
   4. Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).
 
 3. Automatic Focusing
