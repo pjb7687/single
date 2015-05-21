@@ -14,7 +14,7 @@ Compatible Hardwares
 1. Basic Imaging / ALEX
   1. Any EMCCD from Andor.
   2. Any ProEM EMCCDs from Princeton Instruments.
-  3. Counterboards from National Instruments(NI). Currently the program has been tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875), however, The program uses NI standard interface (a.k.a. VISA, Virtual Instrument Software Architecture) to communicate with counterboards, so any VISA-compatible counterboards will work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
+  3. Counterboards from National Instruments(NI). Currently the program has been only tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/en/nid/211875), however, any NI counterboards should also work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
   4. Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).
 
 3. Automatic Focusing
@@ -31,10 +31,11 @@ Prerequisites
 1. Auto-focusing and Auto flow runs in seperate threads, so *CPU with quad core or more cores is recommended*. Also vertical screen resolution should be more than 1050 pixels in order to display settings panel properly.
 2. NI DAQmx. Download it here: http://www.ni.com/download/ni-daqmx-14.1/4953/en/
 3. All other required device drivers (EMCCD, counterboards, Z-axis stages, etc.). Note that DLL for Andor CCD (atmcd32cs.dll and atmcd32d.dll), PI GCS2 piezo stage (E7XX_GCS2_DLL.dll), and for Mad City Labs' C-Focus (Madlib.dll) is already included with the distribution; you can exchange one of the dlls to the one working with your setup.
+4. [DotNet framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42643) (or above). If you have Visual Studio 2015, then you can skip it.
 
 Installation
 ---
-1. Download Binary distribition here: https://github.com/pjb7687/single/releases/download/v1.0/Singlev1.0.zip
+1. Download Binary distribition here: https://github.com/pjb7687/single/releases/download/v1.0.1/Singlev1.0.1.zip
    or Build your own binary from source code.
 2. Download and install all prerequisites. See above section.
 3. Run Single2013.exe.
