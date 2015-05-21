@@ -31,6 +31,7 @@ Prerequisites
 1. Auto-focusing and Auto flow runs in seperate threads, so *CPU with quad core or more cores is recommended*. Also vertical screen resolution should be more than 1050 pixels in order to display settings panel properly.
 2. NI DAQmx. Download it here: http://www.ni.com/download/ni-daqmx-14.1/4953/en/
 3. All other required device drivers (EMCCD, counterboards, Z-axis stages, etc.). Note that DLL for Andor CCD (atmcd32cs.dll and atmcd32d.dll), PI GCS2 piezo stage (E7XX_GCS2_DLL.dll), and for Mad City Labs' C-Focus (Madlib.dll) is already included with the distribution; you can exchange one of the dlls to the one working with your setup.
+4. [DotNet framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42643) (or above). If you have Visual Studio 2015, then you can skip it.
 
 Installation
 ---
