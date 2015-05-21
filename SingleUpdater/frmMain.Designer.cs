@@ -65,6 +65,7 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.progressBar1);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Updater";
             this.ResumeLayout(false);
 
