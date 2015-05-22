@@ -289,7 +289,7 @@ namespace Single2013
         #region Control Events
         private void frmTIRF_Load(object sender, EventArgs e)
         {
-            LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park\r\n\r\nThis program has been inspired by the original 'Single' program by SH and WS.";
+            LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park (pjb7687@gmail.com)\r\n\r\nThis program has been inspired by the original 'Single' program by SH and WS.";
 
             // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
@@ -551,7 +551,11 @@ namespace Single2013
             {
                 int[] xy = new int[2] { ((MouseEventArgs)e).Y, ((MouseEventArgs)e).X };
                 if (xy[0] > 5 && xy[0] < 507 && xy[1] > 5 && xy[1] < 507)
+                {
                     cursorXY = xy;
+                    cursorXY[0] = (int)(cursorXY[0] * CCDWindow.Image.Width / 512.0);
+                    cursorXY[1] = (int)(cursorXY[1] * CCDWindow.Image.Height / 512.0);
+                }
             }
             else
             {

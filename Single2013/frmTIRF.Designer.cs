@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SplitConSubs = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.DeviceSettings = new System.Windows.Forms.TabPage();
@@ -60,6 +60,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.GroupBoxCCDSettings = new System.Windows.Forms.GroupBox();
+            this.TextBoxColortablePath = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.ComboBoxImageRotation = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.NUDCameraIndex = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
@@ -229,11 +234,6 @@
             this.TextBoxAMX = new System.Windows.Forms.TextBox();
             this.TextBoxAMCount = new System.Windows.Forms.TextBox();
             this.ButtonAMInitialize = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
-            this.ComboBoxImageRotation = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.TextBoxColortablePath = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitConSubs)).BeginInit();
             this.SplitConSubs.Panel1.SuspendLayout();
             this.SplitConSubs.SuspendLayout();
@@ -561,6 +561,57 @@
             this.GroupBoxCCDSettings.TabStop = false;
             this.GroupBoxCCDSettings.Text = "CCD";
             // 
+            // TextBoxColortablePath
+            // 
+            this.TextBoxColortablePath.Location = new System.Drawing.Point(124, 172);
+            this.TextBoxColortablePath.Name = "TextBoxColortablePath";
+            this.TextBoxColortablePath.Size = new System.Drawing.Size(132, 21);
+            this.TextBoxColortablePath.TabIndex = 18;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(15, 176);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(99, 12);
+            this.label44.TabIndex = 19;
+            this.label44.Text = "Colortable Path :";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(224, 150);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(31, 12);
+            this.label42.TabIndex = 17;
+            this.label42.Text = "Deg.";
+            // 
+            // ComboBoxImageRotation
+            // 
+            this.ComboBoxImageRotation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxImageRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxImageRotation.FormattingEnabled = true;
+            this.ComboBoxImageRotation.Items.AddRange(new object[] {
+            "0",
+            "90",
+            "180",
+            "270"});
+            this.ComboBoxImageRotation.Location = new System.Drawing.Point(124, 146);
+            this.ComboBoxImageRotation.Name = "ComboBoxImageRotation";
+            this.ComboBoxImageRotation.Size = new System.Drawing.Size(94, 20);
+            this.ComboBoxImageRotation.TabIndex = 16;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(26, 149);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(87, 12);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Rotate Image :";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -597,7 +648,7 @@
             // 
             this.NUDImagingHeight.Location = new System.Drawing.Point(206, 93);
             this.NUDImagingHeight.Maximum = new decimal(new int[] {
-            512,
+            1024,
             0,
             0,
             0});
@@ -609,7 +660,7 @@
             // 
             this.NUDImagingWidth.Location = new System.Drawing.Point(124, 92);
             this.NUDImagingWidth.Maximum = new decimal(new int[] {
-            512,
+            1024,
             0,
             0,
             0});
@@ -1323,7 +1374,7 @@
             this.TabControlModules.Location = new System.Drawing.Point(3, 5);
             this.TabControlModules.Name = "TabControlModules";
             this.TabControlModules.SelectedIndex = 0;
-            this.TabControlModules.Size = new System.Drawing.Size(1095, 421);
+            this.TabControlModules.Size = new System.Drawing.Size(1095, 424);
             this.TabControlModules.TabIndex = 0;
             // 
             // tabPage3
@@ -1334,7 +1385,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1087, 395);
+            this.tabPage3.Size = new System.Drawing.Size(1087, 398);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Auto Focusing";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1390,45 +1441,45 @@
             // 
             // ChartAFFOM
             // 
-            chartArea4.AxisX.LabelStyle.Format = "0.##";
-            chartArea4.AxisY.LabelStyle.Format = "0.##";
-            chartArea4.Name = "ChartArea1";
-            this.ChartAFFOM.ChartAreas.Add(chartArea4);
+            chartArea1.AxisX.LabelStyle.Format = "0.##";
+            chartArea1.AxisY.LabelStyle.Format = "0.##";
+            chartArea1.Name = "ChartArea1";
+            this.ChartAFFOM.ChartAreas.Add(chartArea1);
             this.ChartAFFOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.ChartAFFOM.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.ChartAFFOM.Legends.Add(legend1);
             this.ChartAFFOM.Location = new System.Drawing.Point(377, 3);
             this.ChartAFFOM.Name = "ChartAFFOM";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series5.Legend = "Legend1";
-            series5.Name = "FOM";
-            this.ChartAFFOM.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Legend = "Legend1";
+            series1.Name = "FOM";
+            this.ChartAFFOM.Series.Add(series1);
             this.ChartAFFOM.Size = new System.Drawing.Size(368, 230);
             this.ChartAFFOM.TabIndex = 1;
             this.ChartAFFOM.Text = "chart2";
             // 
             // ChartAFDistance
             // 
-            chartArea5.AxisX.LabelStyle.Format = "0.##";
-            chartArea5.AxisY.LabelStyle.Format = "0.##";
-            chartArea5.Name = "ChartArea1";
-            this.ChartAFDistance.ChartAreas.Add(chartArea5);
+            chartArea2.AxisX.LabelStyle.Format = "0.##";
+            chartArea2.AxisY.LabelStyle.Format = "0.##";
+            chartArea2.Name = "ChartArea1";
+            this.ChartAFDistance.ChartAreas.Add(chartArea2);
             this.ChartAFDistance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.ChartAFDistance.Legends.Add(legend5);
+            legend2.Name = "Legend1";
+            this.ChartAFDistance.Legends.Add(legend2);
             this.ChartAFDistance.Location = new System.Drawing.Point(3, 3);
             this.ChartAFDistance.Name = "ChartAFDistance";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series6.Legend = "Legend1";
-            series6.Name = "FOM";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "Linear Fit of FOM";
-            this.ChartAFDistance.Series.Add(series6);
-            this.ChartAFDistance.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "FOM";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Linear Fit of FOM";
+            this.ChartAFDistance.Series.Add(series2);
+            this.ChartAFDistance.Series.Add(series3);
             this.ChartAFDistance.Size = new System.Drawing.Size(368, 230);
             this.ChartAFDistance.TabIndex = 0;
             this.ChartAFDistance.Text = "chart1";
@@ -1640,7 +1691,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1087, 395);
+            this.tabPage4.Size = new System.Drawing.Size(1087, 398);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Auto Flow";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2005,7 +2056,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1087, 395);
+            this.tabPage1.Size = new System.Drawing.Size(1087, 398);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Temperature";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2021,7 +2072,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1087, 395);
+            this.tabPage7.Size = new System.Drawing.Size(1087, 398);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Active Drift Correction";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2109,16 +2160,16 @@
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(6, 20);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(360, 97);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
@@ -2462,7 +2513,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1087, 395);
+            this.tabPage2.Size = new System.Drawing.Size(1087, 398);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Auto Move";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2553,57 +2604,6 @@
             this.ButtonAMInitialize.TabIndex = 0;
             this.ButtonAMInitialize.Text = "Initialize";
             this.ButtonAMInitialize.UseVisualStyleBackColor = true;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(224, 150);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(31, 12);
-            this.label42.TabIndex = 17;
-            this.label42.Text = "Deg.";
-            // 
-            // ComboBoxImageRotation
-            // 
-            this.ComboBoxImageRotation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxImageRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxImageRotation.FormattingEnabled = true;
-            this.ComboBoxImageRotation.Items.AddRange(new object[] {
-            "0",
-            "90",
-            "180",
-            "270"});
-            this.ComboBoxImageRotation.Location = new System.Drawing.Point(124, 146);
-            this.ComboBoxImageRotation.Name = "ComboBoxImageRotation";
-            this.ComboBoxImageRotation.Size = new System.Drawing.Size(94, 20);
-            this.ComboBoxImageRotation.TabIndex = 16;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(26, 149);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 12);
-            this.label43.TabIndex = 15;
-            this.label43.Text = "Rotate Image :";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // TextBoxColortablePath
-            // 
-            this.TextBoxColortablePath.Location = new System.Drawing.Point(124, 172);
-            this.TextBoxColortablePath.Name = "TextBoxColortablePath";
-            this.TextBoxColortablePath.Size = new System.Drawing.Size(132, 21);
-            this.TextBoxColortablePath.TabIndex = 18;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(15, 176);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(99, 12);
-            this.label44.TabIndex = 19;
-            this.label44.Text = "Colortable Path :";
             // 
             // frmTIRF
             // 

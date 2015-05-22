@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace SMBdevices
 {
@@ -13,7 +14,7 @@ namespace SMBdevices
             ANDOR_CCD,
             PROEM_CCD
         }
-
+        
         public CCDType m_CCDType;
         public int m_CCDTemp;
         public double m_exptime = 0.1;
@@ -22,10 +23,10 @@ namespace SMBdevices
         public int m_clipsize;
         public int m_imagewidth;
         public int m_imageheight;
-        public int m_binsize;
+        public int m_binsize = 1;
 
-        private int m_rangeheight = 512;
-        private int m_rangewidth = 512;
+        private int m_rangeheight = 1024;
+        private int m_rangewidth = 1024;
 
         private uint m_Bufsize;
 
@@ -144,7 +145,7 @@ namespace SMBdevices
             m_Bufsize = (uint)((m_rangewidth / m_binsize) * (m_rangeheight / m_binsize));
             m_imagewidth = m_rangewidth / m_binsize;
             m_imageheight = m_rangeheight / m_binsize;
-            m_clipsize = 30 / (512 / Math.Min(m_imagewidth, m_imageheight));
+            m_clipsize = (int)(30.0 / (512.0 / Math.Min(m_imagewidth, m_imageheight)));
         }
 
         public float GetExptime()
@@ -161,7 +162,6 @@ namespace SMBdevices
         public void SetBinSize(int bin_size)
         {
             m_binsize = bin_size;
-            SetImageSize();
         }
 
         public void SetRange(int rangeWidth, int rangeHeight)
