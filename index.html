@@ -20,11 +20,9 @@
 
           <h1 id="project_title">Single</h1>
           <h2 id="project_tagline">An ultimate single-molecule imaging program in C#</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pjb7687/single/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pjb7687/single/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+          <section id="downloads" style="width:120px !important;">
+            <a class="zip_download_link" href="https://github.com/pjb7687/single/releases/download/v1.0.1/Singlev1.0.1.zip">Download Single</a>
+          </section>
         </header>
     </div>
 
@@ -51,7 +49,7 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 <ol>
 <li>Any EMCCD from Andor.</li>
 <li>Any ProEM EMCCDs from Princeton Instruments.</li>
-<li>Counterboards from National Instruments(NI). Currently the program has been tested with NI PCI-6601/2 (<a href="http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875">http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875</a>), however, The program uses NI standard interface (a.k.a. VISA, Virtual Instrument Software Architecture) to communicate with counterboards, so any VISA-compatible counterboards will work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.</li>
+<li>Counterboards from National Instruments(NI). Currently the program has been tested with NI PCI-6601/2 (<a href="http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875" target="_blank">http://sine.ni.com/nips/cds/view/p/lang/ko/nid/211875</a>), however, The program uses NI standard interface (a.k.a. VISA, Virtual Instrument Software Architecture) to communicate with counterboards, so any VISA-compatible counterboards will work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.</li>
 <li>Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).</li>
 </ol>
 </li>
@@ -59,7 +57,7 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 <p>Automatic Focusing</p>
 
 <ol>
-<li>Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported. For more information, read this article: <a href="http://dx.doi.org/10.1364/OE.20.029353">http://dx.doi.org/10.1364/OE.20.029353</a>
+<li>Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported. For more information, read this article (cite if you want): <a href="http://dx.doi.org/10.1364/OE.20.029353" target="_blank">Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, <i>Opt. Express</i> <b>2012</b>, <i>20</i> (28), 29353-29360.</a>
 </li>
 </ol>
 </li>
@@ -77,18 +75,17 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
 
 <ol>
-<li>Auto-focusing and Auto flow runs in seperate threads, so CPU with quad core or more cores is desired. Also vertical screen resolution should be equal or more than 1080 pixels.</li>
-<li>All required device drivers (EMCCD, counterboards, Z-axis stages, etc.).</li>
-<li>NI VISA with Visual Studio Examples. To install it properly, you should <em>customize</em> your setup and ensure to install <em>Development Support</em>-<em>.Net Framework xxx Lauguages Support</em>-<em>Examples</em>. It installs not only examples but also required .Net DLLs. (FYI, Visual Studio 2010 == .Net 3.5, Visual Studio 2013 == .Net 4.0)</li>
-<li>NI DAQmx with Visual Studio Examples. To install it properly, you should <em>customize</em> your setup and ensure to install <em>Development Support</em>-<em>.Net Framework xxx Lauguages Support</em>-<em>Examples</em>. It installs not only examples but also required .Net DLLs.</li>
-<li>DotNet framework. If you have Visual Studio, then you can skip it.</li>
+<li>Auto-focusing and Auto flow runs in seperate threads, so <i>CPU with quad core or more cores is recommended</i>. Also vertical screen resolution should be equal or more than 1050 pixels in order to display settings panel properly.</li>
+<li>NI DAQmx. Download it here: <a href="http://www.ni.com/download/ni-daqmx-14.1/4953/en/" target="_blank">http://www.ni.com/download/ni-daqmx-14.1/4953/en/</a></li>
+<li>All other required device drivers (EMCCD, counterboards, Z-axis stages, etc.). Note that DLL for Andor CCD (atmcd32cs.dll and atmcd32d.dll), PI GCS2 piezo stage (E7XX_GCS2_DLL.dll), and for Mad City Labs' C-Focus (Madlib.dll) is already included with the distribution; you can exchange one of the dlls to the one working with your setup.</li>
+<li><a href="https://www.microsoft.com/download/details.aspx?id=42643" target="_blank">DotNet framework 4.5.2</a> (or above). If you have Visual Studio 2015, then you can skip it.</li>
 </ol>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <ol>
-<li>Download Binary distribition here: <a href="https://github.com/pjb7687/single/releases/download/v1.0/Singlev1.0.zip">https://github.com/pjb7687/single/releases/download/v1.0/Singlev1.0.zip</a>
+<li>Download Binary distribition here: <a href="https://github.com/pjb7687/single/releases/download/v1.0.1/Singlev1.0.1.zip">https://github.com/pjb7687/single/releases/download/v1.0.1/Singlev1.0.1.zip</a>
 or Build your own binary from source code.</li>
 <li>Download and install all prerequisites. See above section.</li>
 <li>Run Single2013.exe.</li>
