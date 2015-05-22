@@ -1,3 +1,8 @@
+1.0.2 (2015 May 22)
+
+- Support for Andor CCD width 1024x1024 imaging size
+- Added contact information (pjb7687@gmail.com)
+
 1.0.1 (2015 May 22)
 
 - Removed National Instruments .Net DLL dependencies (using native DLLs instead)
