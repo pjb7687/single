@@ -553,8 +553,8 @@ namespace Single2013
                 if (xy[0] > 5 && xy[0] < 507 && xy[1] > 5 && xy[1] < 507)
                 {
                     cursorXY = xy;
-                    cursorXY[0] = (int)(cursorXY[0] * CCDWindow.Image.Width / 512.0);
-                    cursorXY[1] = (int)(cursorXY[1] * CCDWindow.Image.Height / 512.0);
+                    cursorXY[0] = (int)(cursorXY[0] * (double)NUDImagingWidth.Value / 512.0);
+                    cursorXY[1] = (int)(cursorXY[1] * (double)NUDImagingHeight.Value / 512.0);
                 }
             }
             else
