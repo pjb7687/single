@@ -1,3 +1,8 @@
+1.0.3 (2015 May 25)
+
+- Better support for the ALEX functionality (with using native DLLs)
+- Minor bugfix (program hangs when blank screen is clicked)
+
 1.0.2 (2015 May 22)
 
 - Support for Andor CCD with 1024x1024 imaging size
