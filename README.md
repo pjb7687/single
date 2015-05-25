@@ -8,6 +8,13 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 
 Single is written in C#, and completely free to use.
 
+Single is currently being used by
+ - Single Molecule Biophysics Laboratory, Seoul National University
+ - Center for Teragnosis, Korea Institute of Science and Technology
+ - Nano-bio Photonics Division, Advanced Phothonics Research Institute (of Gwangju Institute of Science and Technology)
+ - Nanobio Imaging Laboratory, Gwangju Institute of Science and Technology
+ - Molecular Genome Engineering Laboratory, Hanyang University
+
 Compatible Hardwares
 ---
 
