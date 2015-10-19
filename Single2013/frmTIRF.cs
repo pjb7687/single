@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization;
 using System.IO;
+using System.Reflection;
 
 using SMBdevices;
 using System.Windows;
@@ -289,7 +290,10 @@ namespace Single2013
         #region Control Events
         private void frmTIRF_Load(object sender, EventArgs e)
         {
-            LogTextBox.Text = "Single 2013 - TIRF by Jeongbin Park (pjb7687@gmail.com)\r\n\r\nThis program has been inspired by the original 'Single' program by SH and WS.";
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            version = String.Join(".", version.Split('.').Reverse().Skip(1).Reverse());
+            this.Text = "Single - v" + version;
+            LogTextBox.Text = "Single - v" + version + " by Jeongbin Park (pjb7687@gmail.com)\r\n\r\nThis program has been inspired by the original 'Single' program by SH and WS.";
 
             // Shutters
             m_shutter = new smbShutter(smbShutter.ShutterType.NI_DAQ);
