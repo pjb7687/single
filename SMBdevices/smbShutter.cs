@@ -81,8 +81,12 @@ namespace SMBdevices
 
         public void StopALEX()
         {
-            for (int i = 0; i < m_alexindex.Count; i++)
+            for (int i = 0; i < m_countertaskhandles.Count; i++)
+            {
                 CounterBoard.DAQmxStopTask(m_countertaskhandles[i]);
+            }
+            m_countertaskhandles.Clear();
+
         }
 
         public void ClearALEX()
