@@ -1,6 +1,6 @@
 1.0.4 (2015 Oct 19)
 
-- Bugfix: ALEX stop button might not work when ALEX is performed once more (thanks to Yunsoo Jang)
+- Bugfix: ALEX stop button might not work when ALEX is performed once more (thanks to Yunsu Jang)
 - Now title bar shows the current version of Single.
 
 1.0.3 (2015 May 25)
