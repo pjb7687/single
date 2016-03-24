@@ -74,6 +74,7 @@ namespace SMBdevices
                     AndorCCD.SetAcquisitionMode(5); // Run till about
                     AndorCCD.SetFrameTransferMode(1); // Frame transfer mode on: 1, off: 0
                     AndorCCD.SetTriggerMode(0); // Internal trigger mode
+                    AndorCCD.SetEMAdvanced(1); // Enable high gain
                     break;
                 case CCDType.PROEM_CCD:
                     m_CCDTemp = 0;
