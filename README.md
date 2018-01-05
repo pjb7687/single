@@ -8,7 +8,7 @@ also supports N-color alternate excitation(ALEX), automatic focusing, and automa
 
 Single is written in C#, and completely free to use.
 
-Single is currently being used by
+Single is currently being used at:
  - Single Molecule Biophysics Laboratory, Seoul National University
  - Center for Theragnosis, Korea Institute of Science and Technology
  - Nano-bio Photonics Division, Advanced Phothonics Research Institute (of Gwangju Institute of Science and Technology)
@@ -27,7 +27,7 @@ Compatible Hardwares
 3. Automatic Focusing
   1. Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported.
      
-     For more information, read this article (please cite if you use this): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
+     Additionally a cylinderical lens is required for this feature. For more information, read this article (please cite if you use this): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
 
 4. Automatic Pump Control
   1. Any Chemyx Fusion series syringe pumps.
