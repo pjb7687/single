@@ -19,15 +19,13 @@ Compatible Hardwares
 ---
 
 1. Basic Imaging / ALEX
-    - Any EMCCD from Andor.
-    - Any ProEM EMCCDs from Princeton Instruments (planned).
-    - Counterboards from National Instruments(NI). Currently the program has been only tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/en/nid/211875), however, any NI counterboards should also work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
+    - Any Andor EMCCD.
+    - National Instruments(NI) Counterboards. Currently the program has been only tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/en/nid/211875), however, any NI counterboards should also work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
     - Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).
 
 2. Automatic Focusing
-    - Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported.
-     
-    * Additionally a cylinderical lens is required for this feature. Please refer to this article for more information (and please cite if you use it): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
+    - Z-axis stages. Currently, ASI (Applied Scientific Instrumentation) MS-2000 control unit, MCL (Mad City Labs) C-Focus, and PI (Physik Instrumente) E-516 control unit are supported.
+    - Additionally a cylinderical lens is required for this feature. Please refer to the following article for more information (and please cite if you use it): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
 
 3. Automatic Pump Control
     - Any Chemyx Fusion series syringe pumps.
