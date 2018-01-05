@@ -27,7 +27,7 @@ Compatible Hardwares
 2. Automatic Focusing
     - Z-axis stages. Currently, MS-2000 control unit from Applied Scientific Instrumentation, C-Focus from Mad City Labs, and E-516 control unit from Physik Instrumente are supported.
      
-    * Additionally a cylinderical lens is required for this feature. For more information, read this article (please cite if you use this): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
+    * Additionally a cylinderical lens is required for this feature. Please refer to this article for more information (and please cite if you use it): [Hwang, W. et al. Autofocusing system based on optical astigmatism analysis of single-molecule images, *Opt. Express* **2012**, *20* (28), 29353-29360.](http://dx.doi.org/10.1364/OE.20.029353)
 
 3. Automatic Pump Control
     - Any Chemyx Fusion series syringe pumps.
