@@ -14,12 +14,15 @@ Single is currently being used at:
  - Nano-bio Photonics Division, Advanced Phothonics Research Institute (of Gwangju Institute of Science and Technology)
  - Nanobio Imaging Laboratory, Gwangju Institute of Science and Technology
  - Molecular Genome Engineering Laboratory, Hanyang University
+ - Bio-nanoscopy Laboratory, Seoul National University
+ - Single Molecule Cellular Biology Laboratory, Seoul National University
+ - Biophysical Laboratory, Chung-Ang University
 
 Compatible Hardwares
 ---
 
 1. Basic Imaging / ALEX
-    - Any Andor EMCCD.
+    - Any Andor EMCCD.
     - National Instruments(NI) Counterboards. Currently the program has been only tested with NI PCI-6601/2 (http://sine.ni.com/nips/cds/view/p/lang/en/nid/211875), however, any NI counterboards should also work. For your information, PCI-6601 supports only 3 counters so you will need PCI-6602 (or above) if you want 4-color ALEX.
     - Any electronic shutters compatible with the counterboards. For ALEX FRET imaging, we have used VS35 series from Uniblitz (VS35S2T1-24).
 
