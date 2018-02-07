@@ -58,17 +58,36 @@ namespace SMBdevices
             switch (m_CCDType)
             {
                 case CCDType.ANDOR_CCD:
-                    float vsspeed = 0;
-                    int vsspeed_index = 0;
+                    float vsspeed = 0, hsspeed = 0, tmp_hsspeed = 0;
+                    int vsspeed_index = 0, hsspeed_index = 0, adc_index = 0, amp_index = 0;
+                    int adc_count, amp_count, hss_count;
+                    
                     AndorCCD = new ATMCD32CS.AndorSDK();
                     AndorCCD.GetCameraHandle(CCDNum, ref CCDHandle);
                     AndorCCD.SetCurrentCamera(CCDHandle);
                     AndorCCD.Initialize("");
                     AndorCCD.GetTemperature(ref m_CCDTemp);
                     this.SetBinSize(1);
-
+                    
+                    AndorCCD.GetNumberADChannels(ref adc_count);
+                    AndorCCD.GetNumberAmp(ref amp_count);
+                    for (int i=0; i<adc_count; i++) {
+                        for (int j=0; j<amp_count; j++) {
+                            AndorCCD.GetNumberHSSpeeds(i, j, ref hss_count);
+                            for (int k=0; k<hss_count; k++) {
+                                AndorCCD.GetHSSpeed(i, j, k, ref tmp_hsspeed);
+                                if (tmp_hsspeed > hsspeed) {
+                                    hsspeed = tmp_hsspeed;
+                                    adc_index = i;
+                                    amp_index = j;
+                                    hsspeed_index = k;
+                                }
+                            }
+                        }
+                    }
                     AndorCCD.SetExposureTime(0.1f); 
-                    AndorCCD.SetHSSpeed(0, 0);
+                    AndorCCD.SetADChannel(adc_index);
+                    AndorCCD.SetHSSpeed(amp_index, hsspeed_index);
                     AndorCCD.GetFastestRecommendedVSSpeed(ref vsspeed_index, ref vsspeed);
                     AndorCCD.SetVSSpeed(vsspeed_index);
                     AndorCCD.SetAcquisitionMode(5); // Run till about
