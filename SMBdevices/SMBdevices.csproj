@@ -38,6 +38,9 @@
     <Reference Include="ATMCD32CS">
       <HintPath>..\Single2013\bin\Release\ATMCD32CS.dll</HintPath>
     </Reference>
+    <Reference Include="ATSDK3CS">
+      <HintPath>..\..\..\..\..\..\Program Files\Andor SDK3\C#\ATSDK3CS.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
